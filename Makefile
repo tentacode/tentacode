@@ -9,4 +9,5 @@ install: ## Setup project
 	php artisan optimize:clear
 
 test: ## Run all tests
+	bin/phpcs
 	bin/phpstan
