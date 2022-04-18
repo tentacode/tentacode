@@ -1,4 +1,8 @@
-![test workflow](https://github.com/tentacode/tentacode/actions/workflows/tests.yml/badge.svg)
+![test workflow](https://github.com/tentacode/tentacode/workflows/Tests/badge.svg) [![Twitter @tentacode](https://badgen.net/twitter/follow/tentacode)](https://twitter.com/tentacode)
+
+[![tentacode's github stats](https://github-readme-stats.vercel.app/api?username=tentacode&theme=jolly&border_radius=10&hide_border=true)](https://github.com/tentacode/github-readme-stats)
+
+[![tentacode's github trophy](https://github-profile-trophy.vercel.app/?username=tentacode&column=4&theme=radical&no-frame=true)](https://github.com/tentacode/github-profile-trophy)
 
 ```php
 <?php
