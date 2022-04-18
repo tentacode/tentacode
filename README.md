@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ![test workflow](https://github.com/tentacode/tentacode/actions/workflows/tests.yml/badge.svg) [![Twitter @tentacode](https://badgen.net/twitter/follow/tentacode)](https://twitter.com/tentacode)
+=======
+![test workflow](https://github.com/tentacode/tentacode/actions/workflows/Tests/badge.svg) [![Twitter @tentacode](https://badgen.net/twitter/follow/tentacode)](https://twitter.com/tentacode)
+>>>>>>> 3958d7c (:lipstick: Badges 🤯)
 
 [![tentacode's github stats](https://github-readme-stats.vercel.app/api?username=tentacode&theme=jolly&border_radius=10&hide_border=true)](https://github.com/tentacode/github-readme-stats)
 
