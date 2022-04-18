@@ -1,0 +1,39 @@
+name: Tests
+
+on: [push]
+
+jobs:
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
+          coverage: none
+
+      - name: .env copy
+        run: cp .env.example .env
+        
+      - name: Setup project
+        run: make install
+
+      - name: Phpstan
+        run: bin/phpstan
+
+      - name: Automatic code sniffer fixing
+        run: bin/phpcbf
+        continue-on-error: true
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: '*.php'
+          commit_message: ":robot::art: Fix CS"
+
+      - name: Checking code sniffer after fixes
+        run: bin/phpcs

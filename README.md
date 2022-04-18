@@ -1,3 +1,5 @@
+![test workflow](https://github.com/tentacode/tentacode/actions/workflows/tests.yml/badge.svg)
+
 ```php
 <?php
 
