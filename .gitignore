@@ -6,7 +6,12 @@
 /bin
 /node_modules
 /old
+/public/css
+/public/fonts
 /public/hot
+/public/images
+/public/js
+/public/mix-manifest.json
 /public/storage
 /storage/*.key
 /vendor

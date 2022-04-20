@@ -8,6 +8,6 @@ class LandingController extends Controller
 {
     public function __invoke(): View
     {
-        return view('landing');
+        return view('landing/landing');
     }
 }
