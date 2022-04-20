@@ -7,6 +7,8 @@ install: ## Setup project
 	composer install
 	php artisan key:generate
 	php artisan optimize:clear
+	yarn
+	yarn run dev
 
 test: ## Run all tests
 	bin/pest
