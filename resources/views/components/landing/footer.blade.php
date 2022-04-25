@@ -42,9 +42,9 @@
 <div class="copyright py-4 text-center text-white">
     <div class="container">
         <small>
-            Photos copyright &copy; Benjamin Lévêque -
+            Photos copyright &copy; <a href="http://benjamin.leveque.me/">Benjamin Lévêque</a> -
             Copyright &copy; Gabriel Pillet
-            2022 — <a href="https://github.com/tentacode/tentacode.dev">fork me on github</a>
+            {{ date('Y') }} — <a href="https://github.com/tentacode/tentacode.dev">fork me on github</a>
         </small>
     </div>
 </div>

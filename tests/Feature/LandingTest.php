@@ -11,7 +11,7 @@ it('has a greeting section', function () {
 });
 
 it('has a strength section', function () {
-    get('/')->assertSee('I ship high quality projects');
+    get('/')->assertSee('Quality Addict');
 });
 
 it('has a recently blogged section', function () {
