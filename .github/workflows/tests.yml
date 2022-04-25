@@ -25,6 +25,9 @@ jobs:
       - name: Pest
         run: bin/pest
 
+      - name: Phpspec
+        run: bin/phpspec run -fpretty
+
       - name: Phpstan
         run: bin/phpstan
 

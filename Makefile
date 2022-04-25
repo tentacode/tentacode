@@ -12,6 +12,7 @@ install: ## Setup project
 
 test: ## Run all tests
 	bin/pest
+	bin/phpspec run -fpretty
 	bin/phpcbf
 	bin/phpcs
 	bin/phpstan

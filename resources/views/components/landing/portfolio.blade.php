@@ -22,8 +22,8 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img alt="" class="img-fluid" src="/img/portfolio/small/betaseries_insights.jpg?8bd00e9"
-                        srcset="/img/portfolio/small_x2/betaseries_insights.jpg?8bd00e9 2x">
+                    <img alt="" class="img-fluid" src="/img/portfolio/small/betaseries_insights.webp?8bd00e9"
+                        srcset="/img/portfolio/small_x2/betaseries_insights.webp?8bd00e9 2x">
 
                     <h4 class="portfolio-title text-dark">BetaSeries Insights</h4>
                 </div>
@@ -100,9 +100,9 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <img alt="Neo4j nodes and relations" class="img-fluid rounded mb-4"
-                                            src="img/portfolio/insights_nodes.jpg">
+                                            src="img/portfolio/insights_nodes.webp">
                                         <img alt="BetaSeries Insights page screenshot"
-                                            class="img-fluid rounded mb-4" src="img/portfolio/insights_full.jpg">
+                                            class="img-fluid rounded mb-4" src="img/portfolio/insights_full.webp">
 
                                         <button class="btn btn-primary" data-bs-dismiss="modal">
                                             <i class="fas fa-times fa-fw"></i>
@@ -124,8 +124,8 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img alt="" class="img-fluid" src="/img/portfolio/small/medical_imaging.jpg?8bd00e9"
-                        srcset="/img/portfolio/small_x2/medical_imaging.jpg?8bd00e9 2x">
+                    <img alt="" class="img-fluid" src="/img/portfolio/small/medical_imaging.webp?8bd00e9"
+                        srcset="/img/portfolio/small_x2/medical_imaging.webp?8bd00e9 2x">
 
                     <h4 class="portfolio-title text-dark">Medical Imaging search engine</h4>
                 </div>
@@ -197,7 +197,7 @@
                                         <img alt="Diagram of a DICOM network" class="img-fluid rounded mb-5"
                                             src="img/portfolio/orthanc_network.png">
                                         <img alt="Screenshot of Orthanc frontend" class="img-fluid rounded mb-4"
-                                            src="img/portfolio/orthanc.jpg">
+                                            src="img/portfolio/orthanc.webp">
 
                                         <button class="btn btn-primary" data-bs-dismiss="modal">
                                             <i class="fas fa-times fa-fw"></i>
@@ -218,8 +218,8 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img alt="" class="img-fluid" src="/img/portfolio/small/hr_saas.jpg?8bd00e9"
-                        srcset="/img/portfolio/small_x2/hr_saas.jpg?8bd00e9 2x">
+                    <img alt="" class="img-fluid" src="/img/portfolio/small/hr_saas.webp?8bd00e9"
+                        srcset="/img/portfolio/small_x2/hr_saas.webp?8bd00e9 2x">
 
                     <h4 class="portfolio-title text-dark">SAAS for Temporary Workers</h4>
                 </div>
@@ -299,8 +299,8 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img alt="" class="img-fluid" src="/img/portfolio/small/betaseries.jpg?8bd00e9"
-                        srcset="/img/portfolio/small_x2/betaseries.jpg?8bd00e9 2x">
+                    <img alt="" class="img-fluid" src="/img/portfolio/small/betaseries.webp?8bd00e9"
+                        srcset="/img/portfolio/small_x2/betaseries.webp?8bd00e9 2x">
 
                     <h4 class="portfolio-title text-dark">BetaSeries</h4>
                 </div>
@@ -381,9 +381,9 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <img alt="BetaSeries mobile app screenshots" class="img-fluid rounded mb-3"
-                                            src="img/portfolio/betaseries_mobile.jpg">
+                                            src="img/portfolio/betaseries_mobile.webp">
                                         <img alt="BetaSeries feed page" class="img-fluid rounded mb-4"
-                                            src="img/portfolio/betaseries_feed.jpg">
+                                            src="img/portfolio/betaseries_feed.webp">
 
                                         <button class="btn btn-primary" data-bs-dismiss="modal">
                                             <i class="fas fa-times fa-fw"></i>
@@ -404,8 +404,8 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img alt="" class="img-fluid" src="/img/portfolio/small/diwi.jpg?8bd00e9"
-                        srcset="/img/portfolio/small_x2/diwi.jpg?8bd00e9 2x">
+                    <img alt="" class="img-fluid" src="/img/portfolio/small/diwi.webp?8bd00e9"
+                        srcset="/img/portfolio/small_x2/diwi.webp?8bd00e9 2x">
 
                     <h4 class="portfolio-title text-dark">Diwi</h4>
                 </div>
@@ -471,7 +471,7 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <img alt="Diwi mobile application" class="img-fluid rounded mb-5"
-                                            src="img/portfolio/diwi_mobile.jpg">
+                                            src="img/portfolio/diwi_mobile.webp">
 
                                         <div class="embed-responsive embed-responsive-16by9 mb-4">
                                             <iframe class="embed-responsive-item" width="560" height="315"
@@ -500,8 +500,8 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img alt="" class="img-fluid" src="/img/portfolio/small/ynov.jpg?8bd00e9"
-                        srcset="/img/portfolio/small_x2/ynov.jpg?8bd00e9 2x">
+                    <img alt="" class="img-fluid" src="/img/portfolio/small/ynov.webp?8bd00e9"
+                        srcset="/img/portfolio/small_x2/ynov.webp?8bd00e9 2x">
 
                     <h4 class="portfolio-title text-dark">Teacher at YNOV</h4>
                 </div>
@@ -560,8 +560,8 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img alt="" class="img-fluid" src="/img/portfolio/small/alice_et_bob_slide.jpg?8bd00e9"
-                        srcset="/img/portfolio/small_x2/alice_et_bob_slide.jpg?8bd00e9 2x">
+                    <img alt="" class="img-fluid" src="/img/portfolio/small/alice_et_bob_slide.webp?8bd00e9"
+                        srcset="/img/portfolio/small_x2/alice_et_bob_slide.webp?8bd00e9 2x">
 
                     <h4 class="portfolio-title text-dark">Alice &amp; Bob</h4>
                 </div>
@@ -609,7 +609,7 @@
                                     <div class="col-lg-6">
                                         <img alt="Example of a fixtures file with Alice and Faker"
                                             class="img-fluid rounded mb-4"
-                                            src="img/portfolio/alice_et_bob_fixtures.jpg">
+                                            src="img/portfolio/alice_et_bob_fixtures.webp">
 
                                         <button class="btn btn-primary" data-bs-dismiss="modal">
                                             <i class="fas fa-times fa-fw"></i>
@@ -630,8 +630,8 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img alt="" class="img-fluid" src="/img/portfolio/small/neo4j_import_title.jpg?8bd00e9"
-                        srcset="/img/portfolio/small_x2/neo4j_import_title.jpg?8bd00e9 2x">
+                    <img alt="" class="img-fluid" src="/img/portfolio/small/neo4j_import_title.webp?8bd00e9"
+                        srcset="/img/portfolio/small_x2/neo4j_import_title.webp?8bd00e9 2x">
 
                     <h4 class="portfolio-title text-dark">MySQL to Neo4j Import</h4>
                 </div>
@@ -675,10 +675,10 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <img alt="Neo4j nodes and relations" class="img-fluid rounded mb-4"
-                                            src="img/portfolio/insights_nodes.jpg">
+                                            src="img/portfolio/insights_nodes.webp">
                                         <img alt="Output of the import in a terminal"
                                             class="img-fluid rounded mb-5"
-                                            src="img/portfolio/neo4j_import_terminal.jpg">
+                                            src="img/portfolio/neo4j_import_terminal.webp">
 
                                         <button class="btn btn-primary" data-bs-dismiss="modal">
                                             <i class="fas fa-times fa-fw"></i>
@@ -700,8 +700,8 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img alt="" class="img-fluid" src="/img/portfolio/small/neo4j_15min_title.jpg?8bd00e9"
-                        srcset="/img/portfolio/small_x2/neo4j_15min_title.jpg?8bd00e9 2x">
+                    <img alt="" class="img-fluid" src="/img/portfolio/small/neo4j_15min_title.webp?8bd00e9"
+                        srcset="/img/portfolio/small_x2/neo4j_15min_title.webp?8bd00e9 2x">
 
                     <h4 class="portfolio-title text-dark">Neo4j in 15 minutes</h4>
                 </div>
@@ -742,9 +742,9 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <img alt="Neo4j nodes and relations" class="img-fluid rounded mb-5"
-                                            src="img/portfolio/neo4j_15min_nodes.jpg">
+                                            src="img/portfolio/neo4j_15min_nodes.webp">
                                         <img alt="Cypher query" class="img-fluid rounded mb-4"
-                                            src="img/portfolio/neo4j_15min_cypher.jpg">
+                                            src="img/portfolio/neo4j_15min_cypher.webp">
 
                                         <button class="btn btn-primary" data-bs-dismiss="modal">
                                             <i class="fas fa-times fa-fw"></i>
@@ -765,8 +765,8 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img alt="" class="img-fluid" src="/img/portfolio/small/pdd_title.jpg?8bd00e9"
-                        srcset="/img/portfolio/small_x2/pdd_title.jpg?8bd00e9 2x">
+                    <img alt="" class="img-fluid" src="/img/portfolio/small/pdd_title.webp?8bd00e9"
+                        srcset="/img/portfolio/small_x2/pdd_title.webp?8bd00e9 2x">
 
                     <h4 class="portfolio-title text-dark">Pragmatism Driven Dev.</h4>
                 </div>
@@ -834,8 +834,8 @@
                         </div>
                     </div>
                     <img alt="" class="img-fluid"
-                        src="/img/portfolio/small/metabase_kittens_title.jpg?8bd00e9"
-                        srcset="/img/portfolio/small_x2/metabase_kittens_title.jpg?8bd00e9 2x">
+                        src="/img/portfolio/small/metabase_kittens_title.webp?8bd00e9"
+                        srcset="/img/portfolio/small_x2/metabase_kittens_title.webp?8bd00e9 2x">
 
                     <h4 class="portfolio-title text-dark">Metabase with kittens</h4>
                 </div>
@@ -879,7 +879,7 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <img alt="Metabase dashboard" class="img-fluid rounded mb-4"
-                                            src="img/portfolio/metabase_kittens_diwi.jpg">
+                                            src="img/portfolio/metabase_kittens_diwi.webp">
 
                                         <button class="btn btn-primary" data-bs-dismiss="modal">
                                             <i class="fas fa-times fa-fw"></i>
@@ -905,8 +905,8 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img alt="" class="img-fluid" src="/img/portfolio/small/phat_fishes_game.jpg?8bd00e9"
-                        srcset="/img/portfolio/small_x2/phat_fishes_game.jpg?8bd00e9 2x">
+                    <img alt="" class="img-fluid" src="/img/portfolio/small/phat_fishes_game.webp?8bd00e9"
+                        srcset="/img/portfolio/small_x2/phat_fishes_game.webp?8bd00e9 2x">
 
                     <h4 class="portfolio-title text-dark">Phat Fishes</h4>
                 </div>
@@ -996,9 +996,9 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <img alt="Phat Fishes title screen" class="img-fluid rounded mb-4"
-                                            src="img/portfolio/phat_fishes.jpg">
+                                            src="img/portfolio/phat_fishes.webp">
                                         <img alt="Phat Fishes rematch screen" class="img-fluid rounded mb-4"
-                                            src="img/portfolio/phat_fishes_lol.jpg">
+                                            src="img/portfolio/phat_fishes_lol.webp">
 
                                         <button class="btn btn-primary" data-bs-dismiss="modal">
                                             <i class="fas fa-times fa-fw"></i>
@@ -1019,8 +1019,8 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img alt="" class="img-fluid" src="/img/portfolio/small/s_plus_g.jpg?8bd00e9"
-                        srcset="/img/portfolio/small_x2/s_plus_g.jpg?8bd00e9 2x">
+                    <img alt="" class="img-fluid" src="/img/portfolio/small/s_plus_g.webp?8bd00e9"
+                        srcset="/img/portfolio/small_x2/s_plus_g.webp?8bd00e9 2x">
 
                     <h4 class="portfolio-title text-dark">S + G</h4>
                 </div>
@@ -1079,7 +1079,7 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <img alt="Augmented reality birth announcement card"
-                                            class="img-fluid rounded mb-4" src="img/portfolio/s_plus_g_app.jpg">
+                                            class="img-fluid rounded mb-4" src="img/portfolio/s_plus_g_app.webp">
 
                                         <button class="btn btn-primary" data-bs-dismiss="modal">
                                             <i class="fas fa-times fa-fw"></i>
@@ -1101,8 +1101,8 @@
                             <i class="fas fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img alt="" class="img-fluid" src="/img/portfolio/small/jevendsdestrucs.jpg?8bd00e9"
-                        srcset="/img/portfolio/small_x2/jevendsdestrucs.jpg?8bd00e9 2x">
+                    <img alt="" class="img-fluid" src="/img/portfolio/small/jevendsdestrucs.webp?8bd00e9"
+                        srcset="/img/portfolio/small_x2/jevendsdestrucs.webp?8bd00e9 2x">
 
                     <h4 class="portfolio-title text-dark">jevendsdestrucs</h4>
                 </div>

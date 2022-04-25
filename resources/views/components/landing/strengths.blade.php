@@ -1,4 +1,4 @@
-<section class="page-section background-dark-blue text-light mb-0 shadow" id="my-strengths">
+<section class="page-section background-dark-blue text-light mb-0 pb-6 shadow" id="my-strengths">
     <div class="container">
         <h2 class="page-section-heading text-center text-uppercase">I &#9829; quality projects</h2>
 
@@ -10,7 +10,7 @@
             <div class="divider-custom-line"></div>
         </div>
 
-        <div class="row mt-4 mb-5">
+        <div class="row mt-4 mb-4">
             <div class="col-lg-4">
                 <div class="features mx-auto mb-4">
                     <div class="big-icon mb-3 d-flex">
@@ -35,8 +35,8 @@
                         <i class="m-auto fas fa-tasks text-pink"></i>
                     </div>
                     <h3>Developer Experience</h3>
+                </div>
             </div>
-
         </div>
 
         <div class="divider-custom divider-light">
@@ -47,7 +47,7 @@
             <div class="divider-custom-line"></div>
         </div>
 
-        <div class="row mt-4 mb-5">
+        <div class="row mt-4 mb-4">
             <div class="col-lg-4">
                 <div class="features mx-auto mb-4">
                     <div class="big-icon mb-3 d-flex">
@@ -74,7 +74,6 @@
                     <h3>Optimizer</h3>
                 </div>
             </div>
-
         </div>
 
         <div class="divider-custom divider-light">
@@ -113,8 +112,13 @@
                     <h3>I speak RegEx</h3>
                 </div>
             </div>
-
         </div>
 
+        <div class="text-center mt-5">
+            <a class="btn btn-xl btn-outline-light shadow-sm" href="http://tentacode.github.io/curriculum/">
+                <i class="fas fa-graduation-cap me-2"></i>
+                Learn more in my resume (in 🇫🇷 🐸)
+            </a>
+        </div>
     </div>
 </section>

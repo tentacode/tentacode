@@ -10,9 +10,8 @@
             <div class="divider-custom-line"></div>
         </div>
 
-        <p class="masthead-subheading font-weight-light">
-            I'm Gabriel Pillet and I work for
-            <a href="https://yousign.com">Yousign</a> as their Lead QA.
+        <p class="masthead-subheading font-weight-light" style="max-width: 650px">
+            I'm Gabriel Pillet and I'm a Backend Developer with 12 years of experience with PHP frameworks (Symfony and Laravel) and 3 years managing people as QA Lead and CTO.
         </p>
 
         <div class="text-center mt-5">

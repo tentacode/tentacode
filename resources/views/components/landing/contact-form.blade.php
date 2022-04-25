@@ -12,11 +12,11 @@
 
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <div class="alert alert-primary" role="alert">
+                {{-- <div class="alert alert-primary" role="alert">
                     <h4 class="alert-heading">I'm not looking for any job opportunities right now!</h4>
                     <p class="mt-1 mb-1">Thanks for you interest! That said, do leave me a message if you want
                         to contact me for whatever other reason!</p>
-                </div>
+                </div> --}}
 
                 <form action="/#contact" method="POST" id="contactForm" name="sentMessage" novalidate="novalidate">
                     <div class="form-floating mb-0 pb-2">
