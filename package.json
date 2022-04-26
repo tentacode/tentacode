@@ -21,6 +21,7 @@
         "@popperjs/core": "^2.11.5",
         "bootstrap": "^5.0",
         "dracula-prism": "^2.1.7",
+        "lite-youtube-embed": "^0.2.0",
         "prismjs": "^1.28.0",
         "resolve-url-loader": "^5.0.0",
         "sass-loader": "^12.6.0",

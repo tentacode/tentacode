@@ -6,21 +6,21 @@
                     src="/img/gabriel_pillet.webp?8bd00e9"
                     srcset="/img/gabriel_pillet_2x.webp?8bd00e9 2x"
                 >
-                <h4 class="text-uppercase mb-3">Author</h4>
+                <span class="h4 d-block text-uppercase mb-3">Author</span>
                 <p class="lead mb-4">
                     Hello! I'm Gabriel Pillet (<a href="https://twitter.com/tentacode">@tentacode</a>)
                     and I work for <a href="https://web-id.fr">Web^ID</a> as their CTO.</a>
                 </p>
-                <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/tentacode">
+                <a aria-label="Github" class="btn btn-outline-light btn-social mx-1" href="https://github.com/tentacode">
                     <i class="fab fa-fw fa-github"></i>
                 </a>
-                <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/tentacode">
+                <a aria-label="Linkedin" class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/tentacode">
                     <i class="fab fa-fw fa-twitter"></i>
                 </a>
-                <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/gabrielpillet/">
+                <a aria-label="Twitter" class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/gabrielpillet/">
                     <i class="fab fa-fw fa-linkedin-in"></i>
                 </a>
-                <a class="btn btn-outline-light btn-social mx-1" href="https://keybase.io/tentacode">
+                <a aria-label="Keybase" class="btn btn-outline-light btn-social mx-1" href="https://keybase.io/tentacode">
                     <i class="fab fa-fw fa-keybase"></i>
                 </a>
             </div>

@@ -6,9 +6,9 @@
 <link rel="canonical" href="https://tentacode.dev/" />
 <title>@tentacode - Gabriel Pillet, Backend Developer</title>
 
-<link href="{{ mix('css/app.css') }}" rel="stylesheet" rel="preload" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" rel="preload" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" rel="preload" type="text/css">
+<link href="{{ mix('css/app.css') }}" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" as="font" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&display=swap" rel="stylesheet" as="font" type="text/css">
 
 <meta property="og:url" content="https://tentacode.dev/" />
 <meta property="og:type" content="website" />

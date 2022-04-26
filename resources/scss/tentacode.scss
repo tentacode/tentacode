@@ -1,6 +1,6 @@
 :root {
     --color-dark-blue: #34344A;
-    --color-pink: #FF5693;
+    --color-pink: #ff5592;
     --color-green: #00FFC5;
     --color-blue: #429BB2;
     --color-gray: #F8EDEB;
@@ -266,4 +266,8 @@ pre::-webkit-scrollbar-thumb {
 
 a:hover {
     color: var(--color-pink) !important;
+}
+
+.btn-xl {
+    font-size: 1.75rem !important;
 }

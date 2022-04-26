@@ -22,7 +22,7 @@ More info on the game can be found on [a presentation of the project on the Game
 
 It was a really cool experience, I learnt a lot and it was pleasant to make a game that we could actually enjoy playing after only 48 hours of work. You can [find the sources on github](https://github.com/tentacode/KawaijuRun).
 
-![Kawaiju Run](/img/posts/game_jams_kawaiju.jpg)
+![Kawaiju Run](/img/posts/game_jams_kawaiju.webp)
 
 ## Cubyrinth (Ludum Dare #34, december 2015)
 
@@ -54,7 +54,7 @@ This last jam is a challenge I gave myself. I've been studying art online a bit,
 
 The theme for this jam was "Shapeshift" and I finally went for "Phat Fishes" which is an anagram for shapeshift, the games is a couch multiplayer party game where each player is a fugu fish (they shift shapes too) and have to bounce other players into dangerous stuff. You can [play the game on itch.io](https://tentacode.itch.io/phat-fishes) in your browser or download the game for you PC or Mac. I've [scored #83](http://ludumdare.com/compo/ludum-dare-35/?action=preview&uid=60185) out of 1594 in "humour" so it must not be that bad. [Sources are on github](https://github.com/tentacode/PhatFishes).
 
-![Phat Fishes](/img/posts/game_jams_phat_fishes.jpg)
+![Phat Fishes](/img/posts/game_jams_phat_fishes.webp)
 
 ## What next
 

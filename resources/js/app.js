@@ -10,3 +10,5 @@ require('prismjs/components/prism-gherkin');
 require('prismjs/components/prism-sql');
 require('prismjs/components/prism-yaml');
 require('prismjs/components/prism-bash');
+
+require('lite-youtube-embed');

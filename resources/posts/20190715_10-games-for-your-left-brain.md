@@ -1,5 +1,5 @@
 ---
-post_image: img/posts/metas/human_resource_machine.jpg
+post_image: img/posts/metas/human_resource_machine.webp
 post_description: Are you a bored? Don't want to (learn how to) code but want to improve your logical thinking? I have made a little selection of games for programers (or wannabes, or anyone, really) to make your brain work even when you're not at work!
 ---
 

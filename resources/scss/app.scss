@@ -1,6 +1,8 @@
 // Set custom colors
-$teal: #FF5693;
+$teal: #ff5592;
 $dark-blue: #02003C;
+
+//ff5592
 
 // Override Bootstrap primary and secondary colors
 $primary: $teal;
@@ -35,5 +37,7 @@ $input-btn-border-width: $border-width;
 @import "startbootstrap-freelancer/src/scss/styles";
 
 @import "dracula-prism/dist/css/dracula-prism";
+
+@import "lite-youtube-embed/src/lite-yt-embed.css";
 
 @import "tentacode";

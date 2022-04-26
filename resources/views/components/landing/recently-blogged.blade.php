@@ -13,7 +13,7 @@
 
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <h4><a href="{{ route('blog.detail', ['blogSlug' => '10-games-for-your-left-brain']) }}">10+ games for your Left Brain</a></h4>
+                <h3><a href="{{ route('blog.detail', ['blogSlug' => '10-games-for-your-left-brain']) }}">10+ games for your Left Brain</a></h3>
                 <p class="lead">
                     Edit: I&#039;ve had quite a few people telling me that the Left brain / Right brain is a myth,
                     I&#039;m just here to share some cool games and it was a nice catch phrase but feel free to do
@@ -21,8 +21,8 @@
                 </p>
             </div>
             <div class="col-lg-8 mx-auto">
-                <h4><a href="{{ route('blog.detail', ['blogSlug' => 'behat-dependency-injection-phpdi']) }}">Dependency injection with Behat (and PHP-DI)</a>
-                </h4>
+                <h3><a href="{{ route('blog.detail', ['blogSlug' => 'behat-dependency-injection-phpdi']) }}">Dependency injection with Behat (and PHP-DI)</a>
+                </h3>
                 <p class="lead">
                     Konstantin Kudryashov (alias @everzet) gave us a nice present when releasing Behat 3.3.0 on
                     Christmas! 🎅
@@ -31,7 +31,7 @@
                 </p>
             </div>
             <div class="col-lg-8 mx-auto">
-                <h4><a href="{{ route('blog.detail', ['blogSlug' => 'metabase-with-kittens']) }}">Metabase with kittens</a></h4>
+                <h3><a href="{{ route('blog.detail', ['blogSlug' => 'metabase-with-kittens']) }}">Metabase with kittens</a></h3>
                 <p class="lead">
                     As you read in the previous blog Easy charting with Metabase, I became quite fond of this tool
                     this year. I believe it&#039;s a great and easy way to display simple data, and the quality for
