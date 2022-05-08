@@ -5,7 +5,7 @@
                 <span class="h4 d-block text-uppercase mb-4">Location</span>
                 <p class="lead mb-0">
                     Gabriel Pillet<br />
-                    Villeurbanne, 69100 (France)<br />
+                    Lyon / Villeurbanne (France)<br />
                     I work <strong>full remote</strong> and love it!
                 </p>
             </div>

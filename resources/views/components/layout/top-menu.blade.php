@@ -1,4 +1,4 @@
-<nav class="{{ $navbarClass }} navbar navbar-expand-xl bg-secondary text-uppercase fixed-top" id="mainNav">
+<nav class="{{ $page === 'blog' ? 'transparent-top' : '' }} navbar navbar-expand-xl bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="/#top">
             <i class="fas fa-laptop-code"></i>

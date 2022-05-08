@@ -1,8 +1,8 @@
 <x-layout>
-    <x-landing.greeting-message />
-    <x-landing.strengths />
-    <x-landing.recently-blogged />
-    <x-landing.portfolio />
+    @include('landing.greeting-message')
+    @include('landing.strengths')
+    @include('landing.recently-blogged')
+    @include('landing.portfolio')
     <x-landing.contact-form />
-    <x-landing.footer />
+    @include('landing.footer')
 </x-layout>

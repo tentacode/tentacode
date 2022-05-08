@@ -12,7 +12,7 @@ If you are curious, you can read the slides and do the workshop at home! I'm sor
 
 
 <div class="embed-responsive embed-responsive-4by3 mb-4">
-    <iframe class="embed-responsive-item" width="560" height="315" src="https:///www.slideshare.net/slideshow/embed_code/key/epZNF8hFQYLaIv" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
+    <iframe class="embed-responsive-item" width="100%" height="481" src="https:///www.slideshare.net/slideshow/embed_code/key/epZNF8hFQYLaIv" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
     </iframe>
 </div>
 

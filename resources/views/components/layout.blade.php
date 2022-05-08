@@ -21,10 +21,13 @@
 -->
 <html lang="en">
 <head>
-   <x-layout.metas />
+   <x-layout.metas 
+   page="{{ $page ?? 'index'  }}"
+   page-title="{{ $pageTitle ?? ''  }}"
+   page-description="{{ $pageDescription ?? ''  }}" />
 </head>
 <body id="top">
-    <x-layout.top-menu navbar-class="{{ $navbarClass ?? 'transparent-top' }}" />
+    <x-layout.top-menu page="{{ $page ?? 'index' }}" />
 
     {{ $slot }}
 
