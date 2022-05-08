@@ -11,6 +11,7 @@
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
+        "spatie/laravel-honeypot": "^4.2",
         "symfony/yaml": "^6.0",
         "thecodingmachine/safe": "^2.1",
         "webmozart/assert": "^1.10"

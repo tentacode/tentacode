@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "46cc0a1ca34ff69f25c6627227676cdd",
+    "content-hash": "e72a54a7e59d0503b0b653f6ffee5c8b",
     "packages": [
         {
             "name": "brick/math",
@@ -2824,6 +2824,139 @@
                 }
             ],
             "time": "2022-03-27T21:42:02+00:00"
+        },
+        {
+            "name": "spatie/laravel-honeypot",
+            "version": "4.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-honeypot.git",
+                "reference": "f01d6fba84c746739fa3cde4593cdaa7831ecc9f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-honeypot/zipball/f01d6fba84c746739fa3cde4593cdaa7831ecc9f",
+                "reference": "f01d6fba84c746739fa3cde4593cdaa7831ecc9f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^8.0|^9.0",
+                "illuminate/encryption": "^8.0|^9.0",
+                "illuminate/http": "^8.0|^9.0",
+                "illuminate/support": "^8.0|^9.0",
+                "illuminate/validation": "^8.0|^9.0",
+                "nesbot/carbon": "^2.0",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.9",
+                "symfony/http-foundation": "^5.1.2|^6.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.23|^7.0",
+                "phpunit/phpunit": "^9.4",
+                "spatie/phpunit-snapshot-assertions": "^4.2",
+                "spatie/test-time": "^1.2.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Honeypot\\HoneypotServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Honeypot\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Preventing spam submitted through forms",
+            "homepage": "https://github.com/spatie/laravel-honeypot",
+            "keywords": [
+                "laravel-honeypot",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-honeypot/issues",
+                "source": "https://github.com/spatie/laravel-honeypot/tree/4.2.2"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                }
+            ],
+            "time": "2022-03-24T08:09:04+00:00"
+        },
+        {
+            "name": "spatie/laravel-package-tools",
+            "version": "1.11.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-package-tools.git",
+                "reference": "baeb3df0ebb3a541394fdaf8cbe6115bf4034a59"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/baeb3df0ebb3a541394fdaf8cbe6115bf4034a59",
+                "reference": "baeb3df0ebb3a541394fdaf8cbe6115bf4034a59",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^7.0|^8.0|^9.0",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.4",
+                "orchestra/testbench": "^5.0|^6.23|^7.0",
+                "phpunit/phpunit": "^9.4",
+                "spatie/test-time": "^1.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\LaravelPackageTools\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Tools for creating Laravel packages",
+            "homepage": "https://github.com/spatie/laravel-package-tools",
+            "keywords": [
+                "laravel-package-tools",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-package-tools/issues",
+                "source": "https://github.com/spatie/laravel-package-tools/tree/1.11.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-03-15T20:01:36+00:00"
         },
         {
             "name": "symfony/console",

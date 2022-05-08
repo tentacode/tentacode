@@ -18,7 +18,19 @@
                         to contact me for whatever other reason!</p>
                 </div> --}}
 
-                <form action="/#contact" method="POST" id="contactForm" name="sentMessage" novalidate="novalidate">
+                @if(Session::has('success')) 
+                <div class="alert alert-success" role="alert">
+                    {{ Session::get('success') }} 
+
+                    @php
+                        Session::forget('success'); 
+                    @endphp 
+                </div>
+                @endif
+
+                <form action="{{ route('contact') }}#contact" method="POST" id="contactForm" name="sentMessage">
+                    @csrf
+                    @honeypot
                     <div class="form-floating mb-0 pb-2">
                         <input type="text" id="contact_senderName" name="contact[senderName]"
                             required="required" class="form-control" placeholder="Your Name" />
