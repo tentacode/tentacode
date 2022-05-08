@@ -1,7 +1,3 @@
----
-post_image: img/posts/blackfire_behat_cachedump.png
----
-
 # Blackfire.io review
 
 I was at the [Forum PHP 2015](http://event.afup.org/) this year and, just like last year, [blackfire.io](https://blackfire.io) was sponsoring the event. I decided to give them another chance because the first version I tried last year was a bit raw and I have to admit they did some huge improvements in a year! I first tried it directly at the Forum PHP and did some more test later this week. (And yes, I also write this blog post to try and win a new macbook with their [#FireUpMyMac competition](http://blog.blackfire.io/fireup-my-mac-2015.html))

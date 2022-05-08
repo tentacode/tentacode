@@ -31,7 +31,7 @@ There's [so many jams](http://www.indiegamejams.com/) that you could spend your 
 The concept is really great, and it's too bad we did not polished it anymore after the jam. Theme of the jam was "Two Button Controls": you are dropped on top of a really complex maze acting like a Rubik's cube, and you have to find the control panels to rotate the level and find the path to the end of the level. I never finished it but I know Khezaar's record is under 15 minute knowing the route by heart! Also I wanted to puke after playing too much with the Oculus so yes: your code can literally make you puke. You can find more on the [ludum dare entry page](http://ludumdare.com/compo/ludum-dare-34/?action=preview&uid=65637) (you can, and should, play it without Oculus), [sources are also on github](https://github.com/tentacode/Cubyrinth).
 
 <div class="embed-responsive embed-responsive-21by9 mb-4">
-    <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/UpbTc9REBNA?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
+    <iframe class="embed-responsive-item" width="100%" height="481" src="https://www.youtube.com/embed/UpbTc9REBNA?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
     </iframe>
 </div>
 
@@ -44,7 +44,7 @@ Making a multiplayer game in 48h is ultra hard, but we still had something to sh
 You can find more about it [in the global game jam entry](http://globalgamejam.org/2016/games/rock-paper-cultist).
 
 <div class="embed-responsive embed-responsive-16by9 mb-4">
-    <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/lsHcwuiPEHo?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
+    <iframe class="embed-responsive-item" width="100%" height="481" src="https://www.youtube.com/embed/lsHcwuiPEHo?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
     </iframe>
 </div>
 

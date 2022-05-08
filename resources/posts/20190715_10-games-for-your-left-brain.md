@@ -1,13 +1,8 @@
----
-post_image: img/posts/metas/human_resource_machine.webp
-post_description: Are you a bored? Don't want to (learn how to) code but want to improve your logical thinking? I have made a little selection of games for programers (or wannabes, or anyone, really) to make your brain work even when you're not at work!
----
-
 # 10+ games for your Left Brain
 
 *Edit: I've had quite a few people telling me that the [Left brain / Right brain is a myth](https://www.youtube.com/watch?v=_BxJKrw4TAc), I'm just here to share some cool games and it was a nice catch phrase but feel free to do some research on the subject if you want, it's really instructive. 🤯*
 
-Are you a bored? Don't want to (learn how to) code but want to improve your logical thinking? I have made a little selection of *games for programers (or wannabes, or anyone, really)* to make your brain work even when you're not at work! (is this a bad thing?)
+<p id="post-description">Are you a bored? Don't want to (learn how to) code but want to improve your logical thinking? I have made a little selection of *games for programers (or wannabes, or anyone, really)* to make your brain work even when you're not at work! (is this a bad thing?)</p>
 
 ## The Witness
 
@@ -16,7 +11,7 @@ Are you a bored? Don't want to (learn how to) code but want to improve your logi
 *Made by [Thekla, Inc.](http://the-witness.net/) in 2016 — Available on : PC, PS4, Xbox One, iOS and Android*
 
 <div class="embed-responsive embed-responsive-16by9 mb-4">
-    <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/ul7kNFD6noU" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
+    <iframe class="embed-responsive-item" width="100%" height="481" src="https://www.youtube.com/embed/ul7kNFD6noU" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
     </iframe>
 </div>
 
@@ -29,7 +24,7 @@ The game puts you in charge of one tiny office worker to do basic tasks with box
 *Made by [Tommorow Corporation](https://tomorrowcorporation.com/) in 2015 — Available on : PC, Linux, Mac OS, Nintendo Switch, iOS and Android.*
 
 <div class="embed-responsive embed-responsive-16by9 mb-4">
-    <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/428R_oEjGGI" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
+    <iframe class="embed-responsive-item" width="100%" height="481" src="https://www.youtube.com/embed/428R_oEjGGI" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
     </iframe>
 </div>
 
@@ -42,7 +37,7 @@ The game puts you in charge of one tiny office worker to do basic tasks with box
 *Made by [Tommorow Corporation](https://tomorrowcorporation.com/) in 2018 — Available on : PC, Linux, Mac OS, Nintendo Switch and iOS.*
 
 <div class="embed-responsive embed-responsive-16by9 mb-4">
-    <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/Wo8gePOdv-k" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
+    <iframe class="embed-responsive-item" width="100%" height="481" src="https://www.youtube.com/embed/Wo8gePOdv-k" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
     </iframe>
 </div>
 
@@ -53,7 +48,7 @@ The game puts you in charge of one tiny office worker to do basic tasks with box
 *Made by [Hempuli Oy](http://www.hempuli.com/) in 2019 — Available on : PC, Linux, Mac Os and Nintendo Switch.*
 
 <div class="embed-responsive embed-responsive-16by9 mb-4">
-    <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/U7MJljsoUSo" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
+    <iframe class="embed-responsive-item" width="100%" height="481" src="https://www.youtube.com/embed/U7MJljsoUSo" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
     </iframe>
 </div>
 
@@ -66,7 +61,7 @@ If you like this kind of games you can also check [Infinifactory](http://www.zac
 *Made by [Zachtonics](http://www.zachtronics.com/) in 2017 — Available on : PC, Linux and Mac Os*
 
 <div class="embed-responsive embed-responsive-16by9 mb-4">
-    <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/Uj689znjxpg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
+    <iframe class="embed-responsive-item" width="100%" height="481" src="https://www.youtube.com/embed/Uj689znjxpg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
     </iframe>
 </div>
 
@@ -77,7 +72,7 @@ If you like this kind of games you can also check [Infinifactory](http://www.zac
 *Made by [Sebastien Dubois](https://twitter.com/GFX47) in 2019 — Available on : PC, Linux, Mac Os, Android*
 
 <div class="embed-responsive embed-responsive-16by9 mb-4">
-    <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/bDm5s57hf6w" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
+    <iframe class="embed-responsive-item" width="100%" height="481" src="https://www.youtube.com/embed/bDm5s57hf6w" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
     </iframe>
 </div>
 
@@ -90,7 +85,7 @@ If you want the same kind of challenge of Gladiabots **but on a massive scale**,
 *Made by [Screeps](https://screeps.com/) in 2016 — Available on : PC, Linux, Mac Os*
 
 <div class="embed-responsive embed-responsive-16by9 mb-4">
-    <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/ZboTgOajnGg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
+    <iframe class="embed-responsive-item" width="100%" height="481" src="https://www.youtube.com/embed/ZboTgOajnGg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
     </iframe>
 </div>
 
@@ -101,7 +96,7 @@ Like in [Keep talking and nobody explodes](https://keeptalkinggame.com/) (awesom
 *Made by [Zachtonics](http://www.zachtronics.com/) in 2018 — Available on : PC, Linux and Mac Os*
 
 <div class="embed-responsive embed-responsive-16by9 mb-4">
-    <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/_rOIUUVFRKc" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
+    <iframe class="embed-responsive-item" width="100%" height="481" src="https://www.youtube.com/embed/_rOIUUVFRKc" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
     </iframe>
 </div>
 
@@ -112,7 +107,7 @@ It's the third game in this selection made by [Zachtonics](http://www.zachtronic
 *Made by [Zachtonics](http://www.zachtronics.com/) in 2016 — Available on : PC, Linux and Mac Os*
 
 <div class="embed-responsive embed-responsive-16by9 mb-4">
-    <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/vpoJbIaBg8E" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
+    <iframe class="embed-responsive-item" width="100%" height="481" src="https://www.youtube.com/embed/vpoJbIaBg8E" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
     </iframe>
 </div>
 
@@ -127,7 +122,7 @@ It's the third game in this selection made by [Zachtonics](http://www.zachtronic
 *Made by [Zachtonics](http://www.zachtronics.com/) in 2015 — Available on : PC, Linux and Mac Os, iPhone/iPad*
 
 <div class="embed-responsive embed-responsive-16by9 mb-4">
-    <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/ZkUHGvy2pNU" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
+    <iframe class="embed-responsive-item" width="100%" height="481" src="https://www.youtube.com/embed/ZkUHGvy2pNU" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
     </iframe>
 </div>
 
@@ -138,6 +133,6 @@ It's the third game in this selection made by [Zachtonics](http://www.zachtronic
 You have a lot of other "Coding challenges" website, some to learn a specific concept or more general challenges, here is a small non-exhaustive list : [Regex Crossword](https://regexcrossword.com/), [VIM Adventures](https://vim-adventures.com/), [Cyber Dojo](https://cyber-dojo.org/), [Elevator Saga](https://play.elevatorsaga.com/), [Flexbox Froggy](https://flexboxfroggy.com), [Robocode](https://robocode.sourceforge.io/), [Empire of code](https://empireofcode.com/), [Advent of code](https://adventofcode.com/), [Code combat](https://codecombat.com/), [Untrusted](https://alexnisnevich.github.io/untrusted/), and the list goes on…
 
 <div class="embed-responsive embed-responsive-16by9 mb-4">
-    <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/9hH2wwWpE6Y" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
+    <iframe class="embed-responsive-item" width="100%" height="481" src="https://www.youtube.com/embed/9hH2wwWpE6Y" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
     </iframe>
 </div>

@@ -36,6 +36,12 @@ return [
             'throw' => false,
         ],
 
+        'posts' => [
+            'driver' => 'local',
+            'root' => base_path('resources/posts'),
+            'throw' => true,
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
