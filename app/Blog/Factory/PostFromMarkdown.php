@@ -5,6 +5,7 @@ namespace App\Blog\Factory;
 use App\Blog\Post;
 use App\Blog\PostContent;
 use Carbon\CarbonImmutable;
+use Illuminate\Mail\Markdown;
 use ParsedownExtra;
 
 use function Safe\preg_match;
@@ -53,6 +54,7 @@ final class PostFromMarkdown
         ), '', $markdown));
 
         $html = $this->parser->text($markdown);
+        $html = htmlspecialchars_decode($html);
         $html = $this->autoAnchor($html);
 
         return $html;
