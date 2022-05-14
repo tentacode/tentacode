@@ -6,6 +6,7 @@ use App\Blog\Factory\PostFromFileFactory;
 use App\Blog\Post;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Filesystem\FilesystemManager;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 final class GetPostBySlug
 {
@@ -34,6 +35,6 @@ final class GetPostBySlug
             }
         }
 
-        abort(404, "Post was not found.");
+        throw new NotFoundHttpException('Post was not found.');
     }
 }

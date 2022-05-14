@@ -16,12 +16,11 @@ class ContactMail extends Mailable
         public string $senderName,
         public string $senderEmail,
         public string $message
-    )
-    {
+    ) {
     }
 
 
-    public function build()
+    public function build(): Mailable
     {
         return $this->markdown('emails.contact');
     }

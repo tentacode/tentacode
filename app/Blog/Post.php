@@ -4,7 +4,7 @@ namespace App\Blog;
 
 use Carbon\CarbonImmutable;
 
-class Post
+final class Post
 {
     public function __construct(
         public readonly string $slug,

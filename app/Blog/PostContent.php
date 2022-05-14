@@ -10,18 +10,16 @@ class PostContent
         public readonly string $title,
         public readonly string $text,
         public readonly string $html,
-        public readonly string $image,
     ) {
     }
 
-    public function getDescription():string
+    public function getDescription(): string
     {
-        $description = $this->getExcerpt(200);
-        if (preg_match('/<p id="post-description">(.*)<\/p>/', $this->html, $matches)) {
-            $description = strip_tags($matches[1]);
+        if (preg_match('#<p[^>]*id="post-description"[^>]*>(.*)</p>#s', $this->html, $matches)) {
+            return trim(strip_tags($matches[1]));
         }
 
-        return $description;
+        return $this->getExcerpt(200);
     }
 
     public function getExcerpt(int $characterCount): string

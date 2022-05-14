@@ -18,6 +18,11 @@ class ContactController extends Controller
     {
         $contactData = $request->get('contact');
 
+        Assert::isArray($contactData);
+        Assert::keyExists($contactData, 'senderName');
+        Assert::keyExists($contactData, 'senderEmail');
+        Assert::keyExists($contactData, 'message');
+
         $senderName = $contactData['senderName'];
         $senderEmail = $contactData['senderEmail'];
         $message = $contactData['message'];

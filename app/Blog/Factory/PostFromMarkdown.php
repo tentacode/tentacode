@@ -5,7 +5,6 @@ namespace App\Blog\Factory;
 use App\Blog\Post;
 use App\Blog\PostContent;
 use Carbon\CarbonImmutable;
-use Illuminate\Mail\Markdown;
 use ParsedownExtra;
 
 use function Safe\preg_match;
@@ -28,7 +27,6 @@ final class PostFromMarkdown
             title: $title,
             text: $text,
             html: $html,
-            image: 'toto',
         );
 
         return new Post($slug, $date, $postContent);
