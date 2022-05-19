@@ -2,7 +2,7 @@
 
 *Edit: I've had quite a few people telling me that the [Left brain / Right brain is a myth](https://www.youtube.com/watch?v=_BxJKrw4TAc), I'm just here to share some cool games and it was a nice catch phrase but feel free to do some research on the subject if you want, it's really instructive. 🤯*
 
-<p id="post-description">Are you a bored? Don't want to (learn how to) code but want to improve your logical thinking? I have made a little selection of *games for programers (or wannabes, or anyone, really)* to make your brain work even when you're not at work! (is this a bad thing?)</p>
+Are you a bored? Don't want to (learn how to) code but want to improve your logical thinking? I have made a little selection of *games for programers (or wannabes, or anyone, really)* to make your brain work even when you're not at work! (is this a bad thing?)
 
 ## The Witness
 
