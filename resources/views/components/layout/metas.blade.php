@@ -1,9 +1,12 @@
+<link rel="DNS-prefetch" href="//fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
 <meta content="Gabriel Pillet" name="author">
 <meta name="robots" content="index, follow">
-<title>{{ $pageTitle ?? '@tentacode - Gabriel Pillet, Backend Developer' }}</title>
+<title>{{ ($page === 'blog-detail') ? $pageTitle : '@tentacode - Gabriel Pillet, Backend Developer' }}</title>
 
 <link href="{{ mix('css/app.css') }}" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" as="font" type="text/css">

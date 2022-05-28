@@ -4,10 +4,10 @@
             <i class="fas fa-laptop-code"></i>
             tentacode<span class="text-pink">.dev</span>
         </a>
-        <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
+        <button id="menu-button-closed" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
             class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
             data-bs-target="#navbarResponsive" data-bs-toggle="collapse" type="button">
-            <span class="d-none d-sm-inline">Menu </span><i class="fas fa-bars"></i>
+            <span id="menu-button-closed-text" class="d-none d-sm-inline">Menu </span><i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
