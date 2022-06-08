@@ -1,5 +1,7 @@
 # 💌 Lettre aux recruteurs 💌
 
+**edit : merci à tous pour vos messages, j'ai pris ma décision mais n'hésitez pas à me contacter pour des missions en Freelance.**
+
 Après une petite pause "sans dev." en tant que responsable assurance qualité chez [Yousign](https://yousign.com/fr-fr) et CTO chez [Web^ID](https://web-id.fr), j'ai décidé de revenir à mon premier amour : le développement backend. Voici un petit message à toutes les personnes qui sont curieuses de ma démarche.
 
 ## Ce que je cherche 🕵️
