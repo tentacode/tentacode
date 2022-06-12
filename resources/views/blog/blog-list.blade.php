@@ -2,7 +2,7 @@
     <section class="page-section blog text-dark background-light mt-5 mb-0 pb-5" id="blog">
         <div class="container">
             <h1 class="page-section-heading text-center text-uppercase mt-5 mb-0">
-                tentacode<span class="text-pink">.dev</span> blog
+                blog tentacode<span class="text-pink">.dev</span>
             </h1>
     
             <div class="divider-custom">

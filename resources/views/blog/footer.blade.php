@@ -6,10 +6,10 @@
                     src="/img/gabriel_pillet.webp?8bd00e9"
                     srcset="/img/gabriel_pillet_2x.webp?8bd00e9 2x"
                 >
-                <span class="h4 d-block text-uppercase mb-3">Author</span>
+                <span class="h4 d-block text-uppercase mb-3">Auteur</span>
                 <p class="lead mb-4">
-                    Hello! I'm Gabriel Pillet (<a href="https://twitter.com/tentacode">@tentacode</a>)
-                    and I work for <a href="https://web-id.fr">Web^ID</a> as their CTO.</a>
+                    Bonjour ! Je suis Gabriel Pillet (<a href="https://twitter.com/tentacode">@tentacode</a>)
+                    et je suis <a href="https://tentacode.dev">développeur backend / CTO externalisé</a> en Freelance.</a>
                 </p>
                 <a aria-label="Github" class="btn btn-outline-light btn-social mx-1" href="https://github.com/tentacode">
                     <i class="fab fa-fw fa-github"></i>

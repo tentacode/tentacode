@@ -1,7 +1,7 @@
 <section class="page-section blog text-dark background-light mb-0 pb-0" id="blog">
     <div class="container">
 
-        <h2 class="page-section-heading text-center text-uppercase mb-0">Recently blogged</h2>
+        <h2 class="page-section-heading text-center text-uppercase mb-0">Sur mon blog</h2>
 
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
@@ -27,7 +27,7 @@
         <div class="text-center mt-4">
             <a class="btn btn-xl btn-outline-dark shadow-sm" href="{{ route('blog.list') }}">
                 <i class="fas fa-plus-circle me-2"></i>
-                and more
+                plus d'articles
             </a>
         </div>
     </div>
