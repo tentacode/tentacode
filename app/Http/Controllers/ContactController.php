@@ -43,7 +43,7 @@ class ContactController extends Controller
         ;
 
         return redirect()->back()->with([
-            'success' => 'Thanks for getting in touch! I will get back to you as soon as possible.'
+            'success' => 'Merci pour votre message ! Je vous répondrais dès que possible.'
         ]);
     }
 }

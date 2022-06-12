@@ -1,6 +1,6 @@
 <section class="page-section background-light text-dark mb-0 pb-5" id="contact">
     <div class="container">
-        <h2 class="page-section-heading text-center text-uppercase mb-0">Get in touch</h2>
+        <h2 class="page-section-heading text-center text-uppercase mb-0">Contact</h2>
 
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
@@ -34,22 +34,22 @@
                     <div class="form-floating mb-0 pb-2">
                         <input type="text" id="contact_senderName" name="contact[senderName]"
                             required="required" class="form-control" placeholder="Your Name" />
-                        <label for="contact_senderName">Your Name</label>
+                        <label for="contact_senderName">Votre nom</label>
                     </div>
                     <div class="form-floating mb-0 pb-2">
                         <input type="email" id="contact_senderEmail" name="contact[senderEmail]"
                             required="required" class="form-control" placeholder="Your Email" />
-                            <label for="contact_senderEmail">Your Email</label>
+                            <label for="contact_senderEmail">Votre e-mail</label>
                     </div>
                     <div class="form-floating mb-0 pb-2">
                         <textarea type="text" id="contact_message" name="contact[message]" required="required" class="form-control"
                             placeholder="Your Message" style="height: 20rem"></textarea>
-                            <label for="contact_message">Your Message</label>
+                            <label for="contact_message">Votre message</label>
                     </div>
                     <br>
                     <div class="form-group">
                         <button class="btn btn-primary btn-xl shadow-sm" id="sendMessageButton"
-                            type="submit">Send</button>
+                            type="submit">Envoyer</button>
                     </div>
                 </form>
             </div>

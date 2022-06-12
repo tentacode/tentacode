@@ -11,7 +11,7 @@
             <div class="divider-custom-line"></div>
         </div>
 
-        <h3 class="mb-4 text-center text-dark-blue">Profesionnal Projects</h3>
+        <h3 class="mb-4 text-center text-dark-blue">Projets professionnels</h3>
         <div class="row">
             <div class="mb-4 col-md-6 col-lg-4">
                 <div class="portfolio-item mx-auto" data-bs-target="#portfolioModal_betaseries_insights"
@@ -127,7 +127,7 @@
                     <img loading="lazy" alt="" class="img-fluid" loading="lazy" width="400" height="250" src="/img/portfolio/small/medical_imaging.webp"
                         srcset="/img/portfolio/small_x2/medical_imaging.webp 2x">
 
-                    <h4 class="portfolio-title text-dark">Medical Imaging search engine</h4>
+                    <h4 class="portfolio-title text-dark">Recherche d'imagerie médicale</h4>
                 </div>
             </div>
 
@@ -221,7 +221,7 @@
                     <img loading="lazy" alt="" class="img-fluid" loading="lazy" width="400" height="250" src="/img/portfolio/small/hr_saas.webp"
                         srcset="/img/portfolio/small_x2/hr_saas.webp 2x">
 
-                    <h4 class="portfolio-title text-dark">SAAS for Temporary Workers</h4>
+                    <h4 class="portfolio-title text-dark">SAAS pour une agence d'interim</h4>
                 </div>
             </div>
 
@@ -499,7 +499,7 @@
                     <img loading="lazy" alt="" class="img-fluid" loading="lazy" width="400" height="250" src="/img/portfolio/small/ynov.webp"
                         srcset="/img/portfolio/small_x2/ynov.webp 2x">
 
-                    <h4 class="portfolio-title text-dark">Teacher at YNOV</h4>
+                    <h4 class="portfolio-title text-dark">Enseignant à YNOV</h4>
                 </div>
             </div>
 
@@ -546,7 +546,7 @@
             </div>
         </div>
 
-        <h3 class="mt-3 mb-4 text-center  text-dark-blue">Conferences and talks</h3>
+        <h3 class="mt-3 mb-4 text-center  text-dark-blue">Conférences</h3>
         <div class="row">
             <div class="mb-4 col-md-6 col-lg-4">
                 <div class="portfolio-item mx-auto" data-bs-target="#portfolioModal_alice_et_bob" data-bs-toggle="modal">
@@ -629,7 +629,7 @@
                     <img loading="lazy" alt="" class="img-fluid" loading="lazy" width="400" height="250" src="/img/portfolio/small/neo4j_import_title.webp"
                         srcset="/img/portfolio/small_x2/neo4j_import_title.webp 2x">
 
-                    <h4 class="portfolio-title text-dark">MySQL to Neo4j Import</h4>
+                    <h4 class="portfolio-title text-dark">Import de MySQL vers Neo4j</h4>
                 </div>
             </div>
 
@@ -699,7 +699,7 @@
                     <img loading="lazy" alt="" class="img-fluid" loading="lazy" width="400" height="250" src="/img/portfolio/small/neo4j_15min_title.webp"
                         srcset="/img/portfolio/small_x2/neo4j_15min_title.webp 2x">
 
-                    <h4 class="portfolio-title text-dark">Neo4j in 15 minutes</h4>
+                    <h4 class="portfolio-title text-dark">Neo4j en 15 minutes</h4>
                 </div>
             </div>
 
@@ -830,7 +830,7 @@
                         src="/img/portfolio/small/metabase_kittens_title.webp"
                         srcset="/img/portfolio/small_x2/metabase_kittens_title.webp 2x">
 
-                    <h4 class="portfolio-title text-dark">Metabase with kittens</h4>
+                    <h4 class="portfolio-title text-dark">Metabase avec des chatons</h4>
                 </div>
             </div>
 
@@ -887,7 +887,7 @@
             </div>
         </div>
 
-        <h3 class="mt-3 mb-4 text-center  text-dark-blue">Hobby code</h3>
+        <h3 class="mt-3 mb-4 text-center  text-dark-blue">Projets persos</h3>
         <div class="row">
             <div class="mb-4 col-md-6 col-lg-4">
                 <div class="portfolio-item mx-auto" data-bs-target="#portfolioModal_phat_fishes_game"

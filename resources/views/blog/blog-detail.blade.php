@@ -32,7 +32,7 @@
         <div class="row mt-4">
             <div class="col-lg-12 mx-auto">
                 <p class="lead  text-center h1">
-                    Did you enjoy this post?
+                    Cet article vous as plus ?
                 </p>
             </div>
         </div>
@@ -43,7 +43,7 @@
                 href="https://twitter.com/intent/tweet?text=Dependency%20injection%20with%20Behat%20%28and%20PHP-DI%29%20%E2%80%94%20by%20%40tentacode%0A%0Ahttps%3A%2F%2Ftentacode.dev%2Fbehat-dependency-injection-phpdi"
             >
                 <i class="fab fa-twitter mr-2"></i>
-                share on twitter
+                partager sur twitter
             </a>
         </div>
     </div>

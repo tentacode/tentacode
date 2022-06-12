@@ -7,15 +7,15 @@ it('has no errors', function () {
 });
 
 it('has a greeting section', function () {
-    get('/')->assertSee('Bonjour!');
+    get('/')->assertSee('Bonjour !');
 });
 
 it('has a strength section', function () {
-    get('/')->assertSee('Quality Addict');
+    get('/')->assertSee('Qualité');
 });
 
 it('has a recently blogged section', function () {
-    get('/')->assertSee('Recently blogged');
+    get('/')->assertSee('Sur mon blog');
 });
 
 it('has a portfolio section', function () {
@@ -23,9 +23,9 @@ it('has a portfolio section', function () {
 });
 
 it('has a contact section', function () {
-    get('/')->assertSee('Get in touch');
+    get('/')->assertSee('Contact');
 });
 
 it('has a footer', function () {
-    get('/')->assertSee('If you read this');
+    get('/')->assertSee('Si vous lisez ceci');
 });
