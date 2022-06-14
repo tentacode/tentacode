@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use Spatie\Honeypot\ProtectAgainstSpam;
 
+Route::get('/debug-sentry', function () {
+    throw new Exception('My first Sentry error!');
+});
+
 Route::get('/', App\Http\Controllers\LandingController::class)->name('landing');
 Route::post('/contact', App\Http\Controllers\ContactController::class)->name('contact')->middleware(ProtectAgainstSpam::class);
 ;
