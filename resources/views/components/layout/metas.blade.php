@@ -6,7 +6,7 @@
 
 <meta content="Gabriel Pillet" name="author">
 <meta name="robots" content="index, follow">
-<title>{{ ($page === 'blog-detail') ? $pageTitle : '@tentacode - Gabriel Pillet, Backend Developer' }}</title>
+<title>{{ ($page === 'blog-detail') ? $pageTitle : '@tentacode - Gabriel Pillet, Développeur Backend et CTO externalisé en Freelance, sur Lyon' }}</title>
 
 <link href="{{ mix('css/app.css') }}" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" as="font" type="text/css">
@@ -32,10 +32,10 @@
     <meta name="twitter:description" content="{!! $pageDescription !!}">
     <meta content="{!! $pageDescription !!}" name="description">
 @else
-    <meta property="og:title" content="Hello there!" />
+    <meta property="og:title" content="Bonjour !" />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="My name is Gabriel Pillet and I'm a backend developer (PHP, Symfony, Laravel)." />
-    <meta name="twitter:title" content="Hello there!">
-    <meta name="twitter:description" content="My name is Gabriel Pillet and I'm a backend developer (PHP, Symfony, Laravel).">
-    <meta content="Hello! My name is Gabriel Pillet and I'm a backend developer (PHP / Laravel / Symfony)." name="description">
+    <meta property="og:description" content="Je suis Gabriel Pillet et je suis développeur backend PHP (Symfony / Laravel) et CTO externalisé en Freelance." />
+    <meta name="twitter:title" content="Bonjour !">
+    <meta name="twitter:description" content="Je suis Gabriel Pillet et je suis développeur backend PHP (Symfony / Laravel) et CTO externalisé en Freelance.">
+    <meta content="Je suis Gabriel Pillet et je suis développeur backend PHP (Symfony / Laravel) et CTO externalisé en Freelance." name="description">
 @endif
