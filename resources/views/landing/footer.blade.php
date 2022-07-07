@@ -30,7 +30,7 @@
                 <span class="h4 d-block text-uppercase mb-4">Si vous lisez ceci</span>
                 <p class="lead mb-0">
                     Félicitations !<br />
-                    Vous avez lu mon site en entier et gagner
+                    Vous avez lu mon site en entier et gagné
                     une tasse de café/thé quand on se rencontrera ! <i class="fas fa-mug-hot"></i>
                 </p>
             </div>
@@ -44,7 +44,7 @@
         <small>
             Copyright photo &copy; <a href="http://benjamin.leveque.me/">Benjamin Lévêque</a> -
             Copyright &copy; Gabriel Pillet
-            {{ date('Y') }} — <a href="https://github.com/tentacode/tentacode.dev">fork this website on github</a>
+            {{ date('Y') }} — <a href="https://github.com/tentacode/tentacode">fork this website on github</a>
         </small>
     </div>
 </div>
