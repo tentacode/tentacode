@@ -23,6 +23,8 @@ final class PostFromMarkdown
         $html = $this->getHtmlFromMarkdown($markdown, $title);
         $text = strip_tags($html);
 
+        $html = preg_replace('#<\?php#', '&lt;?php', $html);
+
         $postContent = new PostContent(
             title: $title,
             text: $text,

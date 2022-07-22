@@ -18,7 +18,7 @@ final class ListPosts
         $this->filesystem = $filesystemManager->disk('posts');
     }
 
-    /** @return array[Post] */
+    /** @return array<Post> */
     public function __invoke(?int $postLimit = null): array
     {
         $postFilePaths = $this->getLimitFiles($postLimit);
