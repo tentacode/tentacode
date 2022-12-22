@@ -8,3 +8,14 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+
+# Symfony specific
+/node_modules/
+/bin/*
+!/bin/console
+
+# Ansible specific
+ansible/*.retry
+ansible/config_vars*.yml
+!ansible/config_vars_barista.yml
+ansible/hosts.yml

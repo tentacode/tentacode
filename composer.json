@@ -15,12 +15,15 @@
         "symfony/yaml": "6.2.*"
     },
     "require-dev": {
+        "phpstan/phpstan-symfony": "^1.2",
+        "symplify/easy-coding-standard": "^11.1"
     },
     "config": {
         "allow-plugins": {
             "symfony/flex": true,
             "symfony/runtime": true
         },
+        "bin-dir": "bin",
         "sort-packages": true
     },
     "autoload": {

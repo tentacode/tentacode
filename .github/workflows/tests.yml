@@ -12,28 +12,21 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.1'
+          php-version: '8.2'
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
           coverage: none
 
       - name: .env copy
-        run: cp .env.example .env
+        run: cp .env .env.local
         
       - name: Setup project
         run: make install
-
-      - name: Pest
-        run: bin/pest
-
-      # @TODO fix phpspec, and uncomment
-      # - name: Phpspec
-      #   run: bin/phpspec run -fpretty
 
       - name: Phpstan
         run: bin/phpstan
 
       - name: Automatic code sniffer fixing
-        run: bin/phpcbf
+        run: bin/ecs --fix
         continue-on-error: true
 
       - name: Commit changes
@@ -43,4 +36,4 @@ jobs:
           commit_message: ":robot::art: Fix CS"
 
       - name: Checking code sniffer after fixes
-        run: bin/phpcs
+        run: bin/ecs
