@@ -17,5 +17,3 @@
 # Ansible specific
 ansible/*.retry
 ansible/config_vars*.yml
-!ansible/config_vars_barista.yml
-ansible/hosts.yml

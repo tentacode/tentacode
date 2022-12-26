@@ -1,0 +1,14 @@
+---
+- hosts: all
+
+  roles:
+    - ubuntu
+
+    - cli/bash
+    - cli/certbot
+    - cli/git
+    - cli/supervisor
+
+    - web-server/nginx
+    - web-server/php-fpm
+    - web-server/node

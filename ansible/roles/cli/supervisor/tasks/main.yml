@@ -1,0 +1,12 @@
+---
+- name: Installing supervisor
+  apt: 
+    name: supervisor
+  become: yes
+
+- name: Setup supervisord configuration
+  template:
+    src: supervisord.conf.j2
+    dest: /etc/supervisor/supervisord.conf
+  become: yes
+  notify: restart supervisor

@@ -20,3 +20,7 @@ test: ## Launching every tests
 cc: ## Emptying caches
 	composer dump-autoload
 	bin/console cache:clear
+
+setup-web-server: ## Installing dependencies on the web server
+	cd ansible && ansible-playbook -i hosts.yml -u root create-user.yml --extra-vars="@vars/web-server.yml"
+	cd ansible && ansible-playbook -i hosts.yml setup-web-server.yml --extra-vars="@vars/web-server.yml"

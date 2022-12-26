@@ -1,0 +1,52 @@
+server:
+    timezone: "UTC"
+
+user:
+    name: change_me
+    group: change_me
+    ssh_public_key: /path/to/.ssh/key.pub
+    home_directory: /home/change_me
+    workspace_directory: /home/change_me
+    prompt: "{myserver}"
+
+dns:
+    root_domain: change_me.test
+    scheme: https
+
+sentry:
+    dsn: "https://change_me.test"
+    # each environment should be different, ex : "local_gabriel"
+    environment: change_me
+
+node:
+    available_versions:
+        - 18
+    default_version: 18
+
+git: 
+    email: "change_me@example.com"
+    name: "Change Me"
+    ssh_private_key: /path/to/.ssh/key
+    ssh_public_key: /path/to/.ssh/key.pub
+
+php:
+    max_upload_size_mb: 50
+    versions:
+        - 8.2
+    default_version: 8.2
+    default_cli_version: 8.2
+    default_composer_version: composer2 # or "composer2"
+    extensions:
+        - curl
+        - dom
+        - gd
+        - intl
+        - mbstring
+        - pgsql
+        - simplexml
+        - zip
+        - gmagick
+        - amqp
+
+letsencrypt:
+    reminder_email: change_me@example.com

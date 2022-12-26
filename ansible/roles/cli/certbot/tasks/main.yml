@@ -1,0 +1,26 @@
+---
+- name: Enable universe repository
+  apt_repository:
+    repo: "{{ item }}"
+  loop:
+    - "deb http://archive.ubuntu.com/ubuntu/ bionic universe"
+    - "deb http://archive.ubuntu.com/ubuntu/ bionic-updates universe"
+    - "deb http://security.ubuntu.com/ubuntu/ bionic-security universe"
+  become: yes
+  when: ansible_distribution_version == "20.04"
+
+- name: Installing certbot on Ubuntu 20.04
+  apt: 
+    name: python-certbot-nginx
+    state: latest
+    update_cache: yes
+  become: yes
+  when: ansible_distribution_version == "20.04"
+
+- name: Installing certbot on Ubuntu 22.04
+  apt: 
+    name: python3-certbot-nginx
+    state: latest
+    update_cache: yes
+  become: yes
+  when: ansible_distribution_version == "22.04"

@@ -1,0 +1,6 @@
+---
+- name: restart php-fpm
+  service: name=php{{ item }}-fpm state=restarted
+  listen: "restart web services"
+  with_items: "{{ php.versions }}"
+  become: yes

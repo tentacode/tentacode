@@ -1,0 +1,28 @@
+---
+- meta: flush_handlers
+
+# TODO remettre
+# - name: Testing that the api v1 is setup well
+#   ansible.builtin.uri:
+#     url: "{{ mydaily.v1.api.scheme }}://{{ mydaily.v1.api.servername }}/oauth/token"
+#     return_content: yes
+#   register: this
+#   failed_when: "'No grant type was found in the request' not in this.content"
+
+# TODO remettre
+# - name: Testing that the client v1 is setup well
+#   ansible.builtin.uri:
+#     url: "{{ mydaily.v1.client.scheme }}://{{ mydaily.v1.client.servername }}"
+#     return_content: yes
+#   register: this
+#   failed_when: "'Loading the application, please hold on...' not in this.content"
+
+- name: Testing that the postgresql user and database are set
+  postgresql_query:
+    db: "{{ mydaily.database.name }}"
+    login_user: "{{ postgresql.user }}"
+    login_password: "{{ postgresql.password }}"
+    login_host: 127.0.0.1
+    query: SELECT * FROM pg_extension;
+  register: this
+  failed_when: "'unaccent' not in this.query_result[1].extname"

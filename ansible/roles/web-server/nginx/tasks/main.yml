@@ -1,0 +1,31 @@
+---
+- name: Install nginx
+  apt:
+    name: nginx
+  become: yes
+
+- name: Remove default configuration
+  file: state=absent path=/etc/nginx/sites-enabled/default
+  become: yes
+
+- name: Create web directory in srv
+  file: state=directory path=/srv/www/default
+  become: yes
+
+- name: Copy dummy html index
+  template: src=index.html dest=/srv/www/default/
+  become: yes
+
+- name: Copy dummy php index
+  template: src=index.php dest=/srv/www/default/
+  become: yes
+
+- name: Copy default website configuration
+  template: src=default dest=/etc/nginx/sites-enabled/zzz-default
+  notify: restart web services
+  become: yes
+
+- name: Copy nginx main configuration
+  template: src=nginx.conf dest=/etc/nginx/
+  notify: restart web services
+  become: yes

@@ -1,0 +1,22 @@
+---
+- name: Create safe non root group
+  group:
+    name: "{{ user.group }}"
+
+- name: Create safe non root user
+  user:
+    name: "{{ user.name }}"
+    group: "{{ user.group }}"
+
+- name: Adding user as sudoer
+  community.general.sudoers:
+    name: sudo-user
+    user: "{{ user.name }}"
+    commands: ALL
+  become: yes
+
+- name: Adding local ssh key to known ssh keys
+  authorized_key:
+    user: "{{ user.name }}"
+    state: present
+    key: "{{ lookup('file', user.ssh_public_key) }}"

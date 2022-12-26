@@ -1,0 +1,5 @@
+---
+- name: restart supervisor
+  service: name=supervisor state=restarted enabled=yes
+  listen: "restart supervisor"
+  become: yes
