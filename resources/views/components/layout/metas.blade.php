@@ -34,8 +34,8 @@
 @else
     <meta property="og:title" content="Bonjour !" />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="Je suis Gabriel Pillet et je suis développeur backend PHP (Symfony / Laravel) et CTO externalisé en Freelance." />
+    <meta property="og:description" content="Moi c'est Gabriel Pillet et je suis développeur backend PHP (Symfony / Laravel) et CTO externalisé en Freelance." />
     <meta name="twitter:title" content="Bonjour !">
-    <meta name="twitter:description" content="Je suis Gabriel Pillet et je suis développeur backend PHP (Symfony / Laravel) et CTO externalisé en Freelance.">
-    <meta content="Je suis Gabriel Pillet et je suis développeur backend PHP (Symfony / Laravel) et CTO externalisé en Freelance." name="description">
+    <meta name="twitter:description" content="Moi c'est Gabriel Pillet et je suis développeur backend PHP (Symfony / Laravel) et CTO externalisé en Freelance.">
+    <meta content="Moi c'est Gabriel Pillet et je suis développeur backend PHP (Symfony / Laravel) et CTO externalisé en Freelance." name="description">
 @endif

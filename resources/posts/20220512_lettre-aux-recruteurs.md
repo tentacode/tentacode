@@ -28,7 +28,7 @@ A contrario, ce qui ne m'intéresse pas 👎
 
 J'ai plus de 12 ans d'expérience sur des frameworks PHP (Symfony et Laravel), je suis bienveillant, pragmatique et j'attache une grande importance au respect des bonnes pratiques et à la qualité dans les projets (sans aller à l'extrême). J'aime beaucoup travailler sur des projets à forte complexité data, avec de l'optimisation de performance et automatiser les process de développement avec des outils modernes.
 
-Pour en savoir plus n'hésitez pas à jeter un oeil à [mon portfolio](https://tentacode.dev), [mon cv](http://tentacode.github.io/curriculum/) ou mon [compte github](https://github.com/tentacode).
+Pour en savoir plus n'hésitez pas à jeter un oeil à [mon portfolio](https://tentacode.dev), [mon cv](https://tentacode.github.io/curriculum/) ou mon [compte github](https://github.com/tentacode).
 
 ## Ça vous intéresse ? 💌
 

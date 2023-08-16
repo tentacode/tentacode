@@ -6,7 +6,7 @@
                 <p class="lead mb-0">
                     Gabriel Pillet<br />
                     Lyon / Villeurbanne (France)<br />
-                   Je travaille en <strong>full remote</strong> et j'adore ça !
+                    J'ai aussi l'habitude du <strong>full remote</strong> !
                 </p>
             </div>
 
@@ -20,9 +20,6 @@
                 </a>
                 <a aria-label="Linkedin" class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/gabrielpillet/">
                     <i class="fab fa-fw fa-linkedin-in"></i>
-                </a>
-                <a aria-label="Keybase" class="btn btn-outline-light btn-social mx-1" href="https://keybase.io/tentacode">
-                    <i class="fab fa-fw fa-keybase"></i>
                 </a>
             </div>
 
@@ -42,7 +39,6 @@
 <div class="copyright py-4 text-center text-white">
     <div class="container">
         <small>
-            Copyright photo &copy; <a href="http://benjamin.leveque.me/">Benjamin Lévêque</a> -
             Copyright &copy; Gabriel Pillet
             {{ date('Y') }} — <a href="https://github.com/tentacode/tentacode">fork this website on github</a>
         </small>

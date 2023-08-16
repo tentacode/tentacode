@@ -11,8 +11,8 @@
         </div>
 
         <p class="masthead-subheading font-weight-light" style="max-width: 650px">
-            Je suis Gabriel Pillet et je suis un développeur Backend avec 12 ans d'expérience sur des frameworks PHP (Symfony et Laravel).
-            Je propose des missions en Freelance en tant que développeur ou CTO externalisé (audits, montée en compétence, coaching, etc.).
+            Moi c'est Gabriel Pillet et je suis un développeur Backend avec une quinzaine d'années d'expérience, spécialisé sur des frameworks PHP (Symfony et Laravel).<br /><br />
+            Je propose des missions en Freelance en tant que développeur ou CTO externalisé (audits, montée en compétence, coaching, etc.). J'ai aussi une affinité avec l'assurance qualité et la philosophie DevOps.
         </p>
 
         <div class="text-center mt-5">

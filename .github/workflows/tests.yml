@@ -30,7 +30,7 @@ jobs:
       #   run: bin/phpspec run -fpretty
 
       - name: Phpstan
-        run: bin/phpstan
+        run: bin/phpstan --memory-limit=1G
 
       - name: Automatic code sniffer fixing
         run: bin/phpcbf

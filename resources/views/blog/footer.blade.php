@@ -8,7 +8,7 @@
                 >
                 <span class="h4 d-block text-uppercase mb-3">Auteur</span>
                 <p class="lead mb-4">
-                    Bonjour ! Je suis Gabriel Pillet (<a href="https://twitter.com/tentacode">@tentacode</a>)
+                    Bonjour ! Moi c'est Gabriel Pillet (<a href="https://twitter.com/tentacode">@tentacode</a>)
                     et je suis <a href="https://tentacode.dev">développeur backend / CTO externalisé</a> en Freelance.</a>
                 </p>
                 <a aria-label="Github" class="btn btn-outline-light btn-social mx-1" href="https://github.com/tentacode">

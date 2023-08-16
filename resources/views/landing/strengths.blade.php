@@ -115,7 +115,7 @@
         </div>
 
         <div class="text-center mt-5">
-            <a class="btn btn-xl btn-outline-light shadow-sm" href="http://tentacode.github.io/curriculum/">
+            <a class="btn btn-xl btn-outline-light shadow-sm" href="https://tentacode.github.io/curriculum/">
                 <i class="fas fa-graduation-cap me-2"></i>
                 Lire mon CV
             </a>

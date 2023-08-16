@@ -15,4 +15,4 @@ test: ## Run all tests
 	bin/phpspec run -fpretty
 	bin/phpcbf | true
 	bin/phpcs
-	bin/phpstan
+	bin/phpstan --memory-limit=1G
