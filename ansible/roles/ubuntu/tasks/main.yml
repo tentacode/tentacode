@@ -1,0 +1,5 @@
+---
+- name: Setup server timezone
+  timezone:
+    name: "{{ server.timezone }}"
+  become: yes

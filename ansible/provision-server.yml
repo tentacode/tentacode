@@ -1,0 +1,17 @@
+---
+- hosts: all
+
+  roles:
+    - ubuntu
+
+    # needs to be setup first to use npm / nvm later
+    - web-server/node
+
+    - cli/bash
+    - cli/git
+    - cli/make
+
+    - web-server/nginx
+    - web-server/php-fpm
+
+    - tentacode.dev

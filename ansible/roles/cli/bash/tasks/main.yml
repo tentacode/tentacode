@@ -1,0 +1,10 @@
+- name: Copying bash scripts to ~/bin
+  copy:
+    src: bin
+    dest: "{{ user.home_directory }}"
+    mode: u+x,g+x,o+x
+
+- name: Copying bash_profile
+  template:
+    src: bash_profile.j2
+    dest: "{{ user.home_directory }}/.bash_profile"

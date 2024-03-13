@@ -1,0 +1,42 @@
+---
+- name: Installing delta
+  become: yes
+  apt:
+    deb: https://github.com/dandavison/delta/releases/download/0.11.3/git-delta_0.11.3_amd64.deb
+
+- name: Copying Git configuration
+  template:
+    src: .gitconfig.j2
+    dest: "{{ user.home_directory }}/.gitconfig"
+
+- name: Ensuring .ssh directory exists and is writable
+  file:
+    path: "{{ user.home_directory }}/.ssh"
+    state: directory
+    owner: "{{ user.name }}"
+    group: "{{ user.group }}"
+    recurse: Yes
+  become: yes
+
+- name: Copying ssh private key
+  copy:
+    src: "{{ git.ssh_private_key }}"
+    dest: "{{ user.home_directory }}/.ssh/ssh_git"
+    mode: '0600'
+
+- name: Copying ssh public key
+  copy:
+    src: "{{ git.ssh_public_key }}"
+    dest: "{{ user.home_directory }}/.ssh/ssh_git.pub"
+    mode: '0644'
+
+- name: Copying ssh config
+  template:
+    src: ssh_config.j2
+    dest: "{{ user.home_directory }}/.ssh/config"
+    mode: '0600'
+
+- name: Installing gitmoji-cli
+  shell: source ~/.nvm/nvm.sh && nvm exec {{ node.default_version }} npm install gitmoji-cli --global
+  args:
+    executable: /bin/bash
