@@ -1,0 +1,47 @@
+---
+- name: Cloning tentacode.dev
+  git:
+    repo: git@github.com:tentacode/tentacode.git
+    update: yes
+    force: yes
+    dest: "{{ user.workspace_directory }}/tentacode.dev"
+    accept_hostkey: yes
+
+- name: Copying env file
+  template:
+    src: ".env.j2"
+    dest: "{{ user.workspace_directory }}/tentacode.dev/.env"
+
+- name: Installing composer dependencies
+  shell: composer install --no-interaction
+  args:
+    chdir: "{{ user.workspace_directory }}/tentacode.dev"
+
+- name: Generatig key
+  shell: php artisan key:generate
+  args:
+    chdir: "{{ user.workspace_directory }}/tentacode.dev"
+
+- name: Clearing cache
+  shell: php artisan optimize:clear
+  args:
+    chdir: "{{ user.workspace_directory }}/tentacode.dev"
+
+- name: Installing frontend dependencies
+  shell: source ~/.nvm/nvm.sh && nvm exec {{ node.default_version }} yarn
+  args:
+    chdir: "{{ user.workspace_directory }}/tentacode.dev"
+    executable: /bin/bash
+
+- name: Building frontend
+  shell: source ~/.nvm/nvm.sh && nvm exec {{ node.default_version }}  yarn run dev
+  args:
+    chdir: "{{ user.workspace_directory }}/tentacode.dev"
+    executable: /bin/bash
+
+- name: Copying server nginx configuration
+  template:
+    src: "tentacode.dev.nginx.conf.j2"
+    dest: /etc/nginx/sites-enabled/tentacode.dev.conf
+  notify: restart web services
+  become: yes

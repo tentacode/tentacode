@@ -16,3 +16,6 @@ test: ## Run all tests
 	bin/phpcbf | true
 	bin/phpcs
 	bin/phpstan --memory-limit=1G
+
+provision-server: ## Setup server
+	ansible-playbook -i ansible/hosts ansible/provision-server.yml --extra-vars="@ansible/server-vars.yml"

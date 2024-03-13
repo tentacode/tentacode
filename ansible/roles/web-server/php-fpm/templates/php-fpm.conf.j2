@@ -1,0 +1,13 @@
+[php-fpm]
+listen = /var/run/php/php{{ item }}-fpm.sock
+listen.owner = {{ user.name }}
+listen.group = {{ user.group }}
+listen.mode = 0660
+user = {{ user.name }}
+group = {{ user.group }}
+pm = dynamic
+pm.max_children = 10
+pm.start_servers = 1
+pm.min_spare_servers = 1
+pm.max_spare_servers = 3
+pm.max_requests = 500

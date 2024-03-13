@@ -1,0 +1,41 @@
+server:
+  timezone: Europe/Paris
+
+user:
+  name: gabriel
+  group: gabriel
+  home_directory: /home/gabriel
+  workspace_directory: /home/gabriel
+  prompt: '{tentacode.dev}'
+
+git:
+  name: tentacode
+  email: CHANGE_ME
+  ssh_private_key: /Users/gabriel/.ssh/ssh_github
+  ssh_public_key: /Users/gabriel/.ssh/ssh_github.pub
+
+node:
+  default_version: 20
+  available_versions:
+    - 20
+
+php:
+  max_upload_size_mb: 10
+  default_version: 8.3
+  default_cli_version: 8.3
+  versions:
+    - 8.3
+  extensions:
+      - curl
+      - intl
+      - mbstring
+      - pgsql
+      - simplexml
+      - zip
+
+smtp:
+    host: CHANGE_ME
+    port: 587
+    username: CHANGE_ME
+    password: CHANGE_ME
+    from_address: CHANGE_ME

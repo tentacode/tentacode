@@ -1,0 +1,11 @@
+---
+- name: Install nginx
+  apt:
+    name: nginx
+    update_cache: yes
+  become: yes
+
+- name: Copy nginx main configuration
+  template: src=nginx.conf dest=/etc/nginx/
+  notify: restart web services
+  become: yes
