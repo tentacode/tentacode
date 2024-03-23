@@ -25,7 +25,7 @@
    page="{{ $page ?? 'index'  }}"
    page-title="{{ $pageTitle ?? ''  }}"
    page-image="{{ $pageImage ?? '' }}"
-   page-description="{!! $pageDescription ?? ''  !!}" />
+   page-description="{!! isset($pageDescription) ? $pageDescription : '' !!}" />
 </head>
 <body id="top">
     <x-layout.top-menu page="{{ $page ?? 'index' }}" />
