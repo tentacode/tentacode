@@ -1,4 +1,4 @@
-![test workflow](https://github.com/tentacode/tentacode/workflows/Tests/badge.svg) [![Twitter @tentacode](https://badgen.net/twitter/follow/tentacode)](https://twitter.com/tentacode)
+![test workflow](https://github.com/tentacode/tentacode/workflows/Tests/badge.svg) [![Twitter @tentacode](https://img.shields.io/twitter/url/https/twitter.com/tentacode.svg?style=social&label=Follow%20%40tentacode)](https://twitter.com/tentacode)
 
 [![tentacode's github stats](https://github-readme-stats.vercel.app/api?username=tentacode&theme=jolly&border_radius=10&hide_border=true)](https://github.com/tentacode/github-readme-stats)
 
@@ -7,7 +7,7 @@
 ```php
 <?php
 
-class Tentacode
+final class Tentacode
 {
     public function __construct(
         private string $fullName = "Gabriel Pillet",
