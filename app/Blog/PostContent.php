@@ -22,6 +22,15 @@ class PostContent
         return $this->getExcerpt(200);
     }
 
+    public function getFirstImage(): ?string
+    {
+        if (preg_match('#<img src="([^"]+)"#s', $this->html, $matches)) {
+            return trim($matches[1]);
+        }
+
+        return null;
+    }
+
     public function getExcerpt(int $characterCount): string
     {
         $text = trim($this->text);

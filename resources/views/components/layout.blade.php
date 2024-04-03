@@ -21,10 +21,11 @@
 -->
 <html lang="en">
 <head>
-   <x-layout.metas 
+   <x-layout.metas
    page="{{ $page ?? 'index'  }}"
    page-title="{{ $pageTitle ?? ''  }}"
-   page-description="{{ $pageDescription ?? ''  }}" />
+   page-image="{{ $pageImage ?? '' }}"
+   page-description="{!! $pageDescription ?? ''  !!}" />
 </head>
 <body id="top">
     <x-layout.top-menu page="{{ $page ?? 'index' }}" />

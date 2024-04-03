@@ -3,13 +3,12 @@
         <div class="row">
             <div class="col-lg-4 mb-0 mb-lg-0 mx-auto">
                 <img alt="Picture of Gabriel Pillet" style="width: 100px"  class="shadow rounded-circle mb-3"
-                    src="/img/gabriel_pillet.webp?8bd00e9"
-                    srcset="/img/gabriel_pillet_2x.webp?8bd00e9 2x"
+                    src="/img/gabriel_pillet.jpg"
                 >
                 <span class="h4 d-block text-uppercase mb-3">Auteur</span>
                 <p class="lead mb-4">
-                    Bonjour ! Moi c'est Gabriel Pillet (<a href="https://twitter.com/tentacode">@tentacode</a>)
-                    et je suis <a href="https://tentacode.dev">développeur backend / CTO externalisé</a> en Freelance.</a>
+                    Bonjour ! Moi c'est Gabriel Pillet
+                    et je suis <a href="https://tentacode.dev">dev backend / CTO externalisé</a> en Freelance.</a>
                 </p>
                 <a aria-label="Github" class="btn btn-outline-light btn-social mx-1" href="https://github.com/tentacode">
                     <i class="fab fa-fw fa-github"></i>
