@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!--
-    Oh no! You hacked my source code! 🙀
+    Oh non! Vous avez hacké mon code source! 🙀
 
-    Here is a gift as a reward 👏:
+    Voici un cadeau en récompense 👏:
 
     +      o     +              o
         +             o     +       +
@@ -19,7 +19,7 @@
         o           +
     +      +     o        o      +
 -->
-<html lang="en">
+<html lang="fr">
 <head>
    <x-layout.metas
    page="{{ $page ?? 'index'  }}"
