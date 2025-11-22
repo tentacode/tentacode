@@ -2,7 +2,7 @@
 
 [![tentacode's github stats](https://github-readme-stats.vercel.app/api?username=tentacode&theme=jolly&border_radius=10&hide_border=true)](https://github.com/tentacode/github-readme-stats)
 
-[![tentacode's github trophy](https://github-profile-trophy.vercel.app/?username=tentacode&column=4&theme=radical&no-frame=true)](https://github.com/tentacode/github-profile-trophy)
+[![trophy](https://stable-github-profile-trophy.vercel.app//?username=tentacode&theme=dracula&column=5&margin-w=15&margin-h=15)](https://github.com/ryo-ma/github-profile-trophy)
 
 ```php
 <?php
