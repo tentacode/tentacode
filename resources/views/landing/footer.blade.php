@@ -40,7 +40,7 @@
     <div class="container">
         <small>
             Copyright &copy; Gabriel Pillet
-            {{ date('Y') }} — <a href="https://github.com/tentacode/tentacode">fork this website on github</a>
+            {{ date('Y') }} — <a href="https://github.com/tentacode/tentacode">ce portfolio est sur github</a>
         </small>
     </div>
 </div>

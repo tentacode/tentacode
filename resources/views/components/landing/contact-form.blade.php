@@ -2,7 +2,7 @@
     <div class="container">
         <h2 class="page-section-heading text-center text-uppercase mb-0">Contact</h2>
 
-        <div class="divider-custom">
+        <div class="divider-custom" aria-hidden="true">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon">
                 <i class="far fa-paper-plane"></i>
@@ -18,13 +18,13 @@
                         to contact me for whatever other reason!</p>
                 </div> --}}
 
-                @if(Session::has('success')) 
+                @if(Session::has('success'))
                 <div class="alert alert-success" role="alert">
-                    {{ Session::get('success') }} 
+                    {{ Session::get('success') }}
 
                     @php
-                        Session::forget('success'); 
-                    @endphp 
+                        Session::forget('success');
+                    @endphp
                 </div>
                 @endif
 

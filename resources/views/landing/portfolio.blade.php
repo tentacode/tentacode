@@ -3,7 +3,7 @@
 
         <h2 class="page-section-heading text-center text-uppercase mb-0">Portfolio</h2>
 
-        <div class="divider-custom">
+        <div class="divider-custom" aria-hidden="true">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon">
                 <i class="fas fa-flask"></i>

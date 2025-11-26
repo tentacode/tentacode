@@ -1,8 +1,8 @@
 <header class="masthead text-light text-center shadow">
     <div class="container d-flex align-items-center flex-column">
-        <h1 class="masthead-heading text-uppercase mb-0">Bonjour !</h1>
+        <h1 id="bonjour" class="masthead-heading text-uppercase mb-0">Bonjour !</h1>
 
-        <div class="divider-custom divider-light">
+        <div class="divider-custom divider-light" aria-hidden="true">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon">
                 <i class="fas fa-handshake"></i>
