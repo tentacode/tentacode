@@ -17,7 +17,7 @@ final class PostFromMarkdown
     ) {
     }
 
-    public function __invoke(CarbonImmutable $date, string $slug, string $markdown): Post
+    public function __invoke(CarbonImmutable $date, string $slug, string $language, string $markdown): Post
     {
         $title = $this->getTitle($markdown);
         $html = $this->getHtmlFromMarkdown($markdown, $title);
@@ -31,7 +31,7 @@ final class PostFromMarkdown
             html: $html,
         );
 
-        return new Post($slug, $date, $postContent);
+        return new Post($slug, $date, $language, $postContent);
     }
 
     private function getTitle(string $markdown): string
@@ -66,7 +66,7 @@ final class PostFromMarkdown
         $html = preg_replace_callback('/<h([1-6])>(.*)<\/h([1-6])>/u', function ($matches) {
             $id = preg_replace('/[\W|_]/', '', $matches[2]);
             $id = strtolower($id);
-            
+
             return sprintf('<h%s id="%s">%s</h%s>', $matches[1], $id, $matches[2], $matches[3]);
         }, $html);
 

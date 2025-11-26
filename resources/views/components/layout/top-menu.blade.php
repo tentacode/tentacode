@@ -1,6 +1,8 @@
+<a class="skip-link sr-only sr-only-focusable" href="#bonjour">Aller au contenu</a>
+
 <nav class="{{ $page === 'blog' ? 'transparent-top' : '' }} navbar navbar-expand-xl bg-secondary text-uppercase fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="/#top">
+        <a aria-label="tentacode.dev" class="navbar-brand js-scroll-trigger" href="/#top">
             <i class="fas fa-laptop-code"></i>
             tentacode<span class="text-pink">.dev</span>
         </a>

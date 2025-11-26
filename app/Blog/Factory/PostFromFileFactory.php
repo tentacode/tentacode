@@ -25,11 +25,12 @@ class PostFromFileFactory
     {
         $date = $this->getDateFromFilepath($filePath);
         $slug = $this->getSlugFromFilepath($filePath);
+        $languague = $this->getLanguageFromFilepath($filePath);
 
         $fileContent = $this->filesystem->get($filePath);
         Assert::stringNotEmpty($fileContent);
 
-        return $this->postFromMarkdown->__invoke($date, $slug, $fileContent);
+        return $this->postFromMarkdown->__invoke($date, $slug, $languague, $fileContent);
     }
 
     private function getDateFromFilepath(string $filePath): CarbonImmutable
@@ -51,7 +52,7 @@ class PostFromFileFactory
 
     private function getSlugFromFilepath(string $filePath): string
     {
-        if (!preg_match('/^\d{8}_([\w-]+)\.md$/', $filePath, $matches)) {
+        if (!preg_match('/^\d{8}_([\w-]+)\.[a-z]{2}\.md$/', $filePath, $matches)) {
             throw new \RuntimeException(sprintf(
                 'Could not extract slug from file path "%s".',
                 $filePath
@@ -61,5 +62,19 @@ class PostFromFileFactory
         list(, $slug) = $matches;
 
         return $slug;
+    }
+
+    private function getLanguageFromFilepath(string $filePath): string
+    {
+        if (!preg_match('/^\d{8}_[\w-]+\.([a-z]{2})\.md$/', $filePath, $matches)) {
+            throw new \RuntimeException(sprintf(
+                'Could not extract language from file path "%s".',
+                $filePath
+            ));
+        }
+
+        list(, $language) = $matches;
+
+        return $language;
     }
 }
