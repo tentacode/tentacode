@@ -11,7 +11,7 @@ final class Tentacode
 {
     public function __construct(
         private string $fullName = "Gabriel Pillet",
-        private string $twitterHandle = "@tentacode",
+        private string $linkedinHandle = "gabrielpillet",
         private string $portfolioUrl = "https://tentacode.dev",
         private array $favoriteEmojis = ['🐙', '✨', '🤖', '🤗'],
     ) {}
@@ -23,7 +23,7 @@ final class Tentacode
             My name is {$this->fullName}.
 
             Check my portfolio at {$this->portfolioUrl}
-            Or my twitter profile at https://twitter.com/{$this->twitterHandle}
+            Or my linkedin profile at https://linkedin.com/in/{$this->linkedinHandle}
             BONJOUR;
 
         print $greetingMessage . PHP_EOL;
