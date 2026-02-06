@@ -1,0 +1,16 @@
+name: tentacode
+
+services:
+  www:
+    build:
+      context: ./www
+      dockerfile: Dockerfile
+    ports:
+      - "1447:4321"
+    volumes:
+      - ./www:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true
+      - CHOKIDAR_USEPOLLING=true

@@ -1,22 +1,51 @@
+---
+import '../styles/global.css';
+
+const startedWorkingOn = new Date('2006-09-01');
+const interval = Date.now() - startedWorkingOn.getTime();
+const yearsOfExperience = Math.floor(interval / (1000 * 60 * 60 * 24 * 365.25));
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 	<head>
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+
+		<meta name="description" content={`${yearsOfExperience} années d'expertise dans le développement logiciel au service de l'accessibilité dans votre équipe technique.`} />
+
+		<link
+			rel="preload"
+			href="/fonts/LexendDeca-VariableFont_wght.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin
+		/>
+
+		<title>Gabriel Pillet • tentacode.dev • Accessibilité, Conseil et Développement</title>
+
+		<script is:inline>
+			const stored = localStorage.getItem('theme');
+			const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+			document.documentElement.dataset.theme = stored || preferred;
+		</script>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
 
-<style>
+<style is:global>
 	html,
 	body {
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		background: var(--background);
+		color: var(--text);
+		font-size: 16px;
 	}
 </style>

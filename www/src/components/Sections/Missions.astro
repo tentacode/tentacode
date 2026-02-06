@@ -1,0 +1,151 @@
+---
+import ExternalLink from "../Elements/ExternalLink.astro";
+import Section from "./Section.astro";
+---
+
+<Section title="Expertise & Mission" href="expertise">
+    <p>
+        Mes aventures m'ont amenées à expérimenter à tous les niveaux du développement d'application logicielles :
+        le développement backend et frontend, l'infrastructure, la gestion de projet, le management d'équipe et l'assurance qualité.
+    </p>
+    <p>
+        Aujourd'hui j'aimerais mettre toute cette expérience au service de l'accessibilité numérique <strong>&ldquo;à la source&rdquo;</strong>&nbsp;: là où les projets sont développés, là où le code est produit.
+    </p>
+    <p>
+        Je suis convaincu que ma maîtrise du milieu des petites équipes techniques (comme les agences, les éditeurs ou les startups) et ma compréhension des enjeux du développement me permettent de vous accompagner avec efficacité et pragmatisme, vers des applications plus inclusives pour tous.
+    </p>
+    <p>
+        Je propose une offre et un accompagnement &ldquo;à la carte&rdquo; qui convient aux équipes qui souhaitent se sensibiliser, améliorer l'accessibilité de leur produits ou obtenir la conformité  :
+    </p>
+
+    <div class="mission-grid">
+        <div class="mission">
+            <h3><span>1 :</span> Découverte</h3>
+            <p>
+                Vous voulez savoir quel est le niveau d'accessibilité de votre projet ? Je propose un <strong>audit&nbsp;rapide</strong> sur un parcours délimité afin de connaître le ressenti réel et une estimation du volume de travail à fournir pour en améliorer l'accessibilité.
+            </p>
+        </div>
+        <div class="mission">
+            <h3><span>2 :</span> Sensibilisation</h3>
+            <p>J'accompagne votre équipe pour sa montée en compétence à travers des <strong>ateliers</strong> et un <strong>accompagnement</strong> adaptés : sensibilisation au handicap et à l'accessibilité, méthodologie de développement et maîtrise des outils de tests (dont les essentiels lecteurs d'écran).</p>
+        </div>
+        <div class="mission">
+            <h3><span>3 :</span> Conformité</h3>
+            <p>
+                Quand vous avez atteint un niveau d'accessibilité suffisant, vous pouvez passer à <strong>l'audit de conformité</strong>.
+                Je réalise pour vous un audit <dfn id="rgaa"><abbr title="Référentiel Général d'Amélioration de l'Accessibilité">RGAA</abbr></dfn> ou <dfn id="raam"><abbr title="Référentiel d'Accessibilité des Applications Mobiles">RAAM</abbr></dfn> complet, avec un rapport détaillé et une liste de recommandations exhaustive pour établir votre rapport de conformité.
+            </p>
+        </div>
+        <div class="mission">
+            <h3><span>4 :</span> Remédiation</h3>
+            <p>
+                Mon expérience du développement me permet également de vous accompagner dans la <strong>correction</strong> des non-conformités identifiées et le suivi de leur mise en œuvre.
+                Je peux également suivre vos projets de manière ponctuelle avec des heures de support.
+            </p>
+        </div>
+        <div class="mission">
+            <h3><span>Option :</span> Tests utilisateurs en situation de handicap</h3>
+            <p>
+                Rien ne remplace le retour d'expérience des premiers concernés par les défis de l'accessibilité numérique.
+                À chaque étape de l'accompagnement, je propose de compléter mes interventions par l'expérience de testeurs expérimentés, en partenariat avec l'association <ExternalLink href="https://www.digitalhandicap.fr/nos-tests-utilisateurs/">Digital Handicap</ExternalLink>.
+            </p>
+        </div>
+    </div>
+</Section>
+
+<style>
+    .mission-grid {
+        padding-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 40px;
+        row-gap: 60px;
+    }
+
+    .mission-grid > :nth-child(5) {
+        grid-column: 1 / -1;
+    }
+
+    .mission {
+        position: relative;
+        padding: 40px;
+        border: 5px solid var(--accent);
+        border-radius: 15px;
+        font-size: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 15px;
+    }
+
+    .mission p {
+        margin: 0;
+        text-wrap: balance;
+    }
+
+    h3 {
+        font-family: "Lexend Deca", sans-serif;
+        font-size: 2.3em;
+        font-weight: 500;
+        position: absolute;
+        top: -65px;
+        left: 20px;
+        background: var(--background);
+        padding: 0 15px;
+    }
+
+    h3 span {
+        color: var(--accent);
+    }
+
+    @media (max-width: 1150px) {
+        .mission-grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            row-gap: 60px;
+        }
+    }
+
+    @media (max-width: 900px) {
+
+        h3 {
+            font-size: 2.2em;
+            top: -62px;
+        }
+    }
+
+    @media (max-width: 442px) {
+        h3 {
+            font-size: 1.8em;
+            top: -51px;
+            left: 15px;
+        }
+
+        .mission p {
+            font-size: 1.7em;
+            word-break: break-all;
+        }
+
+    }
+
+    @media (max-width: 390px) {
+        h3 {
+            font-size: 1.4em;
+            top: -40px;
+            left: 15px;
+        }
+
+        .mission-grid {
+            row-gap: 40px;
+        }
+
+        .mission {
+            padding: 30px 0px;
+            border-left-width: 0;
+            border-right-width: 0;
+            border-bottom-width: 0;
+            border-radius: 0;
+        }
+    }
+</style>

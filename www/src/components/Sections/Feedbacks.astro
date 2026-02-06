@@ -1,0 +1,101 @@
+---
+import ArrowTopRightOnSquareIcon from "astro-heroicons/outline/ArrowTopRightOnSquare.astro";
+import ChatBubbleBottomCenterTextIcon from "astro-heroicons/solid/ChatBubbleBottomCenterText.astro";
+
+import imageStephane from "../../assets/reco_stephane.jpeg";
+import imageGuillaume from "../../assets/reco_guillaume.jpeg";
+import imageJulien from "../../assets/reco_julien.jpeg";
+import FeedbackTabs from "./FeedbackTabs";
+import { getImage } from "astro:assets";
+
+const feedbacks = [
+	{
+		id: "guillaume-s",
+		name: "Guillaume S.",
+		role: "Développeur Mobile Senior",
+		image: imageGuillaume,
+		link: "https://www.linkedin.com/in/guillaume-siorak/",
+        context: "J'ai travaillé avec Guillaume pendant 3 ans chez BetaSeries. Notamment en binôme pendant un an sur un prototype d'application de rencontre.",
+		quote: `Gabriel, en plus de fournir un travail de très bonne qualité, est quelqu'un d'extrêmement pédagogue et ne refuse jamais à aider ses collègues et mettre en place des choses afin de souder l'équipe et la porter vers le haut.
+        
+        Il est toujours de bons conseils et adore apprendre de nouvelles choses et se perfectionner. C'était un vrai plaisir de travailler avec lui.`,
+	},
+	{
+		id: "stephane-h",
+		name: "Stéphane H.",
+		role: "Directeur Technique",
+		image: imageStephane,
+		link: "https://www.linkedin.com/in/shulard/",
+        context: "J'ai travaillé avec Stéphane sur plusieurs projets d'applications complexes en Freelance.",
+		quote: `Gabriel m'a permis de démarrer un projet de développement PHP (aujourd'hui plus de 50K lignes de code) (…). Son pragmatisme et sa méthode nous ont orienté vers les bons choix technologiques. (…)
+
+            Il a réussi à structurer et formaliser une réponse viable aux différentes problématiques qui lui ont été soumises (testabilité, performance, architecture). Les échanges étaient constructifs et la collaboration efficace, c'était très agréable de travailler avec lui.`,
+	},
+	{
+		id: "julien-s",
+		name: "Julien S.",
+		role: "Développeur Fullstack",
+		image: imageJulien,
+		link: "https://www.linkedin.com/in/jseixasfr/",
+        context: "Julien a été mon élève sur plusieurs modules techniques à l'école YNOV.",
+		quote: `(…) Très pédagogue et compétent il a toujours cherché à répondre à nos questions même les plus tordues. Il trouvait toujours la solution à nos problèmes même lorsqu'il ne l'a connaissait pas directement.
+        
+        De plus il nous donnait toujours la méthode utilisée pour que nous puissions être autonomes. En dehors des cours, il nous arrivait souvent de dévier sur des sujets n'ayant aucun rapport avec le sujet principal du cours ou même sur des technos qu'il n'utilisait pas forcément et pourtant il nous a toujours été de bon conseil. (…)`,
+	},
+];
+
+const optimizedFeedbacks = await Promise.all(
+	feedbacks.map(async (feedback) => {
+		const optimizedImage = await getImage({
+			src: feedback.image,
+			width: 150,
+			height: 150,
+			format: "webp",
+		});
+		return {
+			...feedback,
+			image: optimizedImage.src,
+		};
+	})
+);
+---
+
+<h3>
+	<ChatBubbleBottomCenterTextIcon />
+	<!-- Travailler avec moi, c'est&nbsp;eux&nbsp;qui&nbsp;en&nbsp;parlent&nbsp;le&nbsp;mieux&nbsp;: -->
+	Travailler avec moi, c'est eux qui en parlent le mieux :
+</h3>
+
+<FeedbackTabs client:load feedbacks={optimizedFeedbacks} />
+
+<style>
+	h3 {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.7em;
+		font-family: "Lexend Deca", sans-serif;
+		font-size: 3em;
+		margin-top: 60px;
+		text-wrap: balance;
+	}
+
+	h3 svg {
+		margin-top: 0.2em;
+		flex-shrink: 0;
+		width: 1.7em;
+		height: 1.7em;
+	}
+
+	@media (max-width: 750px) {
+		h3 {
+			font-size: 2.5em;
+		}
+	}
+
+
+	@media (max-width: 750px) {
+		h3 {
+			font-size: 2em;
+		}
+	}
+</style>

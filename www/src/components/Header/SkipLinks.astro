@@ -1,0 +1,50 @@
+---
+import ArrowDownIcon from "astro-heroicons/outline/ArrowDown.astro";
+--- 
+<a href="#contenu-principal">
+    Aller au contenu
+    <ArrowDownIcon />
+</a>
+
+<style>
+    a {
+        position: absolute;
+        top: -200px;
+        left: 20px;
+        background: var(--accent);
+        color: #010101;
+        padding: 10px 20px;
+        z-index: 100;
+        text-decoration: none;
+        font-family: "Lexend Deca", sans-serif;
+        font-size: 2em;
+        transition: top 0.3s ease;
+        border: 3px solid var(--text);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    svg {
+        flex-shrink: 0;
+        width: 30px;
+        height: 30px;
+    }
+
+    a:focus {
+        top: 20px;
+        outline: 2px solid var(--text);
+        outline-offset: 4px;
+    }
+
+    @media (max-width: 400px) {
+        a {
+            right: 20px;
+        }
+
+        svg {
+            display: none;
+        }
+    }
+</style>

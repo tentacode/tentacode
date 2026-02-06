@@ -1,0 +1,205 @@
+---
+import { Image } from "astro:assets";
+import profilePicture from '../assets/photo_canard_couleur.jpg';
+
+const startedWorkingOn = new Date('2006-09-01');
+const interval = Date.now() - startedWorkingOn.getTime();
+const yearsOfExperience = Math.floor(interval / (1000 * 60 * 60 * 24 * 365.25));
+---
+
+<div id="hero">
+    <div class="heroImage">
+        <Image 
+            widths={[240, 540, 720, 1200]}
+            sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 800px) 720px, ${1200}px`}
+            src={profilePicture} alt={`Photo de Gabriel Pillet en train de présenter une conférence sur l'accessibilité numérique au DevFest Lyon 2025. Sur son tshirt figure un canard qui tiens une tasse de café, avec un texte autour : "Brain just dramatic sometimes".`}
+        />
+    </div>
+    <div id="contenu-principal" class="heroText">
+        <ul class="skills">
+            <li>Accessibilité</li>
+            <li>Conseil</li>
+            <li>Développement</li>
+        </ul>
+        <h1>Gabriel Pillet <span aria-hidden="true">•</span> tentacode.dev</h1>
+        <p><strong>{yearsOfExperience} années</strong> d'expertise dans le développement web et mobile, aujourd'hui au service de l'accessibilité numérique pour vos projets.</p>
+    </div>
+</div>
+
+<style>
+    #hero {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+        font-size: clamp(1rem, 1rem + 0.55vw, 4rem);
+    }
+
+    .heroImage {
+        align-self: flex-start;
+        flex: 2;
+        flex-shrink: 0;
+        position: relative;
+    }
+
+    .heroImage img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .heroImage::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: 
+            /* linear-gradient(to bottom, var(--background) 0%, transparent 30%), */
+            linear-gradient(to top,  var(--background) 0%, transparent 30%),
+            linear-gradient(to left, var(--background) 0%, transparent 30%);
+        pointer-events: none;
+    }
+
+    .heroText {
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2.5em;
+        scroll-margin-top: 40px;
+    }
+
+    ul.skills {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0;
+        gap: 0.2em;
+        margin: 0;
+    }
+
+    ul.skills li {
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 3.5em;
+        font-style: italic;
+        font-weight: 500;
+        letter-spacing: 0.1rem;
+    }
+
+    ul.skills li::after {
+        content: "/";
+        font-style: normal;
+        font-weight: 600;
+        margin-left: 0.2em;
+        color: var(--accent);
+        font-style: italic;
+    }
+
+    h1 {
+		font-family: 'Lexend Deca', sans-serif;
+        font-size: 2.5em;
+        margin: 0;
+        padding: 0;
+    }
+
+    p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2em;
+        margin: 0;
+        padding: 0;
+        padding-right: 200px;
+        line-height: 1.3;
+    }
+
+    @media (max-width: 2380px) {
+        p {
+            padding-right: 90px;
+            font-size: 1.8em;
+        }
+    }
+
+    @media (max-width: 2000px) {
+        #hero {
+            margin-top: 40px;
+            font-size: clamp(1rem, 1rem + 0.3vw, 4rem);
+        }
+
+        p {
+            font-size: 1.8em;
+            padding-right: 50px;
+        }
+    }
+
+    @media (max-width: 1080px) {
+        #hero {
+            flex-direction: column;
+            font-size: clamp(1rem, 1rem + 0.7vw, 4rem);
+        }
+
+        .heroImage {
+            width: 75%;
+        }
+
+        .heroText {
+            padding-left: var(--gutter);
+            padding-right: var(--gutter);
+        }
+
+        h1 {
+            font-size: clamp(1.5em, 1.5em + 1.4vw, 4em);
+        }
+
+        p {
+            text-wrap: balance;
+            padding-right: 0;
+        }
+    }
+
+
+    @media (max-width: 830px) {
+        ul.skills li {
+            font-size: 4rem;
+        }
+    }
+    @media (max-width: 725px) {
+        ul.skills li {
+            font-size: 3.4rem;
+        }
+    }
+
+    @media (max-width: 650px) {
+        ul.skills li {
+            font-size: 3rem;
+        }
+
+        .heroText {
+            padding-left: var(--gutter-small);
+            padding-right: var(--gutter-small);
+        }
+    }
+
+    @media (max-width: 530px) {
+        ul.skills li {
+            font-size: 2.5rem;
+        }
+    }
+
+
+    @media (max-width: 460px) {
+        ul.skills li {
+            font-size: 2rem;
+        }
+    }
+
+    @media (max-width: 400px) {
+        ul.skills li {
+            font-size: 1.8rem;
+        }
+    }
+
+    @media (max-width: 365px) {
+        ul.skills li {
+            font-size: 1.5rem;
+        }
+    }
+</style>

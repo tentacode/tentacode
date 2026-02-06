@@ -1,0 +1,71 @@
+---
+import MoonIcon from "astro-heroicons/outline/Moon.astro";
+import SunIcon from "astro-heroicons/outline/Sun.astro";
+---
+<button id="theme-toggle-small" aria-label="Changer le thème">
+    <span class="icon-dark"><MoonIcon stroke-width="2" /></span>
+    <span class="icon-light"><SunIcon stroke-width="2" /></span>
+</button>
+
+<style>
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        transition: width 0.3s ease, height 0.3s ease;
+    }
+
+    button svg {
+        width: 100%;
+        height: 100%;
+        color: var(--text);
+        transition: color 0.3s ease;
+    }
+
+    button:focus, button:hover {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        outline-color: var(--accent);
+    }
+
+    button:hover svg, button:focus svg {
+        color: var(--accent);
+    }
+
+    .icon-dark { display: none; }
+    .icon-light { display: block; }
+
+    :global([data-theme="dark"]) .icon-dark { display: block; }
+    :global([data-theme="dark"]) .icon-light { display: none; }
+
+    @media (max-width: 1400px) {
+        button {
+            display: none;
+        }
+    }
+</style>
+
+<script>
+    const btn = document.getElementById('theme-toggle-small');
+
+    function updateLabel() {
+        const isDark = document.documentElement.dataset.theme === 'dark';
+        btn.setAttribute('aria-label', isDark ? 'Changer le thème pour un thème clair' : 'Changer le thème pour un thème sombre');
+    }
+
+    updateLabel();
+
+    btn.addEventListener('click', () => {
+        const current = document.documentElement.dataset.theme;
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = next;
+        localStorage.setItem('theme', next);
+        updateLabel();
+    });
+</script>

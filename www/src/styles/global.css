@@ -1,0 +1,31 @@
+@font-face {
+	font-family: "Lexend Deca";
+	src: url("/fonts/LexendDeca-VariableFont_wght.woff2") format("woff2");
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+strong {
+	font-weight: 400;
+	/* font-family: "Lexend Deca", sans-serif; */
+	color: var(--accent);
+}
+
+:root {
+	--accent: #DD0279;
+	--background: #fff5f4;
+	--text: #010101;
+
+	--page-width: 1200px;
+
+	--gutter: 70px;
+	--gutter-small: 40px;
+	--gutter-xsmall: 20px;
+}
+
+[data-theme="dark"] {
+	--accent: #FD3592;
+	--background: #010101;
+	--text: #fff5f4;
+}
