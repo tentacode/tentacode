@@ -1,0 +1,44 @@
+---
+- name: Install certbot
+  apt:
+    name: certbot
+    state: present
+  become: yes
+
+- name: Install certbot nginx plugin
+  apt:
+    name: python3-certbot-nginx
+    state: present
+  become: yes
+
+- name: Execute certbot
+  command: certbot --nginx --expand --non-interactive --agree-tos --email {{ letsencrypt.email }} -d {{ letsencrypt.domain }} -d www.{{ letsencrypt.domain }} -d api.{{ letsencrypt.domain }} -d app.{{ letsencrypt.domain }} -d analytics.{{ letsencrypt.domain }} 
+  become: yes
+  notify: restart web services
+
+- name: Add cron job to renew certificates
+  cron:
+    name: "Renew letsencrypt certificates"
+    minute: "0"
+    hour: "12"
+    job: "certbot renew --quiet"
+
+- name: Ensure HTTP/2 is enabled
+  replace:
+    path: "/etc/nginx/sites-enabled/{{ item }}"
+    regexp: 'listen 443 ssl;'
+    replace: 'listen 443 ssl http2;'
+  loop:
+    - tentacode-www.conf
+  notify: restart web services
+  become: yes
+
+- name: Ensure HTTP/2 is enabled on IPv6
+  replace:
+    path: "/etc/nginx/sites-enabled/{{ item }}"
+    regexp: 'listen \[::\]:443 ssl ipv6only=on;'
+    replace: 'listen [::]:443 ssl http2 ipv6only=on;'
+  loop:
+    - tentacode-www.conf
+  notify: restart web services
+  become: yes

@@ -1,0 +1,12 @@
+---
+- name: Installing pip
+  apt:
+    name: python3-pip
+    update_cache: yes
+  become: yes
+
+- name: Installing psycopg2 via apt
+  apt:
+    name: python3-psycopg2
+    update_cache: yes
+  become: yes

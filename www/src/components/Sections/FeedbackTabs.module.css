@@ -1,0 +1,111 @@
+.tabs {
+	display: flex;
+	justify-content: flex-start;
+	gap: 2em;
+	margin-bottom: 1.5em;
+	background: none;
+}
+
+.tabs button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+	width: 150px;
+	height: 150px;
+	border: 7px solid transparent;
+	transition: border 0.3s ease;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+.tabs button[aria-selected="true"] {
+	border-color: var(--accent);
+}
+
+.tabs button:focus, .tabs button:hover {
+	outline: 3px solid var(--accent);
+	outline-offset: 4px;
+}
+
+.tabs img {
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+	margin-right: 1em;
+	filter: grayscale(100%);
+}
+
+.feedback a {
+	display: inline;
+	font-family: "Lexend Deca", sans-serif;
+	font-size: 2.25rem;
+	color: var(--accent);
+	text-decoration: underline var(--accent);
+	text-underline-offset: 0.2em;
+	font-weight: 600;
+	line-height: 1.4;
+	text-wrap: balance;
+	overflow: hidden;
+}
+
+.feedback a svg {
+	width: 1.2em;
+	height: 1.2em;
+	vertical-align: middle;
+	margin-top: -0.2em;
+	margin-left: 0.3em;
+}
+
+.feedback a:hover {
+	text-decoration: wavy underline var(--accent);
+}
+
+.feedback a:focus {
+	outline: 1px solid var(--accent);
+	border-radius: 5px;
+	text-decoration: none;
+	padding: 0 0.5em;
+	transition: padding 0.3s ease;
+}
+
+.feedback blockquote {
+	white-space: pre-line;
+	font-family: "Roboto", sans-serif;
+	font-size: 1.7rem;
+	font-style: italic;
+	margin: 1em 0 0 0;
+	padding-left: 1.5em;
+	border-left: 10px solid var(--accent);
+	line-height: 1.5;
+}
+
+.context {
+	font-family: "Lexend Deca", sans-serif;
+	font-size: 1.5rem;
+	font-style: normal;
+	line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+	.tabs {
+		gap: 1.5em;
+	}
+
+	.tabs button {
+		flex: 1;
+		aspect-ratio: 1 / 1;
+		width: auto;
+		height: auto;
+	}
+
+.feedback a {
+		font-size: 1.9rem;
+	}
+
+	.feedback blockquote {
+		padding-left: 1em;
+		border-left-width: 7px;
+	}
+}

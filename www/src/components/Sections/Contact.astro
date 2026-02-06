@@ -1,0 +1,22 @@
+---
+import ExternalLink from "../Elements/ExternalLink.astro";
+import MailLink from "../Elements/MailLink.astro";
+import Section from "./Section.astro";
+---
+
+<Section title="Contact" href="contact">
+    <p>
+        Autour d'une visio ou d'un café à Lyon, n'hésitez pas à venir me parler de votre projet !
+        Vous pouvez me joindre via mon <ExternalLink href="https://www.linkedin.com/in/gabrielpillet/">compte LinkedIn</ExternalLink>
+        ou par Email à l'adresse <MailLink href="mailto:contact@tentacode.dev">contact@tentacode.dev</MailLink>.
+    </p>
+    <p>
+        Vous pouvez également planifier vous-même un créneau pour échanger via mon <ExternalLink href="https://calendly.com/gabriel-calendly-tentacode/30min">calendrier en ligne</ExternalLink>.
+    </p>
+</Section>
+
+<style>
+    p {
+        word-break: normal;
+    }
+</style>

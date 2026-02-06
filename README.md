@@ -1,7 +1,5 @@
 ![test workflow](https://github.com/tentacode/tentacode/workflows/Tests/badge.svg) [![Twitter @tentacode](https://img.shields.io/twitter/url/https/twitter.com/tentacode.svg?style=social&label=Follow%20%40tentacode)](https://twitter.com/tentacode)
 
-[![tentacode's github stats](https://github-readme-stats.vercel.app/api?username=tentacode&theme=jolly&border_radius=10&hide_border=true)](https://github.com/tentacode/github-readme-stats)
-
 [![trophy](https://stable-github-profile-trophy.vercel.app//?username=tentacode&theme=dracula&column=5&margin-w=15&margin-h=15)](https://github.com/ryo-ma/github-profile-trophy)
 
 ```php
@@ -20,10 +18,10 @@ final class Tentacode
     {
         $greetingMessage = <<<BONJOUR
             Bonjour! {$this->favoriteEmojis[array_rand($this->favoriteEmojis)]}
-            My name is {$this->fullName}.
+            Je m'appelle {$this->fullName}.
 
-            Check my portfolio at {$this->portfolioUrl}
-            Or my linkedin profile at https://linkedin.com/in/{$this->linkedinHandle}
+            Consultez mon portfolio à {$this->portfolioUrl}
+            Ou mon profil linkedin à https://linkedin.com/in/{$this->linkedinHandle}
             BONJOUR;
 
         print $greetingMessage . PHP_EOL;
@@ -33,7 +31,7 @@ final class Tentacode
 try { 
     (new Tentacode)->sayHello();
 } catch (\Throwable $e) {
-    echo "Oops, nobody is perfect I guess…". PHP_EOL . $e->getMessage();
+    echo "Oups ! Personne n'est parfait je suppose…". PHP_EOL . $e->getMessage();
     die(42);
 }
 ```

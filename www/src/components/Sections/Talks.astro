@@ -1,0 +1,104 @@
+---
+import ExternalLink from "../Elements/ExternalLink.astro";
+import Section from "./Section.astro";
+---
+
+<Section title="Conférences" href="conferences">
+    <ul>
+        <li>
+            <span aria-hidden="true" id="devfest-lyon-2025" class="placeAndDate">
+                au DevFest Lyon, en Novembre 2025
+            </span>
+            <span aria-hidden="true" id="afup-day-2026" class="placeAndDate">
+                et prochainement à l'AFUP Day Lyon, en Mai 2026
+            </span>
+            <ExternalLink
+                aria-label="Accessibilité numérique : cocher des cases, mais rater la cible"
+                aria-describedby="devfest-lyon-2025 afup-day-2026"
+                href="https://event.afup.org/afup-day-2026/afup-day-2026-lyon/programme/"
+            >Accessibilité numérique : cocher des cases, ✅ mais rater la cible 🎯</ExternalLink>
+            <span class="credits">
+                avec <ExternalLink 
+                    href="https://www.linkedin.com/in/vanessa-strub-3451773a/"
+                >Vanessa Strub</ExternalLink>
+            </span>
+        </li>
+        <li>            
+            <span aria-hidden="true" id="forumphp-2021" class="placeAndDate">au ForumPHP, à Paris en Octobre 2021 — vidéo disponible</span>
+            <ExternalLink
+                aria-describedby="forumphp-2021"
+                href="https://www.youtube.com/watch?v=G447nMoFHjI&t=2328s"
+            >Plongée dans l'écosystème Laravel</ExternalLink>
+        </li>
+        <li>
+            <span aria-hidden="true" id="afup-day-2019" class="placeAndDate">à l'AFUP Day, à Lyon en Mai 2019 — présentation disponible</span>
+            <ExternalLink
+                aria-describedby="afup-day-2019"
+                href="https://fr.slideshare.net/slideshow/alice-et-bob-sont-sur-un-bateau/146598382?nway-refresh=B"
+            >Alice et Bob sont sur un bateau</ExternalLink>
+        </li>
+        <li>
+            <span aria-hidden="true" id="meetup-neo4j-2017" class="placeAndDate">à un meetup Neo4j, à Lyon en 2017 — présentation disponible</span>
+            <ExternalLink
+                aria-describedby="meetup-neo4j-2017"
+                href="https://fr.slideshare.net/slideshow/importer-500-millions-de-donnes-de-mysql-vers-neo4j/149626083?nway-refresh=B"
+            >Comment importer 567 millions d'épisodes de MySQL vers Neo4j</ExternalLink>
+        </li>
+        <li>
+            <span aria-hidden="true" id="meetup-afup-2017" class="placeAndDate">à un meetup AFUP, à Lyon en 2017 - présentation disponible</span>
+            <ExternalLink
+                aria-describedby="meetup-afup-2017"
+                href="https://fr.slideshare.net/slideshow/neo4j-en15-minutes/149617901"
+            >Neo4j en 15 minutes</ExternalLink>
+        </li>
+        <li>
+            <span aria-hidden="true" id="meetup-lyon-data-science-2016" class="placeAndDate">à un meetup LyonDataScience, à Lyon en Novembre 2016 — présentation disponible</span>
+            <ExternalLink
+                aria-describedby="meetup-lyon-data-science-2016"
+                href="https://fr.slideshare.net/slideshow/metabase-avec-des-chatons/69553884"
+            >Metabase, avec des chatons</ExternalLink>
+        </li>
+        <li>
+            <span aria-hidden="true" id="phptour-2014" class="placeAndDate">au PHPTour 2014, à Lyon en Juin 2014 — vidéo disponible</span>
+            <ExternalLink
+                aria-describedby="phptour-2014"
+                href="https://www.youtube.com/watch?v=7Dshrnre8d0"
+            >P.D.D. : Pragmatism Driven Development</ExternalLink>
+        </li>
+    </ul>
+</Section>
+
+<style>
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 2em;
+        font-family: "Lexend Deca", sans-serif;
+    }
+
+    .placeAndDate {
+        font-family: "Lexend Deca", sans-serif;
+        font-size: 1.5rem;
+        font-style: italic;
+        font-weight: 500;
+        color: var(--text);
+    }
+
+    .credits {
+        font-family: "Lexend Deca", sans-serif;
+        font-size: 1.5rem;
+        margin-top: 0.5rem;
+        color: var(--text);
+    }
+</style>

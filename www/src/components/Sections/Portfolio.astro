@@ -1,0 +1,114 @@
+---
+import Section from "./Section.astro";
+
+import imageOhdit from "../../assets/ohdit.jpg";
+import imageBiped from "../../assets/biped.jpg";
+import imageIpi from "../../assets/ipi.jpg";
+import PortfolioItem from "./PortfolioItem.astro";
+---
+
+<Section title="Portfolio" href="portfolio">
+    <div>
+        <PortfolioItem 
+            name="Ohdit"
+            description="Création d'un outil facilitant la saisie et la collaboration sur les audits d'accessibilité."
+            drawerId="ohdit"
+            href="https://ohdit.com"
+            image={imageOhdit}
+            imageAlt="Une partie de l'interface d'Ohdit est montrée, avec un résumé du progrès et du taux de conformité du projet, ainsi que la grille permettant de remplir les critères du RGAA et de saisir des recommandations."
+        >
+            <p>
+                J'ai créé Ohdit quand j'ai commencé à m'intéresser sérieusement à l'accessibilité numérique et en constatant que beaucoup d'auditeurices utilisaient principalement des grilles Excel.
+            </p>
+            <p>
+                C'était une opportunité pour proposer quelque chose de plus moderne pour répondre à un vrai besoin d'outillage.
+            </p>
+            <p>
+                C'est aussi venu d'un défi personnel : est-ce que je serais capable de créer un outil complet en assumant tous les rôles du projet : le design, le code, l'infrastructure et même le marketing.
+                J'ai voulu faire un projet "à l'état de l'art" et expérimenter l'accessibilité numérique dans un contexte d'application complexe.
+            </p>
+            <p>
+                <strong>Côté technique :</strong> Astro, NextJs, React, Symfony, PostgreSQL.
+            </p>
+        </PortfolioItem>
+
+        <PortfolioItem 
+            name="biped.ai"
+            description="Développement d'une application mobile à destination des personnes aveugles."
+            drawerId="biped"
+            href="https://biped.ai"
+            image={imageBiped}
+            imageAlt="Une femme aveugle porte un harnais biped sur les épaules et une canne blanche à la main. À côté, une capture de l'application biped montre un écran de navigation avec une carte, demandant à l'utilisateur de choisir une destination."
+        >
+            <p>
+                La startup biped.ai a créé un harnais qui se porte sur les épaules et est équipé de capteurs et de caméras pour améliorer l'autonomie des personnes aveugles. Il offre 3 fonctionnalités principales : détecter les obstacles et les indiquer par des signaux sonores, fournir des indications de navigation pour se déplacer en ville, et décrire l'environnement à l'aide de l'intelligence artificielle.
+            </p>
+            <p>
+                Le harnais est accompagné d'une application mobile qui sert de télécommande, permet de communiquer avec le harnais via des échanges bluetooth, et lui met à disposition les données provenant d'internet et du GPS du téléphone.
+            </p>
+            <p>
+                Pendant une mission d'un an j'ai réécrit une grosse partie de l'application mobile pour la stabiliser, la rendre plus accessible et améliorer l'UX et l'UI pour qu'elle soit autant utilisable via un lecteur d'écran que de manière classique pour les instructeurs de mobilité.
+            </p>
+            <p>
+                C'était une mission captivante et j'ai beaucoup apprécié travailler dans cette petite équipe, avec beaucoup de responsabilité dépassant le développement : design de l'application, tests utilisateurs, gestion de projet, etc.
+            </p>
+            <p>
+                <strong>Côté technique :</strong> React Native, bluetooth low energy, Google Maps, API Nvibe.
+            </p>
+        </PortfolioItem>
+
+
+        <PortfolioItem 
+            name="Cours à l'IPI"
+            description="J'ai donné 12 heures de sensibilisation au handicap et à l'accessibilité numérique à une classe de l'IPI à Lyon."
+            drawerId="ipi"
+            image={imageIpi}
+            imageAlt="Photo d'une salle de classe. L'écran au tableau montre un site que les élèves sont en train d'auditer pour trouver les problèmes d'accessibilité."
+            buttonText="voir les détails de ce cours à l'IPI"
+        >
+            <p>
+                J'ai eu l'occasion de donner un cours de 12 heures à des élèves en formation pour devenir développeurs, à niveau Bac+2.
+            </p>
+            <p>
+                Ce cours a eu pour but de sensibiliser les élèves à tous les enjeux du handicap et de l'accessibilité numérique, avec une partie théorique et des travaux pratiques.
+            </p>
+            <p>
+                <strong>Au programme :</strong>
+            </p>
+            <ul>
+                <li>Sensibilisation aux différents handicaps et aux technologies d'assistance.</li>
+                <li>Les principaux problèmes rencontrés par les personnes handicapées dans le numérique.</li>
+                <li>Création d'un site non accessible en 15 minutes avec l'IA.</li>
+                <li>Réparation des principaux problèmes de leur site, à la main et sans IA.</li>
+                <li>Méthodologie d'accessibilité en mode projet en entreprise.</li>
+                <li>Parcours des différents outils de tests (extensions, automatisations).</li>
+                <li>Parcours du RGAA et mini-audit de 25 critères.</li>
+                <li>Et pour finir, apprentissage du lecteur d'écran avec VoiceOver et TalkBack.</li>
+            </ul>
+        </PortfolioItem>
+    </div>
+</Section>
+
+<style>
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    ul {
+        margin: 0;
+        padding-left: 20px;
+    }
+
+    li {
+        font-family: 'Roboto', sans-serif;
+        margin-bottom: 10px;
+        font-size: 2rem;
+        line-height: 1.5;
+    }
+</style>

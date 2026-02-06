@@ -1,0 +1,5 @@
+all:
+  hosts:
+    # each host can be named after an IP or domain name
+    CHANGE_ME:
+      ansible_user: CHANGE_ME
