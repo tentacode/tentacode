@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>tentacode.dev — développeur fullstack freelance &amp; lead technique</title>
+  <meta name="description" content="Développeur fullstack freelance, lead technique et expert accessibilité. Bientôt disponible pour une prochaine mission ou un CDI." />
+
+  <link rel="stylesheet" href="assets/css/colors_and_type.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/landing.css" />
+</head>
+<body>
+  <template id="__bundler_thumbnail" data-bg-color="#FFF5F3">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect x="120" y="320" width="960" height="160" fill="#FFF5F3" stroke="#010101" stroke-width="8" rx="20"/>
+      <text x="600" y="438" text-anchor="middle"
+            font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif"
+            font-weight="700" font-size="96" letter-spacing="-3" fill="#010101">
+        tentacode<tspan fill="#8579DC">.</tspan>dev
+      </text>
+      <rect x="120" y="320" width="960" height="160" fill="none" stroke="#8579DC"
+            stroke-width="8" rx="20" transform="translate(18,18)" opacity="0.85"/>
+    </svg>
+  </template>
+
+  <a href="#main" class="tc-skip">Aller au contenu</a>
+
+  <!-- ============================================================
+       SECTION — HEADER
+       ============================================================ -->
+  <header class="site-header" data-screen-label="01 Header">
+    <div class="site-header__inner">
+      <a href="/" class="site-header__wordmark" aria-label="tentacode.dev — accueil">
+        tentacode<span class="wm-dot">.</span>dev
+      </a>
+
+      <nav class="site-header__nav" id="primary-nav" aria-label="Navigation principale">
+        <a href="#axes" aria-current="page">Compétences</a>
+        <a href="#projects">Projets</a>
+        <a href="#confs">Conférences</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a href="#contact" class="site-header__cta">
+        <span class="dot" aria-hidden="true"></span>
+        Bientôt dispo
+      </a>
+
+      <button type="button" class="site-header__burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primary-nav" id="burger-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="7" x2="21" y2="7" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="17" x2="21" y2="17" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         SECTION — HERO
+         ============================================================ -->
+    <section class="hero" aria-labelledby="hero-title" data-screen-label="02 Hero">
+      <div class="tc-container hero__inner">
+        <div class="hero__content">
+          <span class="hero__availability"> Disponible — mission ou CDI</span>
+
+          <h1 id="hero-title">
+            Développeur fullstack, lead technique, sensible à l’<span class="hl">accessibilité</span>.
+          </h1>
+
+          <p class="hero__lead">
+            Près de 20&nbsp;ans à concevoir et livrer du logiciel web et mobile. J’écris du back robuste, du front accessible, je tiens un cap quand je tiens une équipe, et j’outille mon quotidien avec l’AI quand ça fait sens.
+          </p>
+
+          <div class="hero__ctas">
+            <a href="#contact" class="hero__cta hero__cta--primary">
+              Me contacter
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#projects" class="hero__cta hero__cta--secondary">Voir les projets</a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__photo-frame">
+            <img src="assets/img/portrait.jpg" alt="Portrait de Gabriel Pillet." />
+          </div>
+
+          <div class="hero__sticker" aria-hidden="true">
+            <span class="label">user.role&nbsp;=</span>
+            <strong>"fullstack&nbsp;+&nbsp;lead"</strong>
+          </div>
+
+          <aside class="hero__code" aria-label="Carte de visite en code">
+<span class="c-comment">// hello.ts</span>
+<span class="c-acc">const</span> <span class="c-key">gabriel</span> = {
+  <span class="c-key">role</span>: <span class="c-str">"fullstack + lead"</span>,
+  <span class="c-key">xp</span>: <span class="c-str">"~20 ans"</span>,
+  <span class="c-key">stack</span>: [<span class="c-str">"php"</span>, <span class="c-str">"react"</span>, <span class="c-str">"pg"</span>],
+  <span class="c-key">a11y</span>: <span class="c-str">"RGAA / WCAG AA"</span>,
+};
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION — AXES (4 poster cards)
+         ============================================================ -->
+    <section class="axes" id="axes" aria-labelledby="axes-title" data-screen-label="03 Axes">
+      <div class="tc-container">
+        <div class="section-head">
+          <div>
+            <span class="tc-eyebrow tc-eyebrow--dot">Ce que je fais</span>
+            <h2 id="axes-title">Quatre axes, un seul interlocuteur.</h2>
+          </div>
+        </div>
+
+        <div class="axes__grid">
+          <article class="axis-card axis-card--dev">
+            <span class="axis-card__num">01 / DEV</span>
+            <div class="axis-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+            </div>
+            <h3>Dev fullstack</h3>
+            <p>Back, front, infra. Du ticket à la prod, en passant par les tests. PHP/Symfony et PostgreSQL en confort, React / Next / Astro en façade.</p>
+            <div class="axis-card__tags">
+              <span class="axis-card__tag">symfony</span>
+              <span class="axis-card__tag">postgres</span>
+              <span class="axis-card__tag">react</span>
+              <span class="axis-card__tag">next.js</span>
+            </div>
+          </article>
+
+          <article class="axis-card axis-card--lead">
+            <span class="axis-card__num">02 / LEAD</span>
+            <div class="axis-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h3>Lead technique</h3>
+            <p>Management bienveillant d’équipes 2–8 devs. Direction technique d’agence en arrière-plan. Productivité durable, plutôt que cadence à crédit.</p>
+            <div class="axis-card__tags">
+              <span class="axis-card__tag">team lead</span>
+              <span class="axis-card__tag">code review</span>
+              <span class="axis-card__tag">mentorat</span>
+            </div>
+          </article>
+
+          <article class="axis-card axis-card--a11y">
+            <span class="axis-card__num">03 / A11Y</span>
+            <div class="axis-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="4" />
+                <line x1="12" y1="2" x2="12" y2="6" />
+                <line x1="12" y1="18" x2="12" y2="22" />
+              </svg>
+            </div>
+            <h3>Accessibilité</h3>
+            <p>Formé à l’audit RGAA. WCAG AA par défaut, lecteurs d’écran testés à la main. Sur le web comme sur le mobile, sans poudre aux yeux.</p>
+            <div class="axis-card__tags">
+              <span class="axis-card__tag">RGAA</span>
+              <span class="axis-card__tag">WCAG AA</span>
+              <span class="axis-card__tag">audit</span>
+              <span class="axis-card__tag">NVDA / VoiceOver</span>
+            </div>
+          </article>
+
+          <article class="axis-card axis-card--ai">
+            <span class="axis-card__num">04 / AI</span>
+            <div class="axis-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M9 9h.01" />
+                <path d="M15 9h.01" />
+                <path d="M9 15c1 1 2 1.5 3 1.5s2-.5 3-1.5" />
+                <path d="M3 12h2" />
+                <path d="M19 12h2" />
+              </svg>
+            </div>
+            <h3>AI &amp; automatisation</h3>
+            <p>Dev assisté par AI au quotidien — Claude Code, Skills, API. Outillage interne, agents, automatisations métier. Sans hype et sans magie noire.</p>
+            <div class="axis-card__tags">
+              <span class="axis-card__tag">claude code</span>
+              <span class="axis-card__tag">skills</span>
+              <span class="axis-card__tag">agents</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION — SKILLS (organic tag cloud)
+         ============================================================ -->
+    <section class="skills" aria-labelledby="skills-title" data-screen-label="04 Skills">
+      <div class="tc-container">
+        <div class="skills__inner">
+          <div class="skills__head">
+            <span class="tc-eyebrow tc-eyebrow--dot">En vrac</span>
+            <h2 id="skills-title">La stack, et tout ce qui va autour.</h2>
+          </div>
+
+          <div class="skills__cloud" role="list" aria-label="Compétences techniques et humaines">
+            <span class="skill skill--xl skill--accent skill--rot-1" role="listitem">PHP / Symfony</span>
+            <span class="skill skill--l skill--rot-2" role="listitem">PostgreSQL</span>
+            <span class="skill skill--m skill--mono" role="listitem">React</span>
+            <span class="skill skill--s skill--mono" role="listitem">Next.js</span>
+            <span class="skill skill--l skill--inverse skill--rot-3" role="listitem">Accessibilité</span>
+            <span class="skill skill--m skill--mono" role="listitem">Astro</span>
+            <span class="skill skill--s skill--mono" role="listitem">React Native</span>
+            <span class="skill skill--xl skill--rot-4" role="listitem">Lead technique</span>
+            <span class="skill skill--m skill--soft" role="listitem">RGAA</span>
+            <span class="skill skill--s skill--mono" role="listitem">TypeScript</span>
+            <span class="skill skill--m skill--mono" role="listitem">Node</span>
+            <span class="skill skill--l skill--rot-5" role="listitem">QA &amp; tests E2E</span>
+            <span class="skill skill--xs skill--mono" role="listitem">Playwright</span>
+            <span class="skill skill--xs skill--mono" role="listitem">Cypress</span>
+            <span class="skill skill--m skill--accent skill--rot-2" role="listitem">Mentorat</span>
+            <span class="skill skill--s" role="listitem">Pair programming</span>
+            <span class="skill skill--xl skill--inverse skill--rot-1" role="listitem">Pragmatisme</span>
+            <span class="skill skill--s skill--mono" role="listitem">Docker</span>
+            <span class="skill skill--xs skill--mono" role="listitem">CI / CD</span>
+            <span class="skill skill--m skill--rot-3" role="listitem">Architecture</span>
+            <span class="skill skill--s skill--soft" role="listitem">Lecteurs d’écran</span>
+            <span class="skill skill--l skill--accent skill--rot-4" role="listitem">Bienveillance</span>
+            <span class="skill skill--s skill--mono" role="listitem">Claude Code</span>
+            <span class="skill skill--m" role="listitem">Audit</span>
+            <span class="skill skill--xs skill--mono" role="listitem">REST / GraphQL</span>
+            <span class="skill skill--s" role="listitem">Recrutement tech</span>
+            <span class="skill skill--xs skill--mono" role="listitem">Redis</span>
+            <span class="skill skill--m skill--rot-5" role="listitem">Pédagogie</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION — TESTIMONIAL (inverted)
+         ============================================================ -->
+    <section class="testimonial" aria-labelledby="testimonial-title" data-screen-label="05 Testimonial">
+      <div class="tc-container testimonial__inner">
+        <span class="tc-sr" id="testimonial-title">Témoignage</span>
+
+        <div class="testimonial__layout">
+          <div class="testimonial__person">
+            <div class="testimonial__avatar" role="img" aria-label="Avatar de Guillaume S.">GS</div>
+            <p class="testimonial__name">Guillaume S.</p>
+            <p class="testimonial__role">Développeur mobile senior</p>
+            <p class="testimonial__context">3 ans en équipe ensemble, dont 1 an en binôme sur un prototype d’app mobile.</p>
+            <a class="testimonial__linkedin" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.22 0z"/>
+              </svg>
+              Profil LinkedIn
+            </a>
+          </div>
+
+          <blockquote class="testimonial__quote">
+            Gabriel, en plus de fournir un travail de très bonne qualité, est quelqu’un d’extrêmement pédagogue&nbsp;; il ne refuse jamais d’aider ses collègues et met en place des choses pour souder l’équipe et la porter vers le haut. Toujours de bon conseil, il adore apprendre et se perfectionner. Un vrai plaisir de travailler avec lui.
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION — PROJECTS (bento)
+         ============================================================ -->
+    <section class="projects" id="projects" aria-labelledby="projects-title" data-screen-label="06 Projects">
+      <div class="tc-container">
+        <div class="section-head">
+          <div>
+            <span class="tc-eyebrow tc-eyebrow--dot">Réalisations récentes</span>
+            <h2 id="projects-title">Six projets, sortis et utilisés.</h2>
+          </div>
+          <a class="section-head__link" href="/projets">
+            Tout voir
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <div class="projects__bento">
+          <a class="project project--featured" href="/projets/dashboard-keyboard-first">
+            <div class="project__media media-1" aria-hidden="true">
+              <span class="project__media-placeholder">screenshot · placeholder</span>
+              <div class="project__tags">
+                <span class="project__tag">react</span>
+                <span class="project__tag">aria</span>
+                <span class="project__tag">audit</span>
+                <span class="project__tag">RGAA</span>
+              </div>
+            </div>
+            <div class="project__body">
+              <h3 class="project__title">Dashboard SaaS — refonte clavier-first</h3>
+              <p class="project__desc">Refonte d’un dashboard B2B de 200&nbsp;écrans pour qu’il soit pleinement navigable au clavier et au lecteur d’écran. Score Lighthouse a11y&nbsp;: 64 → 100.</p>
+            </div>
+          </a>
+
+          <a class="project project--sm" href="/projets/editeur-collaboratif">
+            <div class="project__media media-2" aria-hidden="true">
+              <span class="project__media-placeholder">screenshot</span>
+              <div class="project__tags">
+                <span class="project__tag">yjs</span>
+                <span class="project__tag">tiptap</span>
+              </div>
+            </div>
+            <div class="project__body">
+              <h3 class="project__title">Éditeur temps réel</h3>
+              <p class="project__desc">CRDT, offline-first, livré seul en 6 semaines.</p>
+            </div>
+          </a>
+
+          <a class="project project--sm" href="/projets/refonte-checkout">
+            <div class="project__media media-3" aria-hidden="true">
+              <span class="project__media-placeholder">screenshot</span>
+              <div class="project__tags">
+                <span class="project__tag">next.js</span>
+                <span class="project__tag">stripe</span>
+              </div>
+            </div>
+            <div class="project__body">
+              <h3 class="project__title">Refonte checkout e-commerce</h3>
+              <p class="project__desc">Lead d’une équipe de 3, drop-off réduit de 22%.</p>
+            </div>
+          </a>
+
+          <a class="project project--sm" href="/projets/audit-a11y-consumer-app">
+            <div class="project__media media-4" aria-hidden="true">
+              <span class="project__media-placeholder">screenshot</span>
+              <div class="project__tags">
+                <span class="project__tag">audit</span>
+                <span class="project__tag">RGAA</span>
+              </div>
+            </div>
+            <div class="project__body">
+              <h3 class="project__title">Audit RGAA + remediation</h3>
+              <p class="project__desc">App grand public 40 écrans, liste priorisée + PRs.</p>
+            </div>
+          </a>
+
+          <a class="project project--sm" href="/projets/automatisation-back-office">
+            <div class="project__media media-5" aria-hidden="true">
+              <span class="project__media-placeholder">screenshot</span>
+              <div class="project__tags">
+                <span class="project__tag">claude</span>
+                <span class="project__tag">node</span>
+              </div>
+            </div>
+            <div class="project__body">
+              <h3 class="project__title">Back-office assisté par AI</h3>
+              <p class="project__desc">Workflows internes outillés avec Claude API.</p>
+            </div>
+          </a>
+
+          <a class="project project--sm" href="/projets/app-mobile-accessible">
+            <div class="project__media media-6" aria-hidden="true">
+              <span class="project__media-placeholder">screenshot</span>
+              <div class="project__tags">
+                <span class="project__tag">react native</span>
+                <span class="project__tag">a11y</span>
+              </div>
+            </div>
+            <div class="project__body">
+              <h3 class="project__title">App mobile accessible</h3>
+              <p class="project__desc">React Native, audit VoiceOver / TalkBack inclus.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION — CONFERENCES
+         ============================================================ -->
+    <section class="confs" id="confs" aria-labelledby="confs-title" data-screen-label="07 Conferences">
+      <div class="tc-container">
+        <div class="section-head">
+          <div>
+            <span class="tc-eyebrow tc-eyebrow--dot">Sur scène</span>
+            <h2 id="confs-title">Conférences et talks.</h2>
+          </div>
+          <a class="section-head__link" href="/conferences">
+            Toutes les conférences
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <ul class="confs__list">
+          <li class="conf conf--upcoming">
+            <div class="conf__date">
+              Mai 2026
+              <span class="conf__event">Devoxx France</span>
+            </div>
+            <div class="conf__main">
+              <p class="conf__title">L’accessibilité, c’est aussi pour les devs.</p>
+              <p class="conf__cohost">Solo · ~45 min</p>
+            </div>
+            <a class="conf__link" href="#" aria-label="Détails de la conférence Devoxx France 2026">
+              Voir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </li>
+
+          <li class="conf">
+            <div class="conf__date">
+              Nov 2025
+              <span class="conf__event">BlendWebMix</span>
+            </div>
+            <div class="conf__main">
+              <p class="conf__title">Coder avec un agent : leçons du quotidien.</p>
+              <p class="conf__cohost">avec <strong>Charlotte M.</strong> · 40 min</p>
+            </div>
+            <a class="conf__link" href="#">
+              Voir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </li>
+
+          <li class="conf">
+            <div class="conf__date">
+              Oct 2025
+              <span class="conf__event">Sud Web</span>
+            </div>
+            <div class="conf__main">
+              <p class="conf__title">Tenir une équipe de dev sans la presser.</p>
+              <p class="conf__cohost">Solo · 30 min</p>
+            </div>
+            <a class="conf__link" href="#">
+              Voir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </li>
+
+          <li class="conf">
+            <div class="conf__date">
+              Juin 2025
+              <span class="conf__event">Paris Web</span>
+            </div>
+            <div class="conf__main">
+              <p class="conf__title">RGAA en pratique : ce qui marche vraiment.</p>
+              <p class="conf__cohost">avec <strong>Romain L.</strong> · 45 min</p>
+            </div>
+            <a class="conf__link" href="#">
+              Voir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </li>
+
+          <li class="conf">
+            <div class="conf__date">
+              Avr 2025
+              <span class="conf__event">Meetup Symfony Lyon</span>
+            </div>
+            <div class="conf__main">
+              <p class="conf__title">Décomposer un monolithe sans tout casser.</p>
+              <p class="conf__cohost">Solo · 30 min</p>
+            </div>
+            <a class="conf__link" href="#">
+              Voir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </li>
+
+          <li class="conf">
+            <div class="conf__date">
+              Mar 2025
+              <span class="conf__event">DevFest Lille</span>
+            </div>
+            <div class="conf__main">
+              <p class="conf__title">Recruter dev quand on est dev : l’honnête vérité.</p>
+              <p class="conf__cohost">Solo · 35 min</p>
+            </div>
+            <a class="conf__link" href="#">
+              Voir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </li>
+
+          <li class="conf">
+            <div class="conf__date">
+              Nov 2024
+              <span class="conf__event">Forum PHP</span>
+            </div>
+            <div class="conf__main">
+              <p class="conf__title">PostgreSQL : ce que je voudrais qu’on m’ait dit plus tôt.</p>
+              <p class="conf__cohost">avec <strong>Sophie K.</strong> · 50 min</p>
+            </div>
+            <a class="conf__link" href="#">
+              Voir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </li>
+
+          <li class="conf">
+            <div class="conf__date">
+              Sept 2024
+              <span class="conf__event">Codeurs en Seine</span>
+            </div>
+            <div class="conf__main">
+              <p class="conf__title">Le code review qui n’épuise personne.</p>
+              <p class="conf__cohost">Solo · 30 min</p>
+            </div>
+            <a class="conf__link" href="#">
+              Voir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </li>
+
+          <li class="conf">
+            <div class="conf__date">
+              Mai 2024
+              <span class="conf__event">Mixit</span>
+            </div>
+            <div class="conf__main">
+              <p class="conf__title">Frontend accessible : composants vs primitives.</p>
+              <p class="conf__cohost">avec <strong>Julien D.</strong> · 45 min</p>
+            </div>
+            <a class="conf__link" href="#">
+              Voir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </li>
+
+          <li class="conf">
+            <div class="conf__date">
+              Fev 2024
+              <span class="conf__event">Meetup React Paris</span>
+            </div>
+            <div class="conf__main">
+              <p class="conf__title">React Server Components : six mois après.</p>
+              <p class="conf__cohost">Solo · 30 min</p>
+            </div>
+            <a class="conf__link" href="#">
+              Voir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION — BLOG
+         ============================================================ -->
+    <section class="blog" id="blog" aria-labelledby="blog-title" data-screen-label="08 Blog">
+      <div class="tc-container">
+        <div class="section-head">
+          <div>
+            <span class="tc-eyebrow tc-eyebrow--dot">Derniers articles</span>
+            <h2 id="blog-title">Sur le blog.</h2>
+          </div>
+          <a class="section-head__link" href="/blog">
+            Tous les articles
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+
+        <div class="blog__grid">
+          <a class="post" href="/blog/agent-claude-au-quotidien">
+            <div class="post__head">
+              <span class="post__category">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M9 9h.01" />
+                  <path d="M15 9h.01" />
+                  <path d="M9 15c1 1 2 1.5 3 1.5s2-.5 3-1.5" />
+                </svg>
+                AI
+              </span>
+              <span class="post__date">12 mar. 2026</span>
+            </div>
+            <h3 class="post__title">Vivre un mois avec un agent dans son terminal.</h3>
+            <p class="post__excerpt">Bilan honnête après 30 jours à coder en tandem avec Claude Code : ce qui change vraiment, et ce qui n’a pas changé du tout.</p>
+          </a>
+
+          <a class="post" href="/blog/rgaa-checklist-pragmatique">
+            <div class="post__head">
+              <span class="post__category">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="4" />
+                </svg>
+                Accessibilité
+              </span>
+              <span class="post__date">28 jan. 2026</span>
+            </div>
+            <h3 class="post__title">Une checklist RGAA pragmatique, en 20 lignes.</h3>
+            <p class="post__excerpt">Pas de magie : juste les bons réflexes à intégrer dans la PR, le code review et la recette. Ça épargne 80% des galères en fin de projet.</p>
+          </a>
+
+          <a class="post" href="/blog/lead-sans-burn">
+            <div class="post__head">
+              <span class="post__category">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                </svg>
+                Lead
+              </span>
+              <span class="post__date">14 déc. 2025</span>
+            </div>
+            <h3 class="post__title">Tenir une équipe sans la cramer.</h3>
+            <p class="post__excerpt">La productivité n’est pas un sprint, c’est une cadence soutenable. Sept choses concrètes que je fais, en lead, pour préserver le cerveau collectif.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION — CONTACT
+         ============================================================ -->
+    <section class="contact" id="contact" aria-labelledby="contact-title" data-screen-label="09 Contact">
+      <div class="tc-container contact__inner">
+        <div>
+          <span class="tc-eyebrow tc-eyebrow--dot">Discutons</span>
+          <h2 id="contact-title">On en parle ?</h2>
+          <p class="contact__lead">
+            Une mission, un CDI, un audit, une conf à co-animer, un café pour faire connaissance. Je réponds vite et sans formulaire à rallonge.
+          </p>
+        </div>
+
+        <div class="contact__channels">
+          <a class="contact-channel" href="mailto:hello@tentacode.dev">
+            <div class="contact-channel__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <polyline points="22,7 12,13 2,7" />
+              </svg>
+            </div>
+            <div>
+              <div class="contact-channel__label">Mail</div>
+              <div class="contact-channel__value">hello@tentacode.dev</div>
+            </div>
+            <span class="contact-channel__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </span>
+          </a>
+
+          <a class="contact-channel" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+            <div class="contact-channel__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-channel__label">LinkedIn</div>
+              <div class="contact-channel__value">/in/gabrielpillet</div>
+            </div>
+            <span class="contact-channel__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </span>
+          </a>
+
+          <a class="contact-channel" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+            <div class="contact-channel__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.27-5.24-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.17a11.05 11.05 0 0 1 5.8 0c2.2-1.49 3.18-1.17 3.18-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-channel__label">GitHub</div>
+              <div class="contact-channel__value">/gabrielpillet</div>
+            </div>
+            <span class="contact-channel__arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       SECTION — FOOTER
+       ============================================================ -->
+  <footer class="site-footer" data-screen-label="10 Footer">
+    <div class="tc-container">
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <a href="/" class="site-header__wordmark" aria-label="tentacode.dev — accueil">
+            tentacode<span class="wm-dot">.</span>dev
+          </a>
+          <p class="site-footer__joke">
+            Bravo, t’as scrollé jusqu’en bas. À ce niveau de motivation, le café est offert — préviens-moi, je prépare la machine.
+          </p>
+        </div>
+
+        <nav aria-label="Pages">
+          <h6>Pages</h6>
+          <ul>
+            <li><a href="#axes">Compétences</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#confs">Conférences</a></li>
+            <li><a href="#blog">Blog</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Ailleurs">
+          <h6>Ailleurs</h6>
+          <ul>
+            <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://bsky.app/" target="_blank" rel="noopener noreferrer">Bluesky</a></li>
+            <li><a href="/rss.xml">Flux RSS</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Contact">
+          <h6>Contact</h6>
+          <ul>
+            <li><a href="mailto:hello@tentacode.dev">hello@tentacode.dev</a></li>
+            <li><a href="/cv.pdf">CV (PDF)</a></li>
+            <li><a href="/mentions-legales">Mentions légales</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="site-footer__legal">
+        <span>© 2026 Gabriel Pillet — fait avec soin et un peu trop de café.</span>
+        <span>v0.1 — design en cours</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Edit-mode defaults (Tweaks panel reads/writes this block) -->
+  <script>
+    window.__TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "accent": "#8579DC",
+      "hero": "sticker",
+      "mobile": false
+    }/*EDITMODE-END*/;
+  </script>
+
+  <!-- Page interactions: burger toggle, accent + hero variant apply -->
+  <script>
+    (function () {
+      const burger = document.getElementById('burger-btn');
+      const body = document.body;
+
+      // Burger toggle (real, not tweak)
+      burger.addEventListener('click', function () {
+        const isOpen = body.getAttribute('data-menu') === 'open';
+        body.setAttribute('data-menu', isOpen ? 'closed' : 'open');
+        burger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+        burger.setAttribute('aria-label', isOpen ? 'Ouvrir le menu' : 'Fermer le menu');
+      });
+
+      // Apply tweak defaults at boot
+      const t = window.__TWEAK_DEFAULTS || {};
+      if (t.accent) document.documentElement.style.setProperty('--tc-accent', t.accent);
+      body.setAttribute('data-hero', t.hero || 'frame');
+      if (t.mobile) body.setAttribute('data-mobile', 'true');
+      window.__applyTweaks = function (next) {
+        if (next.accent) document.documentElement.style.setProperty('--tc-accent', next.accent);
+        if (next.hero) body.setAttribute('data-hero', next.hero);
+        if ('mobile' in next) {
+          if (next.mobile) body.setAttribute('data-mobile', 'true');
+          else body.removeAttribute('data-mobile');
+        }
+      };
+    })();
+  </script>
+
+  <!-- ============================================================
+       TWEAKS PANEL — React + Babel, optional toolbar toggle
+       ============================================================ -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="assets/js/tweaks-panel.jsx"></script>
+  <script type="text/babel">
+    const { TweaksPanel, useTweaks, TweakSection, TweakRadio, TweakToggle, TweakColor } = window;
+
+    function Tweaks() {
+      const [t, setT] = useTweaks(window.__TWEAK_DEFAULTS);
+
+      // Live-apply on every change
+      React.useEffect(() => { window.__applyTweaks(t); }, [t]);
+
+      return (
+        <TweaksPanel title="Tweaks">
+          <TweakSection label="Accent">
+            <TweakColor
+              label="Couleur"
+              value={t.accent}
+              onChange={(v) => setT('accent', v)}
+              options={['#8579DC', '#E26D5A', '#2E7D4F', '#1F5FA8', '#F2B705']}
+            />
+          </TweakSection>
+
+          <TweakSection label="Hero">
+            <TweakRadio
+              label="Visuel"
+              value={t.hero}
+              onChange={(v) => setT('hero', v)}
+              options={[
+                { value: 'frame',   label: 'Cadre' },
+                { value: 'sticker', label: 'Sticker' },
+                { value: 'code',    label: 'Code' },
+              ]}
+            />
+          </TweakSection>
+
+          <TweakSection label="Aperçu">
+            <TweakToggle
+              label="Mode mobile"
+              value={t.mobile}
+              onChange={(v) => setT('mobile', v)}
+            />
+          </TweakSection>
+        </TweaksPanel>
+      );
+    }
+
+    const root = document.createElement('div');
+    document.body.appendChild(root);
+    ReactDOM.createRoot(root).render(<Tweaks />);
+  </script>
+</body>
+</html>

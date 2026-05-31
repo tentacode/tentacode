@@ -1,0 +1,164 @@
+/* =========================================================
+   tentacode.dev — Component styles
+   components.css  (Pure HTML/CSS, no interactive states)
+   ========================================================= */
+
+/* ---------- BUTTON ---------- */
+.tc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--tc-space-2);
+  padding: 10px 22px;
+  font-family: var(--tc-font-sans);
+  font-size: var(--tc-fs-body);
+  font-weight: var(--tc-weight-semibold);
+  line-height: 1.2;
+  text-decoration: none;
+  color: var(--tc-fg-1);
+  background: var(--tc-bg);
+  border: var(--tc-border);
+  border-radius: var(--tc-radius);
+  cursor: pointer;
+  box-shadow: var(--tc-shadow-sm);
+}
+.tc-btn--accent  { background: var(--tc-accent); color: var(--tc-fg-1); }
+.tc-btn--inverse { background: var(--tc-fg); color: var(--tc-bg); }
+.tc-btn--ghost   { background: transparent; box-shadow: none; }
+.tc-btn--sm { padding: 6px 14px; font-size: var(--tc-fs-small); }
+.tc-btn--lg { padding: 14px 28px; font-size: var(--tc-fs-h5); }
+
+/* ---------- INPUT ---------- */
+.tc-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tc-space-2);
+}
+.tc-field label, .tc-label {
+  font-size: var(--tc-fs-small);
+  font-weight: var(--tc-weight-semibold);
+  color: var(--tc-fg-1);
+}
+.tc-input,
+.tc-select,
+.tc-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: var(--tc-fs-body);
+  color: var(--tc-fg-1);
+  background: var(--tc-surface);
+  border: var(--tc-border);
+  border-radius: var(--tc-radius);
+  box-sizing: border-box;
+}
+.tc-textarea { min-height: 100px; resize: vertical; line-height: var(--tc-lh-normal); }
+.tc-input::placeholder, .tc-textarea::placeholder { color: var(--tc-fg-4); }
+.tc-hint { font-size: var(--tc-fs-small); color: var(--tc-fg-3); }
+
+/* Checkbox / radio — keep native, just space them */
+.tc-check { display: inline-flex; align-items: center; gap: var(--tc-space-2); font-size: var(--tc-fs-body); }
+.tc-check input { width: 20px; height: 20px; accent-color: var(--tc-accent-deep); }
+
+/* ---------- CARD ---------- */
+.tc-card {
+  background: var(--tc-surface);
+  border: var(--tc-border);
+  border-radius: var(--tc-radius);
+  padding: var(--tc-space-6);
+}
+.tc-card--lift  { box-shadow: var(--tc-shadow); }
+.tc-card--feat  { box-shadow: var(--tc-shadow-accent); }
+.tc-card--inset { background: var(--tc-bg); }
+
+/* ---------- BADGE / TAG ---------- */
+.tc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-size: var(--tc-fs-micro);
+  font-weight: var(--tc-weight-semibold);
+  letter-spacing: var(--tc-ls-wide);
+  text-transform: uppercase;
+  color: var(--tc-fg-1);
+  background: var(--tc-bg);
+  border: var(--tc-border);
+  border-radius: var(--tc-radius-pill);
+  line-height: 1;
+}
+.tc-badge--accent  { background: var(--tc-accent); }
+.tc-badge--success { background: var(--tc-success-soft); color: var(--tc-success); }
+.tc-badge--warning { background: var(--tc-warning-soft); color: var(--tc-warning); }
+.tc-badge--error   { background: var(--tc-error-soft);   color: var(--tc-error); }
+.tc-badge--info    { background: var(--tc-info-soft);    color: var(--tc-info); }
+
+/* ---------- TAG (square corners variant for tech stack) ---------- */
+.tc-tag {
+  display: inline-flex;
+  padding: 4px 10px;
+  font-family: var(--tc-font-mono);
+  font-size: var(--tc-fs-micro);
+  color: var(--tc-fg-1);
+  background: var(--tc-bg);
+  border: var(--tc-border);
+  border-radius: var(--tc-radius-sm);
+  line-height: 1.2;
+}
+
+/* ---------- ALERT ---------- */
+.tc-alert {
+  display: flex;
+  gap: var(--tc-space-3);
+  padding: var(--tc-space-4) var(--tc-space-5);
+  border: var(--tc-border);
+  border-radius: var(--tc-radius);
+  background: var(--tc-surface);
+}
+.tc-alert__title { font-weight: var(--tc-weight-semibold); margin: 0 0 4px; }
+.tc-alert__body  { margin: 0; color: var(--tc-fg-2); font-size: var(--tc-fs-small); }
+.tc-alert--success { background: var(--tc-success-soft); }
+.tc-alert--warning { background: var(--tc-warning-soft); }
+.tc-alert--error   { background: var(--tc-error-soft); }
+.tc-alert--info    { background: var(--tc-info-soft); }
+
+/* ---------- NAV LINK ---------- */
+.tc-nav {
+  display: flex;
+  gap: var(--tc-space-5);
+  align-items: center;
+}
+.tc-nav a {
+  font-size: var(--tc-fs-body);
+  font-weight: var(--tc-weight-medium);
+  color: var(--tc-fg-1);
+  text-decoration: none;
+}
+.tc-nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+  text-decoration-color: var(--tc-accent);
+}
+
+/* ---------- SECTION ---------- */
+.tc-section { padding: var(--tc-space-8) var(--tc-space-5); }
+.tc-section--invert { background: var(--tc-fg); color: var(--tc-bg); }
+.tc-section--invert h1, .tc-section--invert h2, .tc-section--invert h3 { color: var(--tc-bg); }
+
+/* ---------- LAYOUT ---------- */
+.tc-container { max-width: var(--tc-container); margin: 0 auto; }
+
+/* ---------- SKIP LINK (a11y) ---------- */
+.tc-skip {
+  position: absolute;
+  top: -100px;
+  left: 12px;
+  background: var(--tc-fg);
+  color: var(--tc-bg);
+  padding: 8px 14px;
+  border-radius: var(--tc-radius-sm);
+  text-decoration: none;
+  z-index: 999;
+}
+.tc-skip:focus { top: 12px; }
