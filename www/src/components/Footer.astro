@@ -9,7 +9,7 @@ import IconArrowUpRight from './icons/IconArrowUpRight.astro';
       <div class="site-footer__brand">
         <Wordmark size="lg" />
         <p>
-          Bravo, t'as scrollé jusqu'en bas. À ce niveau de motivation, le café est offert — préviens-moi, je prépare la machine.
+          "Fais le ou ne le fais pas. Il n'y a pas d'essai." — Yoda après 10 prompts à Claude qui n'arrive pas à corriger le responsive et qui dit "Je vais essayer une autre approche.".
         </p>
       </div>
 
@@ -26,22 +26,23 @@ import IconArrowUpRight from './icons/IconArrowUpRight.astro';
       <nav aria-label="Ailleurs">
         <h2>Ailleurs</h2>
         <ul>
-          <li><a href="https://github.com/tentacode" target="_blank" rel="noopener noreferrer">GitHub<span class="tc-sr"> (ouvre un nouvel onglet)</span></a></li>
-          <li><a href="https://www.linkedin.com/in/gabrielpillet" target="_blank" rel="noopener noreferrer">LinkedIn<span class="tc-sr"> (ouvre un nouvel onglet)</span></a></li>
-          <li><a href="https://bsky.app/" target="_blank" rel="noopener noreferrer">Bluesky<span class="tc-sr"> (ouvre un nouvel onglet)</span></a></li>
-          <li><a href="/rss.xml">Flux RSS</a></li>
+          <li><a class="footer-extlink" href="https://github.com/tentacode" target="_blank" rel="noopener noreferrer">GitHub 
+              <IconArrowUpRight aria-hidden="true" /><span class="tc-sr">, nouvelle fenêtre</span></a></li>
+          <li><a class="footer-extlink" href="https://www.linkedin.com/in/gabrielpillet" target="_blank" rel="noopener noreferrer">LinkedIn
+              <IconArrowUpRight aria-hidden="true" /><span class="tc-sr">, nouvelle fenêtre</span></a></li>
+          <li><a class="footer-extlink" href="https://bsky.app/profile/tentacode.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky
+              <IconArrowUpRight aria-hidden="true" /><span class="tc-sr">, nouvelle fenêtre</span></a></li>
         </ul>
       </nav>
 
       <nav aria-label="Contact">
         <h2>Contact</h2>
         <ul>
-          <li><a href="mailto:hello@tentacode.dev">hello@tentacode.dev</a></li>
+          <li><a href="mailto:bonjour@tentacode.dev">bonjour@tentacode.dev</a></li>
           <li>
-            <a class="footer-extlink" href="https://cv.tentacode.dev" target="_blank" rel="noopener noreferrer">
+            <a class="footer-extlink" href="https://tentacode.github.io/curriculum/" target="_blank" rel="noopener noreferrer" aria-label="Curriculum Vitae en ligne, nouvelle fenêtre">
               CV en ligne
               <IconArrowUpRight aria-hidden="true" />
-              <span class="tc-sr">(ouvre un nouvel onglet)</span>
             </a>
           </li>
           <li><a href="/mentions-legales">Mentions légales</a></li>

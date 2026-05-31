@@ -1,6 +1,10 @@
 ---
+import { getCollection } from 'astro:content';
 import ProjectCard from './ProjectCard.astro';
 import IconArrowRight from '../icons/IconArrowRight.astro';
+
+const allProjects = await getCollection('projets');
+const projects = allProjects.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <section class="projects" id="projects" aria-labelledby="projects-title">
@@ -17,54 +21,16 @@ import IconArrowRight from '../icons/IconArrowRight.astro';
     </div>
 
     <div class="projects__bento">
-      <ProjectCard
-        variant="featured"
-        href="/projets/dashboard-keyboard-first"
-        title="Dashboard SaaS — refonte clavier-first"
-        description="Refonte d'un dashboard B2B de 200 écrans pour qu'il soit pleinement navigable au clavier et au lecteur d'écran. Score Lighthouse a11y : 64 → 100."
-        tags={["react", "aria", "audit", "RGAA"]}
-        mediaClass="media-1"
-      />
-      <ProjectCard
-        variant="sm"
-        href="/projets/editeur-collaboratif"
-        title="Éditeur temps réel"
-        description="CRDT, offline-first, livré seul en 6 semaines."
-        tags={["yjs", "tiptap"]}
-        mediaClass="media-2"
-      />
-      <ProjectCard
-        variant="sm"
-        href="/projets/refonte-checkout"
-        title="Refonte checkout e-commerce"
-        description="Lead d'une équipe de 3, drop-off réduit de 22%."
-        tags={["next.js", "stripe"]}
-        mediaClass="media-3"
-      />
-      <ProjectCard
-        variant="sm"
-        href="/projets/audit-a11y-consumer-app"
-        title="Audit RGAA + remediation"
-        description="App grand public 40 écrans, liste priorisée + PRs."
-        tags={["audit", "RGAA"]}
-        mediaClass="media-4"
-      />
-      <ProjectCard
-        variant="sm"
-        href="/projets/automatisation-back-office"
-        title="Back-office assisté par AI"
-        description="Workflows internes outillés avec Claude API."
-        tags={["claude", "node"]}
-        mediaClass="media-5"
-      />
-      <ProjectCard
-        variant="sm"
-        href="/projets/app-mobile-accessible"
-        title="App mobile accessible"
-        description="React Native, audit VoiceOver / TalkBack inclus."
-        tags={["react native", "a11y"]}
-        mediaClass="media-6"
-      />
+      {projects.map((p) => (
+        <ProjectCard
+          variant={p.data.variant}
+          href={`/projets/${p.id.replace(/\.md$/, '')}`}
+          title={p.data.title}
+          description={p.data.description}
+          tags={p.data.tags}
+          mediaClass={p.data.mediaClass}
+        />
+      ))}
     </div>
   </div>
 </section>
