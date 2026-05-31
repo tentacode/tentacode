@@ -98,6 +98,10 @@ There is no `global.css`. If a genuine need for global styles arises, ask before
 2. ESLint — linting
 3. Playwright smoke test — visits the homepage, asserts it loads with no console errors
 
+### Debugging
+
+The server is probably already running on `localhost:1447`. If not, start it with `make serve`. Use browser dev tools to inspect the page, check console logs, and debug.
+
 ## infrastructure/ (Ansible — to be created)
 
 Ansible playbooks for deploying the Astro build output to the server.

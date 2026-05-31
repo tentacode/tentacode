@@ -1,0 +1,168 @@
+---
+---
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="tc-container hero__inner">
+    <div class="hero__content">
+      <span class="hero__availability">Disponible — mission ou CDI</span>
+
+      <h1 id="hero-title">
+        Développeur fullstack, lead technique, sensible à l'<span class="hl">accessibilité</span>.
+      </h1>
+
+      <p class="hero__lead">
+        Près de 20&nbsp;ans à concevoir et livrer du logiciel web et mobile. J'écris du back robuste, du front accessible, je tiens un cap quand je tiens une équipe, et j'outille mon quotidien avec l'AI quand ça fait sens.
+      </p>
+
+      <div class="hero__ctas">
+        <a href="#contact" class="hero__cta hero__cta--primary">
+          Me contacter
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+        <a href="#projects" class="hero__cta hero__cta--secondary">Voir les projets</a>
+      </div>
+    </div>
+
+    <div class="hero__visual">
+      <div class="hero__photo-frame">
+        <img src="/img/portrait.jpg" alt="Portrait de Gabriel Pillet." width="420" height="525" />
+      </div>
+
+      <div class="hero__sticker" aria-hidden="true">
+        <span class="label">user.role&nbsp;=</span>
+        <strong>"fullstack&nbsp;+&nbsp;lead"</strong>
+      </div>
+
+      <aside class="hero__code" aria-label="Carte de visite en code">
+        <span class="c-comment">// hello.ts</span>
+        <span class="c-acc">const</span> <span class="c-key">gabriel</span> = {"{"}
+        <br />  <span class="c-key">role</span>: <span class="c-str">"fullstack + lead"</span>,
+        <br />  <span class="c-key">xp</span>: <span class="c-str">"~20 ans"</span>,
+        <br />  <span class="c-key">stack</span>: [<span class="c-str">"php"</span>, <span class="c-str">"react"</span>, <span class="c-str">"pg"</span>],
+        <br />  <span class="c-key">a11y</span>: <span class="c-str">"RGAA / WCAG AA"</span>,
+        <br />{"}"}
+        <span class="c-punc">;</span>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.body.setAttribute('data-hero', 'code');
+</script>
+
+<style>
+  .hero { padding: var(--tc-space-9) 0 var(--tc-space-8); }
+  .hero__inner {
+    display: grid; grid-template-columns: 1.25fr 1fr;
+    gap: var(--tc-space-8); align-items: center;
+  }
+
+  .hero__availability {
+    display: inline-flex; align-items: center; gap: var(--tc-space-2);
+    padding: 6px 14px;
+    background: var(--tc-surface);
+    border: var(--tc-border); border-radius: var(--tc-radius-pill);
+    font-size: 13px; font-weight: 700;
+    color: var(--tc-fg-1);
+    margin-bottom: var(--tc-space-5);
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 6vw, 68px);
+    letter-spacing: -0.03em;
+    margin: 0 0 var(--tc-space-5);
+  }
+  .hero h1 .hl {
+    background: linear-gradient(transparent 65%, var(--tc-accent) 65%);
+    padding: 0 4px;
+  }
+  .hero__lead {
+    font-size: 19px; line-height: 1.55;
+    color: var(--tc-fg-2);
+    max-width: 52ch;
+    margin: 0 0 var(--tc-space-6);
+  }
+  .hero__ctas { display: flex; flex-wrap: wrap; gap: var(--tc-space-3); align-items: center; }
+  .hero__cta {
+    display: inline-flex; align-items: center; gap: var(--tc-space-2);
+    padding: 14px 24px;
+    font-family: var(--tc-font-sans); font-weight: 700; font-size: 16px;
+    text-decoration: none;
+    border: var(--tc-border); border-radius: var(--tc-radius);
+    box-shadow: var(--tc-shadow-sm);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
+  .hero__cta:hover { transform: translate(-1px, -1px); box-shadow: var(--tc-shadow); }
+  .hero__cta:active { transform: translate(1px, 1px); box-shadow: var(--tc-shadow-sm); }
+  .hero__cta:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 2px; }
+  .hero__cta--primary  { background: var(--tc-fg-1); color: var(--tc-bg); }
+  .hero__cta--secondary { background: var(--tc-bg); color: var(--tc-fg-1); }
+  .hero__cta svg { width: 18px; height: 18px; }
+
+  /* Visual */
+  .hero__visual { position: relative; max-width: 420px; justify-self: end; width: 100%; }
+
+  .hero__photo-frame {
+    position: relative;
+    border: var(--tc-border); border-radius: var(--tc-radius);
+    box-shadow: var(--tc-shadow-accent);
+    overflow: hidden;
+    background: var(--tc-accent-soft);
+    aspect-ratio: 4 / 5;
+  }
+  .hero__photo-frame img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
+  }
+
+  .hero__sticker {
+    position: absolute;
+    bottom: -18px; left: -18px;
+    background: var(--tc-bg);
+    border: var(--tc-border); border-radius: var(--tc-radius);
+    box-shadow: var(--tc-shadow-sm);
+    padding: 10px 14px;
+    font-family: var(--tc-font-mono); font-size: 12px;
+    display: flex; align-items: center; gap: 8px;
+    transform: rotate(-3deg);
+  }
+  .hero__sticker strong { color: var(--tc-fg-1); }
+  .hero__sticker .label { color: var(--tc-fg-3); }
+
+  .hero__code {
+    position: absolute;
+    right: -32px; bottom: -36px;
+    width: min(320px, 80%);
+    background: var(--tc-fg-1);
+    color: var(--tc-bg);
+    border: var(--tc-border); border-radius: var(--tc-radius);
+    padding: 18px 20px;
+    font-family: var(--tc-font-mono); font-size: 12px; line-height: 1.6;
+    box-shadow: var(--tc-shadow);
+    display: none;
+  }
+  .hero__code .c-comment { color: #888; }
+  .hero__code .c-key { color: #FFF5F3; }
+  .hero__code .c-str { color: #FFD9CF; }
+  .hero__code .c-acc { color: var(--tc-accent); }
+
+  /* Variant display via data-hero on body */
+  :global(body[data-hero="frame"]) .hero__sticker { display: flex; }
+  :global(body[data-hero="frame"]) .hero__code { display: none; }
+  :global(body[data-hero="sticker"]) .hero__photo-frame { box-shadow: var(--tc-shadow); }
+  :global(body[data-hero="sticker"]) .hero__sticker { display: flex; }
+  :global(body[data-hero="sticker"]) .hero__code { display: none; }
+  :global(body[data-hero="code"]) .hero__sticker { display: none; }
+  :global(body[data-hero="code"]) .hero__code { display: block; }
+  :global(body[data-hero="code"]) .hero__visual { padding-right: 0; padding-bottom: 24px; }
+
+  @media (max-width: 760px) {
+    .hero { padding: var(--tc-space-7) 0; }
+    .hero__inner { grid-template-columns: 1fr; gap: var(--tc-space-7); }
+    .hero__visual { justify-self: stretch; max-width: 360px; margin: 0 auto; }
+    .hero__code { right: -16px; bottom: -24px; width: min(280px, 90%); }
+  }
+</style>

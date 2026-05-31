@@ -1,0 +1,91 @@
+---
+import AxisCard from './AxisCard.astro';
+---
+
+<section class="axes" id="axes" aria-labelledby="axes-title">
+  <div class="tc-container">
+    <div class="section-head">
+      <div>
+        <span class="tc-eyebrow tc-eyebrow--dot">Ce que je fais</span>
+        <h2 id="axes-title">Quatre axes, un seul interlocuteur.</h2>
+      </div>
+    </div>
+
+    <div class="axes__grid">
+      <AxisCard
+        num="01 / DEV"
+        variant="dev"
+        title="Dev fullstack"
+        description="Back, front, infra. Du ticket à la prod, en passant par les tests. PHP/Symfony et PostgreSQL en confort, React / Next / Astro en façade."
+        tags={["symfony", "postgres", "react", "next.js"]}
+      >
+        <svg slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="16 18 22 12 16 6" />
+          <polyline points="8 6 2 12 8 18" />
+        </svg>
+      </AxisCard>
+
+      <AxisCard
+        num="02 / LEAD"
+        variant="lead"
+        title="Lead technique"
+        description="Management bienveillant d'équipes 2–8 devs. Direction technique d'agence en arrière-plan. Productivité durable, plutôt que cadence à crédit."
+        tags={["team lead", "code review", "mentorat"]}
+      >
+        <svg slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
+      </AxisCard>
+
+      <AxisCard
+        num="03 / A11Y"
+        variant="a11y"
+        title="Accessibilité"
+        description="Formé à l'audit RGAA. WCAG AA par défaut, lecteurs d'écran testés à la main. Sur le web comme sur le mobile, sans poudre aux yeux."
+        tags={["RGAA", "WCAG AA", "audit", "NVDA / VoiceOver"]}
+      >
+        <svg slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" />
+          <circle cx="12" cy="12" r="4" />
+          <line x1="12" y1="2" x2="12" y2="6" />
+          <line x1="12" y1="18" x2="12" y2="22" />
+        </svg>
+      </AxisCard>
+
+      <AxisCard
+        num="04 / AI"
+        variant="ai"
+        title="AI & automatisation"
+        description="Dev assisté par AI au quotidien — Claude Code, Skills, API. Outillage interne, agents, automatisations métier. Sans hype et sans magie noire."
+        tags={["claude code", "skills", "agents"]}
+      >
+        <svg slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="2" />
+          <path d="M9 9h.01" />
+          <path d="M15 9h.01" />
+          <path d="M9 15c1 1 2 1.5 3 1.5s2-.5 3-1.5" />
+          <path d="M3 12h2" />
+          <path d="M19 12h2" />
+        </svg>
+      </AxisCard>
+    </div>
+  </div>
+</section>
+
+<style>
+  .axes { padding: var(--tc-space-8) 0; }
+  .axes__grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: var(--tc-space-5);
+  }
+
+  @media (max-width: 1080px) {
+    .axes__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 760px) {
+    .axes__grid { grid-template-columns: 1fr; }
+  }
+</style>

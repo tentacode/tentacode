@@ -1,0 +1,171 @@
+---
+---
+
+<section class="skills" aria-labelledby="skills-title">
+  <div class="tc-container">
+    <div class="skills__inner" id="skills-inner">
+      <div class="skills__head">
+        <span class="tc-eyebrow tc-eyebrow--dot">La boîte à outils</span>
+        <h2 id="skills-title">La stack, et tout ce qui va autour.</h2>
+        <p class="skills__hint" id="skills-hint" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 11V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2"/>
+            <path d="M14 10V4a2 2 0 0 0-2-2 2 2 0 0 0-2 2v2"/>
+            <path d="M10 10.5V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v8"/>
+            <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
+          </svg>
+          Attrape une brique, secoue le tas.
+        </p>
+      </div>
+
+      <div class="skills__controls" id="skills-controls">
+        <button type="button" class="skills__btn skills__btn--primary" id="skills-tidy" aria-pressed="false">
+          <svg class="skills__ico-tidy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+          <svg class="skills__ico-mix" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 2l3 3-3 3"/>
+            <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+            <path d="M6 22l-3-3 3-3"/>
+            <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+          </svg>
+          <span id="skills-tidy-label">Ranger</span>
+        </button>
+        <button type="button" class="skills__btn" id="skills-shake">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="23 4 23 10 17 10"/>
+            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+          </svg>
+          Secouer
+        </button>
+      </div>
+
+      <ul class="skills__pile" id="skills-pile" role="list" aria-label="Compétences techniques et humaines">
+        <li class="brick brick--xl brick--accent" role="listitem">PHP / Symfony</li>
+        <li class="brick brick--l" role="listitem">React</li>
+        <li class="brick brick--l brick--inverse" role="listitem">PostgreSQL</li>
+        <li class="brick brick--xl" role="listitem">Accessibilité</li>
+        <li class="brick brick--mono" role="listitem">TypeScript</li>
+        <li class="brick brick--l brick--accent" role="listitem">Lead technique</li>
+        <li class="brick brick--mono" role="listitem">Next.js</li>
+        <li class="brick brick--soft" role="listitem">RGAA</li>
+        <li class="brick brick--mono" role="listitem">Node</li>
+        <li class="brick" role="listitem">Mentorat</li>
+        <li class="brick brick--mono brick--s" role="listitem">Astro</li>
+        <li class="brick brick--l brick--soft" role="listitem">Bienveillance</li>
+        <li class="brick brick--mono brick--s" role="listitem">Docker</li>
+        <li class="brick brick--l brick--inverse" role="listitem">QA &amp; tests E2E</li>
+        <li class="brick brick--mono brick--s" role="listitem">Playwright</li>
+        <li class="brick brick--xl brick--inverse" role="listitem">Pragmatisme</li>
+        <li class="brick brick--mono" role="listitem">React Native</li>
+        <li class="brick" role="listitem">Audit</li>
+        <li class="brick brick--accent" role="listitem">Claude Code</li>
+        <li class="brick brick--mono brick--s" role="listitem">CI / CD</li>
+        <li class="brick" role="listitem">Pair programming</li>
+        <li class="brick brick--l" role="listitem">Architecture</li>
+        <li class="brick brick--mono brick--s" role="listitem">Cypress</li>
+        <li class="brick brick--soft brick--s" role="listitem">WCAG AA</li>
+        <li class="brick" role="listitem">Pédagogie</li>
+        <li class="brick brick--mono brick--s" role="listitem">Redis</li>
+        <li class="brick brick--mono" role="listitem">REST / GraphQL</li>
+        <li class="brick brick--s" role="listitem">Recrutement tech</li>
+        <li class="brick brick--mono brick--s" role="listitem">Lecteurs d'écran</li>
+        <li class="brick brick--accent brick--s" role="listitem">Agents</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.20.0/matter.min.js" crossorigin="anonymous"></script>
+<script is:inline src="/js/skills-pile.js"></script>
+
+<style>
+  .skills { padding: var(--tc-space-8) 0; }
+  .skills__inner {
+    position: relative;
+    padding: 0;
+  }
+  .skills__head { max-width: 56ch; margin-bottom: var(--tc-space-5); position: relative; }
+  .skills__hint {
+    display: none;
+    align-items: center; gap: 8px;
+    font-family: var(--tc-font-mono); font-size: 13px;
+    color: var(--tc-fg-3); margin: var(--tc-space-3) 0 0;
+  }
+  .skills__hint svg { width: 16px; height: 16px; color: var(--tc-accent-deep); }
+  :global(.skills__inner.is-physics) .skills__hint { display: inline-flex; }
+
+  .skills__controls {
+    position: absolute; top: 0; right: 0;
+    display: none; align-items: center; gap: 10px;
+    z-index: 3;
+  }
+  :global(.skills__inner.is-physics) .skills__controls { display: flex; }
+
+  .skills__btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--tc-font-mono); font-size: 13px; font-weight: 700;
+    color: var(--tc-fg-1);
+    padding: 8px 14px;
+    background: var(--tc-bg);
+    border: 2px solid var(--tc-fg-1); border-radius: var(--tc-radius-pill);
+    box-shadow: var(--tc-shadow-sm);
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s ease;
+  }
+  .skills__btn svg { width: 15px; height: 15px; }
+  .skills__btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 0 var(--tc-fg-1); }
+  .skills__btn:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 0 var(--tc-fg-1); }
+  .skills__btn:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 2px; }
+  .skills__btn--primary { background: var(--tc-accent); }
+
+  .skills__ico-mix { display: none; }
+  .skills__btn--primary[aria-pressed="true"] .skills__ico-tidy { display: none; }
+  .skills__btn--primary[aria-pressed="true"] .skills__ico-mix { display: inline; }
+
+  .skills__pile {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start;
+  }
+  :global(.skills__pile.is-physics) {
+    display: block; position: relative;
+    height: 460px;
+    margin-top: var(--tc-space-4);
+    overflow: hidden;
+    touch-action: none;
+    cursor: grab;
+  }
+  :global(.skills__pile.is-physics:active) { cursor: grabbing; }
+
+  .brick {
+    font-family: var(--tc-font-display); font-weight: 700;
+    font-size: 18px; line-height: 1;
+    padding: 12px 18px;
+    border: 3px solid var(--tc-fg-1);
+    border-radius: var(--tc-radius-sm);
+    background: var(--tc-bg); color: var(--tc-fg-1);
+    white-space: nowrap;
+    box-shadow: var(--tc-shadow-sm);
+    user-select: none; -webkit-user-select: none;
+  }
+  :global(.skills__pile.is-physics) .brick {
+    position: absolute; top: 0; left: 0;
+    margin: 0; will-change: transform;
+    opacity: 0; transition: opacity 0.25s ease;
+  }
+  :global(.skills__pile.is-physics) :global(.brick.is-live) { opacity: 1; }
+
+  .brick--mono    { font-family: var(--tc-font-mono); font-weight: 500; font-size: 15px; }
+  .brick--accent  { background: var(--tc-accent); }
+  .brick--inverse { background: var(--tc-fg-1); color: var(--tc-bg); }
+  .brick--soft    { background: var(--tc-accent-soft); }
+  .brick--s  { font-size: 14px; padding: 9px 14px; }
+  .brick--l  { font-size: 22px; padding: 14px 20px; }
+  .brick--xl { font-size: 28px; padding: 16px 24px; letter-spacing: -0.02em; }
+
+  .skills__pile:not(:global(.is-physics)) .brick:nth-child(3n)   { transform: rotate(-2deg); }
+  .skills__pile:not(:global(.is-physics)) .brick:nth-child(3n+1) { transform: rotate(1.5deg); }
+  .skills__pile:not(:global(.is-physics)) .brick:nth-child(4n+2) { transform: rotate(-1deg); }
+</style>

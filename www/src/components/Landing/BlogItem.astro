@@ -1,0 +1,55 @@
+---
+interface Props {
+  href: string;
+  category: string;
+  date: string;
+  title: string;
+  excerpt: string;
+}
+
+const { href, category, date, title, excerpt } = Astro.props;
+---
+
+<a class="post" href={href}>
+  <div class="post__head">
+    <span class="post__category">
+      <slot name="icon" />
+      {category}
+    </span>
+    <span class="post__date">{date}</span>
+  </div>
+  <h3 class="post__title">{title}</h3>
+  <p class="post__excerpt">{excerpt}</p>
+</a>
+
+<style>
+  .post {
+    display: flex; flex-direction: column; gap: var(--tc-space-3);
+    text-decoration: none; color: var(--tc-fg-1);
+    border-top: 3px solid var(--tc-fg-1);
+    padding-top: var(--tc-space-4);
+    transition: color 0.15s ease;
+  }
+  .post:focus-visible {
+    outline: 3px solid var(--tc-accent);
+    outline-offset: 4px;
+    border-radius: 3px;
+  }
+  .post__head {
+    display: flex; align-items: center; justify-content: space-between;
+    font-family: var(--tc-font-mono); font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .post__category {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--tc-fg-1); font-weight: 700;
+  }
+  .post__category :global(svg) { width: 16px; height: 16px; }
+  .post__date { color: var(--tc-fg-3); }
+  .post__title {
+    font-family: var(--tc-font-display); font-weight: 700;
+    font-size: 22px; line-height: 1.2; margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .post__excerpt { font-size: 14px; color: var(--tc-fg-2); margin: 0; line-height: 1.5; }
+</style>

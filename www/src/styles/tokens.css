@@ -1,0 +1,213 @@
+/* =========================================================
+   tentacode.dev — Design Tokens
+   ========================================================= */
+
+@font-face {
+  font-family: "Lexend Deca";
+  src: url("/fonts/LexendDeca-VariableFont_wght.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Brand */
+  --tc-bg:       #FFF5F3;
+  --tc-fg:       #010101;
+  --tc-accent:   #8579DC;
+
+  /* Surfaces */
+  --tc-surface:        #FFFFFF;
+  --tc-surface-sunk:   #F5E9E5;
+  --tc-overlay:        rgba(1, 1, 1, 0.55);
+
+  /* Accent variants */
+  --tc-accent-soft:    #E8E4F8;
+  --tc-accent-deep:    #5B4FB0;
+
+  /* Semantic */
+  --tc-success:        #2E7D4F;
+  --tc-success-soft:   #DCEFE2;
+  --tc-warning:        #B86E00;
+  --tc-warning-soft:   #FBE8C9;
+  --tc-error:          #C0341D;
+  --tc-error-soft:     #F8DCD5;
+  --tc-info:           #1F5FA8;
+  --tc-info-soft:      #D9E6F5;
+
+  /* Foreground scale */
+  --tc-fg-1:   #010101;
+  --tc-fg-2:   #2A2A2A;
+  --tc-fg-3:   #545454;
+  --tc-fg-4:   #767676;
+
+  /* Typography */
+  --tc-font-display: "Lexend Deca", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --tc-font-sans: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --tc-font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo,
+                  Consolas, "Liberation Mono", monospace;
+
+  --tc-weight-regular: 400;
+  --tc-weight-medium:  500;
+  --tc-weight-semibold:600;
+  --tc-weight-bold:    700;
+
+  --tc-fs-display: 4rem;
+  --tc-fs-h1:      3rem;
+  --tc-fs-h2:      2.25rem;
+  --tc-fs-h3:      1.75rem;
+  --tc-fs-h4:      1.375rem;
+  --tc-fs-h5:      1.125rem;
+  --tc-fs-body:    1rem;
+  --tc-fs-small:   0.875rem;
+  --tc-fs-micro:   0.75rem;
+
+  --tc-lh-tight:    1.1;
+  --tc-lh-snug:     1.25;
+  --tc-lh-normal:   1.5;
+  --tc-lh-relaxed:  1.7;
+
+  --tc-ls-tight:    -0.02em;
+  --tc-ls-normal:    0;
+  --tc-ls-wide:      0.04em;
+
+  /* Spacing (4px base) */
+  --tc-space-0:  0;
+  --tc-space-1:  0.25rem;
+  --tc-space-2:  0.5rem;
+  --tc-space-3:  0.75rem;
+  --tc-space-4:  1rem;
+  --tc-space-5:  1.5rem;
+  --tc-space-6:  2rem;
+  --tc-space-7:  3rem;
+  --tc-space-8:  4rem;
+  --tc-space-9:  6rem;
+
+  /* Borders & Radii */
+  --tc-border:        3px solid var(--tc-fg);
+  --tc-radius:        15px;
+  --tc-radius-sm:     8px;
+  --tc-radius-pill:   999px;
+
+  /* Shadows — flat offset, no blur */
+  --tc-shadow-sm: 3px 3px 0 0 var(--tc-fg);
+  --tc-shadow:    6px 6px 0 0 var(--tc-fg);
+  --tc-shadow-lg: 10px 10px 0 0 var(--tc-fg);
+  --tc-shadow-accent: 6px 6px 0 0 var(--tc-accent);
+
+  /* Layout */
+  --tc-container: 1200px;
+  --tc-content:   72ch;
+}
+
+/* =========================================================
+   BASE STYLES
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+html {
+  font-family: var(--tc-font-sans);
+  font-size: 16px;
+  color: var(--tc-fg-1);
+  background: var(--tc-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-size: var(--tc-fs-body);
+  line-height: var(--tc-lh-normal);
+  color: var(--tc-fg-2);
+  background: var(--tc-bg);
+}
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; cursor: pointer; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 var(--tc-space-4);
+  color: var(--tc-fg-1);
+  font-family: var(--tc-font-display);
+  font-weight: var(--tc-weight-bold);
+  line-height: var(--tc-lh-tight);
+  letter-spacing: var(--tc-ls-tight);
+  text-wrap: balance;
+}
+h1 { font-size: var(--tc-fs-h1); }
+h2 { font-size: var(--tc-fs-h2); }
+h3 { font-size: var(--tc-fs-h3); font-weight: var(--tc-weight-semibold); }
+h4 { font-size: var(--tc-fs-h4); font-weight: var(--tc-weight-semibold); }
+h5 { font-size: var(--tc-fs-h5); font-weight: var(--tc-weight-semibold); }
+h6 {
+  font-size: var(--tc-fs-small);
+  font-weight: var(--tc-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tc-ls-wide);
+}
+
+p {
+  margin: 0 0 var(--tc-space-4);
+  max-width: var(--tc-content);
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--tc-accent-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+::selection { background: var(--tc-accent); color: var(--tc-bg); }
+
+/* Helpers */
+.tc-sr {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+.tc-container {
+  max-width: var(--tc-container); margin: 0 auto;
+  padding-left: var(--tc-space-6); padding-right: var(--tc-space-6);
+}
+.tc-eyebrow {
+  font-size: var(--tc-fs-micro);
+  font-weight: var(--tc-weight-semibold);
+  letter-spacing: var(--tc-ls-wide);
+  text-transform: uppercase;
+  color: var(--tc-fg-3);
+}
+.tc-eyebrow--dot::before {
+  content: "";
+  display: inline-block;
+  width: 10px; height: 10px;
+  background: var(--tc-accent);
+  border: 2px solid var(--tc-fg);
+  margin-right: var(--tc-space-2);
+  vertical-align: 1px;
+}
+
+/* Section heading row */
+.section-head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: var(--tc-space-5); margin-bottom: var(--tc-space-7); flex-wrap: wrap;
+}
+.section-head h2 { margin: var(--tc-space-2) 0 0; font-size: clamp(28px, 4vw, 40px); }
+.section-head .section-head__link {
+  font-family: var(--tc-font-sans); font-weight: 700;
+  color: var(--tc-fg-1); text-decoration: none; display: inline-flex; align-items: center;
+  gap: var(--tc-space-2); border-bottom: 3px solid var(--tc-fg-1); padding-bottom: 2px;
+}
+.section-head .section-head__link svg { width: 18px; height: 18px; }
+
+/* Skip link */
+.tc-skip {
+  position: absolute;
+  top: -100px;
+  left: 12px;
+  background: var(--tc-fg);
+  color: var(--tc-bg);
+  padding: 8px 14px;
+  border-radius: var(--tc-radius-sm);
+  text-decoration: none;
+  z-index: 999;
+}
+.tc-skip:focus { top: 12px; }

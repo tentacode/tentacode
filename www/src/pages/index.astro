@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import HeroSection from '../components/Landing/HeroSection.astro';
+import AxesSection from '../components/Landing/AxesSection.astro';
+import SkillsSection from '../components/Landing/SkillsSection.astro';
+import TestimonialsSection from '../components/Landing/TestimonialsSection.astro';
+import ProjectsSection from '../components/Landing/ProjectsSection.astro';
+import ConferencesSection from '../components/Landing/ConferencesSection.astro';
+import BlogSection from '../components/Landing/BlogSection.astro';
+import ContactSection from '../components/Landing/ContactSection.astro';
+---
+
+<Base>
+  <a href="#main" class="tc-skip">Aller au contenu</a>
+  <Header />
+  <main id="main">
+    <HeroSection />
+    <AxesSection />
+    <SkillsSection />
+    <TestimonialsSection />
+    <ProjectsSection />
+    <ConferencesSection />
+    <BlogSection />
+    <ContactSection />
+  </main>
+  <Footer />
+</Base>
