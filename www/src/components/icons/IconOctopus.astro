@@ -1,0 +1,16 @@
+---
+interface Props {
+  eyeBg?: string;
+}
+const { eyeBg = 'var(--tc-bg)', ...rest } = Astro.props;
+---
+<svg viewBox="0 0 32 32" fill="none" {...rest}>
+  <path d="M7 16.5C7 10.7 11 7 16 7s9 3.7 9 9.5v.8c0 .7-.6 1.2-1.3 1.2H8.3C7.6 18.5 7 18 7 17.3Z" fill="currentColor"/>
+  <path d="M11 19l-4 3.2 4 3.2" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M21 19l4 3.2-4 3.2" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18 19l-4 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="12.6" cy="13.4" r="2.2" fill={eyeBg}/>
+  <circle cx="19.4" cy="13.4" r="2.2" fill={eyeBg}/>
+  <circle cx="13" cy="13.7" r="1" fill="var(--tc-accent)"/>
+  <circle cx="19.8" cy="13.7" r="1" fill="var(--tc-accent)"/>
+</svg>

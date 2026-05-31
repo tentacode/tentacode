@@ -8,6 +8,10 @@
 (function () {
   "use strict";
 
+  // Defer one frame so Vite dev-mode style injection has time to apply before
+  // we measure brick dimensions (production is fine; dev injects CSS async).
+  requestAnimationFrame(function init() {
+
   var inner = document.querySelector(".skills__inner");
   var pile = document.getElementById("skills-pile");
   var shakeBtn = document.getElementById("skills-shake");
@@ -202,4 +206,6 @@
       });
     }, 200);
   });
+
+  }); // end requestAnimationFrame
 })();

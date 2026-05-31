@@ -1,0 +1,49 @@
+---
+import IconOctopus from '../icons/IconOctopus.astro';
+
+interface Props {
+  size?: 'sm' | 'lg';
+}
+
+const { size = 'sm' } = Astro.props;
+---
+
+<a href="/" class:list={['wordmark', `wordmark--${size}`]} aria-label="tentacode.dev — accueil">
+  <IconOctopus eyeBg="var(--eye-bg)" aria-hidden="true" />
+  <span>tentacode<span>.</span>dev</span>
+</a>
+
+<style>
+  .wordmark {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-family: var(--tc-font-display);
+    font-weight: 700; letter-spacing: -0.02em;
+    text-decoration: none;
+    line-height: 1;
+  }
+  .wordmark--sm {
+    font-size: 24px;
+    color: var(--tc-fg-1);
+    --eye-bg: var(--tc-bg);
+  }
+  .wordmark--lg {
+    font-size: 28px;
+    color: var(--tc-bg);
+    --eye-bg: var(--tc-fg-1);
+  }
+
+  svg {
+    flex: none;
+    transition: transform 0.25s cubic-bezier(.2,.85,.25,1);
+    transform-origin: 50% 70%;
+  }
+  .wordmark--sm svg { width: 30px; height: 30px; }
+  .wordmark--lg svg { width: 34px; height: 34px; }
+
+  .wordmark:hover svg { transform: rotate(-6deg) scale(1.06); }
+  @media (prefers-reduced-motion: reduce) {
+    .wordmark:hover svg { transform: none; }
+  }
+
+  span span { color: var(--tc-accent); }
+</style>

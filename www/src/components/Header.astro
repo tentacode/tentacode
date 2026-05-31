@@ -1,23 +1,13 @@
 ---
+import Wordmark from './ui/Wordmark.astro';
+import IconMenu from './icons/IconMenu.astro';
 ---
 
-<header class="site-header">
-  <div class="site-header__inner">
-    <a href="/" class="site-header__wordmark" aria-label="tentacode.dev — accueil">
-      <svg class="wm-octo" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <path d="M7 16.5C7 10.7 11 7 16 7s9 3.7 9 9.5v.8c0 .7-.6 1.2-1.3 1.2H8.3C7.6 18.5 7 18 7 17.3Z" fill="currentColor"/>
-        <path d="M11 19l-4 3.2 4 3.2" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M21 19l4 3.2-4 3.2" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M18 19l-4 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
-        <circle cx="12.6" cy="13.4" r="2.2" fill="var(--tc-bg)"/>
-        <circle cx="19.4" cy="13.4" r="2.2" fill="var(--tc-bg)"/>
-        <circle cx="13" cy="13.7" r="1" fill="var(--tc-accent)"/>
-        <circle cx="19.8" cy="13.7" r="1" fill="var(--tc-accent)"/>
-      </svg>
-      <span class="wm-text">tentacode<span class="wm-dot">.</span>dev</span>
-    </a>
+<header>
+  <div>
+    <Wordmark />
 
-    <nav class="site-header__nav" id="primary-nav" aria-label="Navigation principale">
+    <nav id="primary-nav" aria-label="Navigation principale">
       <a href="#axes">Compétences</a>
       <a href="#projects">Projets</a>
       <a href="#confs">Conférences</a>
@@ -26,26 +16,22 @@
     </nav>
 
     <a href="#contact" class="site-header__cta">
-      <span class="dot" aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
       je suis disponible&nbsp;!
     </a>
 
     <button
       type="button"
-      class="site-header__burger"
       aria-label="Ouvrir le menu"
       aria-expanded="false"
       aria-controls="primary-nav"
       id="burger-btn"
     >
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <line x1="3" y1="7" x2="21" y2="7" />
-        <line x1="3" y1="12" x2="21" y2="12" />
-        <line x1="3" y1="17" x2="21" y2="17" />
-      </svg>
+      <IconMenu aria-hidden="true" />
     </button>
   </div>
 </header>
+
 
 <script>
   const burger = document.getElementById('burger-btn');
@@ -60,47 +46,30 @@
 </script>
 
 <style>
-  .site-header {
+  header {
     position: sticky; top: 0; z-index: 50;
     background: var(--tc-bg);
     border-bottom: var(--tc-border);
   }
-  .site-header__inner {
+  header > div {
     max-width: var(--tc-container); margin: 0 auto;
     display: flex; align-items: center; justify-content: space-between;
     gap: var(--tc-space-5);
     padding: 18px var(--tc-space-6);
   }
-  .site-header__wordmark {
-    display: inline-flex; align-items: center; gap: 9px;
-    font-family: var(--tc-font-display);
-    font-size: 24px; font-weight: 700; letter-spacing: -0.02em;
-    color: var(--tc-fg-1); text-decoration: none;
-    line-height: 1;
-  }
-  .site-header__wordmark .wm-octo {
-    width: 30px; height: 30px; flex: none;
-    transition: transform 0.25s cubic-bezier(.2,.85,.25,1);
-    transform-origin: 50% 70%;
-  }
-  .site-header__wordmark:hover .wm-octo { transform: rotate(-6deg) scale(1.06); }
-  @media (prefers-reduced-motion: reduce) {
-    .site-header__wordmark:hover .wm-octo { transform: none; }
-  }
-  .site-header__wordmark .wm-dot { color: var(--tc-accent); }
 
-  .site-header__nav { display: flex; gap: var(--tc-space-6); align-items: center; }
-  .site-header__nav a {
+  nav { display: flex; gap: var(--tc-space-6); align-items: center; }
+  nav a {
     font-size: 15px; font-weight: 700;
     color: var(--tc-fg-1); text-decoration: none;
   }
-  .site-header__nav a:hover,
-  .site-header__nav a:focus-visible {
+  nav a:hover,
+  nav a:focus-visible {
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
   }
-  .site-header__nav a:focus-visible {
+  nav a:focus-visible {
     outline: 3px solid var(--tc-accent);
     outline-offset: 3px;
     border-radius: 3px;
@@ -123,19 +92,19 @@
   }
   .site-header__cta:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 0 var(--tc-success); }
   .site-header__cta:focus-visible { outline: 3px solid var(--tc-success); outline-offset: 2px; }
-  .site-header__cta .dot {
+  .site-header__cta span {
     width: 9px; height: 9px; border-radius: 50%;
     background: var(--tc-success); display: inline-block;
     position: relative; flex: none;
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--tc-success) 28%, transparent);
   }
-  .site-header__cta .dot::after {
+  .site-header__cta span::after {
     content: ""; position: absolute; inset: 0;
     border-radius: 50%; border: 2px solid var(--tc-success);
     opacity: 0; transform: scale(1);
   }
-  .site-header__cta:hover .dot::after,
-  .site-header__cta:focus-visible .dot::after {
+  .site-header__cta:hover span::after,
+  .site-header__cta:focus-visible span::after {
     animation: cta-ping 0.7s ease-out 1;
   }
   @keyframes cta-ping {
@@ -143,11 +112,11 @@
     100% { transform: scale(2.4); opacity: 0; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .site-header__cta:hover .dot::after,
-    .site-header__cta:focus-visible .dot::after { animation: none; }
+    .site-header__cta:hover span::after,
+    .site-header__cta:focus-visible span::after { animation: none; }
   }
 
-  .site-header__burger {
+  button {
     display: none;
     width: 44px; height: 44px;
     align-items: center; justify-content: center;
@@ -156,18 +125,18 @@
     color: var(--tc-fg-1);
     box-shadow: var(--tc-shadow-sm);
   }
-  .site-header__burger:focus-visible {
+  button:focus-visible {
     outline: 3px solid var(--tc-accent);
     outline-offset: 2px;
   }
-  .site-header__burger svg { width: 24px; height: 24px; }
+  button :global(svg) { width: 24px; height: 24px; }
 
   @media (max-width: 760px) {
-    .site-header__inner { padding: 14px var(--tc-space-4); }
-    .site-header__nav, .site-header__cta { display: none; }
-    .site-header__burger { display: inline-flex; }
+    header > div { padding: 14px var(--tc-space-4); }
+    nav, .site-header__cta { display: none; }
+    button { display: inline-flex; }
 
-    :global(body[data-menu="open"]) .site-header__nav {
+    :global(body[data-menu="open"]) nav {
       display: flex; flex-direction: column;
       align-items: stretch;
       position: absolute; top: 100%; left: 0; right: 0;
@@ -177,13 +146,13 @@
       gap: var(--tc-space-3);
       z-index: 60;
     }
-    :global(body[data-menu="open"]) .site-header__nav a {
+    :global(body[data-menu="open"]) nav a {
       font-size: 22px;
       font-family: var(--tc-font-display);
       padding: 8px 0;
       border-bottom: 1px solid #d9c9c4;
     }
-    :global(body[data-menu="open"]) .site-header__nav a:last-child {
+    :global(body[data-menu="open"]) nav a:last-child {
       border-bottom: none;
     }
   }

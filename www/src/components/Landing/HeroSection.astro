@@ -1,13 +1,14 @@
 ---
+import IconArrowRight from '../icons/IconArrowRight.astro';
 ---
 
-<section class="hero" aria-labelledby="hero-title">
-  <div class="tc-container hero__inner">
+<section aria-labelledby="hero-title">
+  <div class="tc-container">
     <div class="hero__content">
       <span class="hero__availability">Disponible — mission ou CDI</span>
 
       <h1 id="hero-title">
-        Développeur fullstack, lead technique, sensible à l'<span class="hl">accessibilité</span>.
+        Développeur fullstack, lead technique, sensible à l'<span>accessibilité</span>.
       </h1>
 
       <p class="hero__lead">
@@ -17,10 +18,7 @@
       <div class="hero__ctas">
         <a href="#contact" class="hero__cta hero__cta--primary">
           Me contacter
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="5" y1="12" x2="19" y2="12"/>
-            <polyline points="12 5 19 12 12 19"/>
-          </svg>
+          <IconArrowRight aria-hidden="true" />
         </a>
         <a href="#projects" class="hero__cta hero__cta--secondary">Voir les projets</a>
       </div>
@@ -32,7 +30,7 @@
       </div>
 
       <div class="hero__sticker" aria-hidden="true">
-        <span class="label">user.role&nbsp;=</span>
+        <span>user.role&nbsp;=</span>
         <strong>"fullstack&nbsp;+&nbsp;lead"</strong>
       </div>
 
@@ -55,8 +53,8 @@
 </script>
 
 <style>
-  .hero { padding: var(--tc-space-9) 0 var(--tc-space-8); }
-  .hero__inner {
+  section { padding: var(--tc-space-9) 0 var(--tc-space-8); }
+  section > div {
     display: grid; grid-template-columns: 1.25fr 1fr;
     gap: var(--tc-space-8); align-items: center;
   }
@@ -71,12 +69,12 @@
     margin-bottom: var(--tc-space-5);
   }
 
-  .hero h1 {
+  h1 {
     font-size: clamp(40px, 6vw, 68px);
     letter-spacing: -0.03em;
     margin: 0 0 var(--tc-space-5);
   }
-  .hero h1 .hl {
+  h1 span {
     background: linear-gradient(transparent 65%, var(--tc-accent) 65%);
     padding: 0 4px;
   }
@@ -101,7 +99,7 @@
   .hero__cta:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 2px; }
   .hero__cta--primary  { background: var(--tc-fg-1); color: var(--tc-bg); }
   .hero__cta--secondary { background: var(--tc-bg); color: var(--tc-fg-1); }
-  .hero__cta svg { width: 18px; height: 18px; }
+  .hero__cta :global(svg) { width: 18px; height: 18px; }
 
   /* Visual */
   .hero__visual { position: relative; max-width: 420px; justify-self: end; width: 100%; }
@@ -130,7 +128,7 @@
     transform: rotate(-3deg);
   }
   .hero__sticker strong { color: var(--tc-fg-1); }
-  .hero__sticker .label { color: var(--tc-fg-3); }
+  .hero__sticker span { color: var(--tc-fg-3); }
 
   .hero__code {
     position: absolute;
@@ -160,8 +158,8 @@
   :global(body[data-hero="code"]) .hero__visual { padding-right: 0; padding-bottom: 24px; }
 
   @media (max-width: 760px) {
-    .hero { padding: var(--tc-space-7) 0; }
-    .hero__inner { grid-template-columns: 1fr; gap: var(--tc-space-7); }
+    section { padding: var(--tc-space-7) 0; }
+    section > div { grid-template-columns: 1fr; gap: var(--tc-space-7); }
     .hero__visual { justify-self: stretch; max-width: 360px; margin: 0 auto; }
     .hero__code { right: -16px; bottom: -24px; width: min(280px, 90%); }
   }

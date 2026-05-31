@@ -1,4 +1,8 @@
 ---
+import IconHandDrag from '../icons/IconHandDrag.astro';
+import IconList from '../icons/IconList.astro';
+import IconShuffle from '../icons/IconShuffle.astro';
+import IconRotateCcw from '../icons/IconRotateCcw.astro';
 ---
 
 <section class="skills" aria-labelledby="skills-title">
@@ -7,42 +11,25 @@
       <div class="skills__head">
         <span class="tc-eyebrow tc-eyebrow--dot">La boîte à outils</span>
         <h2 id="skills-title">La stack, et tout ce qui va autour.</h2>
-        <p class="skills__hint" id="skills-hint" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M18 11V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2"/>
-            <path d="M14 10V4a2 2 0 0 0-2-2 2 2 0 0 0-2 2v2"/>
-            <path d="M10 10.5V6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v8"/>
-            <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
-          </svg>
+        <p id="skills-hint" aria-hidden="true">
+          <IconHandDrag aria-hidden="true" />
           Attrape une brique, secoue le tas.
         </p>
       </div>
 
       <div class="skills__controls" id="skills-controls">
-        <button type="button" class="skills__btn skills__btn--primary" id="skills-tidy" aria-pressed="false">
-          <svg class="skills__ico-tidy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="3" y1="6" x2="21" y2="6"/>
-            <line x1="3" y1="12" x2="21" y2="12"/>
-            <line x1="3" y1="18" x2="21" y2="18"/>
-          </svg>
-          <svg class="skills__ico-mix" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M18 2l3 3-3 3"/>
-            <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
-            <path d="M6 22l-3-3 3-3"/>
-            <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
-          </svg>
+        <button type="button" class="skills__btn--primary" id="skills-tidy" aria-pressed="false">
+          <IconList class="skills__ico-tidy" aria-hidden="true" />
+          <IconShuffle class="skills__ico-mix" aria-hidden="true" />
           <span id="skills-tidy-label">Ranger</span>
         </button>
-        <button type="button" class="skills__btn" id="skills-shake">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polyline points="23 4 23 10 17 10"/>
-            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
-          </svg>
+        <button type="button" id="skills-shake">
+          <IconRotateCcw aria-hidden="true" />
           Secouer
         </button>
       </div>
 
-      <ul class="skills__pile" id="skills-pile" role="list" aria-label="Compétences techniques et humaines">
+      <ul id="skills-pile" role="list" aria-label="Compétences techniques et humaines">
         <li class="brick brick--xl brick--accent" role="listitem">PHP / Symfony</li>
         <li class="brick brick--l" role="listitem">React</li>
         <li class="brick brick--l brick--inverse" role="listitem">PostgreSQL</li>
@@ -88,23 +75,23 @@
     padding: 0;
   }
   .skills__head { max-width: 56ch; margin-bottom: var(--tc-space-5); position: relative; }
-  .skills__hint {
+  p {
     display: none;
     align-items: center; gap: 8px;
     font-family: var(--tc-font-mono); font-size: 13px;
     color: var(--tc-fg-3); margin: var(--tc-space-3) 0 0;
   }
-  .skills__hint svg { width: 16px; height: 16px; color: var(--tc-accent-deep); }
-  :global(.skills__inner.is-physics) .skills__hint { display: inline-flex; }
+  p :global(svg) { width: 16px; height: 16px; color: var(--tc-accent-deep); }
+  .skills__inner.is-physics p { display: inline-flex; }
 
   .skills__controls {
     position: absolute; top: 0; right: 0;
     display: none; align-items: center; gap: 10px;
     z-index: 3;
   }
-  :global(.skills__inner.is-physics) .skills__controls { display: flex; }
+  .skills__inner.is-physics .skills__controls { display: flex; }
 
-  .skills__btn {
+  .skills__controls button {
     display: inline-flex; align-items: center; gap: 8px;
     font-family: var(--tc-font-mono); font-size: 13px; font-weight: 700;
     color: var(--tc-fg-1);
@@ -115,21 +102,21 @@
     cursor: pointer;
     transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s ease;
   }
-  .skills__btn svg { width: 15px; height: 15px; }
-  .skills__btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 0 var(--tc-fg-1); }
-  .skills__btn:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 0 var(--tc-fg-1); }
-  .skills__btn:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 2px; }
+  .skills__controls button :global(svg) { width: 15px; height: 15px; }
+  .skills__controls button:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 0 var(--tc-fg-1); }
+  .skills__controls button:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 0 var(--tc-fg-1); }
+  .skills__controls button:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 2px; }
   .skills__btn--primary { background: var(--tc-accent); }
 
-  .skills__ico-mix { display: none; }
-  .skills__btn--primary[aria-pressed="true"] .skills__ico-tidy { display: none; }
-  .skills__btn--primary[aria-pressed="true"] .skills__ico-mix { display: inline; }
+  :global(.skills__ico-mix) { display: none; }
+  .skills__btn--primary[aria-pressed="true"] :global(.skills__ico-tidy) { display: none; }
+  .skills__btn--primary[aria-pressed="true"] :global(.skills__ico-mix) { display: inline; }
 
-  .skills__pile {
+  ul {
     list-style: none; margin: 0; padding: 0;
     display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start;
   }
-  :global(.skills__pile.is-physics) {
+  ul.is-physics {
     display: block; position: relative;
     height: 460px;
     margin-top: var(--tc-space-4);
@@ -137,7 +124,7 @@
     touch-action: none;
     cursor: grab;
   }
-  :global(.skills__pile.is-physics:active) { cursor: grabbing; }
+  ul.is-physics:active { cursor: grabbing; }
 
   .brick {
     font-family: var(--tc-font-display); font-weight: 700;
@@ -150,12 +137,12 @@
     box-shadow: var(--tc-shadow-sm);
     user-select: none; -webkit-user-select: none;
   }
-  :global(.skills__pile.is-physics) .brick {
+  ul.is-physics .brick {
     position: absolute; top: 0; left: 0;
     margin: 0; will-change: transform;
     opacity: 0; transition: opacity 0.25s ease;
   }
-  :global(.skills__pile.is-physics) :global(.brick.is-live) { opacity: 1; }
+  ul.is-physics .brick.is-live { opacity: 1; }
 
   .brick--mono    { font-family: var(--tc-font-mono); font-weight: 500; font-size: 15px; }
   .brick--accent  { background: var(--tc-accent); }
@@ -165,7 +152,7 @@
   .brick--l  { font-size: 22px; padding: 14px 20px; }
   .brick--xl { font-size: 28px; padding: 16px 24px; letter-spacing: -0.02em; }
 
-  .skills__pile:not(:global(.is-physics)) .brick:nth-child(3n)   { transform: rotate(-2deg); }
-  .skills__pile:not(:global(.is-physics)) .brick:nth-child(3n+1) { transform: rotate(1.5deg); }
-  .skills__pile:not(:global(.is-physics)) .brick:nth-child(4n+2) { transform: rotate(-1deg); }
+  ul:not(.is-physics) .brick:nth-child(3n)   { transform: rotate(-2deg); }
+  ul:not(.is-physics) .brick:nth-child(3n+1) { transform: rotate(1.5deg); }
+  ul:not(.is-physics) .brick:nth-child(4n+2) { transform: rotate(-1deg); }
 </style>

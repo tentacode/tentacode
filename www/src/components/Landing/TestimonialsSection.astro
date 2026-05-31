@@ -1,28 +1,29 @@
 ---
+import IconLinkedIn from '../icons/IconLinkedIn.astro';
 ---
 
 <section class="testimonial" aria-labelledby="testimonial-title">
   <div class="tc-container testimonial__inner">
-    <span class="tc-eyebrow tc-eyebrow--dot tm__eyebrow">Ils ont bossé avec moi</span>
-    <h2 id="testimonial-title" class="tm__title">On ne se croit pas sur parole.</h2>
+    <span class="tc-eyebrow tc-eyebrow--dot">Ils ont bossé avec moi</span>
+    <h2 id="testimonial-title">On ne se croit pas sur parole.</h2>
 
     <div class="tm">
-      <div class="tm__tablist" role="tablist" aria-label="Témoignages" aria-orientation="vertical">
-        <button type="button" class="tm__tab" role="tab" id="tm-tab-1" aria-controls="tm-panel-1" aria-selected="true" tabindex="0">
+      <div role="tablist" aria-label="Témoignages" aria-orientation="vertical">
+        <button type="button" role="tab" id="tm-tab-1" aria-controls="tm-panel-1" aria-selected="true" tabindex="0">
           <span class="tm__tab-avatar" aria-hidden="true">GS</span>
           <span class="tm__tab-id">
             <span class="tm__tab-name">Guillaume S.</span>
             <span class="tm__tab-role">Développeur mobile senior</span>
           </span>
         </button>
-        <button type="button" class="tm__tab" role="tab" id="tm-tab-2" aria-controls="tm-panel-2" aria-selected="false" tabindex="-1">
+        <button type="button" role="tab" id="tm-tab-2" aria-controls="tm-panel-2" aria-selected="false" tabindex="-1">
           <span class="tm__tab-avatar" aria-hidden="true">AL</span>
           <span class="tm__tab-id">
             <span class="tm__tab-name">Amélie L.</span>
             <span class="tm__tab-role">CTO, agence web</span>
           </span>
         </button>
-        <button type="button" class="tm__tab" role="tab" id="tm-tab-3" aria-controls="tm-panel-3" aria-selected="false" tabindex="-1">
+        <button type="button" role="tab" id="tm-tab-3" aria-controls="tm-panel-3" aria-selected="false" tabindex="-1">
           <span class="tm__tab-avatar" aria-hidden="true">KR</span>
           <span class="tm__tab-id">
             <span class="tm__tab-name">Karim R.</span>
@@ -31,37 +32,37 @@
         </button>
       </div>
 
-      <div class="tm__panels">
-        <div class="tm__panel" role="tabpanel" id="tm-panel-1" aria-labelledby="tm-tab-1" tabindex="0">
-          <blockquote class="tm__quote">Gabriel, en plus de fournir un travail de très bonne qualité, est quelqu'un d'extrêmement pédagogue ; il ne refuse jamais d'aider ses collègues et met en place des choses pour souder l'équipe et la porter vers le haut. Toujours de bon conseil, il adore apprendre et se perfectionner. Un vrai plaisir de travailler avec lui.</blockquote>
-          <footer class="tm__foot">
-            <p class="tm__foot-context">3 ans en équipe ensemble, dont 1 an en binôme sur un prototype d'app mobile.</p>
-            <a class="tm__linkedin" href="https://www.linkedin.com/in/gabrielpillet" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+      <div>
+        <div role="tabpanel" id="tm-panel-1" aria-labelledby="tm-tab-1" tabindex="0">
+          <blockquote>Gabriel, en plus de fournir un travail de très bonne qualité, est quelqu'un d'extrêmement pédagogue ; il ne refuse jamais d'aider ses collègues et met en place des choses pour souder l'équipe et la porter vers le haut. Toujours de bon conseil, il adore apprendre et se perfectionner. Un vrai plaisir de travailler avec lui.</blockquote>
+          <footer>
+            <p>3 ans en équipe ensemble, dont 1 an en binôme sur un prototype d'app mobile.</p>
+            <a href="https://www.linkedin.com/in/gabrielpillet" target="_blank" rel="noopener noreferrer">
+              <IconLinkedIn aria-hidden="true" />
               Profil de Guillaume
               <span class="tc-sr">(ouvre un nouvel onglet)</span>
             </a>
           </footer>
         </div>
 
-        <div class="tm__panel" role="tabpanel" id="tm-panel-2" aria-labelledby="tm-tab-2" tabindex="0" hidden>
-          <blockquote class="tm__quote">On a confié à Gabriel le lead technique d'un chantier sensible, avec une deadline serrée et une équipe junior. Il a tenu le cap sans jamais cramer personne, refactorisé ce qu'il fallait, et laissé derrière lui une base de code que mes équipes osent toucher. Exactement le profil qu'on s'arrache.</blockquote>
-          <footer class="tm__foot">
-            <p class="tm__foot-context">Mission de 8 mois en direction technique déléguée sur un produit SaaS.</p>
-            <a class="tm__linkedin" href="https://www.linkedin.com/in/gabrielpillet" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        <div role="tabpanel" id="tm-panel-2" aria-labelledby="tm-tab-2" tabindex="0" hidden>
+          <blockquote>On a confié à Gabriel le lead technique d'un chantier sensible, avec une deadline serrée et une équipe junior. Il a tenu le cap sans jamais cramer personne, refactorisé ce qu'il fallait, et laissé derrière lui une base de code que mes équipes osent toucher. Exactement le profil qu'on s'arrache.</blockquote>
+          <footer>
+            <p>Mission de 8 mois en direction technique déléguée sur un produit SaaS.</p>
+            <a href="https://www.linkedin.com/in/gabrielpillet" target="_blank" rel="noopener noreferrer">
+              <IconLinkedIn aria-hidden="true" />
               Profil d'Amélie
               <span class="tc-sr">(ouvre un nouvel onglet)</span>
             </a>
           </footer>
         </div>
 
-        <div class="tm__panel" role="tabpanel" id="tm-panel-3" aria-labelledby="tm-tab-3" tabindex="0" hidden>
-          <blockquote class="tm__quote">Ce que j'ai adoré, c'est qu'il traduit. Entre ce que le métier veut et ce que la technique peut, Gabriel fait le pont sans jargon ni esbroufe. L'accessibilité, il l'a portée comme une évidence et pas comme une contrainte de fin de sprint. Nos utilisateurs en ont profité, nos chiffres aussi.</blockquote>
-          <footer class="tm__foot">
-            <p class="tm__foot-context">Collaboration sur la refonte d'un parcours grand public à fort trafic.</p>
-            <a class="tm__linkedin" href="https://www.linkedin.com/in/gabrielpillet" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        <div role="tabpanel" id="tm-panel-3" aria-labelledby="tm-tab-3" tabindex="0" hidden>
+          <blockquote>Ce que j'ai adoré, c'est qu'il traduit. Entre ce que le métier veut et ce que la technique peut, Gabriel fait le pont sans jargon ni esbroufe. L'accessibilité, il l'a portée comme une évidence et pas comme une contrainte de fin de sprint. Nos utilisateurs en ont profité, nos chiffres aussi.</blockquote>
+          <footer>
+            <p>Collaboration sur la refonte d'un parcours grand public à fort trafic.</p>
+            <a href="https://www.linkedin.com/in/gabrielpillet" target="_blank" rel="noopener noreferrer">
+              <IconLinkedIn aria-hidden="true" />
               Profil de Karim
               <span class="tc-sr">(ouvre un nouvel onglet)</span>
             </a>
@@ -73,7 +74,7 @@
 </section>
 
 <script>
-  const tablist = document.querySelector('.tm__tablist');
+  const tablist = document.querySelector('[role="tablist"]');
   if (tablist) {
     const tabs = Array.from(tablist.querySelectorAll<HTMLElement>('[role="tab"]'));
 
@@ -122,9 +123,9 @@
     aria-hidden: true;
   }
   .testimonial__inner { position: relative; }
-  .tm__eyebrow { color: #C8BFBC; }
-  .tm__eyebrow.tc-eyebrow--dot::before { background: var(--tc-accent); }
-  .tm__title {
+  .tc-eyebrow { color: #C8BFBC; }
+  .tc-eyebrow.tc-eyebrow--dot::before { background: var(--tc-accent); }
+  h2 {
     color: var(--tc-bg);
     font-size: var(--tc-fs-h2);
     margin: var(--tc-space-2) 0 var(--tc-space-7);
@@ -137,12 +138,12 @@
     gap: var(--tc-space-7);
     align-items: start;
   }
-  .tm__tablist {
+  [role="tablist"] {
     display: flex;
     flex-direction: column;
     gap: var(--tc-space-3);
   }
-  .tm__tab {
+  [role="tab"] {
     display: flex;
     align-items: center;
     gap: var(--tc-space-3);
@@ -155,14 +156,14 @@
     cursor: pointer;
     transition: border-color 0.15s ease, background 0.15s ease;
   }
-  .tm__tab:hover { border-color: var(--tc-bg); }
-  .tm__tab[aria-selected="true"] {
+  [role="tab"]:hover { border-color: var(--tc-bg); }
+  [role="tab"][aria-selected="true"] {
     background: var(--tc-bg);
     border-color: var(--tc-bg);
     color: var(--tc-fg-1);
     box-shadow: var(--tc-shadow-accent);
   }
-  .tm__tab:focus-visible {
+  [role="tab"]:focus-visible {
     outline: 3px solid var(--tc-accent);
     outline-offset: 2px;
   }
@@ -190,21 +191,21 @@
     line-height: 1.3;
     color: #B8AFAC;
   }
-  .tm__tab[aria-selected="true"] .tm__tab-role { color: var(--tc-fg-3); }
+  [role="tab"][aria-selected="true"] .tm__tab-role { color: var(--tc-fg-3); }
 
-  .tm__panels { position: relative; min-height: 0; }
-  .tm__panel {
+  .tm > div:last-child { position: relative; min-height: 0; }
+  [role="tabpanel"] {
     display: flex;
     flex-direction: column;
     gap: var(--tc-space-5);
   }
-  .tm__panel[hidden] { display: none; }
-  .tm__panel:focus-visible {
+  [role="tabpanel"][hidden] { display: none; }
+  [role="tabpanel"]:focus-visible {
     outline: 3px solid var(--tc-accent);
     outline-offset: 6px;
     border-radius: var(--tc-radius);
   }
-  .tm__quote {
+  blockquote {
     font-family: var(--tc-font-display);
     font-weight: 500;
     font-size: clamp(22px, 2.4vw, 30px);
@@ -214,23 +215,23 @@
     letter-spacing: -0.01em;
     text-wrap: pretty;
   }
-  .tm__quote::before { content: "\00AB\0020"; color: var(--tc-accent); }
-  .tm__quote::after  { content: "\0020\00BB"; color: var(--tc-accent); }
-  .tm__foot {
+  blockquote::before { content: "\00AB\0020"; color: var(--tc-accent); }
+  blockquote::after  { content: "\0020\00BB"; color: var(--tc-accent); }
+  footer {
     display: flex;
     flex-direction: column;
     gap: var(--tc-space-3);
     padding-top: var(--tc-space-4);
     border-top: 2px solid #4A4A4A;
   }
-  .tm__foot-context {
+  footer p {
     font-size: 14px;
     color: #C8BFBC;
     margin: 0;
     max-width: 52ch;
     line-height: 1.5;
   }
-  .tm__linkedin {
+  footer a {
     display: inline-flex; align-items: center; gap: 8px;
     color: var(--tc-bg); text-decoration: none;
     font-weight: 700; font-size: 14px;
@@ -239,15 +240,15 @@
     border: 2px solid #4A4A4A; border-radius: var(--tc-radius-pill);
     transition: border-color 0.15s ease, background 0.15s ease;
   }
-  .tm__linkedin:hover,
-  .tm__linkedin:focus-visible { border-color: var(--tc-accent); background: rgba(133,121,220,0.12); }
-  .tm__linkedin:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 2px; }
-  .tm__linkedin svg { width: 16px; height: 16px; color: var(--tc-accent); }
+  footer a:hover,
+  footer a:focus-visible { border-color: var(--tc-accent); background: rgba(133,121,220,0.12); }
+  footer a:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 2px; }
+  footer a :global(svg) { width: 16px; height: 16px; color: var(--tc-accent); }
 
   @media (max-width: 760px) {
     .tm { grid-template-columns: 1fr; gap: var(--tc-space-6); }
-    .tm__tablist { flex-direction: row; flex-wrap: wrap; }
-    .tm__tab { flex: 1 1 auto; }
+    [role="tablist"] { flex-direction: row; flex-wrap: wrap; }
+    [role="tab"] { flex: 1 1 auto; }
     .testimonial::before { font-size: 240px; bottom: -100px; }
   }
 </style>

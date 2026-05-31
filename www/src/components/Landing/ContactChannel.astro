@@ -1,4 +1,6 @@
 ---
+import IconArrowUpRight from '../icons/IconArrowUpRight.astro';
+
 interface Props {
   href: string;
   label: string;
@@ -22,10 +24,7 @@ const attrs = external
   </div>
   {external && <span class="tc-sr">(ouvre un nouvel onglet)</span>}
   <span class="contact-channel__arrow" aria-hidden="true">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="7" y1="17" x2="17" y2="7"/>
-      <polyline points="7 7 17 7 17 17"/>
-    </svg>
+    <IconArrowUpRight />
   </span>
 </a>
 
@@ -58,5 +57,5 @@ const attrs = external
     font-weight: 700; line-height: 1.2; letter-spacing: -0.01em;
   }
   .contact-channel__arrow { margin-left: auto; }
-  .contact-channel__arrow svg { width: 24px; height: 24px; }
+  .contact-channel__arrow :global(svg) { width: 24px; height: 24px; }
 </style>

@@ -1,30 +1,20 @@
 ---
+import Wordmark from './ui/Wordmark.astro';
+import IconArrowUpRight from './icons/IconArrowUpRight.astro';
 ---
 
-<footer class="site-footer">
+<footer>
   <div class="tc-container">
     <div class="site-footer__inner">
       <div class="site-footer__brand">
-        <a href="/" class="site-footer__wordmark" aria-label="tentacode.dev — accueil">
-          <svg class="wm-octo" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-            <path d="M7 16.5C7 10.7 11 7 16 7s9 3.7 9 9.5v.8c0 .7-.6 1.2-1.3 1.2H8.3C7.6 18.5 7 18 7 17.3Z" fill="currentColor"/>
-            <path d="M11 19l-4 3.2 4 3.2" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M21 19l4 3.2-4 3.2" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M18 19l-4 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
-            <circle cx="12.6" cy="13.4" r="2.2" fill="var(--tc-fg-1)"/>
-            <circle cx="19.4" cy="13.4" r="2.2" fill="var(--tc-fg-1)"/>
-            <circle cx="13" cy="13.7" r="1" fill="var(--tc-accent)"/>
-            <circle cx="19.8" cy="13.7" r="1" fill="var(--tc-accent)"/>
-          </svg>
-          <span class="wm-text">tentacode<span class="wm-dot">.</span>dev</span>
-        </a>
-        <p class="site-footer__joke">
+        <Wordmark size="lg" />
+        <p>
           Bravo, t'as scrollé jusqu'en bas. À ce niveau de motivation, le café est offert — préviens-moi, je prépare la machine.
         </p>
       </div>
 
       <nav aria-label="Pages">
-        <h2 class="footer-nav__heading">Pages</h2>
+        <h2>Pages</h2>
         <ul>
           <li><a href="#axes">Compétences</a></li>
           <li><a href="#projects">Projets</a></li>
@@ -34,7 +24,7 @@
       </nav>
 
       <nav aria-label="Ailleurs">
-        <h2 class="footer-nav__heading">Ailleurs</h2>
+        <h2>Ailleurs</h2>
         <ul>
           <li><a href="https://github.com/tentacode" target="_blank" rel="noopener noreferrer">GitHub<span class="tc-sr"> (ouvre un nouvel onglet)</span></a></li>
           <li><a href="https://www.linkedin.com/in/gabrielpillet" target="_blank" rel="noopener noreferrer">LinkedIn<span class="tc-sr"> (ouvre un nouvel onglet)</span></a></li>
@@ -44,16 +34,13 @@
       </nav>
 
       <nav aria-label="Contact">
-        <h2 class="footer-nav__heading">Contact</h2>
+        <h2>Contact</h2>
         <ul>
           <li><a href="mailto:hello@tentacode.dev">hello@tentacode.dev</a></li>
           <li>
             <a class="footer-extlink" href="https://cv.tentacode.dev" target="_blank" rel="noopener noreferrer">
               CV en ligne
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="7" y1="17" x2="17" y2="7"/>
-                <polyline points="7 7 17 7 17 17"/>
-              </svg>
+              <IconArrowUpRight aria-hidden="true" />
               <span class="tc-sr">(ouvre un nouvel onglet)</span>
             </a>
           </li>
@@ -70,7 +57,7 @@
 </footer>
 
 <style>
-  .site-footer {
+  footer {
     background: var(--tc-fg-1); color: var(--tc-bg);
     padding: var(--tc-space-8) 0 var(--tc-space-6);
   }
@@ -79,21 +66,12 @@
     gap: var(--tc-space-6);
   }
   .site-footer__brand { max-width: 30ch; }
-  .site-footer__wordmark {
-    display: inline-flex; align-items: center; gap: 9px;
-    font-family: var(--tc-font-display);
-    font-size: 28px; font-weight: 700; letter-spacing: -0.02em;
-    color: var(--tc-bg); text-decoration: none;
-    line-height: 1;
-  }
-  .site-footer__wordmark .wm-octo { width: 34px; height: 34px; flex: none; }
-  .site-footer__wordmark .wm-dot { color: var(--tc-accent); }
-  .site-footer__joke {
+  .site-footer__brand p {
     margin: var(--tc-space-3) 0 0;
     font-size: 14px; color: #C8BFBC; line-height: 1.55;
   }
 
-  .footer-nav__heading {
+  nav h2 {
     font-size: 11px; color: var(--tc-accent);
     margin: 0 0 var(--tc-space-3);
     letter-spacing: 0.08em;
@@ -101,20 +79,20 @@
     text-transform: uppercase;
     font-family: var(--tc-font-sans);
   }
-  .site-footer ul {
+  nav ul {
     list-style: none; padding: 0; margin: 0;
     display: flex; flex-direction: column; gap: 8px;
   }
-  .site-footer ul a {
+  nav a {
     color: var(--tc-bg); text-decoration: none; font-size: 14px; font-weight: 500;
   }
-  .site-footer ul a:hover,
-  .site-footer ul a:focus-visible { text-decoration: underline; }
-  .site-footer ul a:focus-visible { outline: 2px solid var(--tc-accent); outline-offset: 2px; border-radius: 2px; }
+  nav a:hover,
+  nav a:focus-visible { text-decoration: underline; }
+  nav a:focus-visible { outline: 2px solid var(--tc-accent); outline-offset: 2px; border-radius: 2px; }
 
   .footer-extlink { display: inline-flex; align-items: center; gap: 5px; }
-  .footer-extlink svg { width: 12px; height: 12px; opacity: 0.7; }
-  .footer-extlink:hover svg { opacity: 1; }
+  .footer-extlink :global(svg) { width: 12px; height: 12px; opacity: 0.7; }
+  .footer-extlink:hover :global(svg) { opacity: 1; }
 
   .site-footer__legal {
     margin-top: var(--tc-space-7); padding-top: var(--tc-space-4);
