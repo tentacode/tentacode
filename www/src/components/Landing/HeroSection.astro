@@ -1,5 +1,18 @@
 ---
 import IconArrowRight from '../icons/IconArrowRight.astro';
+import hljs from 'highlight.js/lib/core';
+import php from 'highlight.js/lib/languages/php';
+
+hljs.registerLanguage('php', php);
+
+const code = `try {
+    $cup = ($this->brewCoffeeQuery)();
+    $me->drink($cup);
+} catch (OutOfBeansException $e) {
+    Sentry::captureMessage("Ça va être compliqué...");
+}`;
+
+const highlighted = hljs.highlight(code, { language: 'php' }).value;
 ---
 
 <section aria-labelledby="hero-title">
@@ -12,8 +25,9 @@ import IconArrowRight from '../icons/IconArrowRight.astro';
       </h1>
 
       <p class="hero__lead">
-        Près de 20&nbsp;ans à concevoir et livrer du logiciel web et mobile. J'écris du back robuste, du front accessible, je tiens un cap quand je tiens une équipe, et j'outille mon quotidien avec l'AI quand ça fait sens.
+        Près de 20&nbsp;ans à concevoir et livrer des logiciels web et mobile. J'écris du code robuste et maintenable avec un focus sur la simplicité et la performance. Pragmatique, je sais aussi déléguer à l'I.A. quand ça fait sens, <strong>en gardant la maîtrise sur la qualité</strong>.
       </p>
+      <!-- du back robuste, du front accessible, je tiens un cap quand je tiens une équipe, et j'outille mon quotidien avec l'AI quand ça fait sens. -->
 
       <div class="hero__ctas">
         <a href="#contact" class="hero__cta hero__cta--primary">
@@ -26,23 +40,11 @@ import IconArrowRight from '../icons/IconArrowRight.astro';
 
     <div class="hero__visual">
       <div class="hero__photo-frame">
-        <img src="/img/portrait.jpg" alt="Portrait de Gabriel Pillet." width="420" height="525" />
-      </div>
-
-      <div class="hero__sticker" aria-hidden="true">
-        <span>user.role&nbsp;=</span>
-        <strong>"fullstack&nbsp;+&nbsp;lead"</strong>
+        <img alt="" src="/img/portrait.jpg" width="420" height="525" />
       </div>
 
       <aside class="hero__code" aria-label="Carte de visite en code">
-        <span class="c-comment">// hello.ts</span>
-        <span class="c-acc">const</span> <span class="c-key">gabriel</span> = {"{"}
-        <br />  <span class="c-key">role</span>: <span class="c-str">"fullstack + lead"</span>,
-        <br />  <span class="c-key">xp</span>: <span class="c-str">"~20 ans"</span>,
-        <br />  <span class="c-key">stack</span>: [<span class="c-str">"php"</span>, <span class="c-str">"react"</span>, <span class="c-str">"pg"</span>],
-        <br />  <span class="c-key">a11y</span>: <span class="c-str">"RGAA / WCAG AA"</span>,
-        <br />{"}"}
-        <span class="c-punc">;</span>
+        <pre><code set:html={highlighted} /></pre>
       </aside>
     </div>
   </div>
@@ -116,46 +118,34 @@ import IconArrowRight from '../icons/IconArrowRight.astro';
     width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
   }
 
-  .hero__sticker {
-    position: absolute;
-    bottom: -18px; left: -18px;
-    background: var(--tc-bg);
-    border: var(--tc-border); border-radius: var(--tc-radius);
-    box-shadow: var(--tc-shadow-sm);
-    padding: 10px 14px;
-    font-family: var(--tc-font-mono); font-size: 12px;
-    display: flex; align-items: center; gap: 8px;
-    transform: rotate(-3deg);
-  }
-  .hero__sticker strong { color: var(--tc-fg-1); }
-  .hero__sticker span { color: var(--tc-fg-3); }
-
   .hero__code {
     position: absolute;
-    right: -32px; bottom: -36px;
-    width: min(320px, 80%);
+    right: -50px; bottom: -100px;
+    width: min(360px, 80%);
     background: var(--tc-fg-1);
     color: var(--tc-bg);
     border: var(--tc-border); border-radius: var(--tc-radius);
-    padding: 18px 20px;
+    padding: 18px 20px 10px 20px;
     font-family: var(--tc-font-mono); font-size: 12px; line-height: 1.6;
     box-shadow: var(--tc-shadow);
-    display: none;
+    display: block;
   }
-  .hero__code .c-comment { color: #888; }
-  .hero__code .c-key { color: #FFF5F3; }
-  .hero__code .c-str { color: #FFD9CF; }
-  .hero__code .c-acc { color: var(--tc-accent); }
-
-  /* Variant display via data-hero on body */
-  :global(body[data-hero="frame"]) .hero__sticker { display: flex; }
-  :global(body[data-hero="frame"]) .hero__code { display: none; }
-  :global(body[data-hero="sticker"]) .hero__photo-frame { box-shadow: var(--tc-shadow); }
-  :global(body[data-hero="sticker"]) .hero__sticker { display: flex; }
-  :global(body[data-hero="sticker"]) .hero__code { display: none; }
-  :global(body[data-hero="code"]) .hero__sticker { display: none; }
-  :global(body[data-hero="code"]) .hero__code { display: block; }
-  :global(body[data-hero="code"]) .hero__visual { padding-right: 0; padding-bottom: 24px; }
+  .hero__code pre { margin: 0; white-space: pre-wrap; word-break: break-all; }
+  .hero__code code {
+    font-family: inherit; font-size: inherit;
+    background: transparent; padding: 0;
+  }
+  /* highlight.js — atom-one-dark, background overridden */
+  .hero__code :global(.hljs)                          { color: #abb2bf; background: transparent; }
+  .hero__code :global(.hljs-comment)                  { color: #5c6370; font-style: italic; }
+  .hero__code :global(.hljs-keyword)                  { color: #c678dd; }
+  .hero__code :global(.hljs-string)                   { color: #98c379; }
+  .hero__code :global(.hljs-variable)                 { color: #d19a66; }
+  .hero__code :global(.hljs-title.class_),
+  .hero__code :global(.hljs-built_in)                 { color: #e6c07b; }
+  .hero__code :global(.hljs-title.function_)          { color: #61aeee; }
+  .hero__code :global(.hljs-name),
+  .hero__code :global(.hljs-selector-tag)             { color: #e06c75; }
 
   @media (max-width: 760px) {
     section { padding: var(--tc-space-7) 0; }

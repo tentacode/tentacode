@@ -14,7 +14,7 @@
   /* Brand */
   --tc-bg:       #FFF5F3;
   --tc-fg:       #010101;
-  --tc-accent:   #8579DC;
+  --tc-accent:   #6f60d5;
 
   /* Surfaces */
   --tc-surface:        #FFFFFF;
@@ -26,7 +26,7 @@
   --tc-accent-deep:    #5B4FB0;
 
   /* Semantic */
-  --tc-success:        #2E7D4F;
+  --tc-success:        #00c9b1;
   --tc-success-soft:   #DCEFE2;
   --tc-warning:        #B86E00;
   --tc-warning-soft:   #FBE8C9;
@@ -34,6 +34,10 @@
   --tc-error-soft:     #F8DCD5;
   --tc-info:           #1F5FA8;
   --tc-info-soft:      #D9E6F5;
+
+  /* Color variants */
+  --tc-turquoise: #00c9b1;
+  --tc-pink:     #d81182; /* d81182 */
 
   /* Foreground scale */
   --tc-fg-1:   #010101;

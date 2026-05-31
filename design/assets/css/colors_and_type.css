@@ -26,7 +26,7 @@
   /* Brand */
   --tc-bg:       #FFF5F3;  /* warm beige — primary background */
   --tc-fg:       #010101;  /* near-black — text + borders */
-  --tc-accent:   #8579DC;  /* purple — primary accent */
+  --tc-accent:   #8376db;  /* purple — primary accent */
 
   /* Surfaces (derived) */
   --tc-surface:        #FFFFFF;          /* card / elevated panels */
@@ -38,7 +38,7 @@
   --tc-accent-deep:    #5B4FB0;          /* AA-contrast purple on bg for body text */
 
   /* Semantic */
-  --tc-success:        #2E7D4F;
+  --tc-success:        #6b2e7d;
   --tc-success-soft:   #DCEFE2;
   --tc-warning:        #B86E00;
   --tc-warning-soft:   #FBE8C9;

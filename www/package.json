@@ -13,7 +13,8 @@
     "check": "astro check && eslint src && playwright test"
   },
   "dependencies": {
-    "astro": "^6.4.2"
+    "astro": "^6.4.2",
+    "highlight.js": "^11.11.1"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",

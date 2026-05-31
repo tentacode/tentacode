@@ -8,11 +8,13 @@ import IconMenu from './icons/IconMenu.astro';
     <Wordmark />
 
     <nav id="primary-nav" aria-label="Navigation principale">
-      <a href="#axes">Compétences</a>
-      <a href="#projects">Projets</a>
-      <a href="#confs">Conférences</a>
-      <a href="#blog">Blog</a>
-      <a href="#contact">Contact</a>
+      <ul role="list">
+        <li><a href="#axes">Compétences</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#confs">Conférences</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
 
     <a href="#contact" class="site-header__cta">
@@ -58,7 +60,10 @@ import IconMenu from './icons/IconMenu.astro';
     padding: 18px var(--tc-space-6);
   }
 
-  nav { display: flex; gap: var(--tc-space-6); align-items: center; }
+  nav ul {
+    display: flex; gap: var(--tc-space-6); align-items: center;
+    list-style: none; margin: 0; padding: 0;
+  }
   nav a {
     font-size: 15px; font-weight: 700;
     color: var(--tc-fg-1); text-decoration: none;
@@ -79,10 +84,10 @@ import IconMenu from './icons/IconMenu.astro';
     display: inline-flex; align-items: center; gap: 9px;
     padding: 9px 18px;
     font-family: var(--tc-font-sans); font-weight: 700; font-size: 14px;
-    color: var(--tc-success); text-decoration: none;
+    color: var(--tc-fg-3); text-decoration: none;
     white-space: nowrap;
     background: var(--tc-bg);
-    border: 2px solid var(--tc-success); border-radius: var(--tc-radius-pill);
+    border: 2px solid var(--tc-fg); border-radius: var(--tc-radius-pill);
     box-shadow: var(--tc-shadow-sm);
     transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s ease;
   }
@@ -137,14 +142,16 @@ import IconMenu from './icons/IconMenu.astro';
     button { display: inline-flex; }
 
     :global(body[data-menu="open"]) nav {
-      display: flex; flex-direction: column;
-      align-items: stretch;
       position: absolute; top: 100%; left: 0; right: 0;
       background: var(--tc-bg);
-      padding: var(--tc-space-5) var(--tc-space-4);
       border-bottom: var(--tc-border);
-      gap: var(--tc-space-3);
       z-index: 60;
+    }
+    :global(body[data-menu="open"]) nav ul {
+      display: flex; flex-direction: column;
+      align-items: stretch;
+      padding: var(--tc-space-5) var(--tc-space-4);
+      gap: var(--tc-space-3);
     }
     :global(body[data-menu="open"]) nav a {
       font-size: 22px;
@@ -152,7 +159,7 @@ import IconMenu from './icons/IconMenu.astro';
       padding: 8px 0;
       border-bottom: 1px solid #d9c9c4;
     }
-    :global(body[data-menu="open"]) nav a:last-child {
+    :global(body[data-menu="open"]) nav li:last-child a {
       border-bottom: none;
     }
   }

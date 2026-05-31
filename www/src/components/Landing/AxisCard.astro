@@ -39,7 +39,7 @@ const { num, variant, title, description, tags } = Astro.props;
   .axis-card__num {
     font-family: var(--tc-font-mono); font-size: 12px; font-weight: 700;
     letter-spacing: 0.06em;
-    color: var(--axis-color);
+    color: var(--tc-fg-2);
   }
   .axis-card__icon {
     width: 64px; height: 64px;
@@ -56,12 +56,12 @@ const { num, variant, title, description, tags } = Astro.props;
     border: 2px solid var(--axis-color);
     border-radius: 6px;
     background: rgba(255,255,255,0.5);
-    color: var(--axis-color);
+    color: var(--tc-fg-1);
   }
 
   .axis-card--dev  { --axis-color: var(--tc-accent); }
-  .axis-card--lead { --axis-color: #B86E00; }
-  .axis-card--a11y { --axis-color: var(--tc-success); }
+  .axis-card--lead { --axis-color: var(--tc-turquoise); }
+  .axis-card--a11y { --axis-color: var(--tc-pink); }
   .axis-card--ai   { --axis-color: var(--tc-fg-1); }
 
   @media (max-width: 760px) {
