@@ -1,7 +1,5 @@
 ---
-import Base from './Base.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import MarkdownLayout from './MarkdownLayout.astro';
 
 interface Props {
   title: string;
@@ -23,54 +21,43 @@ const meta = [
 ].filter(Boolean) as { label: string; value: string }[];
 ---
 
-<Base title={`${title} — tentacode.dev`} description={description}>
-  <a class="tc-skip" href="#main-content">Aller au contenu principal</a>
-  <Header />
-
-  <main id="main-content">
-    <div class="tc-container">
-      <header class="project-hero">
-        <a class="back-link" href="/#projects">
-          ← Tous les projets
-        </a>
-        <div class="project-hero__tags">
-          {tags.map((tag) => <span class="project-tag">{tag}</span>)}
-        </div>
-        <h1>{title}</h1>
-        <p class="project-hero__description">{description}</p>
-
-        {meta.length > 0 && (
-          <dl class="project-meta">
-            {meta.map(({ label, value }) => (
-              <div class="project-meta__item">
-                <dt>{label}</dt>
-                <dd>{value}</dd>
-              </div>
-            ))}
-          </dl>
-        )}
-      </header>
-
-      <article class="project-content">
-        <slot />
-      </article>
-
-      <aside class="signature-block" aria-label="À propos de l'auteur">
-        <div class="signature-block__inner">
-          <div class="signature-block__text">
-            <p>
-              <strong>Gabriel Pillet</strong> est développeur fullstack freelance, lead technique et expert accessibilité basé en France.
-              Il accompagne des équipes produit sur des projets web exigeants — de l'audit RGAA à la mise en production.
-            </p>
-            <a href="/">Voir le profil complet sur tentacode.dev →</a>
-          </div>
-        </div>
-      </aside>
+<MarkdownLayout title={title} description={description}>
+  <header class="project-hero" slot="header">
+    <a class="back-link" href="/#projects">
+      ← Tous les projets
+    </a>
+    <div class="project-hero__tags">
+      {tags.map((tag) => <span class="project-tag">{tag}</span>)}
     </div>
-  </main>
+    <h1>{title}</h1>
+    <p class="project-hero__description">{description}</p>
 
-  <Footer />
-</Base>
+    {meta.length > 0 && (
+      <dl class="project-meta">
+        {meta.map(({ label, value }) => (
+          <div class="project-meta__item">
+            <dt>{label}</dt>
+            <dd>{value}</dd>
+          </div>
+        ))}
+      </dl>
+    )}
+  </header>
+
+  <slot />
+
+  <aside class="signature-block" slot="footer" aria-label="À propos de l'auteur">
+    <div class="signature-block__inner">
+      <div class="signature-block__text">
+        <p>
+          <strong>Gabriel Pillet</strong> est développeur fullstack freelance, lead technique et expert accessibilité basé en France.
+          Il accompagne des équipes produit sur des projets web exigeants — de l'audit RGAA à la mise en production.
+        </p>
+        <a href="/">Voir le profil complet sur tentacode.dev →</a>
+      </div>
+    </div>
+  </aside>
+</MarkdownLayout>
 
 <style>
   .project-hero {
@@ -136,71 +123,6 @@ const meta = [
     font-weight: var(--tc-weight-semibold);
     color: var(--tc-fg-1);
     font-size: var(--tc-fs-small);
-  }
-
-  .project-content {
-    max-width: 72ch;
-    padding-bottom: var(--tc-space-9);
-    font-size: var(--tc-fs-body);
-    line-height: var(--tc-lh-relaxed);
-  }
-  .project-content :global(h2) {
-    font-size: var(--tc-fs-h3);
-    margin-top: var(--tc-space-8);
-    margin-bottom: var(--tc-space-4);
-    padding-bottom: var(--tc-space-3);
-    border-bottom: var(--tc-border);
-  }
-  .project-content :global(h3) {
-    font-size: var(--tc-fs-h4);
-    margin-top: var(--tc-space-6);
-    margin-bottom: var(--tc-space-3);
-  }
-  .project-content :global(p) { margin-bottom: var(--tc-space-4); }
-  .project-content :global(ul),
-  .project-content :global(ol) {
-    padding-left: var(--tc-space-5);
-    margin-bottom: var(--tc-space-4);
-  }
-  .project-content :global(li) { margin-bottom: var(--tc-space-2); }
-  .project-content :global(pre) {
-    background: var(--tc-fg-1);
-    color: var(--tc-bg);
-    padding: var(--tc-space-5);
-    border-radius: var(--tc-radius-sm);
-    overflow-x: auto;
-    margin-bottom: var(--tc-space-5);
-    font-family: var(--tc-font-mono);
-    font-size: 14px;
-    line-height: 1.6;
-  }
-  .project-content :global(code) {
-    font-family: var(--tc-font-mono);
-    font-size: 0.875em;
-    background: var(--tc-accent-soft);
-    padding: 2px 6px;
-    border-radius: 4px;
-  }
-  .project-content :global(pre code) {
-    background: none;
-    padding: 0;
-  }
-  .project-content :global(table) {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: var(--tc-space-5);
-    font-size: var(--tc-fs-small);
-  }
-  .project-content :global(th),
-  .project-content :global(td) {
-    padding: var(--tc-space-3) var(--tc-space-4);
-    border: 2px solid var(--tc-fg-1);
-    text-align: left;
-  }
-  .project-content :global(th) {
-    background: var(--tc-fg-1);
-    color: var(--tc-bg);
-    font-family: var(--tc-font-display);
   }
 
   .signature-block {
