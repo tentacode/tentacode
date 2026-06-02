@@ -7,17 +7,14 @@ interface Props {
   tags: string[];
   client?: string;
   role?: string;
-  duration?: string;
-  outcome?: string;
+  href?: string;
 }
 
-const { title, description, tags, client, role, duration, outcome } = Astro.props;
+const { title, description, tags, client, role, href } = Astro.props;
 
 const meta = [
-  client   && { label: 'Client',    value: client },
-  role     && { label: 'Rôle',      value: role },
-  duration && { label: 'Durée',     value: duration },
-  outcome  && { label: 'Résultat',  value: outcome },
+  client && { label: 'Client', value: client },
+  role   && { label: 'Rôle',   value: role },
 ].filter(Boolean) as { label: string; value: string }[];
 ---
 
@@ -42,11 +39,17 @@ const meta = [
         ))}
       </dl>
     )}
+
+    {href && (
+      <a class="project-link" href={href} target="_blank" rel="noopener noreferrer">
+        Voir le projet →
+      </a>
+    )}
   </header>
 
   <slot />
 
-  <aside class="signature-block" slot="footer" aria-label="À propos de l'auteur">
+  <!-- <aside class="signature-block" slot="footer" aria-label="À propos de l'auteur">
     <div class="signature-block__inner">
       <div class="signature-block__text">
         <p>
@@ -56,7 +59,7 @@ const meta = [
         <a href="/">Voir le profil complet sur tentacode.dev →</a>
       </div>
     </div>
-  </aside>
+  </aside> -->
 </MarkdownLayout>
 
 <style>
@@ -124,6 +127,17 @@ const meta = [
     color: var(--tc-fg-1);
     font-size: var(--tc-fs-small);
   }
+
+  .project-link {
+    display: inline-block;
+    margin-top: var(--tc-space-5);
+    font-weight: var(--tc-weight-semibold);
+    font-size: var(--tc-fs-small);
+    color: var(--tc-accent-deep);
+    text-decoration: none;
+  }
+  .project-link:hover { text-decoration: underline; }
+  .project-link:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 3px; border-radius: 3px; }
 
   .signature-block {
     border-top: var(--tc-border);

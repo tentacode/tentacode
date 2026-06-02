@@ -17,6 +17,7 @@
   var shakeBtn = document.getElementById("skills-shake");
   var tidyBtn = document.getElementById("skills-tidy");
   var tidyLabel = document.getElementById("skills-tidy-label");
+  var titleState = document.getElementById("skills-title-state");
   if (!inner || !pile) return;
 
   var bricks = Array.prototype.slice.call(pile.querySelectorAll(".brick"));
@@ -81,19 +82,6 @@
   M.Events.on(engine, "afterUpdate", render);
   render();
 
-  // Mouse / drag — attach to the pile element (no canvas).
-  var mouse = M.Mouse.create(pile);
-  // Don't hijack the page scroll wheel over the pile.
-  if (mouse.mousewheel) {
-    pile.removeEventListener("mousewheel", mouse.mousewheel);
-    pile.removeEventListener("DOMMouseScroll", mouse.mousewheel);
-  }
-  var mc = M.MouseConstraint.create(engine, {
-    mouse: mouse,
-    constraint: { stiffness: 0.2, render: { visible: false } }
-  });
-  M.World.add(engine.world, mc);
-
   // Runner — start only when the section scrolls into view (so the drop is seen).
   var runner = M.Runner.create();
   var started = false;
@@ -137,17 +125,38 @@
   var tidy = false;
   var basePileH = pile.clientHeight;
 
+  // Build category order from data attribute on pile.
+  var categoryOrder = (pile.dataset.categoryOrder || '').split(',').filter(Boolean);
+
+  function categoryRank(item) {
+    var cat = item.el.dataset.category || '';
+    var i = categoryOrder.indexOf(cat);
+    return i === -1 ? categoryOrder.length : i;
+  }
+
   function tidyPositions() {
     var pad = 16, gap = 12;
     var maxX = pile.clientWidth - pad;
     var x = pad, y = pad, rowH = 0, total = 0;
-    var pos = items.map(function (it) {
+
+    // Sort by category order, preserving original index for position mapping.
+    var sorted = items.map(function (it, i) { return { it: it, i: i }; });
+    sorted.sort(function (a, b) { return categoryRank(a.it) - categoryRank(b.it); });
+
+    var pos = new Array(items.length);
+    var lastCat = null;
+    sorted.forEach(function (entry) {
+      var it = entry.it;
+      var cat = it.el.dataset.category || '';
+      // Force new row at each category boundary.
+      if (lastCat !== null && cat !== lastCat) { x = pad; y += rowH + gap; rowH = 0; }
+      lastCat = cat;
       if (x + it.w > maxX && x > pad) { x = pad; y += rowH + gap; rowH = 0; }
       var c = { x: x + it.w / 2, y: y + it.h / 2 };
       x += it.w + gap;
       rowH = Math.max(rowH, it.h);
       total = y + rowH + pad;
-      return c;
+      pos[entry.i] = c;
     });
     return { pos: pos, height: total };
   }
@@ -158,6 +167,7 @@
     if (tidyBtn) {
       tidyBtn.setAttribute("aria-pressed", on ? "true" : "false");
       if (tidyLabel) tidyLabel.textContent = on ? "Mélanger" : "Ranger";
+      if (titleState) titleState.textContent = on ? "rangée" : "en vrac";
     }
     if (on) {
       if (!started) start();
@@ -193,7 +203,7 @@
   }
   if (tidyBtn) tidyBtn.addEventListener("click", function () { setTidy(!tidy); });
 
-  // Keep walls in sync with width changes; nudge settled bricks back in bounds.
+  // Keep walls in sync with width changes; recalculate tidy layout if active.
   var resizeTO;
   window.addEventListener("resize", function () {
     clearTimeout(resizeTO);
@@ -201,10 +211,29 @@
       var nd = dims();
       M.Body.setPosition(walls[0], { x: nd.w / 2, y: nd.h + wallT / 2 });
       M.Body.setPosition(walls[2], { x: nd.w + wallT / 2, y: nd.h / 2 });
-      items.forEach(function (it) {
-        if (it.body.position.x > nd.w) M.Body.setPosition(it.body, { x: nd.w - it.w, y: it.body.position.y });
-      });
-    }, 200);
+      if (tidy) {
+        var t = tidyPositions();
+        pile.style.height = Math.max(basePileH, t.height) + "px";
+        items.forEach(function (it, i) {
+          // Suppress transition during resize to avoid glitch
+          it.el.style.transition = "none";
+          it.el.style.transitionDelay = "";
+          M.Body.setPosition(it.body, t.pos[i]);
+          it.el.style.transform =
+            "translate(" + (t.pos[i].x - it.w / 2) + "px," + (t.pos[i].y - it.h / 2) + "px) rotate(0rad)";
+        });
+        // Re-enable transitions after the frame is painted
+        requestAnimationFrame(function () {
+          items.forEach(function (it) {
+            it.el.style.transition = "transform 0.55s cubic-bezier(.2,.85,.25,1)";
+          });
+        });
+      } else {
+        items.forEach(function (it) {
+          if (it.body.position.x > nd.w) M.Body.setPosition(it.body, { x: nd.w - it.w, y: it.body.position.y });
+        });
+      }
+    }, 150);
   });
 
   }); // end requestAnimationFrame

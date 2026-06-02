@@ -1,10 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 import ProjectCard from './ProjectCard.astro';
-import IconArrowRight from '../icons/IconArrowRight.astro';
 
 const allProjects = await getCollection('projets');
-const projects = allProjects.sort((a, b) => a.data.order - b.data.order);
+const projects = allProjects.sort((a, b) => b.id.localeCompare(a.id));
 ---
 
 <section class="projects" id="projects" aria-labelledby="projects-title">
@@ -14,21 +13,18 @@ const projects = allProjects.sort((a, b) => a.data.order - b.data.order);
         <span class="tc-eyebrow tc-eyebrow--dot">Portfolio</span>
         <h2 id="projects-title">Projets variés et de qualité</h2>
       </div>
-      <a class="section-head__link" href="/projets">
-        Tout voir
-        <IconArrowRight aria-hidden="true" />
-      </a>
     </div>
 
     <div class="projects__bento">
       {projects.map((p) => (
         <ProjectCard
           variant={p.data.variant}
-          href={`/projets/${p.id.replace(/\.md$/, '')}`}
+          href={`/projets/${p.data.slug}`}
           title={p.data.title}
           description={p.data.description}
           tags={p.data.tags}
-          mediaClass={p.data.mediaClass}
+          image={p.data.image}
+          imageAlt={p.data.imageAlt}
         />
       ))}
     </div>
@@ -47,15 +43,6 @@ const projects = allProjects.sort((a, b) => a.data.order - b.data.order);
   /* Grid placement */
   :global(.project--featured) { grid-column: span 4; grid-row: span 2; }
   :global(.project--sm) { grid-column: span 2; grid-row: span 1; }
-
-  /* Media swatches */
-  :global(.media-1) { background: repeating-linear-gradient(45deg, #E8E4F8 0 10px, #FFF5F3 10px 20px); }
-  :global(.media-2) { background: var(--tc-fg-1); color: var(--tc-bg); }
-  :global(.media-2) :global(.project__media-placeholder) { color: rgba(255, 245, 243, 0.55); }
-  :global(.media-3) { background: var(--tc-accent); }
-  :global(.media-4) { background: repeating-linear-gradient(0deg, #FFF5F3 0 12px, #F5E9E5 12px 24px); }
-  :global(.media-5) { background: #F3D9A4; }
-  :global(.media-6) { background: #B7DBC2; }
 
   @media (max-width: 1080px) {
     .projects__bento { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 220px; }

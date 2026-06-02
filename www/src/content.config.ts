@@ -3,18 +3,18 @@ import { glob } from 'astro/loaders';
 
 const projets = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/projets' }),
-  schema: z.object({
+  schema: ({ image: img }) => z.object({
     title: z.string(),
     description: z.string(),
     tags: z.array(z.string()),
     variant: z.enum(['featured', 'sm']),
-    mediaClass: z.string(),
-    order: z.number(),
+    slug: z.string(),
     publishDate: z.date(),
+    image: img(),
+    imageAlt: z.string(),
+    href: z.string().url().optional(),
     client: z.string().optional(),
     role: z.string().optional(),
-    duration: z.string().optional(),
-    outcome: z.string().optional(),
   }),
 });
 

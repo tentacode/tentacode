@@ -2,6 +2,9 @@
 import IconList from '../icons/IconList.astro';
 import IconShuffle from '../icons/IconShuffle.astro';
 import IconRotateCcw from '../icons/IconRotateCcw.astro';
+import { skills, CATEGORY_ORDER } from '../../data/skills';
+
+const categoryOrder = CATEGORY_ORDER.join(',');
 ---
 
 <section class="skills" aria-labelledby="skills-title">
@@ -9,7 +12,7 @@ import IconRotateCcw from '../icons/IconRotateCcw.astro';
     <div class="skills__inner" id="skills-inner">
       <div class="skills__head">
         <span class="tc-eyebrow tc-eyebrow--dot">Quelques compétences</span>
-        <h2 id="skills-title">La stack, en vrac</h2>
+        <h2 id="skills-title">La stack, <span id="skills-title-state">en vrac</span></h2>
       </div>
 
       <div class="skills__controls" id="skills-controls">
@@ -24,37 +27,19 @@ import IconRotateCcw from '../icons/IconRotateCcw.astro';
         </button>
       </div>
 
-      <ul id="skills-pile" role="list" aria-label="Compétences techniques et humaines">
-        <li class="brick brick--xl brick--accent" role="listitem">PHP / Symfony</li>
-        <li class="brick brick--l" role="listitem">React</li>
-        <li class="brick brick--l brick--inverse" role="listitem">PostgreSQL</li>
-        <li class="brick brick--xl" role="listitem">Accessibilité</li>
-        <li class="brick brick--mono" role="listitem">TypeScript</li>
-        <li class="brick brick--l brick--accent" role="listitem">Lead technique</li>
-        <li class="brick brick--mono" role="listitem">Next.js</li>
-        <li class="brick brick--soft" role="listitem">RGAA</li>
-        <li class="brick brick--mono" role="listitem">Node</li>
-        <li class="brick" role="listitem">Mentorat</li>
-        <li class="brick brick--mono brick--s" role="listitem">Astro</li>
-        <li class="brick brick--l brick--soft" role="listitem">Bienveillance</li>
-        <li class="brick brick--mono brick--s" role="listitem">Docker</li>
-        <li class="brick brick--l brick--inverse" role="listitem">QA &amp; tests E2E</li>
-        <li class="brick brick--mono brick--s" role="listitem">Playwright</li>
-        <li class="brick brick--xl brick--inverse" role="listitem">Pragmatisme</li>
-        <li class="brick brick--mono" role="listitem">React Native</li>
-        <li class="brick" role="listitem">Audit</li>
-        <li class="brick brick--accent" role="listitem">Claude Code</li>
-        <li class="brick brick--mono brick--s" role="listitem">CI / CD</li>
-        <li class="brick" role="listitem">Pair programming</li>
-        <li class="brick brick--l" role="listitem">Architecture</li>
-        <li class="brick brick--mono brick--s" role="listitem">Cypress</li>
-        <li class="brick brick--soft brick--s" role="listitem">WCAG AA</li>
-        <li class="brick" role="listitem">Pédagogie</li>
-        <li class="brick brick--mono brick--s" role="listitem">Redis</li>
-        <li class="brick brick--mono" role="listitem">API REST</li>
-        <li class="brick brick--s" role="listitem">Recrutement tech</li>
-        <li class="brick brick--mono brick--s" role="listitem">Lecteurs d'écran</li>
-        <li class="brick brick--accent brick--s" role="listitem">Dev. Agentique</li>
+      <ul id="skills-pile" role="list" aria-label="Compétences techniques et humaines" data-category-order={categoryOrder}>
+        {skills.map((skill) => (
+          <li
+            class:list={[
+              'brick',
+              `brick--cat-${skill.category.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')}`,
+              `brick--${skill.size}`,
+              skill.mono && 'brick--mono',
+            ]}
+            data-category={skill.category}
+            role="listitem"
+          >{skill.name}</li>
+        ))}
       </ul>
     </div>
   </div>
@@ -117,9 +102,7 @@ import IconRotateCcw from '../icons/IconRotateCcw.astro';
     margin-top: var(--tc-space-4);
     overflow: hidden;
     touch-action: none;
-    cursor: grab;
   }
-  ul.is-physics:active { cursor: grabbing; }
 
   .brick {
     font-family: var(--tc-font-display); font-weight: 700;
@@ -140,12 +123,18 @@ import IconRotateCcw from '../icons/IconRotateCcw.astro';
   ul.is-physics .brick.is-live { opacity: 1; }
 
   .brick--mono    { font-family: var(--tc-font-mono); font-weight: 500; font-size: 15px; }
-  .brick--accent  { background: var(--tc-accent); }
-  .brick--inverse { background: var(--tc-fg-1); color: var(--tc-bg); }
-  .brick--soft    { background: var(--tc-accent-soft); }
   .brick--s  { font-size: 14px; padding: 9px 14px; }
   .brick--l  { font-size: 22px; padding: 14px 20px; }
   .brick--xl { font-size: 28px; padding: 16px 24px; letter-spacing: -0.02em; }
+
+  /* Category colors — li.brick--cat-* wins over .brick (specificity 0,2,1 vs 0,2,0) */
+  li.brick--cat-frontend      { background: var(--tc-accent-soft); }
+  li.brick--cat-backend       { background: var(--tc-info-soft); }
+  li.brick--cat-devops        { background: var(--tc-devops-soft); }
+  li.brick--cat-qualite       { background: var(--tc-warning-soft); }
+  li.brick--cat-accessibilite { background: var(--tc-success-soft); }
+  li.brick--cat-leadership    { background: var(--tc-pink-soft); }
+  li.brick--cat-ia            { background: var(--tc-ai-soft); }
 
   ul:not(.is-physics) .brick:nth-child(3n)   { transform: rotate(-2deg); }
   ul:not(.is-physics) .brick:nth-child(3n+1) { transform: rotate(1.5deg); }

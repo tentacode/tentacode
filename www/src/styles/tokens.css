@@ -22,7 +22,7 @@
   --tc-overlay:        rgba(1, 1, 1, 0.55);
 
   /* Accent variants */
-  --tc-accent-soft:    #E8E4F8;
+  --tc-accent-soft:    #c3bbf4;
   --tc-accent-deep:    #5B4FB0;
 
   /* Semantic */
@@ -38,6 +38,11 @@
   /* Color variants */
   --tc-turquoise: #00c9b1;
   --tc-pink:     #d81182; /* d81182 */
+  --tc-pink-soft: #fec2e4; /* F8D0E3 */
+
+  /* Category colors (skills section) */
+  --tc-devops-soft: #E0F0F0;
+  --tc-ai-soft:     #F0E8FF;
 
   /* Foreground scale */
   --tc-fg-1:   #010101;
