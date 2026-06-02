@@ -1,6 +1,8 @@
 ---
+import { getCollection } from 'astro:content';
 import ConferenceItem from './ConferenceItem.astro';
-import IconArrowRight from '../icons/IconArrowRight.astro';
+
+const conferences = (await getCollection('conferences')).sort((a, b) => a.id.localeCompare(b.id));
 ---
 
 <section class="confs" id="confs" aria-labelledby="confs-title">
@@ -8,98 +10,21 @@ import IconArrowRight from '../icons/IconArrowRight.astro';
     <div class="section-head">
       <div>
         <span class="tc-eyebrow tc-eyebrow--dot">Sur scène</span>
-        <h2 id="confs-title">Conférences et talks.</h2>
+        <h2 id="confs-title">Conférences et talks</h2>
       </div>
-      <a class="section-head__link" href="/conferences">
-        Toutes les conférences
-        <IconArrowRight aria-hidden="true" />
-      </a>
     </div>
 
     <ul class="confs__list">
-      <ConferenceItem
-        title="L'accessibilité, c'est aussi pour les devs."
-        occurrences={[
-          { event: "Devoxx France", date: "Mai 2026 · Paris" },
-          { event: "Sunny Tech", date: "Juin 2026 · Montpellier" },
-        ]}
-        cohost="Solo · ~45 min"
-        href="#"
-      />
-      <ConferenceItem
-        title="Coder avec un agent : leçons du quotidien."
-        occurrences={[
-          { event: "BlendWebMix", date: "Nov 2025 · Lyon" },
-        ]}
-        cohost="avec <strong>Charlotte M.</strong> · 40 min"
-        href="#"
-      />
-      <ConferenceItem
-        title="Tenir une équipe de dev sans la presser."
-        occurrences={[
-          { event: "Sud Web", date: "Oct 2025 · Toulouse" },
-          { event: "Codeurs en Seine", date: "Nov 2025 · Rouen" },
-        ]}
-        cohost="Solo · 30 min"
-        href="#"
-      />
-      <ConferenceItem
-        title="RGAA en pratique : ce qui marche vraiment."
-        occurrences={[
-          { event: "Paris Web", date: "Juin 2025 · Paris" },
-        ]}
-        cohost="avec <strong>Romain L.</strong> · 45 min"
-        href="#"
-      />
-      <ConferenceItem
-        title="Décomposer un monolithe sans tout casser."
-        occurrences={[
-          { event: "Meetup Symfony Lyon", date: "Avr 2025 · Lyon" },
-        ]}
-        cohost="Solo · 30 min"
-        href="#"
-      />
-      <ConferenceItem
-        title="Recruter dev quand on est dev : l'honnête vérité."
-        occurrences={[
-          { event: "DevFest Lille", date: "Mar 2025 · Lille" },
-        ]}
-        cohost="Solo · 35 min"
-        href="#"
-      />
-      <ConferenceItem
-        title="PostgreSQL : ce que je voudrais qu'on m'ait dit plus tôt."
-        occurrences={[
-          { event: "Forum PHP", date: "Nov 2024 · Paris" },
-        ]}
-        cohost="avec <strong>Sophie K.</strong> · 50 min"
-        href="#"
-      />
-      <ConferenceItem
-        title="Le code review qui n'épuise personne."
-        occurrences={[
-          { event: "Codeurs en Seine", date: "Sept 2024 · Rouen" },
-        ]}
-        cohost="Solo · 30 min"
-        href="#"
-      />
-      <ConferenceItem
-        title="Frontend accessible : composants vs primitives."
-        occurrences={[
-          { event: "Mixit", date: "Mai 2024 · Lyon" },
-          { event: "Meetup React Paris", date: "Fév 2024 · Paris" },
-        ]}
-        cohost="avec <strong>Julien D.</strong> · 45 min"
-        href="#"
-      />
-      <ConferenceItem
-        title="React Server Components : six mois après."
-        occurrences={[
-          { event: "Meetup React Paris", date: "Fév 2024 · Paris" },
-        ]}
-        cohost="Solo · 30 min"
-        href="#"
-      />
+      {conferences.map((conf) => (
+        <ConferenceItem
+          title={conf.data.title}
+          occurrences={conf.data.occurrences}
+          cohost={conf.data.cohost}
+          cohostUrl={conf.data.cohostUrl}
+          linkLabel={conf.data.linkLabel}
+          href={conf.data.href}
+        />
+      ))}
     </ul>
   </div>
 </section>

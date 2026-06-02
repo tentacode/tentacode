@@ -18,4 +18,16 @@ const projets = defineCollection({
   }),
 });
 
-export const collections = { projets };
+const conferences = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/conferences' }),
+  schema: z.object({
+    title: z.string(),
+    occurrences: z.array(z.object({ event: z.string(), date: z.string() })),
+    cohost: z.string().optional(),
+    cohostUrl: z.string().url().optional(),
+    linkLabel: z.string(),
+    href: z.string(),
+  }),
+});
+
+export const collections = { projets, conferences };

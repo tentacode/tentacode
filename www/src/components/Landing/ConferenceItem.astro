@@ -1,5 +1,5 @@
 ---
-import IconArrowRight from '../icons/IconArrowRight.astro';
+import IconArrowUpRight from '../icons/IconArrowUpRight.astro';
 
 interface Occurrence {
   event: string;
@@ -9,11 +9,13 @@ interface Occurrence {
 interface Props {
   title: string;
   occurrences: Occurrence[];
-  cohost: string;
+  cohost?: string;
+  cohostUrl?: string;
+  linkLabel: string;
   href: string;
 }
 
-const { title, occurrences, cohost, href } = Astro.props;
+const { title, occurrences, cohost, cohostUrl, linkLabel, href } = Astro.props;
 ---
 
 <li class="conf">
@@ -27,11 +29,19 @@ const { title, occurrences, cohost, href } = Astro.props;
   </div>
   <div class="conf__main">
     <p class="conf__title">{title}</p>
-    <p class="conf__cohost" set:html={cohost} />
+    {cohost && (
+      <p class="conf__cohost">
+        avec{' '}
+        {cohostUrl
+          ? <a href={cohostUrl} target="_blank" rel="noopener noreferrer"><strong>{cohost}</strong><IconArrowUpRight aria-hidden="true" /></a>
+          : <strong>{cohost}</strong>
+        }
+      </p>
+    )}
   </div>
-  <a href={href} aria-label={`Détails de la conférence : ${title}`}>
-    Voir
-    <IconArrowRight aria-hidden="true" />
+  <a class="link-detail" href={href} aria-label={`${linkLabel} : ${title}`} target="_blank" rel="noopener noreferrer">
+    {linkLabel}
+    <IconArrowUpRight aria-hidden="true" />
   </a>
 </li>
 
@@ -79,15 +89,17 @@ const { title, occurrences, cohost, href } = Astro.props;
     letter-spacing: 0.05em;
     color: var(--tc-fg-3);
   }
-  .conf__main { display: flex; flex-direction: column; gap: 4px; align-self: center; }
+  .conf__main { display: flex; flex-direction: column; gap: 4px; align-self: start; }
   .conf__title {
     font-family: var(--tc-font-display); font-size: 20px;
     font-weight: 600; margin: 0;
     color: var(--tc-fg-1); letter-spacing: -0.01em;
   }
   .conf__cohost { font-size: 13px; color: var(--tc-fg-3); margin: 0; }
-  .conf__cohost :global(strong) { font-weight: 700; color: var(--tc-fg-2); }
-  a {
+  .conf__cohost strong { font-weight: 700; color: var(--tc-fg-2); }
+  .conf__cohost a { color: inherit; text-decoration: underline; display: inline-flex; align-items: center; gap: 2px; }
+  .conf__cohost a :global(svg) { width: 10px; height: 10px; flex-shrink: 0; }
+  .link-detail {
     font-family: var(--tc-font-mono); font-size: 12px;
     text-decoration: none;
     color: var(--tc-fg-1);
@@ -96,15 +108,15 @@ const { title, occurrences, cohost, href } = Astro.props;
     display: inline-flex; align-items: center; gap: 6px;
     background: var(--tc-bg);
     white-space: nowrap;
-    align-self: center;
+    align-self: start;
     transition: transform 0.1s ease, box-shadow 0.1s ease;
   }
-  a:hover { transform: translate(-1px, -1px); box-shadow: var(--tc-shadow-sm); }
-  a:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 2px; }
-  a :global(svg) { width: 12px; height: 12px; }
+  .link-detail:hover { transform: translate(-1px, -1px); box-shadow: var(--tc-shadow-sm); }
+  .link-detail:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 2px; }
+  .link-detail :global(svg) { width: 12px; height: 12px; }
 
   @media (max-width: 760px) {
     .conf { grid-template-columns: 1fr; gap: var(--tc-space-2); padding: var(--tc-space-4) 0; }
-    a { justify-self: start; }
+    .link-detail { justify-self: start; }
   }
 </style>
