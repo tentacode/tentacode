@@ -142,6 +142,7 @@ import IconMenu from './icons/IconMenu.astro';
     button { display: inline-flex; }
 
     :global(body[data-menu="open"]) nav {
+      display: block;
       position: absolute; top: 100%; left: 0; right: 0;
       background: var(--tc-bg);
       border-bottom: var(--tc-border);
