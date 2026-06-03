@@ -1,0 +1,27 @@
+---
+- name: Getting current local git branch
+  local_action:
+    module: shell
+    cmd: git rev-parse --abbrev-ref HEAD
+  register: current_git_branch
+
+- name: Cloning tentacode
+  git:
+    repo: git@github.com:tentacode/tentacode.git
+    update: yes
+    force: yes
+    version: "{{ current_git_branch.stdout | trim }}"
+    dest: "{{ user.workspace_directory }}/tentacode"
+    accept_hostkey: yes
+
+- name: Installing www dependencies
+  shell: source ~/.nvm/nvm.sh && npm install
+  args:
+    chdir: "{{ user.workspace_directory }}/tentacode/www"
+    executable: /bin/bash
+
+- name: Building www
+  shell: source ~/.nvm/nvm.sh && npm run build
+  args:
+    chdir: "{{ user.workspace_directory }}/tentacode/www"
+    executable: /bin/bash

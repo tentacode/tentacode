@@ -17,3 +17,9 @@ test: ## Run astro check and ESLint (no Playwright)
 
 serve: ## Start astro sever
 	cd www && npm run dev -- --port=1447
+
+provision-server: ## Provision server
+	ansible-playbook -i infrastructure/ansible/hosts infrastructure/ansible/provision-server.yml --extra-vars="@infrastructure/ansible/tentacode-vars.yml"
+
+deploy: ## Deploy main to server
+	ansible-playbook -i infrastructure/ansible/hosts infrastructure/ansible/deploy.yml --extra-vars="@infrastructure/ansible/tentacode-vars.yml"

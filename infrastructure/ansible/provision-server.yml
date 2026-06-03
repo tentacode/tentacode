@@ -1,0 +1,27 @@
+---
+- hosts: all
+
+  post_tasks:
+    - shell: say -v 'good news' server provisioning complete
+      delegate_to: localhost
+      args:
+        executable: /bin/bash
+      
+
+  roles:
+    - ubuntu
+
+    # needs to be setup first to use npm / nvm later
+    - web-server/node
+
+    - cli/bash
+    - cli/git
+    - cli/make
+    - cli/python
+
+    - web-server/nginx
+
+    - tentacode/deploy
+    - tentacode/nginx
+
+    - web-server/letsencrypt

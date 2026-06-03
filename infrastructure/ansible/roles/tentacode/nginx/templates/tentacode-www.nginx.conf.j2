@@ -1,0 +1,54 @@
+server {
+    listen 80;
+    listen [::]:80;
+    server_name tentacode.dev www.tentacode.dev;
+
+    root {{ user.workspace_directory }}/tentacode/www/dist;
+    index index.html;
+
+    access_log /var/log/nginx/tentacode_www.log;
+    error_log /var/log/nginx/tentacode_www_error.log;
+
+    # Security headers
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+
+    # Performance hints
+    add_header X-DNS-Prefetch-Control "on";
+
+    # Allow certbot to verify domain
+    location ^~ /.well-known/acme-challenge/ {
+        allow all;
+        default_type "text/plain";
+    }
+
+    # Deny access to hidden files
+    location ~ /\. {
+        deny all;
+    }
+
+    # Static assets with aggressive caching
+    location ~* \.(jpg|jpeg|gif|png|webp|avif|ico|svg)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        access_log off;
+    }
+
+    location ~* \.(css|js|woff|woff2|ttf|eot|otf)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        access_log off;
+    }
+
+    # HTML files - no cache (or short cache)
+    location ~* \.(html)$ {
+        add_header Cache-Control "no-cache, must-revalidate";
+    }
+
+    # Main location - try files then fallback to index.html for SPA routing
+    location / {
+        http2_push /fonts/LexendDeca-VariableFont_wght.woff2;
+        try_files $uri $uri.html $uri/ /404.html =404;
+    }
+}

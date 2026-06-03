@@ -1,0 +1,11 @@
+---
+- hosts: all
+
+  post_tasks:
+    - shell: say -v 'good news' deployment complete
+      delegate_to: localhost
+      args:
+        executable: /bin/bash
+
+  roles:
+    - tentacode/deploy

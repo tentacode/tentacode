@@ -1,0 +1,47 @@
+[core]
+    precomposeunicode = false
+    editor = vim -c 'startinsert' 
+
+[pull]
+    rebase = false
+
+[fetch]
+    prune = true
+
+[alias]
+    recent = 'for-each-ref --sort=-committerdate --count=10 --format='%(refname:short)' refs/heads/'
+    st = status -sb
+    amend = commit --amend --no-edit
+    rebase-main = pull --rebase origin main
+    pushu = !git push -u origin "$(git rev-parse --abbrev-ref HEAD)"
+    yolo = !git add . && git amend && git push -f
+    # use like 'git date "2020-02-14"' go to this date in your current branch history
+    date = "!f() { date=${1-Jan 01 2020}; git checkout `git rev-list -1 --before=\"$date\" master`;  }; f"
+
+[color]
+    ui = true
+
+[push]
+    default = simple
+
+[user]
+    email = "{{ git.email }}"
+    name = "{{ git.name }}"
+
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none

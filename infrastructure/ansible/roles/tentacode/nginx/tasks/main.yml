@@ -1,0 +1,7 @@
+---
+- name: Copying server nginx configuration
+  template:
+    src: "tentacode-www.nginx.conf.j2"
+    dest: /etc/nginx/sites-enabled/tentacode-www.conf
+  notify: restart web services
+  become: yes
