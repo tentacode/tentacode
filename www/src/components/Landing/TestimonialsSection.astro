@@ -1,5 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import IconLinkedIn from '../icons/IconLinkedIn.astro';
+import recoGuillaume from '../../assets/img/reco_guillaume.jpeg';
+import recoStephane from '../../assets/img/reco_stephane.jpeg';
+import recoJulien from '../../assets/img/reco_julien.jpeg';
 ---
 
 <section class="testimonial" aria-labelledby="testimonial-title">
@@ -10,21 +14,21 @@ import IconLinkedIn from '../icons/IconLinkedIn.astro';
     <div class="tm">
       <div role="tablist" aria-label="Témoignages" aria-orientation="vertical">
         <button type="button" role="tab" id="tm-tab-1" aria-controls="tm-panel-1" aria-selected="true" tabindex="0">
-          <img class="tm__tab-avatar" src="/img/reco_guillaume.jpeg" alt="Guillaume S." aria-hidden="true" />
+          <Image class="tm__tab-avatar" src={recoGuillaume} alt="Guillaume S." aria-hidden="true" width="48" height="48" />
           <span class="tm__tab-id">
             <span class="tm__tab-name">Guillaume S.</span>
             <span class="tm__tab-role">Développeur mobile senior</span>
           </span>
         </button>
         <button type="button" role="tab" id="tm-tab-2" aria-controls="tm-panel-2" aria-selected="false" tabindex="-1">
-          <img class="tm__tab-avatar" src="/img/reco_stephane.jpeg" alt="Stéphane H." aria-hidden="true" />
+          <Image class="tm__tab-avatar" src={recoStephane} alt="Stéphane H." aria-hidden="true" width="48" height="48" />
           <span class="tm__tab-id">
             <span class="tm__tab-name">Stéphane H.</span>
             <span class="tm__tab-role">CTO, agence web</span>
           </span>
         </button>
         <button type="button" role="tab" id="tm-tab-3" aria-controls="tm-panel-3" aria-selected="false" tabindex="-1">
-          <img class="tm__tab-avatar" src="/img/reco_julien.jpeg" alt="Julien S." aria-hidden="true" />
+          <Image class="tm__tab-avatar" src={recoJulien} alt="Julien S." aria-hidden="true" width="48" height="48" />
           <span class="tm__tab-id">
             <span class="tm__tab-name">Julien S.</span>
             <span class="tm__tab-role">Développeur Fullstack</span>

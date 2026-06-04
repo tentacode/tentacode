@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import IconArrowRight from '../icons/IconArrowRight.astro';
 import hljs from 'highlight.js/lib/core';
 import php from 'highlight.js/lib/languages/php';
+import portrait from '../../assets/img/portrait.jpg';
 
 hljs.registerLanguage('php', php);
 
@@ -36,7 +38,7 @@ const highlighted = hljs.highlight(code, { language: 'php' }).value;
 
     <div class="hero__visual">
       <div class="hero__photo-frame">
-        <img alt="" src="/img/portrait.jpg" width="420" height="525" />
+        <Image alt="" src={portrait} width="420" />
       </div>
 
       <aside class="hero__code" aria-label="Carte de visite en code">
@@ -100,7 +102,7 @@ const highlighted = hljs.highlight(code, { language: 'php' }).value;
     background: var(--tc-accent-soft);
     aspect-ratio: 4 / 5;
   }
-  .hero__photo-frame img {
+  .hero__photo-frame :global(img) {
     width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
   }
 
