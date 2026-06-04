@@ -1,6 +1,6 @@
 ---
 import Base from './Base.astro';
-import Header from '../components/Header.astro';
+import HeaderSecondary from '../components/HeaderSecondary.astro';
 import Footer from '../components/Footer.astro';
 
 interface Props {
@@ -15,7 +15,7 @@ const { title, description } = props;
 
 <Base title={`${title} — tentacode.dev`} description={description}>
   <a class="tc-skip" href="#main-content">Aller au contenu principal</a>
-  <Header />
+  <HeaderSecondary />
 
   <main id="main-content">
     <div class="tc-container">
@@ -42,6 +42,7 @@ const { title, description } = props;
     padding: var(--tc-space-8) 0 var(--tc-space-6);
     max-width: 72ch;
     margin-bottom: var(--tc-space-7);
+    margin-inline: auto;
   }
 
   h1 {
@@ -58,6 +59,7 @@ const { title, description } = props;
 
   .prose-content {
     max-width: 72ch;
+    margin-inline: auto;
     padding-bottom: var(--tc-space-9);
     font-size: var(--tc-fs-body);
     line-height: var(--tc-lh-relaxed);
@@ -119,6 +121,13 @@ const { title, description } = props;
     background: var(--tc-fg-1);
     color: var(--tc-bg);
     font-family: var(--tc-font-display);
+  }
+  .prose-content :global(img) {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--tc-radius);
+    margin-block: var(--tc-space-5);
+    display: block;
   }
   .prose-content :global(a) {
     color: var(--tc-accent);

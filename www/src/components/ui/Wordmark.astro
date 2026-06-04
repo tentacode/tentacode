@@ -3,14 +3,18 @@ import IconOctopus from '../icons/IconOctopus.astro';
 
 interface Props {
   size?: 'sm' | 'lg';
+  backLabel?: string;
 }
 
-const { size = 'sm' } = Astro.props;
+const { size = 'sm', backLabel } = Astro.props;
 ---
 
-<a href="/" class:list={['wordmark', `wordmark--${size}`]} aria-label="tentacode.dev — accueil">
+<a href="/" class:list={['wordmark', `wordmark--${size}`, backLabel && 'wordmark--back']} aria-label="tentacode.dev — accueil">
   <IconOctopus eyeBg="var(--eye-bg)" aria-hidden="true" />
-  <span>tentacode<span>.</span>dev</span>
+  <span class="wordmark__text">
+    {backLabel && <span class="wordmark__back">{backLabel}</span>}
+    <span class="wordmark__name">tentacode<span>.</span>dev</span>
+  </span>
 </a>
 
 <style>
@@ -45,6 +49,19 @@ const { size = 'sm' } = Astro.props;
     .wordmark:hover svg { transform: none; }
   }
 
-  span span { color: var(--tc-accent); }
-  .wordmark--lg span span { color: var(--tc-accent-soft) }
+  .wordmark__text {
+    display: flex; flex-direction: column; gap: 1px;
+  }
+
+  .wordmark__name span { color: var(--tc-accent); }
+  .wordmark--lg .wordmark__name span { color: var(--tc-accent-soft); }
+
+  .wordmark__back {
+    font-size: 11px; font-weight: 700;
+    color: var(--tc-fg-3);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .wordmark--back:hover .wordmark__back { color: var(--tc-accent); }
 </style>

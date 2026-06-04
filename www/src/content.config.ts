@@ -13,8 +13,6 @@ const projets = defineCollection({
     image: img(),
     imageAlt: z.string(),
     href: z.string().url().optional(),
-    client: z.string().optional(),
-    role: z.string().optional(),
   }),
 });
 

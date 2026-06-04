@@ -1,83 +1,119 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import MarkdownLayout from './MarkdownLayout.astro';
+import IconArrowLeft from '../components/icons/IconArrowLeft.astro';
+import IconArrowRight from '../components/icons/IconArrowRight.astro';
+import IconArrowUpRight from '../components/icons/IconArrowUpRight.astro';
+
+interface ProjectRef {
+  title: string;
+  slug: string;
+}
 
 interface Props {
   title: string;
   description: string;
   tags: string[];
-  client?: string;
-  role?: string;
+  image: ImageMetadata;
+  imageAlt: string;
   href?: string;
+  prevProject?: ProjectRef;
+  nextProject?: ProjectRef;
 }
 
-const { title, description, tags, client, role, href } = Astro.props;
-
-const meta = [
-  client && { label: 'Client', value: client },
-  role   && { label: 'Rôle',   value: role },
-].filter(Boolean) as { label: string; value: string }[];
+const { title, description, tags, image, imageAlt, href, prevProject, nextProject } = Astro.props;
 ---
 
 <MarkdownLayout title={title} description={description}>
   <header class="project-hero" slot="header">
-    <a class="back-link" href="/#projects">
-      ← Tous les projets
-    </a>
+    {(prevProject || nextProject) && (
+      <nav class="project-nav">
+        {prevProject && (
+          <a class="nav-prev" href={`/projets/${prevProject.slug}`}>
+            <IconArrowLeft aria-hidden="true" width="16" height="16" />
+            {prevProject.title}
+          </a>
+        )}
+        {nextProject && (
+          <a class="nav-next" href={`/projets/${nextProject.slug}`}>
+            {nextProject.title}
+            <IconArrowRight aria-hidden="true" width="16" height="16" />
+          </a>
+        )}
+      </nav>
+    )}
+
+    <figure class="project-cover">
+      <Image src={image} alt={imageAlt} />
+    </figure>
     <div class="project-hero__tags">
       {tags.map((tag) => <span class="project-tag">{tag}</span>)}
     </div>
     <h1>{title}</h1>
     <p class="project-hero__description">{description}</p>
 
-    {meta.length > 0 && (
-      <dl class="project-meta">
-        {meta.map(({ label, value }) => (
-          <div class="project-meta__item">
-            <dt>{label}</dt>
-            <dd>{value}</dd>
-          </div>
-        ))}
-      </dl>
-    )}
-
     {href && (
-      <a class="project-link" href={href} target="_blank" rel="noopener noreferrer">
-        Voir le projet →
+      <a aria-label={`Voir le projet, nouvelle fenêtre`} class="project-cta" href={href} target="_blank" rel="noopener noreferrer">
+        Voir le projet
+        <IconArrowUpRight aria-hidden="true" width="18" height="18" />
       </a>
     )}
   </header>
 
   <slot />
-
-  <!-- <aside class="signature-block" slot="footer" aria-label="À propos de l'auteur">
-    <div class="signature-block__inner">
-      <div class="signature-block__text">
-        <p>
-          <strong>Gabriel Pillet</strong> est développeur fullstack freelance, lead technique et expert accessibilité basé en France.
-          Il accompagne des équipes produit sur des projets web exigeants — de l'audit RGAA à la mise en production.
-        </p>
-        <a href="/">Voir le profil complet sur tentacode.dev →</a>
-      </div>
-    </div>
-  </aside> -->
 </MarkdownLayout>
 
 <style>
   .project-hero {
     padding: var(--tc-space-8) 0 var(--tc-space-7);
     max-width: 72ch;
+    margin-inline: auto;
   }
 
-  .back-link {
-    display: inline-block;
-    font-size: var(--tc-fs-small);
-    font-weight: var(--tc-weight-semibold);
-    color: var(--tc-fg-3);
-    text-decoration: none;
-    margin-bottom: var(--tc-space-5);
+  .project-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--tc-space-4);
+    margin-bottom: var(--tc-space-6);
   }
-  .back-link:hover { color: var(--tc-fg-1); text-decoration: underline; }
-  .back-link:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 3px; border-radius: 3px; }
+  .project-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--tc-space-2);
+    padding: 10px 18px;
+    font-family: var(--tc-font-sans);
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--tc-fg-1);
+    background: var(--tc-bg);
+    border: var(--tc-border);
+    border-radius: var(--tc-radius);
+    box-shadow: var(--tc-shadow-sm);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 45%;
+  }
+  .project-nav a:hover { transform: translate(-1px, -1px); box-shadow: var(--tc-shadow); }
+  .project-nav a:active { transform: translate(1px, 1px); box-shadow: var(--tc-shadow-sm); }
+  .project-nav a:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 2px; }
+  .project-nav .nav-next { margin-left: auto; }
+  .project-nav :global(svg) { flex-shrink: 0; }
+
+  .project-cover {
+    margin: 0 0 var(--tc-space-7);
+    border-radius: var(--tc-radius);
+    box-shadow: var(--tc-shadow-accent);
+    overflow: hidden;
+  }
+  .project-cover :global(img) {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 
   .project-hero__tags {
     display: flex; flex-wrap: wrap; gap: 6px;
@@ -102,72 +138,21 @@ const meta = [
     margin-bottom: var(--tc-space-6);
   }
 
-  .project-meta {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: var(--tc-space-3) var(--tc-space-5);
-    margin: 0;
-    padding: var(--tc-space-5);
-    background: var(--tc-surface);
-    border: var(--tc-border);
-    border-radius: var(--tc-radius);
-    box-shadow: var(--tc-shadow-sm);
-  }
-  .project-meta__item dt {
-    font-size: var(--tc-fs-micro);
-    font-weight: var(--tc-weight-semibold);
-    text-transform: uppercase;
-    letter-spacing: var(--tc-ls-wide);
-    color: var(--tc-fg-4);
-    margin-bottom: 4px;
-  }
-  .project-meta__item dd {
-    margin: 0;
-    font-weight: var(--tc-weight-semibold);
-    color: var(--tc-fg-1);
-    font-size: var(--tc-fs-small);
-  }
-
-  .project-link {
-    display: inline-block;
-    margin-top: var(--tc-space-5);
-    font-weight: var(--tc-weight-semibold);
-    font-size: var(--tc-fs-small);
-    color: var(--tc-accent-deep);
+  .project-cta {
+    display: inline-flex; align-items: center; gap: var(--tc-space-2);
+    padding: 14px 24px;
+    font-family: var(--tc-font-sans); font-weight: 700; font-size: 16px;
     text-decoration: none;
-  }
-  .project-link:hover { text-decoration: underline; }
-  .project-link:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 3px; border-radius: 3px; }
-
-  .signature-block {
-    border-top: var(--tc-border);
-    padding: var(--tc-space-7) 0 var(--tc-space-9);
-  }
-  .signature-block__inner {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--tc-space-5);
-    max-width: 72ch;
-    padding: var(--tc-space-5) var(--tc-space-6);
-    background: var(--tc-accent-soft);
-    border: var(--tc-border);
-    border-radius: var(--tc-radius);
+    border: var(--tc-border); border-radius: var(--tc-radius);
     box-shadow: var(--tc-shadow-sm);
+    background: var(--tc-fg-1); color: var(--tc-bg);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
   }
-  .signature-block__text p {
-    margin: 0 0 var(--tc-space-3);
-    font-size: var(--tc-fs-small);
-    color: var(--tc-fg-2);
-    max-width: none;
-  }
-  .signature-block__text a {
-    font-weight: var(--tc-weight-semibold);
-    font-size: var(--tc-fs-small);
-    color: var(--tc-accent-deep);
-  }
+  .project-cta:hover { transform: translate(-1px, -1px); box-shadow: var(--tc-shadow); }
+  .project-cta:active { transform: translate(1px, 1px); box-shadow: var(--tc-shadow-sm); }
+  .project-cta:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 2px; }
 
   @media (max-width: 760px) {
     .project-hero { padding: var(--tc-space-6) 0 var(--tc-space-5); }
-    .project-meta { grid-template-columns: repeat(2, 1fr); }
   }
 </style>

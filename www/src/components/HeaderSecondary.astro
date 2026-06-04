@@ -1,0 +1,25 @@
+---
+import Wordmark from './ui/Wordmark.astro';
+---
+
+<header>
+  <div>
+    <Wordmark backLabel="Retour au site" />
+  </div>
+</header>
+
+<style>
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--tc-bg);
+    border-bottom: var(--tc-border);
+  }
+  header > div {
+    max-width: var(--tc-container); margin: 0 auto;
+    padding: 14px var(--tc-space-6);
+  }
+
+  @media (max-width: 760px) {
+    header > div { padding: 12px var(--tc-space-4); }
+  }
+</style>

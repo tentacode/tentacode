@@ -4,27 +4,38 @@ import type { CollectionEntry } from 'astro:content';
 import ProjectLayout from '../../layouts/ProjectLayout.astro';
 
 export async function getStaticPaths() {
-  const projects = await getCollection('projets');
-  return projects.map((project) => ({
+  const allProjects = await getCollection('projets');
+  const sorted = allProjects.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+  return sorted.map((project, idx) => ({
     params: { slug: project.data.slug },
-    props: { project },
+    props: {
+      project,
+      prevProject: idx > 0 ? sorted[idx - 1] : undefined,
+      nextProject: idx < sorted.length - 1 ? sorted[idx + 1] : undefined,
+    },
   }));
 }
 
-interface Props { project: CollectionEntry<'projets'>; }
+interface Props {
+  project: CollectionEntry<'projets'>;
+  prevProject?: CollectionEntry<'projets'>;
+  nextProject?: CollectionEntry<'projets'>;
+}
 
-const { project } = Astro.props;
+const { project, prevProject, nextProject } = Astro.props;
 const { Content } = await render(project);
-const { title, description, tags, client, role, href } = project.data;
+const { title, description, tags, image, imageAlt, href } = project.data;
 ---
 
 <ProjectLayout
   title={title}
   description={description}
   tags={tags}
-  client={client}
-  role={role}
+  image={image}
+  imageAlt={imageAlt}
   href={href}
+  prevProject={prevProject ? { title: prevProject.data.title, slug: prevProject.data.slug } : undefined}
+  nextProject={nextProject ? { title: nextProject.data.title, slug: nextProject.data.slug } : undefined}
 >
   <Content />
 </ProjectLayout>
