@@ -166,6 +166,7 @@
     if (tidyBtn) {
       tidyBtn.setAttribute("aria-pressed", on ? "true" : "false");
       if (tidyLabel) tidyLabel.textContent = on ? "Mélanger" : "Ranger";
+      if (tidyLabel) tidyLabel.setAttribute("aria-label", on ? "Mélanger la stack" : "Ranger la stack");
       if (titleState) titleState.textContent = on ? "rangée" : "en vrac";
     }
     if (on) {
