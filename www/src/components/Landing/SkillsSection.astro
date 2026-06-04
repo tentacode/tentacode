@@ -23,7 +23,7 @@ const categoryOrder = CATEGORY_ORDER.join(',');
         </button>
         <button type="button" id="skills-shake">
           <IconRotateCcw aria-hidden="true" />
-          Secouer
+          <span>Secouer</span>
         </button>
       </div>
 
@@ -139,4 +139,17 @@ const categoryOrder = CATEGORY_ORDER.join(',');
   ul:not(.is-physics) .brick:nth-child(3n)   { transform: rotate(-2deg); }
   ul:not(.is-physics) .brick:nth-child(3n+1) { transform: rotate(1.5deg); }
   ul:not(.is-physics) .brick:nth-child(4n+2) { transform: rotate(-1deg); }
+
+  @media (max-width: 640px) {
+    ul.is-physics { height: 560px; }
+
+    .brick { font-size: 14px; padding: 8px 12px; border-width: 2px; }
+    .brick--s  { font-size: 12px; padding: 6px 10px; }
+    .brick--l  { font-size: 16px; padding: 10px 14px; }
+    .brick--xl { font-size: 20px; padding: 12px 16px; }
+
+    .skills__controls button { padding: 8px 10px; }
+    #skills-tidy-label { display: none; }
+    #skills-shake span { display: none; }
+  }
 </style>

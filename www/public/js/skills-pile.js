@@ -23,23 +23,22 @@
   var bricks = Array.prototype.slice.call(pile.querySelectorAll(".brick"));
   if (!bricks.length) return;
 
-  // Gate: only run physics with a fine pointer + motion allowed + Matter present.
-  var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  // Gate: only skip physics for reduced motion or missing Matter.js.
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (!finePointer || reduceMotion || !window.Matter) return; // keep static fallback
+  if (reduceMotion || !window.Matter) return; // keep static fallback
 
   var M = window.Matter;
   var engine = M.Engine.create();
   engine.gravity.y = 1;
 
-  // Switch to physics layout AFTER measuring would be ideal, but bricks are
-  // inline-flex now; measure each, then absolutely position.
+  // Switch to physics layout first so bricks get position:absolute + mobile
+  // CSS sizes applied, then measure — guarantees bodies match what's rendered.
+  inner.classList.add("is-physics");
+  pile.classList.add("is-physics");
+
   var measured = bricks.map(function (el) {
     return { el: el, w: el.offsetWidth, h: el.offsetHeight };
   });
-
-  inner.classList.add("is-physics");
-  pile.classList.add("is-physics");
 
   function dims() {
     return { w: pile.clientWidth, h: pile.clientHeight };
@@ -208,6 +207,17 @@
   window.addEventListener("resize", function () {
     clearTimeout(resizeTO);
     resizeTO = setTimeout(function () {
+      // Re-measure bricks — CSS media queries may have changed their size.
+      items.forEach(function (it) {
+        var newW = it.el.offsetWidth;
+        var newH = it.el.offsetHeight;
+        if (newW !== it.w || newH !== it.h) {
+          M.Body.scale(it.body, newW / it.w, newH / it.h);
+          it.w = newW;
+          it.h = newH;
+        }
+      });
+
       var nd = dims();
       M.Body.setPosition(walls[0], { x: nd.w / 2, y: nd.h + wallT / 2 });
       M.Body.setPosition(walls[2], { x: nd.w + wallT / 2, y: nd.h / 2 });
