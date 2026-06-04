@@ -38,7 +38,7 @@ const highlighted = hljs.highlight(code, { language: 'php' }).value;
 
     <div class="hero__visual">
       <div class="hero__photo-frame">
-        <Image alt="" src={portrait} width="420" />
+        <Image alt="" src={portrait} width="420" fetchpriority="high" loading="eager" />
       </div>
 
       <aside class="hero__code" aria-label="Carte de visite en code">

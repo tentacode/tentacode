@@ -48,7 +48,6 @@ server {
 
     # Main location - try files then fallback to index.html for SPA routing
     location / {
-        http2_push /fonts/LexendDeca-VariableFont_wght.woff2;
         try_files $uri $uri.html $uri/ /404.html =404;
     }
 }
