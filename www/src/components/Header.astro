@@ -136,10 +136,15 @@ import IconMenu from './icons/IconMenu.astro';
   }
   button :global(svg) { width: 24px; height: 24px; }
 
+  @media (min-width: 761px) and (max-width: 930px) {
+    .site-header__cta { display: none }
+  }
   @media (max-width: 760px) {
     header > div { padding: 14px var(--tc-space-4); }
-    nav, .site-header__cta { display: none; }
+    nav { display: none; }
     button { display: inline-flex; }
+
+    header :global(.wordmark) { flex: 1 }
 
     :global(body[data-menu="open"]) nav {
       display: block;
@@ -163,5 +168,9 @@ import IconMenu from './icons/IconMenu.astro';
     :global(body[data-menu="open"]) nav li:last-child a {
       border-bottom: none;
     }
+  }
+
+  @media (max-width: 510px) {
+    .site-header__cta { display: none }
   }
 </style>

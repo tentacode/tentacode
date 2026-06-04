@@ -56,7 +56,7 @@ const highlighted = hljs.highlight(code, { language: 'php' }).value;
   section { padding: var(--tc-space-9) 0 var(--tc-space-8); }
   section > div {
     display: grid; grid-template-columns: 1.25fr 1fr;
-    gap: var(--tc-space-8); align-items: center;
+    gap: var(--tc-space-8); align-items: flex-start;
   }
 
   h1 {
@@ -108,7 +108,7 @@ const highlighted = hljs.highlight(code, { language: 'php' }).value;
 
   .hero__code {
     position: absolute;
-    right: -50px; bottom: -100px;
+    right: 40px; bottom: -100px;
     width: min(360px, 80%);
     background: var(--tc-fg-1);
     color: var(--tc-bg);
@@ -135,10 +135,18 @@ const highlighted = hljs.highlight(code, { language: 'php' }).value;
   .hero__code :global(.hljs-name),
   .hero__code :global(.hljs-selector-tag)             { color: #e06c75; }
 
+  @media (min-width: 1264px) {
+    .hero__code { right: -50px; }
+  }
+
   @media (max-width: 760px) {
-    section { padding: var(--tc-space-7) 0; }
+    section { padding: var(--tc-space-7) 0; margin-bottom: 30px; }
     section > div { grid-template-columns: 1fr; gap: var(--tc-space-7); }
     .hero__visual { justify-self: stretch; max-width: 360px; margin: 0 auto; }
-    .hero__code { right: -16px; bottom: -24px; width: min(280px, 90%); }
+    .hero__code { right: -50px; bottom: -100px; width: min(280px, 90%); }
+  }
+
+  @media (max-width: 500px) {
+    .hero__code { right: 40px; }
   }
 </style>
