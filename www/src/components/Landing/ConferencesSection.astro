@@ -5,7 +5,7 @@ import ConferenceItem from './ConferenceItem.astro';
 const conferences = (await getCollection('conferences')).sort((a, b) => a.id.localeCompare(b.id));
 ---
 
-<section class="confs" id="confs" aria-labelledby="confs-title">
+<section class="confs" id="talks">
   <div class="tc-container">
     <div class="section-head">
       <div>
