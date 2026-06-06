@@ -57,7 +57,7 @@
   --tc-pink-soft: #fec2e4; /* F8D0E3 */
 
   /* Category colors (skills section) */
-  --tc-devops-soft: #E0F0F0;
+  --tc-devops-soft: #beebff;
   --tc-ai-soft:     #F0E8FF;
 
   /* Foreground scale */
@@ -137,6 +137,7 @@ html {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
+  scroll-padding-top: 45px;
 }
 body {
   margin: 0;

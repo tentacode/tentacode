@@ -32,7 +32,7 @@ const highlighted = hljs.highlight(code, { language: 'php' }).value;
           Me contacter
           <IconArrowRight aria-hidden="true" />
         </a>
-        <a href="#projects" class="hero__cta hero__cta--secondary">Voir mes projets</a>
+        <a href="#projets" class="hero__cta hero__cta--secondary">Voir mes projets</a>
       </div>
     </div>
 
@@ -65,7 +65,7 @@ const highlighted = hljs.highlight(code, { language: 'php' }).value;
     margin: 0 0 var(--tc-space-5);
   }
   h1 span {
-    background: linear-gradient(transparent 65%, var(--tc-accent) 65%);
+    background: linear-gradient(transparent 65%, #9889fe 65%);
     padding: 0 4px;
   }
   .hero__lead {
@@ -74,6 +74,7 @@ const highlighted = hljs.highlight(code, { language: 'php' }).value;
     max-width: 52ch;
     margin: 0 0 var(--tc-space-6);
   }
+  .hero__lead strong { font-size: 1.125rem; }
   .hero__ctas { display: flex; flex-wrap: wrap; gap: var(--tc-space-3); align-items: center; }
   .hero__cta {
     display: inline-flex; align-items: center; gap: var(--tc-space-2);

@@ -68,6 +68,7 @@ const categoryOrder = CATEGORY_ORDER.join(',');
     position: absolute; top: 0; right: 0;
     display: none; align-items: center; gap: 10px;
     z-index: 3;
+     margin-top: 27px;
   }
   .skills__inner.is-physics .skills__controls { display: flex; }
 
@@ -128,13 +129,13 @@ const categoryOrder = CATEGORY_ORDER.join(',');
   .brick--xl { font-size: 28px; padding: 16px 24px; letter-spacing: -0.02em; }
 
   /* Category colors — li.brick--cat-* wins over .brick (specificity 0,2,1 vs 0,2,0) */
-  li.brick--cat-frontend      { background: var(--tc-accent-soft); }
-  li.brick--cat-backend       { background: var(--tc-info-soft); }
-  li.brick--cat-devops        { background: var(--tc-devops-soft); }
-  li.brick--cat-qualite       { background: var(--tc-warning-soft); }
-  li.brick--cat-accessibilite { background: var(--tc-success-soft); }
-  li.brick--cat-leadership    { background: var(--tc-pink-soft); }
-  li.brick--cat-ia            { background: var(--tc-ai-soft); }
+  li.brick--cat-backend       { background: var(--tc-accent-soft); }
+  li.brick--cat-frontend      { background: var(--tc-devops-soft); }
+  li.brick--cat-accessibilite { background: var(--tc-info-soft); }
+  li.brick--cat-qualite       { background: var(--tc-success-soft); }
+  li.brick--cat-devops        { background: var(--tc-warning-soft); }
+  li.brick--cat-leadership    { background: var(--tc-error-soft); }
+  li.brick--cat-ia            { background: var(--tc-pink-soft); }
 
   ul:not(.is-physics) .brick:nth-child(3n)   { transform: rotate(-2deg); }
   ul:not(.is-physics) .brick:nth-child(3n+1) { transform: rotate(1.5deg); }

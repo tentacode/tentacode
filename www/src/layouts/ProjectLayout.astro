@@ -45,7 +45,12 @@ const { title, description, tags, image, imageAlt, href, prevProject, nextProjec
     )}
 
     <figure class="project-cover">
-      <Image src={image} alt={imageAlt} />
+      <Image
+        src={image}
+        alt={imageAlt}
+        width={1600}
+        height={Math.round(1600 * image.height / image.width)}
+      />
     </figure>
     <div class="project-hero__tags">
       {tags.map((tag) => <span class="project-tag">{tag}</span>)}
@@ -95,7 +100,6 @@ const { title, description, tags, image, imageAlt, href, prevProject, nextProjec
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 45%;
   }
   .project-nav a:hover { transform: translate(-1px, -1px); box-shadow: var(--tc-shadow); }
   .project-nav a:active { transform: translate(1px, 1px); box-shadow: var(--tc-shadow-sm); }
@@ -154,5 +158,16 @@ const { title, description, tags, image, imageAlt, href, prevProject, nextProjec
 
   @media (max-width: 760px) {
     .project-hero { padding: var(--tc-space-6) 0 var(--tc-space-5); }
+  }
+
+  @media (max-width: 560px) {
+    .project-nav {
+      flex-direction: column;
+    }
+
+    .project-nav a {
+      width: fit-content;
+      justify-content: center;
+    }
   }
 </style>

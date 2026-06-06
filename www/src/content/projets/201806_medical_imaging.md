@@ -6,7 +6,7 @@ variant: sm
 slug: medical_imaging
 publishDate: 2018-06-01
 image: ../../assets/medical_imaging.jpg
-imageAlt: "Diagramme d'un réseau DICOM pour la recherche d'imagerie médicale"
+imageAlt: ""
 ---
 
 Ce projet challengeant était pour une entreprise de santé confidentielle. L'objectif de l'application est de fournir un moteur de recherche d'imagerie médicale (IRM par exemple) pour classifier et retrouver les meilleures images.
