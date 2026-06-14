@@ -1,0 +1,232 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import MarkdownLayout from './MarkdownLayout.astro';
+import IconArrowLeft from '../components/icons/IconArrowLeft.astro';
+import IconArrowRight from '../components/icons/IconArrowRight.astro';
+import BlogCategoryIcon from '../components/BlogCategoryIcon.astro';
+import portrait from '../assets/img/portrait.jpg';
+
+interface PostRef {
+  title: string;
+  slug: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  category: string;
+  categoryIcon: 'ai' | 'lead' | 'a11y';
+  publishDate: Date;
+  image?: ImageMetadata;
+  imageAlt?: string;
+  prevPost?: PostRef;
+  nextPost?: PostRef;
+}
+
+const { title, description, category, categoryIcon, publishDate, image, imageAlt, prevPost, nextPost } = Astro.props;
+const fmt = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<MarkdownLayout title={title} description={description}>
+  <header class="blog-hero" slot="header">
+    {image && (
+      <figure class="blog-cover">
+        <Image
+          src={image}
+          alt={imageAlt ?? ''}
+          width={1600}
+          height={Math.round(1600 * image.height / image.width)}
+        />
+      </figure>
+    )}
+    <div class="blog-meta">
+      <span class="blog-meta__icon">
+        <BlogCategoryIcon icon={categoryIcon} />
+      </span>
+      <time class="blog-meta__date" datetime={publishDate.toISOString()}>
+        {fmt.format(publishDate)}
+      </time>
+    </div>
+    <h1>{title}</h1>
+    <p class="blog-hero__description">{description}</p>
+  </header>
+
+  <slot />
+
+  <div class="blog-footer" slot="footer">
+    <div class="author-card">
+      <div class="author-avatar">
+        <Image src={portrait} alt="Gabriel Pillet" width={64} height={64} />
+      </div>
+      <strong>Gabriel Pillet</strong>
+      <p>Développeur fullstack et lead technique depuis près de 20 ans. J'écris ici sur l'accessibilité, la qualité logicielle, et l'usage raisonné de l'IA dans le quotidien d'une équipe.</p>
+    </div>
+
+    {(prevPost || nextPost) && (
+      <nav class="post-nav" aria-label="Navigation entre articles">
+        {prevPost && (
+          <a class="nav-prev" href={`/blog/${prevPost.slug}`}>
+            <IconArrowLeft aria-hidden="true" width="16" height="16" />
+            {prevPost.title}
+          </a>
+        )}
+        {nextPost && (
+          <a class="nav-next" href={`/blog/${nextPost.slug}`}>
+            {nextPost.title}
+            <IconArrowRight aria-hidden="true" width="16" height="16" />
+          </a>
+        )}
+      </nav>
+    )}
+  </div>
+</MarkdownLayout>
+
+<style>
+  .blog-hero {
+    padding: var(--tc-space-8) 0 var(--tc-space-7);
+    max-width: 72ch;
+    margin-inline: auto;
+  }
+
+  .blog-cover {
+    margin: 0 0 var(--tc-space-7);
+    border-radius: var(--tc-radius);
+    box-shadow: var(--tc-shadow-accent);
+    overflow: hidden;
+  }
+  .blog-cover :global(img) {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .blog-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--tc-space-3);
+    margin-bottom: var(--tc-space-6);
+  }
+
+  .blog-meta__icon {
+    display: flex;
+    align-items: center;
+    gap: var(--tc-space-4);
+    width: 100%;
+    color: var(--tc-fg-2);
+  }
+  .blog-meta__icon::before,
+  .blog-meta__icon::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.3;
+  }
+  .blog-meta__icon :global(svg) { width: 48px; height: 48px; }
+
+  .blog-meta__date {
+    font-family: var(--tc-font-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--tc-fg-3);
+  }
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: var(--tc-space-4);
+  }
+
+  .blog-hero__description {
+    font-size: var(--tc-fs-h5);
+    color: var(--tc-fg-3);
+    line-height: var(--tc-lh-relaxed);
+    margin-bottom: 0;
+  }
+
+  /* Footer */
+  .blog-footer {
+    max-width: 72ch;
+    margin-inline: auto;
+    padding-bottom: var(--tc-space-9);
+  }
+
+  .author-card {
+    position: relative;
+    margin-top: var(--tc-space-8);
+    padding: 48px 24px 24px;
+    background: var(--tc-surface);
+    border: var(--tc-border);
+    border-radius: var(--tc-radius);
+  }
+
+  .author-avatar {
+    position: absolute;
+    top: -32px;
+    left: 24px;
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    overflow: hidden;
+    border: var(--tc-border);
+  }
+  .author-avatar :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+  }
+
+  .author-card strong {
+    display: block;
+    font-family: var(--tc-font-display);
+    font-size: var(--tc-fs-h5);
+    margin-bottom: var(--tc-space-3);
+  }
+
+  .author-card p {
+    font-size: 14px;
+    color: var(--tc-fg-2);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Prev/next nav */
+  .post-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--tc-space-4);
+    margin-top: var(--tc-space-6);
+  }
+
+  .post-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--tc-space-2);
+    padding: 10px 18px;
+    font-family: var(--tc-font-sans);
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--tc-fg-1);
+    background: var(--tc-bg);
+    border: var(--tc-border);
+    border-radius: var(--tc-radius);
+    box-shadow: var(--tc-shadow-sm);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    max-width: 100%;
+  }
+  .post-nav a:hover { transform: translate(-1px, -1px); box-shadow: var(--tc-shadow); }
+  .post-nav a:active { transform: translate(1px, 1px); box-shadow: var(--tc-shadow-sm); }
+  .post-nav a:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 2px; }
+  .post-nav .nav-next { margin-left: auto; }
+  .post-nav :global(svg) { flex-shrink: 0; }
+
+  @media (max-width: 760px) {
+    .blog-hero { padding: var(--tc-space-6) 0 var(--tc-space-5); }
+    .post-nav { flex-direction: column; }
+    .post-nav .nav-next { margin-left: 0; }
+  }
+</style>

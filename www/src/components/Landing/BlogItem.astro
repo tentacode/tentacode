@@ -1,19 +1,22 @@
 ---
+import BlogCategoryIcon from '../BlogCategoryIcon.astro';
+
 interface Props {
   href: string;
   category: string;
+  categoryIcon: 'ai' | 'lead' | 'a11y';
   date: string;
   title: string;
   excerpt: string;
 }
 
-const { href, category, date, title, excerpt } = Astro.props;
+const { href, category, categoryIcon, date, title, excerpt } = Astro.props;
 ---
 
 <a class="post" href={href}>
   <div>
     <span class="post__category">
-      <slot name="icon" />
+      <BlogCategoryIcon icon={categoryIcon} />
       {category}
     </span>
     <span class="post__date">{date}</span>

@@ -1,6 +1,20 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
+const blog = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
+  schema: ({ image: img }) => z.object({
+    title: z.string(),
+    description: z.string(),
+    slug: z.string(),
+    publishDate: z.date(),
+    category: z.string(),
+    categoryIcon: z.enum(['ai', 'lead', 'a11y']),
+    image: img().optional(),
+    imageAlt: z.string().optional(),
+  }),
+});
+
 const projets = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/projets' }),
   schema: ({ image: img }) => z.object({
@@ -28,4 +42,4 @@ const conferences = defineCollection({
   }),
 });
 
-export const collections = { projets, conferences };
+export const collections = { projets, conferences, blog };

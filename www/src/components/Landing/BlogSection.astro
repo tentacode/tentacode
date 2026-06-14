@@ -1,9 +1,11 @@
 ---
-// import BlogItem from './BlogItem.astro';
-import CodingIllustration from '../icons/CodingIllustration.astro';
-// import IconRobot from '../icons/IconRobot.astro';
-// import IconCircles from '../icons/IconCircles.astro';
-// import IconPerson from '../icons/IconPerson.astro';
+import { getCollection } from 'astro:content';
+import BlogItem from './BlogItem.astro';
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+
+const fmt = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' });
 ---
 
 <section class="blog" id="blog">
@@ -15,83 +17,27 @@ import CodingIllustration from '../icons/CodingIllustration.astro';
       </div>
     </div>
 
-    <div class="blog__placeholder">
-      <div class="blog__placeholder-text">
-        <p>Accessibilité, qualité et réflexions.</p>
-        <p class="blog__coming-soon">Les premiers articles arrivent bientôt.</p>
-      </div>
-      <CodingIllustration />
-    </div>
-
-    {/* Articles à venir — conserver pour le CSS de BlogItem
     <div class="blog__grid">
-      <BlogItem
-        href="/blog/agent-claude-au-quotidien"
-        category="AI"
-        date="12 mar. 2026"
-        title="Vivre un mois avec un agent dans son terminal."
-        excerpt="Bilan honnête après 30 jours à coder en tandem avec Claude Code : ce qui change vraiment, et ce qui n'a pas changé du tout."
-      >
-        <IconRobot slot="icon" stroke-width="2" aria-hidden="true" />
-      </BlogItem>
-
-      <BlogItem
-        href="/blog/rgaa-checklist-pragmatique"
-        category="Accessibilité"
-        date="28 jan. 2026"
-        title="Une checklist RGAA pragmatique, en 20 lignes."
-        excerpt="Pas de magie : juste les bons réflexes à intégrer dans la PR, le code review et la recette. Ça épargne 80% des galères en fin de projet."
-      >
-        <IconCircles slot="icon" stroke-width="2" aria-hidden="true" />
-      </BlogItem>
-
-      <BlogItem
-        href="/blog/lead-sans-burn"
-        category="Lead"
-        date="14 déc. 2025"
-        title="Tenir une équipe sans la cramer."
-        excerpt="La productivité n'est pas un sprint, c'est une cadence soutenable. Sept choses concrètes que je fais, en lead, pour préserver le cerveau collectif."
-      >
-        <IconPerson slot="icon" stroke-width="2" aria-hidden="true" />
-      </BlogItem>
+      {posts.map((post) => (
+        <BlogItem
+          href={`/blog/${post.data.slug}`}
+          category={post.data.category}
+          categoryIcon={post.data.categoryIcon}
+          date={fmt.format(post.data.publishDate)}
+          title={post.data.title}
+          excerpt={post.data.description}
+        />
+      ))}
     </div>
-    */}
   </div>
 </section>
 
 <style>
   .blog { padding: var(--tc-space-8) 0; padding-bottom: 0 !important; }
 
-  .blog__placeholder {
-    display: flex;
-    align-items: start;
-    gap: var(--tc-space-8);
-  }
-  .blog__placeholder-text {
-    flex: 1;
-  }
-  .blog__placeholder-text p {
-    font-size: var(--tc-fs-h4);
-    color: var(--tc-fg-2);
-    max-width: 40ch;
-  }
-  .blog__coming-soon {
-    font-style: italic;
-    color: var(--tc-fg-3);
-    font-size: var(--tc-fs-body) !important;
-  }
-  .blog__placeholder :global(svg) {
-    flex-shrink: 0;
-    width: 320px;
-    height: 320px;
-    margin-top: -90px;
-  }
-
   .blog__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--tc-space-6); }
 
   @media (max-width: 760px) {
-    .blog__placeholder { flex-direction: column; }
-    .blog__placeholder :global(svg) { width: 240px; height: 240px; margin-top: -60px; }
     .blog__grid { grid-template-columns: 1fr; }
   }
   @media (min-width: 761px) and (max-width: 1080px) {

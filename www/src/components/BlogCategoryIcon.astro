@@ -1,0 +1,14 @@
+---
+import IconRobot from './icons/IconRobot.astro';
+import IconCircles from './icons/IconCircles.astro';
+import IconPerson from './icons/IconPerson.astro';
+
+interface Props {
+  icon: 'ai' | 'lead' | 'a11y';
+}
+
+const { icon } = Astro.props;
+---
+{icon === 'ai' && <IconRobot stroke-width="2" aria-hidden="true" />}
+{icon === 'a11y' && <IconCircles stroke-width="2" aria-hidden="true" />}
+{icon === 'lead' && <IconPerson stroke-width="2" aria-hidden="true" />}
