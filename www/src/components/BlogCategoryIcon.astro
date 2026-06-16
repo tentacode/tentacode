@@ -5,10 +5,11 @@ import IconPerson from './icons/IconPerson.astro';
 
 interface Props {
   icon: 'ai' | 'lead' | 'a11y';
+  size: 's' | 'm' | 'l';
 }
 
-const { icon } = Astro.props;
+const { icon, size } = Astro.props;
 ---
-{icon === 'ai' && <IconRobot stroke-width="2" aria-hidden="true" />}
-{icon === 'a11y' && <IconCircles stroke-width="2" aria-hidden="true" />}
-{icon === 'lead' && <IconPerson stroke-width="2" aria-hidden="true" />}
+{icon === 'ai' && <IconRobot size={size} stroke-width="2" aria-hidden="true" />}
+{icon === 'a11y' && <IconCircles size={size} stroke-width="2" aria-hidden="true" />}
+{icon === 'lead' && <IconPerson size={size} stroke-width="2" aria-hidden="true" />}

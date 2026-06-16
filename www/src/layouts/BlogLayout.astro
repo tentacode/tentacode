@@ -5,7 +5,7 @@ import MarkdownLayout from './MarkdownLayout.astro';
 import IconArrowLeft from '../components/icons/IconArrowLeft.astro';
 import IconArrowRight from '../components/icons/IconArrowRight.astro';
 import BlogCategoryIcon from '../components/BlogCategoryIcon.astro';
-import portrait from '../assets/img/portrait.jpg';
+import portrait from '../assets/img/portrait_small.jpg';
 
 interface PostRef {
   title: string;
@@ -42,7 +42,7 @@ const fmt = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', ye
     )}
     <div class="blog-meta">
       <span class="blog-meta__icon">
-        <BlogCategoryIcon icon={categoryIcon} />
+        <BlogCategoryIcon icon={categoryIcon} size="m" />
       </span>
       <time class="blog-meta__date" datetime={publishDate.toISOString()}>
         {fmt.format(publishDate)}
@@ -57,7 +57,7 @@ const fmt = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', ye
   <div class="blog-footer" slot="footer">
     <div class="author-card">
       <div class="author-avatar">
-        <Image src={portrait} alt="Gabriel Pillet" width={64} height={64} />
+        <Image src={portrait} alt="Gabriel Pillet" width={256} height={256} />
       </div>
       <strong>Gabriel Pillet</strong>
       <p>Développeur fullstack et lead technique depuis près de 20 ans. J'écris ici sur l'accessibilité, la qualité logicielle, et l'usage raisonné de l'IA dans le quotidien d'une équipe.</p>
@@ -95,6 +95,7 @@ const fmt = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', ye
     box-shadow: var(--tc-shadow-accent);
     overflow: hidden;
   }
+
   .blog-cover :global(img) {
     width: 100%;
     height: auto;
@@ -148,6 +149,7 @@ const fmt = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', ye
 
   /* Footer */
   .blog-footer {
+    margin-top: 120px;
     max-width: 72ch;
     margin-inline: auto;
     padding-bottom: var(--tc-space-9);
@@ -156,7 +158,7 @@ const fmt = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', ye
   .author-card {
     position: relative;
     margin-top: var(--tc-space-8);
-    padding: 48px 24px 24px;
+    padding: 78px 24px 24px;
     background: var(--tc-surface);
     border: var(--tc-border);
     border-radius: var(--tc-radius);
@@ -164,10 +166,10 @@ const fmt = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', ye
 
   .author-avatar {
     position: absolute;
-    top: -32px;
+    top: -64px;
     left: 24px;
-    width: 64px;
-    height: 64px;
+    width: 128px;
+    height: 128px;
     border-radius: 100%;
     overflow: hidden;
     border: var(--tc-border);
@@ -177,17 +179,18 @@ const fmt = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', ye
     height: 100%;
     object-fit: cover;
     object-position: center 20%;
+    margin-block: 0;
   }
 
   .author-card strong {
     display: block;
     font-family: var(--tc-font-display);
-    font-size: var(--tc-fs-h5);
+    font-size: 20px;
     margin-bottom: var(--tc-space-3);
   }
 
   .author-card p {
-    font-size: 14px;
+    font-size: 18px;
     color: var(--tc-fg-2);
     line-height: 1.6;
     margin: 0;

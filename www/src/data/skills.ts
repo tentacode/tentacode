@@ -47,7 +47,8 @@ export const skills: Skill[] = [
   { name: "Accessibilité", category: "Accessibilité", size: "xl" },
   { name: "RGAA", category: "Accessibilité", size: "m" },
   { name: "WCAG AA", category: "Accessibilité", size: "s" },
-  { name: "Audit", category: "Accessibilité", size: "m" },
+  { name: "Audits", category: "Accessibilité", size: "l", mono: true },
+  { name: "RAAM", category: "Accessibilité", size: "m" },
   {
     name: "Lecteurs d'écran",
     category: "Accessibilité",

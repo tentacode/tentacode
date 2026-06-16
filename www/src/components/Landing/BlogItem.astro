@@ -16,7 +16,7 @@ const { href, category, categoryIcon, date, title, excerpt } = Astro.props;
 <a class="post" href={href}>
   <div>
     <span class="post__category">
-      <BlogCategoryIcon icon={categoryIcon} />
+      <BlogCategoryIcon icon={categoryIcon} size="s" />
       {category}
     </span>
     <span class="post__date">{date}</span>
