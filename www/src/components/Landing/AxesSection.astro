@@ -6,12 +6,12 @@ import IconTarget from '../icons/IconTarget.astro';
 import IconRobotFull from '../icons/IconRobotFull.astro';
 ---
 
-<section class="axes" id="competences">
+<div class="axes" id="competences">
   <div class="tc-container">
     <div class="section-head">
       <div>
-        <span class="tc-eyebrow tc-eyebrow--dot">Ce que j'apporte</span>
         <h2 id="axes-title">Mon expertise</h2>
+        <span class="tc-eyebrow tc-eyebrow--dot">Ce que j'apporte</span>
       </div>
     </div>
 
@@ -20,7 +20,7 @@ import IconRobotFull from '../icons/IconRobotFull.astro';
         num="01 / DEV"
         variant="dev"
         title="Dev fullstack"
-        description="Du backend au frontend avec un soupçon d'infra. J'aime rendre simple les problèmes complexes. Je pousse la qualité mais sans oublier qu'à un moment il faut livrer."
+        description="Du <span lang='en'>backend</span> au <span lang='en'>frontend</span> avec un soupçon d'infra. J'aime rendre simple les problèmes complexes. Je pousse la qualité mais sans oublier qu'à un moment il faut livrer."
         tags={["Symfony", "PostgreSQL", "React", "React Native", "Next.js"]}
       >
         <IconCode slot="icon" aria-hidden="true" />
@@ -31,7 +31,7 @@ import IconRobotFull from '../icons/IconRobotFull.astro';
         variant="lead"
         title="Lead technique"
         description="Que ce soit pour apporter une architecture technique, faire monter en compétences des juniors ou aider des seniors à prendre du recul, j'apporte un management technique vraiment bienveillant et au service de l'équipe."
-        tags={["vision", "pédagogie", "code review", "santé mentale", "1:1"]}
+        tags={["vision", "pédagogie", "code review", "santé mentale", "entretien individuel"]}
       >
         <IconUsers slot="icon" aria-hidden="true" />
       </AxisCard>
@@ -57,7 +57,7 @@ import IconRobotFull from '../icons/IconRobotFull.astro';
       </AxisCard>
     </div>
   </div>
-</section>
+</div>
 
 <style>
   .axes { padding: var(--tc-space-8) 0; }

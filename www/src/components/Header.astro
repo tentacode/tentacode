@@ -18,8 +18,9 @@ import IconMenu from './icons/IconMenu.astro';
     </nav>
 
     <a href="/#contact" class="site-header__cta">
-      <span aria-hidden="true"></span>
+      <span class="pill" aria-hidden="true"></span>
       je suis disponible&nbsp;!
+      <span class="sr-only">aller à la section contact</span>
     </a>
 
     <button
@@ -97,19 +98,19 @@ import IconMenu from './icons/IconMenu.astro';
   }
   .site-header__cta:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 0 var(--tc-success); }
   .site-header__cta:focus-visible { outline: 3px solid var(--tc-success); outline-offset: 2px; }
-  .site-header__cta span {
+  .site-header__cta .pill {
     width: 9px; height: 9px; border-radius: 50%;
     background: var(--tc-success); display: inline-block;
     position: relative; flex: none;
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--tc-success) 28%, transparent);
   }
-  .site-header__cta span::after {
+  .site-header__cta .pill::after {
     content: ""; position: absolute; inset: 0;
     border-radius: 50%; border: 2px solid var(--tc-success);
     opacity: 0; transform: scale(1);
   }
-  .site-header__cta:hover span::after,
-  .site-header__cta:focus-visible span::after {
+  .site-header__cta:hover .pill::after,
+  .site-header__cta:focus-visible .pill::after {
     animation: cta-ping 0.7s ease-out 1;
   }
   @keyframes cta-ping {
@@ -117,8 +118,8 @@ import IconMenu from './icons/IconMenu.astro';
     100% { transform: scale(2.4); opacity: 0; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .site-header__cta:hover span::after,
-    .site-header__cta:focus-visible span::after { animation: none; }
+    .site-header__cta:hover .pill::after,
+    .site-header__cta:focus-visible .pill::after { animation: none; }
   }
 
   button {

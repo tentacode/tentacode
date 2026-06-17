@@ -11,13 +11,13 @@ const code = `try {
     $cup = ($this->brewCoffeeQuery)();
     $me->drink($cup);
 } catch (OutOfBeansException $e) {
-    Sentry::captureMessage("Ça va être compliqué...");
+    Sentry::captureMessage("La journée va être compliquée…");
 }`;
 
 const highlighted = hljs.highlight(code, { language: 'php' }).value;
 ---
 
-<section aria-labelledby="hero-title">
+<div class="hero" aria-labelledby="hero-title">
   <div class="tc-container">
     <div class="hero__content">
       <h1 id="hero-title">
@@ -41,20 +41,21 @@ const highlighted = hljs.highlight(code, { language: 'php' }).value;
         <Image alt="" src={portrait} width="420" fetchpriority="high" loading="eager" />
       </div>
 
-      <aside class="hero__code" aria-label="Carte de visite en code">
-        <pre><code set:html={highlighted} /></pre>
+      <aside class="hero__code">
+        <pre aria-hidden="true"><code set:html={highlighted} /></pre>
+        <p class="sr-only">J'ai écrit ici un extrait de code PHP humoristique. Dans un bloc "try catch" j'appelle un service "brew coffee query" qui me retourne une tasse de café, que je bois. En cas d'absence de café, une exception "Out Of Beans Exception" est levée, et un message est envoyé à Sentry qui indique "La journée va être compliquée…".</p>
       </aside>
     </div>
   </div>
-</section>
+</div>
 
 <script>
   document.body.setAttribute('data-hero', 'code');
 </script>
 
 <style>
-  section { padding: var(--tc-space-9) 0 var(--tc-space-8); }
-  section > div {
+  .hero { padding: var(--tc-space-9) 0 var(--tc-space-8); }
+  .hero > div {
     display: grid; grid-template-columns: 1.25fr 1fr;
     gap: var(--tc-space-8); align-items: flex-start;
   }
@@ -141,8 +142,8 @@ const highlighted = hljs.highlight(code, { language: 'php' }).value;
   }
 
   @media (max-width: 760px) {
-    section { padding: var(--tc-space-7) 0; margin-bottom: 30px; }
-    section > div { grid-template-columns: 1fr; gap: var(--tc-space-7); }
+    .hero { padding: var(--tc-space-7) 0; margin-bottom: 30px; }
+    .hero > div { grid-template-columns: 1fr; gap: var(--tc-space-7); }
     .hero__visual { justify-self: stretch; max-width: 360px; margin: 0 auto; }
     .hero__code { right: -50px; bottom: -100px; width: min(280px, 90%); }
   }

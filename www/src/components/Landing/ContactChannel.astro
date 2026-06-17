@@ -12,17 +12,21 @@ const { href, label, value, external = false } = Astro.props;
 const attrs = external
   ? { target: '_blank', rel: 'noopener noreferrer' }
   : {};
+
+let ariaLabel = `${label} : ${value}${external ? ', nouvelle fenêtre' : ''}`;
+if (label === 'CV') {
+  ariaLabel = `Mon Curriculum Vitae en ligne, nouvelle fenêtre`;
+}
 ---
 
-<a class="contact-channel" href={href} {...attrs}>
+<a class="contact-channel" href={href} {...attrs} aria-label={ariaLabel}>
   <div class="contact-channel__icon" aria-hidden="true">
     <slot name="icon" />
   </div>
   <div>
-    <div class="contact-channel__label">{label}</div>
-    <div class="contact-channel__value">{value}</div>
+    <div aria-hidden="true" class="contact-channel__label">{label}</div>
+    <div aria-hidden="true" class="contact-channel__value">{value}</div>
   </div>
-  {external && <span class="tc-sr">(ouvre un nouvel onglet)</span>}
   <span class="contact-channel__arrow" aria-hidden="true">
     <IconArrowUpRight />
   </span>

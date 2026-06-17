@@ -1,6 +1,6 @@
 ---
 const { size } = Astro.props;
-const marginTop = size === 'm' ? '-15px' : '0';
+const marginTop = size === 'm' ? '-15px' : size === 's' ? '-5px' : '0';
 ---
 <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M9 15C8.44771 15 8 15.4477 8 16C8 16.5523 8.44771 17 9 17C9.55229 17 10 16.5523 10 16C10 15.4477 9.55229 15 9 15Z" fill="#0F0F0F"/>

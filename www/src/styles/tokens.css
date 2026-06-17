@@ -186,7 +186,7 @@ a {
 ::selection { background: var(--tc-accent); color: var(--tc-bg); }
 
 /* Helpers */
-.tc-sr {
+.sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
@@ -195,6 +195,7 @@ a {
   padding-left: var(--tc-space-6); padding-right: var(--tc-space-6);
 }
 .tc-eyebrow {
+  order: 1;
   font-size: var(--tc-fs-micro);
   font-weight: var(--tc-weight-semibold);
   letter-spacing: var(--tc-ls-wide);
@@ -216,7 +217,8 @@ a {
   display: flex; align-items: flex-end; justify-content: space-between;
   gap: var(--tc-space-5); margin-bottom: var(--tc-space-7); flex-wrap: wrap;
 }
-.section-head h2 { margin: var(--tc-space-2) 0 0; font-size: clamp(28px, 4vw, 40px); }
+.section-head div { display: flex; flex-direction:column; align-items: flex-start; gap: 0px; }
+.section-head h2 { order: 2; margin: var(--tc-space-2) 0 0; font-size: clamp(28px, 4vw, 40px); }
 .section-head .section-head__link {
   font-family: var(--tc-font-sans); font-weight: 700;
   color: var(--tc-fg-1); text-decoration: none; display: inline-flex; align-items: center;

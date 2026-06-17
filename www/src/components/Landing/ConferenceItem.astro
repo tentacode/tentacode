@@ -1,5 +1,6 @@
 ---
 import IconArrowUpRight from '../icons/IconArrowUpRight.astro';
+import { expandFrenchMonths } from '../../utils/dates';
 
 interface Occurrence {
   event: string;
@@ -19,25 +20,25 @@ const { title, occurrences, cohost, cohostUrl, linkLabel, href } = Astro.props;
 ---
 
 <li class="conf">
-  <div class="conf__when">
-    {occurrences.map((occ) => (
-      <span class="conf__occ">
-        <strong>{occ.event}</strong>
-        <span>{occ.date}</span>
-      </span>
-    ))}
-  </div>
   <div class="conf__main">
-    <p class="conf__title">{title}</p>
+    <h3 class="conf__title">{title}</h3>
     {cohost && (
       <p class="conf__cohost">
         avec{' '}
         {cohostUrl
-          ? <a href={cohostUrl} target="_blank" rel="noopener noreferrer"><strong>{cohost}</strong><IconArrowUpRight aria-hidden="true" /></a>
+          ? <a href={cohostUrl} target="_blank" rel="noopener noreferrer"><strong>{cohost}<span class="sr-only">, nouvelle fenêtre</span></strong><IconArrowUpRight aria-hidden="true" /></a>
           : <strong>{cohost}</strong>
         }
       </p>
     )}
+  </div>
+  <div class="conf__when">
+    {occurrences.map((occ) => (
+      <span class="conf__occ">
+        <strong>{occ.event}</strong>
+        <span aria-label={expandFrenchMonths(occ.date)}>{occ.date}</span>
+      </span>
+    ))}
   </div>
   <a class="link-detail" href={href} aria-label={`${linkLabel} : ${title}`} target="_blank" rel="noopener noreferrer">
     {linkLabel}
@@ -58,6 +59,7 @@ const { title, occurrences, cohost, cohostUrl, linkLabel, href } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: var(--tc-space-3);
+    order: 1;
   }
   .conf__occ {
     display: flex;
@@ -89,7 +91,7 @@ const { title, occurrences, cohost, cohostUrl, linkLabel, href } = Astro.props;
     letter-spacing: 0.05em;
     color: var(--tc-fg-3);
   }
-  .conf__main { display: flex; flex-direction: column; gap: 4px; align-self: start; }
+  .conf__main { display: flex; flex-direction: column; gap: 4px; align-self: start; order: 2; }
   .conf__title {
     font-family: var(--tc-font-display); font-size: 20px;
     font-weight: 600; margin: 0;
@@ -100,6 +102,7 @@ const { title, occurrences, cohost, cohostUrl, linkLabel, href } = Astro.props;
   .conf__cohost a { color: inherit; text-decoration: underline; display: inline-flex; align-items: center; gap: 2px; }
   .conf__cohost a :global(svg) { width: 10px; height: 10px; flex-shrink: 0; }
   .link-detail {
+    order: 3;
     font-family: var(--tc-font-mono); font-size: 12px;
     text-decoration: none;
     color: var(--tc-fg-1);
