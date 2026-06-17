@@ -20,7 +20,7 @@ const projets = defineCollection({
   schema: ({ image: img }) => z.object({
     title: z.string(),
     description: z.string(),
-    tags: z.array(z.string()),
+    tags: z.array(z.object({ label: z.string(), lang: z.enum(['fr', 'en']) })),
     variant: z.enum(['featured', 'sm']),
     slug: z.string(),
     publishDate: z.date(),

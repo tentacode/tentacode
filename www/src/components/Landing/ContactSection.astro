@@ -6,36 +6,41 @@ import IconGitHub from '../icons/IconGitHub.astro';
 import IconFile from '../icons/IconFile.astro';
 ---
 
-<section class="contact" id="contact" aria-labelledby="contact-title">
+<div class="contact" id="contact" aria-labelledby="contact-title">
   <div class="tc-container contact__inner">
     <div>
-      <span class="tc-eyebrow tc-eyebrow--dot">devant un café ou une visio</span>
-      <h2 id="contact-title">Parlons-en !</h2>
+      <div class="invert-order">
+        <h2 id="contact-title">Parlons-en !</h2>
+        <span class="tc-eyebrow tc-eyebrow--dot">devant un café ou une visio</span>
+      </div>
       <p class="contact__lead">
 Si mon profil vous intéresse, si vous cherchez un accompagnement technique ou que vous vous interrogez sur votre stratégie accessibilité, je suis disponible pour en parler. N'hésitez pas à me contacter pour échanger, même sans projet immédiat : ces sujets me tiennent particulièrement à cœur !</p>
     </div>
 
-    <div class="contact__channels">
-      <ContactChannel href="mailto:hello@tentacode.dev" label="Mail" value="hello@tentacode.dev">
-        <IconMail slot="icon" aria-hidden="true" />
+    <ul class="contact__channels">
+      <ContactChannel href="mailto:hello@tentacode.dev" label="Email" value="hello@tentacode.dev">
+        <IconMail slot="icon" />
       </ContactChannel>
 
       <ContactChannel href="https://www.linkedin.com/in/gabrielpillet" label="LinkedIn" value="/in/gabrielpillet" external>
-        <IconLinkedIn slot="icon" aria-hidden="true" />
+        <IconLinkedIn slot="icon" />
       </ContactChannel>
 
       <ContactChannel href="https://github.com/tentacode" label="GitHub" value="/tentacode" external>
-        <IconGitHub slot="icon" aria-hidden="true" />
+        <IconGitHub slot="icon" />
       </ContactChannel>
 
       <ContactChannel href="https://tentacode.github.io/curriculum" label="CV" value="Mon CV en ligne" external>
-        <IconFile slot="icon" aria-hidden="true" />
+        <IconFile slot="icon" />
       </ContactChannel>
-    </div>
+    </ul>
   </div>
-</section>
+</div>
 
 <style>
+  .invert-order { display: flex; flex-direction: column; gap: 0px; }
+  .invert-order h2 { order: 2; }
+  .invert-order .tc-eyebrow { order: 1; }
   .contact { padding: var(--tc-space-9) 0; position: relative; }
   .contact__inner {
     display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--tc-space-8);
@@ -44,12 +49,14 @@ Si mon profil vous intéresse, si vous cherchez un accompagnement technique ou q
   .contact h2 {
     font-size: clamp(36px, 5vw, 56px); letter-spacing: -0.025em;
     margin: var(--tc-space-2) 0 var(--tc-space-5);
+    overflow-wrap: anywhere;
   }
+  .contact__inner > div { min-width: 0; }
   .contact__lead {
     font-size: 18px; color: var(--tc-fg-2); margin: 0 0 var(--tc-space-6);
     max-width: 48ch;
   }
-  .contact__channels { display: flex; flex-direction: column; gap: var(--tc-space-3); }
+  .contact__channels { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--tc-space-3); min-width: 0; }
 
   @media (max-width: 760px) {
     .contact__inner { grid-template-columns: 1fr; gap: var(--tc-space-6); }

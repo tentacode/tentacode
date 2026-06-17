@@ -1,7 +1,14 @@
 ---
 title: "BetaSeries Insights"
 description: "Plateforme d'analyse de données de consommation de séries TV pour les professionnels des médias, propulsée par Neo4j."
-tags: ["php", "symfony", "neo4j", "sql", "b2b"]
+tags:
+  [
+    { label: "php", lang: "en" },
+    { label: "symfony", lang: "en" },
+    { label: "neo4j", lang: "en" },
+    { label: "sql", lang: "en" },
+    { label: "b2b", lang: "en" },
+  ]
 variant: sm
 slug: betaseries_insights
 publishDate: 2018-01-01

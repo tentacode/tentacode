@@ -1,13 +1,14 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import type { Tag } from '../../types';
 
 interface Props {
   href: string;
   variant: 'featured' | 'sm';
   title: string;
   description: string;
-  tags: string[];
+  tags: Tag[];
   image: ImageMetadata;
   imageAlt: string;
 }
@@ -15,18 +16,19 @@ interface Props {
 const { href, variant, title, description, tags, image, imageAlt } = Astro.props;
 ---
 
-<a class={`project project--${variant}`} href={href}>
-  <div class="project__media" aria-hidden="true">
-    <Image src={image} alt={imageAlt} />
+<div class={`project project--${variant}`}>
+  <div class="project__media">
+    <Image src={image} alt="" />
   </div>
   <div class="project__body">
-    <h3>{title}</h3>
-    <div class="project__tags">
-      {tags.map((tag) => <span class="project__tag">{tag}</span>)}
-    </div>
+    <h3><a href={href}>{title}</a></h3>
     <p>{description}</p>
+    <span class="sr-only">Liste de tags :</span>
+    <ul class="project__tags">
+      {tags.map((tag) => <li class="project__tag" lang={tag.lang}>{tag.label}</li>)}
+    </ul>
   </div>
-</a>
+</div>
 
 <style>
   .project {
@@ -38,10 +40,11 @@ const { href, variant, title, description, tags, image, imageAlt } = Astro.props
     text-decoration: none;
     color: var(--tc-fg-1);
     transition: transform 0.1s ease, box-shadow 0.1s ease;
+    cursor: pointer;
   }
   .project:hover { transform: translate(-2px, -2px); box-shadow: var(--tc-shadow-lg); }
-  .project:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 2px; }
-
+  .project a { text-decoration: none; color: inherit; }
+  .project a:focus-visible { outline: 3px solid var(--tc-pink); outline-offset: 2px; border-radius: var(--tc-radius-sm); }
   .project__media {
     aspect-ratio: 16 / 9;
     border-bottom: var(--tc-border);
@@ -49,11 +52,12 @@ const { href, variant, title, description, tags, image, imageAlt } = Astro.props
     overflow: hidden;
   }
   .project__media img {
+    order: 1;
     position: absolute; inset: 0;
     width: 100%; height: 100%;
     object-fit: cover; object-position: center;
   }
-  .project__tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 10px; }
+  .project__tags { list-style: none; order: 2; display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 10px; padding: 0; }
   .project__tag {
     font-family: var(--tc-font-mono); font-size: 11px;
     padding: 3px 8px;
@@ -61,12 +65,13 @@ const { href, variant, title, description, tags, image, imageAlt } = Astro.props
     border-radius: 6px; color: var(--tc-fg-1);
     line-height: 1.3;
   }
-  .project__body { padding: var(--tc-space-4) var(--tc-space-5) var(--tc-space-5); }
+  .project__body { display: flex; flex-direction: column; gap: 2px; padding: var(--tc-space-4) var(--tc-space-5) var(--tc-space-5); }
   h3 {
+    order: 3;
     font-family: var(--tc-font-display); font-weight: 700;
     font-size: 20px; margin: 0; letter-spacing: -0.01em; line-height: 1.2;
   }
-  p { font-size: 14px; color: var(--tc-fg-2); margin: 0; line-height: 1.5; }
+  p { order: 4; font-size: 14px; color: var(--tc-fg-2); margin: 0; line-height: 1.5; }
 
   .project--featured h3 { font-size: 28px; }
   .project--featured p { font-size: 16px; max-width: 56ch; }
@@ -80,3 +85,17 @@ const { href, variant, title, description, tags, image, imageAlt } = Astro.props
     overflow: hidden;
   }
 </style>
+
+<script>
+  const card = document.querySelectorAll('.project');
+
+  // Gérer les clics sur chaque carte.
+  card.forEach((c) => {
+    c.addEventListener('click', () => {
+      const link = c.querySelector('a');
+      if (link) {
+        window.location.href = link.href;
+      }
+    });
+  });
+</script>

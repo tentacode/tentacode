@@ -12,21 +12,27 @@ const { href, label, value, external = false } = Astro.props;
 const attrs = external
   ? { target: '_blank', rel: 'noopener noreferrer' }
   : {};
+
+let ariaLabel = `${label} : ${value}${external ? ', nouvelle fenêtre' : ''}`;
+if (label === 'CV') {
+  ariaLabel = `Mon Curriculum Vitae en ligne, nouvelle fenêtre`;
+}
 ---
 
-<a class="contact-channel" href={href} {...attrs}>
-  <div class="contact-channel__icon" aria-hidden="true">
+<li>
+<a class="contact-channel" href={href} {...attrs} aria-label={ariaLabel}>
+  <div class="contact-channel__icon">
     <slot name="icon" />
   </div>
   <div>
-    <div class="contact-channel__label">{label}</div>
-    <div class="contact-channel__value">{value}</div>
+    <div aria-hidden="true" class="contact-channel__label">{label}</div>
+    <div aria-hidden="true" class="contact-channel__value">{value}</div>
   </div>
-  {external && <span class="tc-sr">(ouvre un nouvel onglet)</span>}
-  <span class="contact-channel__arrow" aria-hidden="true">
+  <span class="contact-channel__arrow">
     <IconArrowUpRight />
   </span>
 </a>
+</li>
 
 <style>
   .contact-channel {
@@ -39,8 +45,10 @@ const attrs = external
     color: var(--tc-fg-1);
     transition: transform 0.1s ease, box-shadow 0.1s ease;
   }
+  li { min-width: 0; }
+  .contact-channel > div { min-width: 0; }
   .contact-channel:hover { transform: translate(-2px, -2px); box-shadow: var(--tc-shadow); }
-  .contact-channel:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 2px; }
+  .contact-channel:focus-visible { outline: 3px solid var(--tc-pink); outline-offset: 2px; }
   .contact-channel__icon {
     width: 48px; height: 48px; flex: 0 0 48px;
     display: flex; align-items: center; justify-content: center;
@@ -55,6 +63,7 @@ const attrs = external
   .contact-channel__value {
     font-family: var(--tc-font-display); font-size: 20px;
     font-weight: 700; line-height: 1.2; letter-spacing: -0.01em;
+    overflow-wrap: anywhere;
   }
   .contact-channel__arrow { margin-left: auto; }
   .contact-channel__arrow :global(svg) { width: 24px; height: 24px; }

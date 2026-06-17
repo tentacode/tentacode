@@ -1,7 +1,13 @@
 ---
 title: "Recherche d'imagerie médicale"
 description: "Moteur de recherche d'imagerie médicale (IRM, scanner…) pour classifier et retrouver les meilleures images, sur architecture DICOM distribuée."
-tags: ["php", "symfony", "elasticsearch", "dicom"]
+tags:
+  [
+    { label: "php", lang: "en" },
+    { label: "symfony", lang: "en" },
+    { label: "elasticsearch", lang: "en" },
+    { label: "dicom", lang: "en" },
+  ]
 variant: sm
 slug: medical_imaging
 publishDate: 2018-06-01

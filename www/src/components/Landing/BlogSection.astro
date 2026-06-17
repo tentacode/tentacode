@@ -6,14 +6,15 @@ const posts = (await getCollection('blog'))
   .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
 
 const fmt = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' });
+const fmtLong = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
 ---
 
-<section class="blog" id="blog">
+<div class="blog" id="blog">
   <div class="tc-container">
     <div class="section-head">
       <div>
-        <span class="tc-eyebrow tc-eyebrow--dot">Blog</span>
         <h2 id="blog-title">Sur le blog</h2>
+        <span aria-hidden="true" class="tc-eyebrow tc-eyebrow--dot">Blog</span>
       </div>
     </div>
 
@@ -24,13 +25,14 @@ const fmt = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'short', y
           category={post.data.category}
           categoryIcon={post.data.categoryIcon}
           date={fmt.format(post.data.publishDate)}
+          dateAriaLabel={fmtLong.format(post.data.publishDate)}
           title={post.data.title}
           excerpt={post.data.description}
         />
       ))}
     </div>
   </div>
-</section>
+</div>
 
 <style>
   .blog { padding: var(--tc-space-8) 0; padding-bottom: 0 !important; }

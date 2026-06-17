@@ -9,12 +9,12 @@ import IconArrowUpRight from './icons/IconArrowUpRight.astro';
       <div class="site-footer__brand">
         <Wordmark size="lg" />
         <p>
-          "Fais le ou ne le fais pas. Il n'y a pas d'essai." — Yoda après 10 prompts à Claude qui n'arrive pas à corriger le responsive et qui dit "Je vais essayer une autre approche.".
+          <q> Fais le ou ne le fais pas. Il n'y a pas d'essai. </q> — Yoda après 10 prompts à Claude qui n'arrive pas à corriger le responsive et qui dit "Je vais essayer une autre approche.".
         </p>
       </div>
 
-      <nav aria-label="Pages">
-        <h2>Pages</h2>
+      <nav>
+        <strong class="h2">Liens</strong>
         <ul>
           <li><a href="/#competences">Compétences</a></li>
           <li><a href="/#projets">Projets</a></li>
@@ -23,20 +23,20 @@ import IconArrowUpRight from './icons/IconArrowUpRight.astro';
         </ul>
       </nav>
 
-      <nav aria-label="Ailleurs">
-        <h2>Ailleurs</h2>
+      <nav>
+        <strong class="h2">Mes réseaux</strong>
         <ul>
           <li><a class="footer-extlink" href="https://github.com/tentacode" target="_blank" rel="noopener noreferrer">GitHub 
-              <IconArrowUpRight aria-hidden="true" /><span class="tc-sr">, nouvelle fenêtre</span></a></li>
+              <IconArrowUpRight aria-hidden="true" /><span class="sr-only">, nouvelle fenêtre</span></a></li>
           <li><a class="footer-extlink" href="https://www.linkedin.com/in/gabrielpillet" target="_blank" rel="noopener noreferrer">LinkedIn
-              <IconArrowUpRight aria-hidden="true" /><span class="tc-sr">, nouvelle fenêtre</span></a></li>
+              <IconArrowUpRight aria-hidden="true" /><span class="sr-only">, nouvelle fenêtre</span></a></li>
           <li><a class="footer-extlink" href="https://bsky.app/profile/tentacode.bsky.social" target="_blank" rel="noopener noreferrer">Bluesky
-              <IconArrowUpRight aria-hidden="true" /><span class="tc-sr">, nouvelle fenêtre</span></a></li>
+              <IconArrowUpRight aria-hidden="true" /><span class="sr-only">, nouvelle fenêtre</span></a></li>
         </ul>
       </nav>
 
-      <nav aria-label="Contact">
-        <h2>Contact</h2>
+      <nav>
+        <strong class="h2">Contact</strong>
         <ul>
           <li><a href="mailto:bonjour@tentacode.dev">bonjour@tentacode.dev</a></li>
           <li>
@@ -51,7 +51,7 @@ import IconArrowUpRight from './icons/IconArrowUpRight.astro';
     </div>
 
     <div class="site-footer__legal">
-      <span>© 2026 Gabriel Pillet — fait avec soin (et mon pote Claude aussi).</span>
+      <span>© 2026 Gabriel Pillet — fait avec soin (et mon pote Claude aussi) — Accessibilité : audit en cours</span>
     </div>
   </div>
 </footer>
@@ -65,13 +65,16 @@ import IconArrowUpRight from './icons/IconArrowUpRight.astro';
     display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: var(--tc-space-6);
   }
+  .site-footer__inner > * { min-width: 0; }
   .site-footer__brand { max-width: 30ch; }
   .site-footer__brand p {
     margin: var(--tc-space-3) 0 0;
     font-size: 14px; color: #C8BFBC; line-height: 1.55;
+    overflow-wrap: anywhere;
   }
 
-  nav h2 {
+  nav .h2 {
+    display: block;
     font-size: 11px; color: var(--tc-accent-soft);
     margin: 0 0 var(--tc-space-3);
     letter-spacing: 0.08em;
@@ -85,10 +88,11 @@ import IconArrowUpRight from './icons/IconArrowUpRight.astro';
   }
   nav a {
     color: var(--tc-bg); text-decoration: none; font-size: 14px; font-weight: 500;
+    overflow-wrap: anywhere;
   }
   nav a:hover,
   nav a:focus-visible { text-decoration: underline; }
-  nav a:focus-visible { outline: 2px solid var(--tc-accent); outline-offset: 2px; border-radius: 2px; }
+  nav a:focus-visible { outline: 2px solid var(--tc-pink); outline-offset: 2px; border-radius: 2px; }
 
   .footer-extlink { display: inline-flex; align-items: center; gap: 5px; }
   .footer-extlink :global(svg) { width: 12px; height: 12px; opacity: 0.7; }

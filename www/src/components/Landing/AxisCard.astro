@@ -1,26 +1,29 @@
 ---
+import type { Tag } from '../../types';
+
 interface Props {
   num: string;
   variant: 'dev' | 'lead' | 'a11y' | 'ai';
   title: string;
   description: string;
-  tags: string[];
+  tags: Tag[];
 }
 
 const { num, variant, title, description, tags } = Astro.props;
 ---
 
-<article class={`axis-card axis-card--${variant}`}>
-  <span class="axis-card__num">{num}</span>
+<div class={`axis-card axis-card--${variant}`}>
+  <span class="axis-card__num" aria-hidden="true">{num}</span>
   <div class="axis-card__icon" aria-hidden="true">
     <slot name="icon" />
   </div>
   <h3>{title}</h3>
-  <p>{description}</p>
-  <div class="axis-card__tags" aria-label="Technologies">
-    {tags.map((tag) => <span class="axis-card__tag">{tag}</span>)}
-  </div>
-</article>
+  <p set:html={description} />
+
+  <ul class="axis-card__tags" aria-label={`Compétences`}>
+    {tags.map((tag) => <li class="axis-card__tag" lang={tag.lang}>{tag.label}</li>)}
+  </ul>
+</div>
 
 <style>
   .axis-card {
@@ -48,8 +51,8 @@ const { num, variant, title, description, tags } = Astro.props;
   }
   .axis-card__icon :global(svg) { width: 56px; height: 56px; stroke-width: 1.75; stroke: var(--axis-color); }
   h3 { font-size: 24px; margin: 0; letter-spacing: -0.02em; }
-  p { font-size: 15px; line-height: 1.55; margin: 0; color: var(--tc-fg-2); }
-  .axis-card__tags { margin-top: auto; padding-top: var(--tc-space-4); display: flex; flex-wrap: wrap; gap: 6px; }
+  p { flex: 1; font-size: 15px; line-height: 1.55; margin: 0; color: var(--tc-fg-2); }
+  .axis-card__tags { list-style: none; padding: 0; margin: 0; padding-top: var(--tc-space-4); display: flex; flex-wrap: wrap; gap: 6px; }
   .axis-card__tag {
     font-family: var(--tc-font-mono); font-size: 11px;
     padding: 3px 8px;

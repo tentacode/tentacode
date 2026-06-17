@@ -1,7 +1,13 @@
 ---
 title: "Automatisation de review apps"
 description: "Automatisation de la création d'environnements de test éphémères pour les branches Git, avec Ansible et AWS."
-tags: ["php", "symfony", "ansible", "aws"]
+tags:
+  [
+    { label: "php", lang: "en" },
+    { label: "symfony", lang: "en" },
+    { label: "ansible", lang: "en" },
+    { label: "aws", lang: "en" },
+  ]
 variant: sm
 slug: interim_ansible
 publishDate: 2022-06-01

@@ -5,16 +5,16 @@ import ConferenceItem from './ConferenceItem.astro';
 const conferences = (await getCollection('conferences')).sort((a, b) => a.id.localeCompare(b.id));
 ---
 
-<section class="confs" id="talks">
+<div class="confs" id="talks">
   <div class="tc-container">
     <div class="section-head">
       <div>
-        <span class="tc-eyebrow tc-eyebrow--dot">Sur scène</span>
         <h2 id="confs-title">Conférences et talks</h2>
+        <span aria-hidden="true" class="tc-eyebrow tc-eyebrow--dot">Sur scène</span>
       </div>
     </div>
 
-    <ul class="confs__list">
+    <div class="confs__list">
       {conferences.map((conf) => (
         <ConferenceItem
           title={conf.data.title}
@@ -25,9 +25,9 @@ const conferences = (await getCollection('conferences')).sort((a, b) => a.id.loc
           href={conf.data.href}
         />
       ))}
-    </ul>
+    </div>
   </div>
-</section>
+</div>
 
 <style>
   .confs { padding: var(--tc-space-8) 0; }

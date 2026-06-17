@@ -1,7 +1,13 @@
 ---
 title: "Phat Fishes"
 description: "Jeu d'arène multijoueur (4 joueurs) créé en solo en 72 heures pour la Ludum Dare 35, avec code, graphismes, UI, FX et musique."
-tags: ["unity3d", "c#", "game-jam", "ludum-dare"]
+tags:
+  [
+    { label: "unity3d", lang: "en" },
+    { label: "c#", lang: "en" },
+    { label: "game-jam", lang: "en" },
+    { label: "ludum-dare", lang: "en" },
+  ]
 variant: sm
 slug: phat_fishes
 publishDate: 2016-08-01

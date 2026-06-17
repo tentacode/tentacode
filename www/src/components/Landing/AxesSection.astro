@@ -6,12 +6,12 @@ import IconTarget from '../icons/IconTarget.astro';
 import IconRobotFull from '../icons/IconRobotFull.astro';
 ---
 
-<section class="axes" id="competences">
+<div class="axes" id="competences">
   <div class="tc-container">
     <div class="section-head">
       <div>
-        <span class="tc-eyebrow tc-eyebrow--dot">Ce que j'apporte</span>
         <h2 id="axes-title">Mon expertise</h2>
+        <span class="tc-eyebrow tc-eyebrow--dot">Ce que j'apporte</span>
       </div>
     </div>
 
@@ -20,8 +20,14 @@ import IconRobotFull from '../icons/IconRobotFull.astro';
         num="01 / DEV"
         variant="dev"
         title="Dev fullstack"
-        description="Du backend au frontend avec un soupçon d'infra. J'aime rendre simple les problèmes complexes. Je pousse la qualité mais sans oublier qu'à un moment il faut livrer."
-        tags={["Symfony", "PostgreSQL", "React", "React Native", "Next.js"]}
+        description="Du <span lang='en'>backend</span> au <span lang='en'>frontend</span> avec un soupçon d'infra. J'aime rendre simple les problèmes complexes. Je pousse la qualité mais sans oublier qu'à un moment il faut livrer."
+        tags={[
+          { label: "Symfony", lang: "en" },
+          { label: "PostgreSQL", lang: "en" },
+          { label: "React", lang: "en" },
+          { label: "React Native", lang: "en" },
+          { label: "Next.js", lang: "en" },
+        ]}
       >
         <IconCode slot="icon" aria-hidden="true" />
       </AxisCard>
@@ -31,7 +37,13 @@ import IconRobotFull from '../icons/IconRobotFull.astro';
         variant="lead"
         title="Lead technique"
         description="Que ce soit pour apporter une architecture technique, faire monter en compétences des juniors ou aider des seniors à prendre du recul, j'apporte un management technique vraiment bienveillant et au service de l'équipe."
-        tags={["vision", "pédagogie", "code review", "santé mentale", "1:1"]}
+        tags={[
+          { label: "vision", lang: "fr" },
+          { label: "pédagogie", lang: "fr" },
+          { label: "code review", lang: "en" },
+          { label: "santé mentale", lang: "fr" },
+          { label: "entretien individuel", lang: "fr" },
+        ]}
       >
         <IconUsers slot="icon" aria-hidden="true" />
       </AxisCard>
@@ -41,7 +53,12 @@ import IconRobotFull from '../icons/IconRobotFull.astro';
         variant="a11y"
         title="Accessibilité"
         description="Nos applications devraient être utilisables par tous, sans exception, et j'ai toutes les compétences en accessibilité numérique pour développer et tester des solutions inclusives. Je suis également formé à l'audit RGAA et peux évaluer la conformité de vos projets."
-        tags={["RGAA", "RAAM", "audits", "VoiceOver"]}
+        tags={[
+          { label: "RGAA", lang: "fr" },
+          { label: "RAAM", lang: "fr" },
+          { label: "audits", lang: "fr" },
+          { label: "VoiceOver", lang: "en" },
+        ]}
       >
         <IconTarget slot="icon" aria-hidden="true" />
       </AxisCard>
@@ -51,13 +68,17 @@ import IconRobotFull from '../icons/IconRobotFull.astro';
         variant="ai"
         title="I.A. & automatisation"
         description="Avant l'I.A. j'automatisais déjà des process, mais aujourd'hui les possibilités sont bluffantes ! J'utilise Claude en assistant et en dev agentique dans tous mes projets, et je prends soin de garder le contrôle sur la qualité en sortie."
-        tags={["claude code", "skills", "agents"]}
+        tags={[
+          { label: "claude code", lang: "en" },
+          { label: "skills", lang: "en" },
+          { label: "agents", lang: "en" },
+        ]}
       >
         <IconRobotFull slot="icon" aria-hidden="true" />
       </AxisCard>
     </div>
   </div>
-</section>
+</div>
 
 <style>
   .axes { padding: var(--tc-space-8) 0; }

@@ -138,6 +138,7 @@ const fmt = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', ye
   h1 {
     font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: var(--tc-space-4);
+    overflow-wrap: break-word;
   }
 
   .blog-hero__description {
@@ -223,7 +224,7 @@ const fmt = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', ye
   }
   .post-nav a:hover { transform: translate(-1px, -1px); box-shadow: var(--tc-shadow); }
   .post-nav a:active { transform: translate(1px, 1px); box-shadow: var(--tc-shadow-sm); }
-  .post-nav a:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 2px; }
+  .post-nav a:focus-visible { outline: 3px solid var(--tc-pink); outline-offset: 2px; }
   .post-nav .nav-next { margin-left: auto; }
   .post-nav :global(svg) { flex-shrink: 0; }
 

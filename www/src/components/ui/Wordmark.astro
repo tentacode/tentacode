@@ -45,12 +45,17 @@ const { size = 'sm', backLabel } = Astro.props;
   .wordmark--lg svg { width: 34px; height: 34px; }
 
   .wordmark:hover svg { transform: rotate(-6deg) scale(1.06); }
+  .wordmark:focus-visible { outline: 3px solid var(--tc-pink); outline-offset: 3px; border-radius: 3px; }
   @media (prefers-reduced-motion: reduce) {
     .wordmark:hover svg { transform: none; }
   }
 
   .wordmark__text {
     display: flex; flex-direction: column; gap: 1px;
+    min-width: 0;
+  }
+  .wordmark__name {
+    overflow-wrap: anywhere;
   }
 
   .wordmark__name span { color: var(--tc-accent); }

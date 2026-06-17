@@ -1,6 +1,7 @@
 ---
 import Wordmark from './ui/Wordmark.astro';
 import IconMenu from './icons/IconMenu.astro';
+import MobileMenu from './MobileMenu.astro';
 ---
 
 <header>
@@ -18,32 +19,72 @@ import IconMenu from './icons/IconMenu.astro';
     </nav>
 
     <a href="/#contact" class="site-header__cta">
-      <span aria-hidden="true"></span>
+      <span class="pill" aria-hidden="true"></span>
       je suis disponible&nbsp;!
+      <span class="sr-only">aller à la section contact</span>
     </a>
 
     <button
       type="button"
       aria-label="Ouvrir le menu"
       aria-expanded="false"
-      aria-controls="primary-nav"
+      aria-controls="mobile-menu"
       id="burger-btn"
     >
       <IconMenu aria-hidden="true" />
     </button>
+
+    <MobileMenu />
   </div>
 </header>
 
 
 <script>
   const burger = document.getElementById('burger-btn');
-  const body = document.body;
+  const closeBtn = document.getElementById('mobile-menu-close');
+  const header = document.querySelector('header');
+  const dialogEl = document.getElementById('mobile-menu');
+  const dialog = dialogEl instanceof HTMLDialogElement ? dialogEl : null;
+
+  function syncHeaderHeight(): void {
+    if (header) {
+      document.documentElement.style.setProperty('--tc-header-height', `${header.getBoundingClientRect().height}px`);
+    }
+  }
+  syncHeaderHeight();
+  window.addEventListener('resize', syncHeaderHeight);
 
   burger?.addEventListener('click', () => {
-    const isOpen = body.getAttribute('data-menu') === 'open';
-    body.setAttribute('data-menu', isOpen ? 'closed' : 'open');
-    burger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-    burger.setAttribute('aria-label', isOpen ? 'Ouvrir le menu' : 'Fermer le menu');
+    dialog?.showModal();
+    burger.setAttribute('aria-expanded', 'true');
+    burger.setAttribute('aria-label', 'Fermer le menu');
+  });
+
+  closeBtn?.addEventListener('click', () => dialog?.close());
+
+  dialog?.addEventListener('close', () => {
+    burger?.setAttribute('aria-expanded', 'false');
+    burger?.setAttribute('aria-label', 'Ouvrir le menu');
+  });
+
+  dialog?.addEventListener('keydown', (event: KeyboardEvent) => {
+    if (event.key !== 'Tab' || !dialog) return;
+
+    const focusable = [closeBtn, ...Array.from(dialog.querySelectorAll<HTMLAnchorElement>('a[href]'))]
+      .filter((el): el is HTMLElement => el !== null);
+    if (focusable.length === 0) return;
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    const active = document.activeElement;
+
+    if (event.shiftKey && active === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && active === last) {
+      event.preventDefault();
+      first.focus();
+    }
   });
 </script>
 
@@ -68,14 +109,13 @@ import IconMenu from './icons/IconMenu.astro';
     font-size: 15px; font-weight: 700;
     color: var(--tc-fg-1); text-decoration: none;
   }
-  nav a:hover,
-  nav a:focus-visible {
+  nav a:hover {
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
   }
   nav a:focus-visible {
-    outline: 3px solid var(--tc-accent);
+    outline: 3px solid var(--tc-pink);
     outline-offset: 3px;
     border-radius: 3px;
   }
@@ -97,19 +137,19 @@ import IconMenu from './icons/IconMenu.astro';
   }
   .site-header__cta:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 0 var(--tc-success); }
   .site-header__cta:focus-visible { outline: 3px solid var(--tc-success); outline-offset: 2px; }
-  .site-header__cta span {
+  .site-header__cta .pill {
     width: 9px; height: 9px; border-radius: 50%;
     background: var(--tc-success); display: inline-block;
     position: relative; flex: none;
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--tc-success) 28%, transparent);
   }
-  .site-header__cta span::after {
+  .site-header__cta .pill::after {
     content: ""; position: absolute; inset: 0;
     border-radius: 50%; border: 2px solid var(--tc-success);
     opacity: 0; transform: scale(1);
   }
-  .site-header__cta:hover span::after,
-  .site-header__cta:focus-visible span::after {
+  .site-header__cta:hover .pill::after,
+  .site-header__cta:focus-visible .pill::after {
     animation: cta-ping 0.7s ease-out 1;
   }
   @keyframes cta-ping {
@@ -117,13 +157,14 @@ import IconMenu from './icons/IconMenu.astro';
     100% { transform: scale(2.4); opacity: 0; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .site-header__cta:hover span::after,
-    .site-header__cta:focus-visible span::after { animation: none; }
+    .site-header__cta:hover .pill::after,
+    .site-header__cta:focus-visible .pill::after { animation: none; }
   }
 
   button {
     display: none;
     width: 44px; height: 44px;
+    flex-shrink: 0;
     align-items: center; justify-content: center;
     background: var(--tc-bg);
     border: var(--tc-border); border-radius: var(--tc-radius);
@@ -131,7 +172,7 @@ import IconMenu from './icons/IconMenu.astro';
     box-shadow: var(--tc-shadow-sm);
   }
   button:focus-visible {
-    outline: 3px solid var(--tc-accent);
+    outline: 3px solid var(--tc-pink);
     outline-offset: 2px;
   }
   button :global(svg) { width: 24px; height: 24px; }
@@ -144,29 +185,13 @@ import IconMenu from './icons/IconMenu.astro';
     nav { display: none; }
     button { display: inline-flex; }
 
-    header :global(.wordmark) { flex: 1 }
-
-    :global(body[data-menu="open"]) nav {
+    header :global(.wordmark) { flex: 1; min-width: 0; }
+    header :global(.wordmark__text) { min-width: 0; }
+    header :global(.wordmark__name) {
       display: block;
-      position: absolute; top: 100%; left: 0; right: 0;
-      background: var(--tc-bg);
-      border-bottom: var(--tc-border);
-      z-index: 60;
-    }
-    :global(body[data-menu="open"]) nav ul {
-      display: flex; flex-direction: column;
-      align-items: stretch;
-      padding: var(--tc-space-5) var(--tc-space-4);
-      gap: var(--tc-space-3);
-    }
-    :global(body[data-menu="open"]) nav a {
-      font-size: 22px;
-      font-family: var(--tc-font-display);
-      padding: 8px 0;
-      border-bottom: 1px solid #d9c9c4;
-    }
-    :global(body[data-menu="open"]) nav li:last-child a {
-      border-bottom: none;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
   }
 

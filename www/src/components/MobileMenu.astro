@@ -1,0 +1,97 @@
+---
+import IconClose from './icons/IconClose.astro';
+---
+
+<dialog id="mobile-menu" aria-label="Menu mobile">
+  <button type="button" id="mobile-menu-close" aria-label="Fermer le menu">
+    <IconClose aria-hidden="true" />
+  </button>
+
+  <nav aria-label="Navigation principale">
+    <ul role="list">
+      <li><a href="/#competences">Compétences</a></li>
+      <li><a href="/#projets">Projets</a></li>
+      <li><a href="/#talks">Conférences</a></li>
+      <li><a href="/#blog">Blog</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </nav>
+</dialog>
+
+<style>
+  dialog {
+    margin: 0; padding: 0; border: none; max-width: none;
+  }
+  dialog::backdrop {
+    background: transparent;
+  }
+
+  #mobile-menu-close {
+    display: none;
+    position: fixed;
+    top: 14px; right: var(--tc-space-4);
+    z-index: 61;
+    width: 44px; height: 44px;
+    flex-shrink: 0;
+    align-items: center; justify-content: center;
+    background: var(--tc-bg);
+    border: var(--tc-border); border-radius: var(--tc-radius);
+    color: var(--tc-fg-1);
+    box-shadow: var(--tc-shadow-sm);
+  }
+  #mobile-menu-close:focus-visible {
+    outline: 3px solid var(--tc-pink);
+    outline-offset: 2px;
+  }
+  #mobile-menu-close :global(svg) { width: 24px; height: 24px; }
+
+  nav ul {
+    display: flex; gap: var(--tc-space-6); align-items: center;
+    list-style: none; margin: 0; padding: 0;
+  }
+  nav a {
+    font-size: 15px; font-weight: 700;
+    color: var(--tc-fg-1); text-decoration: none;
+  }
+  nav a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+  nav a:focus-visible {
+    outline: 3px solid var(--tc-pink);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  @media (max-width: 760px) {
+    dialog[open] {
+      display: block;
+      position: fixed;
+      top: var(--tc-header-height, 75px);
+      left: 0; right: 0;
+      width: 100%;
+      background: var(--tc-bg);
+      border-bottom: var(--tc-border);
+      z-index: 60;
+    }
+    dialog[open] #mobile-menu-close {
+      display: inline-flex;
+    }
+    dialog[open] nav ul {
+      display: flex; flex-direction: column;
+      align-items: stretch;
+      padding: var(--tc-space-5) var(--tc-space-4);
+      gap: var(--tc-space-3);
+    }
+    dialog[open] nav a {
+      font-size: 22px;
+      font-family: var(--tc-font-display);
+      padding: 8px 0;
+      border-bottom: 1px solid #d9c9c4;
+    }
+    dialog[open] nav li:last-child a {
+      border-bottom: none;
+    }
+  }
+</style>

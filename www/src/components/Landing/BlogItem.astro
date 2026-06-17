@@ -6,24 +6,25 @@ interface Props {
   category: string;
   categoryIcon: 'ai' | 'lead' | 'a11y';
   date: string;
+  dateAriaLabel?: string;
   title: string;
   excerpt: string;
 }
 
-const { href, category, categoryIcon, date, title, excerpt } = Astro.props;
+const { href, category, categoryIcon, date, dateAriaLabel, title, excerpt } = Astro.props;
 ---
 
-<a class="post" href={href}>
-  <div>
+<div class="post">
+  <a class="post__title" href={href}><h3>{title}</h3></a>
+  <p>{excerpt}</p>
+  <div class="post__meta">
     <span class="post__category">
       <BlogCategoryIcon icon={categoryIcon} size="s" />
       {category}
     </span>
-    <span class="post__date">{date}</span>
+    <span class="post__date" aria-label={dateAriaLabel ?? date}>{date}</span>
   </div>
-  <h3>{title}</h3>
-  <p>{excerpt}</p>
-</a>
+</div>
 
 <style>
   .post {
@@ -33,12 +34,8 @@ const { href, category, categoryIcon, date, title, excerpt } = Astro.props;
     padding-top: var(--tc-space-4);
     transition: color 0.15s ease;
   }
-  .post:focus-visible {
-    outline: 3px solid var(--tc-accent);
-    outline-offset: 4px;
-    border-radius: 3px;
-  }
-  div {
+  .post__meta {
+    order: 1;
     display: flex; align-items: center; justify-content: space-between;
     font-family: var(--tc-font-mono); font-size: 12px;
     text-transform: uppercase; letter-spacing: 0.05em;
@@ -49,10 +46,14 @@ const { href, category, categoryIcon, date, title, excerpt } = Astro.props;
   }
   .post__category :global(svg) { width: 16px; height: 16px; }
   .post__date { color: var(--tc-fg-3); }
-  h3 {
+  .post__title {
+    order: 2;
     font-family: var(--tc-font-display); font-weight: 700;
     font-size: 22px; line-height: 1.2; margin: 0;
     letter-spacing: -0.01em;
+    text-decoration: none;
   }
-  p { font-size: 14px; color: var(--tc-fg-2); margin: 0; line-height: 1.5; }
+  .post__title:hover { text-decoration: underline; }
+  .post__title:focus-visible { outline: 3px solid var(--tc-pink); outline-offset: 4px; border-radius: 3px; }
+  p { font-size: 14px; color: var(--tc-fg-2); margin: 0; line-height: 1.5; order: 3; }
 </style>

@@ -6,12 +6,12 @@ const allProjects = await getCollection('projets');
 const projects = allProjects.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
 ---
 
-<section class="projects" id="projets">
+<div class="projects" id="projets">
   <div class="tc-container">
     <div class="section-head">
       <div>
-        <span class="tc-eyebrow tc-eyebrow--dot">Portfolio</span>
         <h2 id="projects-title">Projets variés et de qualité</h2>
+        <span class="tc-eyebrow tc-eyebrow--dot">Portfolio</span>
       </div>
     </div>
 
@@ -29,7 +29,7 @@ const projects = allProjects.sort((a, b) => b.data.publishDate.getTime() - a.dat
       ))}
     </div>
   </div>
-</section>
+</div>
 
 <style>
   .projects { padding: var(--tc-space-8) 0; }

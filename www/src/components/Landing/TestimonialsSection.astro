@@ -6,32 +6,34 @@ import recoStephane from '../../assets/img/reco_stephane.jpeg';
 import recoJulien from '../../assets/img/reco_julien.jpeg';
 ---
 
-<section class="testimonial" aria-labelledby="testimonial-title">
+<div class="testimonial" aria-labelledby="testimonial-title">
   <div class="tc-container testimonial__inner">
-    <span class="tc-eyebrow tc-eyebrow--dot">Ils ont apprécié travailler avec moi</span>
-    <h2 id="testimonial-title">Témoignages</h2>
+    <div class="invert-order">
+      <h2 id="testimonial-title">Témoignages</h2>
+      <span class="tc-eyebrow tc-eyebrow--dot">Ils ont apprécié travailler avec moi</span>
+    </div>
 
     <div class="tm">
       <div role="tablist" aria-label="Témoignages" aria-orientation="vertical">
-        <button type="button" role="tab" id="tm-tab-1" aria-controls="tm-panel-1" aria-selected="true" tabindex="0">
-          <Image class="tm__tab-avatar" src={recoGuillaume} alt="Guillaume S." aria-hidden="true" width="48" height="48" />
+        <button aria-label="Guillaume S., Développeur mobile senior" type="button" role="tab" id="tm-tab-1" aria-controls="tm-panel-1" aria-selected="true" tabindex="0">
+          <Image class="tm__tab-avatar" src={recoGuillaume} alt="" width="48" height="48" />
           <span class="tm__tab-id">
-            <span class="tm__tab-name">Guillaume S.</span>
-            <span class="tm__tab-role">Développeur mobile senior</span>
+            <span aria-hidden="true" class="tm__tab-name">Guillaume S.</span>
+            <span aria-hidden="true" class="tm__tab-role">Développeur mobile senior</span>
           </span>
         </button>
-        <button type="button" role="tab" id="tm-tab-2" aria-controls="tm-panel-2" aria-selected="false" tabindex="-1">
-          <Image class="tm__tab-avatar" src={recoStephane} alt="Stéphane H." aria-hidden="true" width="48" height="48" />
+        <button aria-label="Stéphane H., CTO, agence web" type="button" role="tab" id="tm-tab-2" aria-controls="tm-panel-2" aria-selected="false" tabindex="-1">
+          <Image class="tm__tab-avatar" src={recoStephane} alt="" width="48" height="48" />
           <span class="tm__tab-id">
-            <span class="tm__tab-name">Stéphane H.</span>
-            <span class="tm__tab-role">CTO, agence web</span>
+            <span aria-hidden="true" class="tm__tab-name">Stéphane H.</span>
+            <span aria-hidden="true" class="tm__tab-role">CTO, agence web</span>
           </span>
         </button>
-        <button type="button" role="tab" id="tm-tab-3" aria-controls="tm-panel-3" aria-selected="false" tabindex="-1">
-          <Image class="tm__tab-avatar" src={recoJulien} alt="Julien S." aria-hidden="true" width="48" height="48" />
+        <button aria-label="Julien S., Développeur Fullstack" type="button" role="tab" id="tm-tab-3" aria-controls="tm-panel-3" aria-selected="false" tabindex="-1">
+          <Image class="tm__tab-avatar" src={recoJulien} alt="" width="48" height="48" />
           <span class="tm__tab-id">
-            <span class="tm__tab-name">Julien S.</span>
-            <span class="tm__tab-role">Développeur Fullstack</span>
+            <span aria-hidden="true" class="tm__tab-name">Julien S.</span>
+            <span aria-hidden="true" class="tm__tab-role">Développeur Fullstack</span>
           </span>
         </button>
       </div>
@@ -39,26 +41,24 @@ import recoJulien from '../../assets/img/reco_julien.jpeg';
       <div>
         <div role="tabpanel" id="tm-panel-1" aria-labelledby="tm-tab-1" tabindex="0">
           <blockquote>Gabriel, en plus de fournir un travail de très bonne qualité, est quelqu'un d'extrêmement pédagogue ; il ne refuse jamais d'aider ses collègues et met en place des choses pour souder l'équipe et la porter vers le haut. Toujours de bon conseil, il adore apprendre et se perfectionner. Un vrai plaisir de travailler avec lui.</blockquote>
-          <footer>
+          <div class="footer">
             <p>3 ans en équipe ensemble, dont 1 an en binôme sur un prototype d'application mobile de rencontre.</p>
             <a href="https://www.linkedin.com/in/guillaume-siorak/" target="_blank" rel="noopener noreferrer">
               <IconLinkedIn aria-hidden="true" />
-              Profil de Guillaume
-              <span class="tc-sr">(ouvre un nouvel onglet)</span>
+              Profil LinkedIn de Guillaume
             </a>
-          </footer>
+          </div>
         </div>
 
         <div role="tabpanel" id="tm-panel-2" aria-labelledby="tm-tab-2" tabindex="0" hidden>
           <blockquote>Gabriel m'a permis de démarrer un projet de développement PHP (aujourd'hui plus de 50K lignes de code) (…).<br/>Son pragmatisme et sa méthode nous ont orienté vers les bons choix technologiques. (…)<br />Il a réussi à structurer et formaliser une réponse viable aux différentes problématiques qui lui ont été soumises (testabilité, performance, architecture). Les échanges étaient constructifs et la collaboration efficace, c'était très agréable de travailler avec lui.</blockquote>
-          <footer>
+          <div class="footer">
             <p>J'ai travaillé avec Stéphane sur plusieurs projets d'applications complexes en Freelance.</p>
             <a href="https://www.linkedin.com/in/shulard/" target="_blank" rel="noopener noreferrer">
               <IconLinkedIn aria-hidden="true" />
-              Profil de Stéphane
-              <span class="tc-sr">(ouvre un nouvel onglet)</span>
+              Profil LinkedIn de Stéphane
             </a>
-          </footer>
+          </div>
         </div>
 
         <div role="tabpanel" id="tm-panel-3" aria-labelledby="tm-tab-3" tabindex="0" hidden>
@@ -67,19 +67,18 @@ import recoJulien from '../../assets/img/reco_julien.jpeg';
 <br />De plus il nous donnait toujours la méthode utilisée pour que nous puissions être autonomes. En dehors des cours, il nous arrivait souvent de dévier sur des sujets n'ayant aucun rapport avec le sujet principal du cours ou même sur des technos qu'il n'utilisait pas forcément et pourtant il nous a toujours été de bon conseil. (…)
 
           </blockquote>
-          <footer>
+          <div class="footer">
             <p>Julien a été mon élève sur plusieurs modules techniques à l'école YNOV.</p>
             <a href="https://www.linkedin.com/in/jseixasfr/" target="_blank" rel="noopener noreferrer">
               <IconLinkedIn aria-hidden="true" />
-              Profil de Julien
-              <span class="tc-sr">(ouvre un nouvel onglet)</span>
+              Profil LinkedIn de Julien
             </a>
-          </footer>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <script>
   const tablist = document.querySelector('[role="tablist"]');
@@ -118,18 +117,6 @@ import recoJulien from '../../assets/img/reco_julien.jpeg';
     position: relative;
     overflow: hidden;
   }
-  .testimonial::before {
-    content: "\201C";
-    position: absolute;
-    top: auto; bottom: -180px; right: -10px; left: auto;
-    font-family: var(--tc-font-display);
-    font-size: 420px; line-height: 1;
-    color: var(--tc-accent);
-    opacity: 0.12;
-    font-weight: 700;
-    pointer-events: none;
-    aria-hidden: true;
-  }
   .testimonial__inner { position: relative; }
   .tc-eyebrow { color: #C8BFBC; }
   .tc-eyebrow.tc-eyebrow--dot::before { background: var(--tc-accent); }
@@ -150,6 +137,7 @@ import recoJulien from '../../assets/img/reco_julien.jpeg';
     display: flex;
     flex-direction: column;
     gap: var(--tc-space-3);
+    min-width: 0;
   }
   [role="tab"] {
     display: flex;
@@ -172,7 +160,7 @@ import recoJulien from '../../assets/img/reco_julien.jpeg';
     box-shadow: var(--tc-shadow-accent);
   }
   [role="tab"]:focus-visible {
-    outline: 3px solid var(--tc-accent);
+    outline: 3px solid var(--tc-pink);
     outline-offset: 2px;
   }
   .tm__tab-avatar {
@@ -197,7 +185,7 @@ import recoJulien from '../../assets/img/reco_julien.jpeg';
   }
   [role="tab"][aria-selected="true"] .tm__tab-role { color: var(--tc-fg-3); }
 
-  .tm > div:last-child { position: relative; min-height: 0; }
+  .tm > div:last-child { position: relative; min-height: 0; min-width: 0; }
   [role="tabpanel"] {
     display: flex;
     flex-direction: column;
@@ -205,7 +193,7 @@ import recoJulien from '../../assets/img/reco_julien.jpeg';
   }
   [role="tabpanel"][hidden] { display: none; }
   [role="tabpanel"]:focus-visible {
-    outline: 3px solid var(--tc-accent);
+    outline: 3px solid var(--tc-pink);
     outline-offset: 6px;
     border-radius: var(--tc-radius);
   }
@@ -218,24 +206,25 @@ import recoJulien from '../../assets/img/reco_julien.jpeg';
     margin: 0;
     letter-spacing: -0.01em;
     text-wrap: pretty;
+    overflow-wrap: anywhere;
   }
   blockquote::before { content: "\00AB\0020"; color: var(--tc-accent); }
   blockquote::after  { content: "\0020\00BB"; color: var(--tc-accent); }
-  footer {
+  .footer {
     display: flex;
     flex-direction: column;
     gap: var(--tc-space-3);
     padding-top: var(--tc-space-4);
     border-top: 2px solid #4A4A4A;
   }
-  footer p {
+  .footer p {
     font-size: 14px;
     color: #C8BFBC;
     margin: 0;
     max-width: 52ch;
     line-height: 1.5;
   }
-  footer a {
+  .footer a {
     display: inline-flex; align-items: center; gap: 8px;
     color: var(--tc-bg); text-decoration: none;
     font-weight: 700; font-size: 14px;
@@ -244,10 +233,14 @@ import recoJulien from '../../assets/img/reco_julien.jpeg';
     border: 2px solid #4A4A4A; border-radius: var(--tc-radius-pill);
     transition: border-color 0.15s ease, background 0.15s ease;
   }
-  footer a:hover,
-  footer a:focus-visible { border-color: var(--tc-accent); background: rgba(133,121,220,0.12); }
-  footer a:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 2px; }
-  footer a :global(svg) { width: 16px; height: 16px; color: var(--tc-accent); }
+  .footer a:hover,
+  .footer a:focus-visible { border-color: var(--tc-pink); background: rgba(216,17,130,0.12); }
+  .footer a:focus-visible { outline: 3px solid var(--tc-pink); outline-offset: 2px; }
+  .footer a :global(svg) { width: 16px; height: 16px; color: var(--tc-accent); }
+
+  .invert-order { display: flex; flex-direction: column; gap: 5px; }
+  .invert-order h2 { order: 2; }
+  .invert-order .tc-eyebrow { order: 1; }
 
   @media (max-width: 760px) {
     .tm { grid-template-columns: 1fr; gap: var(--tc-space-6); }

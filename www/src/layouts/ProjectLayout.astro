@@ -5,6 +5,7 @@ import MarkdownLayout from './MarkdownLayout.astro';
 import IconArrowLeft from '../components/icons/IconArrowLeft.astro';
 import IconArrowRight from '../components/icons/IconArrowRight.astro';
 import IconArrowUpRight from '../components/icons/IconArrowUpRight.astro';
+import type { Tag } from '../types';
 
 interface ProjectRef {
   title: string;
@@ -14,7 +15,7 @@ interface ProjectRef {
 interface Props {
   title: string;
   description: string;
-  tags: string[];
+  tags: Tag[];
   image: ImageMetadata;
   imageAlt: string;
   href?: string;
@@ -52,9 +53,9 @@ const { title, description, tags, image, imageAlt, href, prevProject, nextProjec
         height={Math.round(1600 * image.height / image.width)}
       />
     </figure>
-    <div class="project-hero__tags">
-      {tags.map((tag) => <span class="project-tag">{tag}</span>)}
-    </div>
+    <ul class="project-hero__tags">
+      {tags.map((tag) => <li class="project-tag" lang={tag.lang}>{tag.label}</li>)}
+    </ul>
     <h1>{title}</h1>
     <p class="project-hero__description">{description}</p>
 
@@ -86,6 +87,7 @@ const { title, description, tags, image, imageAlt, href, prevProject, nextProjec
     display: inline-flex;
     align-items: center;
     gap: var(--tc-space-2);
+    min-width: 0;
     padding: 10px 18px;
     font-family: var(--tc-font-sans);
     font-weight: 600;
@@ -103,7 +105,7 @@ const { title, description, tags, image, imageAlt, href, prevProject, nextProjec
   }
   .project-nav a:hover { transform: translate(-1px, -1px); box-shadow: var(--tc-shadow); }
   .project-nav a:active { transform: translate(1px, 1px); box-shadow: var(--tc-shadow-sm); }
-  .project-nav a:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 2px; }
+  .project-nav a:focus-visible { outline: 3px solid var(--tc-pink); outline-offset: 2px; }
   .project-nav .nav-next { margin-left: auto; }
   .project-nav :global(svg) { flex-shrink: 0; }
 
@@ -120,6 +122,7 @@ const { title, description, tags, image, imageAlt, href, prevProject, nextProjec
   }
 
   .project-hero__tags {
+    list-style: none; padding: 0; margin: 0 0 var(--tc-space-4);
     display: flex; flex-wrap: wrap; gap: 6px;
     margin-bottom: var(--tc-space-4);
   }
@@ -133,6 +136,7 @@ const { title, description, tags, image, imageAlt, href, prevProject, nextProjec
   h1 {
     font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: var(--tc-space-4);
+    overflow-wrap: break-word;
   }
 
   .project-hero__description {
@@ -154,7 +158,7 @@ const { title, description, tags, image, imageAlt, href, prevProject, nextProjec
   }
   .project-cta:hover { transform: translate(-1px, -1px); box-shadow: var(--tc-shadow); }
   .project-cta:active { transform: translate(1px, 1px); box-shadow: var(--tc-shadow-sm); }
-  .project-cta:focus-visible { outline: 3px solid var(--tc-accent); outline-offset: 2px; }
+  .project-cta:focus-visible { outline: 3px solid var(--tc-pink); outline-offset: 2px; }
 
   @media (max-width: 760px) {
     .project-hero { padding: var(--tc-space-6) 0 var(--tc-space-5); }
