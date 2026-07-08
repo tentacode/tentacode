@@ -10,9 +10,27 @@ import ProjectsSection from '../components/Landing/ProjectsSection.astro';
 import ConferencesSection from '../components/Landing/ConferencesSection.astro';
 import BlogSection from '../components/Landing/BlogSection.astro';
 import ContactSection from '../components/Landing/ContactSection.astro';
+
+const siteURL = Astro.site!.toString();
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Gabriel Pillet',
+    url: siteURL,
+    jobTitle: 'Développeur fullstack freelance & lead technique',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'tentacode.dev',
+    url: siteURL,
+    inLanguage: 'fr-FR',
+  },
+];
 ---
 
-<Base>
+<Base jsonLd={jsonLd}>
   <a href="#main" class="tc-skip">Aller au contenu</a>
   <Header />
   <main id="main">

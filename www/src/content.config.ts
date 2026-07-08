@@ -1,5 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { BLOG_CATEGORY_ICON_KEYS } from './types';
 
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
@@ -9,7 +10,7 @@ const blog = defineCollection({
     slug: z.string(),
     publishDate: z.date(),
     category: z.string(),
-    categoryIcon: z.enum(['ai', 'lead', 'a11y']),
+    categoryIcon: z.enum(BLOG_CATEGORY_ICON_KEYS),
     image: img().optional(),
     imageAlt: z.string().optional(),
   }),

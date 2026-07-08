@@ -1,15 +1,23 @@
 ---
-import IconRobot from './icons/IconRobot.astro';
-import IconCircles from './icons/IconCircles.astro';
-import IconPerson from './icons/IconPerson.astro';
+import { BLOG_CATEGORY_ICONS } from './icons/blogCategoryIcons';
+import type { BlogCategoryIcon as BlogCategoryIconType } from '../types';
 
 interface Props {
-  icon: 'ai' | 'lead' | 'a11y';
+  icon: BlogCategoryIconType;
   size: 's' | 'm' | 'l';
 }
 
 const { icon, size } = Astro.props;
+const def = BLOG_CATEGORY_ICONS[icon];
 ---
-{icon === 'ai' && <IconRobot size={size} stroke-width="2" aria-hidden="true" />}
-{icon === 'a11y' && <IconCircles size={size} stroke-width="2" aria-hidden="true" />}
-{icon === 'lead' && <IconPerson size={size} stroke-width="2" aria-hidden="true" />}
+<svg
+  aria-hidden="true"
+  viewBox={def.viewBox}
+  fill={def.mode === 'fill' ? 'currentColor' : 'none'}
+  stroke={def.mode === 'stroke' ? 'currentColor' : 'none'}
+  stroke-width={def.mode === 'stroke' ? '2' : undefined}
+  stroke-linecap={def.mode === 'stroke' ? 'round' : undefined}
+  stroke-linejoin={def.mode === 'stroke' ? 'round' : undefined}
+  style={`margin-top: ${def.marginTop[size]}`}
+  set:html={def.markup}
+/>

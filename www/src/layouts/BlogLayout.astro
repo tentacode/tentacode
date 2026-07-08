@@ -6,6 +6,7 @@ import IconArrowLeft from '../components/icons/IconArrowLeft.astro';
 import IconArrowRight from '../components/icons/IconArrowRight.astro';
 import BlogCategoryIcon from '../components/BlogCategoryIcon.astro';
 import portrait from '../assets/img/portrait_small.jpg';
+import type { BlogCategoryIcon as BlogCategoryIconType } from '../types';
 
 interface PostRef {
   title: string;
@@ -15,8 +16,9 @@ interface PostRef {
 interface Props {
   title: string;
   description: string;
+  slug: string;
   category: string;
-  categoryIcon: 'ai' | 'lead' | 'a11y';
+  categoryIcon: BlogCategoryIconType;
   publishDate: Date;
   image?: ImageMetadata;
   imageAlt?: string;
@@ -24,11 +26,25 @@ interface Props {
   nextPost?: PostRef;
 }
 
-const { title, description, category, categoryIcon, publishDate, image, imageAlt, prevPost, nextPost } = Astro.props;
+const { title, description, slug, category, categoryIcon, publishDate, image, imageAlt, prevPost, nextPost } = Astro.props;
 const fmt = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const ogCardURL = new URL(`/og/${slug}.png`, Astro.site).toString();
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description,
+  image: ogCardURL,
+  datePublished: publishDate.toISOString(),
+  mainEntityOfPage: canonicalURL,
+  author: { '@type': 'Person', name: 'Gabriel Pillet' },
+  publisher: { '@type': 'Person', name: 'Gabriel Pillet' },
+};
 ---
 
-<MarkdownLayout title={title} description={description}>
+<MarkdownLayout title={title} description={description} image={ogCardURL} type="article" jsonLd={jsonLd}>
   <header class="blog-hero" slot="header">
     {image && (
       <figure class="blog-cover">
@@ -57,7 +73,7 @@ const fmt = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', ye
   <div class="blog-footer" slot="footer">
     <div class="author-card">
       <div class="author-avatar">
-        <Image src={portrait} alt="Gabriel Pillet" width={256} height={256} />
+        <Image src={portrait} alt="" width={256} height={256} />
       </div>
       <strong>Gabriel Pillet</strong>
       <p>Développeur fullstack et lead technique depuis près de 20 ans. J'écris ici sur l'accessibilité, la qualité logicielle, et l'usage raisonné de l'IA dans le quotidien d'une équipe.</p>

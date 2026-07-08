@@ -26,7 +26,7 @@ interface Props {
 const { title, description, tags, image, imageAlt, href, prevProject, nextProject } = Astro.props;
 ---
 
-<MarkdownLayout title={title} description={description}>
+<MarkdownLayout title={title} description={description} image={image} imageAlt={imageAlt}>
   <header class="project-hero" slot="header">
     {(prevProject || nextProject) && (
       <nav class="project-nav">

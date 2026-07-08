@@ -1,13 +1,28 @@
 ---
+import type { ImageMetadata } from 'astro';
+import { resolveOgImage } from '../lib/seo';
+
 interface Props {
   title?: string;
   description?: string;
+  image?: ImageMetadata | string;
+  imageAlt?: string;
+  type?: 'website' | 'article';
+  jsonLd?: object | object[];
 }
 
 const {
   title = "tentacode.dev — développeur fullstack freelance & lead technique",
   description = "Développeur fullstack freelance, lead technique et formé à l'accessibilité. Disponible pour une prochaine mission ou un CDI.",
+  image,
+  type = 'website',
+  jsonLd,
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = typeof image === 'string'
+  ? { url: image, width: 1200, height: 630 }
+  : await resolveOgImage(image, Astro.site!);
 ---
 
 <!doctype html>
@@ -17,10 +32,30 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" href="/fonts/LexendDeca-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/AtkinsonHyperlegible-Regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/AtkinsonHyperlegible-Bold.woff2" as="font" type="font/woff2" crossorigin />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="tentacode.dev" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:image" content={ogImage.url} />
+    <meta property="og:image:width" content={String(ogImage.width)} />
+    <meta property="og:image:height" content={String(ogImage.height)} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage.url} />
+
+    {jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+    )}
   </head>
   <body>
     <slot />

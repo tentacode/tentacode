@@ -1,6 +1,6 @@
 ---
 title: "Ce portfolio fait avec Claude est-il accessible ?"
-description: "J'ai réalisé ce portfolio avec l'aide de Claude Design et de Claude Code, en essayant de lui faire respecter les bonnes pratiques d'accessibilité. Est-ce que ça a fonctionné ?"
+description: "J'ai réalisé ce portfolio avec Claude Design et Claude Code, en essayant de respecter les bonnes pratiques d'accessibilité. Est-ce que ça a fonctionné ?"
 slug: portfolio-ia-accessible-ou-pas
 publishDate: 2026-07-07
 category: "I.A."

@@ -24,12 +24,13 @@ interface Props {
 
 const { post, prevPost, nextPost } = Astro.props;
 const { Content } = await render(post);
-const { title, description, image, imageAlt, category, categoryIcon, publishDate } = post.data;
+const { title, description, slug, image, imageAlt, category, categoryIcon, publishDate } = post.data;
 ---
 
 <BlogLayout
   title={title}
   description={description}
+  slug={slug}
   category={category}
   categoryIcon={categoryIcon}
   publishDate={publishDate}

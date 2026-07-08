@@ -1,19 +1,27 @@
 ---
+import type { ImageMetadata } from 'astro';
 import Base from './Base.astro';
 import HeaderSecondary from '../components/HeaderSecondary.astro';
 import Footer from '../components/Footer.astro';
 
-interface Props {
+interface PageData {
   title: string;
   description?: string;
-  frontmatter?: { title: string; description?: string };
+  image?: ImageMetadata | string;
+  imageAlt?: string;
+  type?: 'website' | 'article';
+  jsonLd?: object | object[];
+}
+
+interface Props extends PageData {
+  frontmatter?: PageData;
 }
 
 const props = Astro.props.frontmatter ?? Astro.props;
-const { title, description } = props;
+const { title, description, image, imageAlt, type, jsonLd } = props;
 ---
 
-<Base title={`${title} — tentacode.dev`} description={description}>
+<Base title={`${title} — tentacode.dev`} description={description} image={image} imageAlt={imageAlt} type={type} jsonLd={jsonLd}>
   <a class="tc-skip" href="#main-content">Aller au contenu principal</a>
   <HeaderSecondary />
 

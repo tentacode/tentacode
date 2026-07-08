@@ -1,10 +1,11 @@
 ---
 import BlogCategoryIcon from '../BlogCategoryIcon.astro';
+import type { BlogCategoryIcon as BlogCategoryIconType } from '../../types';
 
 interface Props {
   href: string;
   category: string;
-  categoryIcon: 'ai' | 'lead' | 'a11y';
+  categoryIcon: BlogCategoryIconType;
   date: string;
   dateAriaLabel?: string;
   title: string;
