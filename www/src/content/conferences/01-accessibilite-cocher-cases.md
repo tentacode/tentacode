@@ -9,6 +9,6 @@ occurrences:
     date: "Nov 2025 · Lyon"
 cohost: "Vanessa Strub"
 cohostUrl: "https://www.linkedin.com/in/vanessa-strub-3451773a/"
-linkLabel: "Voir le programme"
-href: "https://event.afup.org/afup-day-2026/afup-day-2026-lyon/programme/"
+linkLabel: "Voir la vidéo"
+href: "https://www.youtube.com/watch?v=NACOlI8mCZQ"
 ---
