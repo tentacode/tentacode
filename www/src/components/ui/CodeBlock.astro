@@ -1,0 +1,53 @@
+---
+import hljs from 'highlight.js/lib/core';
+import xml from 'highlight.js/lib/languages/xml';
+import css from 'highlight.js/lib/languages/css';
+import javascript from 'highlight.js/lib/languages/javascript';
+
+hljs.registerLanguage('xml', xml);
+hljs.registerLanguage('css', css);
+hljs.registerLanguage('javascript', javascript);
+
+interface Props {
+  code: string;
+}
+
+const { code } = Astro.props;
+const highlighted = hljs.highlight(code.trim(), { language: 'xml' }).value;
+---
+
+<pre class="code-block" aria-hidden="true"><code set:html={highlighted} /></pre>
+
+<style>
+  .code-block {
+    background: var(--tc-fg-1);
+    color: var(--tc-bg);
+    padding: var(--tc-space-5);
+    border-radius: var(--tc-radius-sm);
+    overflow-x: auto;
+    margin: 0;
+    font-family: var(--tc-font-mono);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .code-block code {
+    font-family: inherit;
+    font-size: inherit;
+    background: transparent;
+    padding: 0;
+  }
+  /* highlight.js — atom-one-dark, background overridden */
+  .code-block :global(.hljs)                          { color: #abb2bf; background: transparent; }
+  .code-block :global(.hljs-comment)                  { color: #5c6370; font-style: italic; }
+  .code-block :global(.hljs-keyword)                  { color: #c678dd; }
+  .code-block :global(.hljs-string)                   { color: #98c379; }
+  .code-block :global(.hljs-attr)                     { color: #d19a66; }
+  .code-block :global(.hljs-variable)                 { color: #d19a66; }
+  .code-block :global(.hljs-title.class_),
+  .code-block :global(.hljs-built_in)                 { color: #e6c07b; }
+  .code-block :global(.hljs-title.function_)          { color: #61aeee; }
+  .code-block :global(.hljs-name),
+  .code-block :global(.hljs-selector-tag),
+  .code-block :global(.hljs-selector-class)           { color: #e06c75; }
+  .code-block :global(.hljs-number)                   { color: #d19a66; }
+</style>

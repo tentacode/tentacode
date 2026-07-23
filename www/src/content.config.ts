@@ -3,7 +3,7 @@ import { glob } from 'astro/loaders';
 import { BLOG_CATEGORY_ICON_KEYS } from './types';
 
 const blog = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
   schema: ({ image: img }) => z.object({
     title: z.string(),
     description: z.string(),

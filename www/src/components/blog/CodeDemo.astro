@@ -1,0 +1,92 @@
+---
+import CodeBlock from '../ui/CodeBlock.astro';
+import IconCode from '../icons/IconCode.astro';
+
+interface Props {
+  title: string;
+  source: string;
+}
+
+const { title, source } = Astro.props;
+const panelId = `code-demo-panel-${crypto.randomUUID()}`;
+---
+
+<figure class="code-demo">
+  <figcaption>{title}</figcaption>
+
+  <div class="code-demo__preview">
+    <slot />
+  </div>
+
+  <button type="button" class="code-demo__toggle" aria-expanded="false" aria-controls={panelId}>
+    <IconCode aria-hidden="true" />
+    <span>Voir le code</span>
+  </button>
+
+  <div id={panelId} class="code-demo__panel" hidden aria-hidden="true">
+    <CodeBlock code={source} />
+  </div>
+</figure>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.code-demo').forEach((demo) => {
+    const button = demo.querySelector<HTMLButtonElement>('.code-demo__toggle');
+    const label = button?.querySelector('span');
+    const panel = demo.querySelector<HTMLElement>('.code-demo__panel');
+    if (!button || !label || !panel) return;
+
+    button.addEventListener('click', () => {
+      const expanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      panel.hidden = expanded;
+      label.textContent = expanded ? 'Voir le code' : 'Masquer le code';
+    });
+  });
+</script>
+
+<style>
+  .code-demo {
+    margin: 0 0 var(--tc-space-6);
+    padding: var(--tc-space-5);
+    background: var(--tc-surface);
+    border: var(--tc-border);
+    border-radius: var(--tc-radius);
+    box-shadow: var(--tc-shadow-sm);
+  }
+
+  figcaption {
+    font-family: var(--tc-font-mono);
+    font-size: var(--tc-fs-micro);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--tc-fg-3);
+    margin-bottom: var(--tc-space-4);
+  }
+
+  .code-demo__preview {
+    margin-bottom: var(--tc-space-4);
+  }
+
+  .code-demo__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--tc-space-2);
+    padding: 10px 18px;
+    font-family: var(--tc-font-sans);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--tc-fg-1);
+    background: var(--tc-bg);
+    border: var(--tc-border);
+    border-radius: var(--tc-radius);
+    box-shadow: var(--tc-shadow-sm);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
+  .code-demo__toggle:hover { transform: translate(-1px, -1px); box-shadow: var(--tc-shadow); }
+  .code-demo__toggle:active { transform: translate(1px, 1px); box-shadow: var(--tc-shadow-sm); }
+  .code-demo__toggle:focus-visible { outline: 3px solid var(--tc-pink); outline-offset: 2px; }
+  .code-demo__toggle :global(svg) { width: 16px; height: 16px; }
+
+  .code-demo__panel { margin-top: var(--tc-space-4); }
+  .code-demo__panel[hidden] { display: none; }
+</style>

@@ -1,0 +1,82 @@
+<ul class="product-grid">
+  <li class="product-card">
+    <h2>Casque audio sans fil</h2>
+    <p>Réduction de bruit active, 30&nbsp;h d'autonomie.</p>
+    <span class="badge">En promo</span>
+    <button type="button" class="add-to-cart">Ajouter au panier</button>
+  </li>
+  <li class="product-card">
+    <h2>Enceinte connectée</h2>
+    <p>Compatible avec les principaux assistants vocaux.</p>
+    <span class="badge badge--soon">Bientôt disponible</span>
+    <button type="button" class="add-to-cart" disabled>Ajouter au panier</button>
+  </li>
+</ul>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.product-grid .add-to-cart').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      btn.textContent = 'Ajouté ✓';
+    });
+  });
+</script>
+
+<style>
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--tc-space-5);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--tc-space-2);
+    padding: var(--tc-space-4);
+    border: var(--tc-border);
+    border-radius: var(--tc-radius);
+  }
+  /* L'ordre DOM place le titre en premier (logique pour un lecteur d'écran),
+     l'ordre visuel d'origine (badge, bouton, titre, description) est restauré via `order`. */
+  .product-card h2 {
+    order: 3;
+    font-size: var(--tc-fs-h5);
+    margin: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .product-card p {
+    order: 4;
+    font-size: var(--tc-fs-small);
+    color: var(--tc-fg-3);
+    margin: 0;
+  }
+  .badge {
+    order: 1;
+    font-size: var(--tc-fs-micro);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 4px 10px;
+    border-radius: var(--tc-radius-pill);
+    background: var(--tc-success-soft);
+    color: var(--tc-fg-1);
+  }
+  .badge--soon { background: var(--tc-warning-soft); }
+  .add-to-cart {
+    order: 2;
+    padding: 8px 14px;
+    font-family: var(--tc-font-sans);
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--tc-bg);
+    background: var(--tc-fg-1);
+    border: none;
+    border-radius: var(--tc-radius-sm);
+  }
+  .add-to-cart:disabled { opacity: 0.5; cursor: not-allowed; }
+  .add-to-cart:focus-visible { outline: 3px solid var(--tc-pink); outline-offset: 2px; }
+</style>

@@ -1,0 +1,42 @@
+---
+title: "L'ordre dans une page et le lecteur d'écran"
+description: "J'ai réalisé ce portfolio avec Claude Design et Claude Code, en essayant de respecter les bonnes pratiques d'accessibilité. Est-ce que ça a fonctionné ?"
+slug: ordre-du-dom-lecteur-ecran
+publishDate: 2026-07-16
+category: "Accessibilité"
+categoryIcon: a11y
+---
+
+import CodeDemo from '../../components/blog/CodeDemo.astro';
+import ProductGridBad from '../../components/blog/demos/dom-order-lecteur-ecran/ProductGridBad.astro';
+import productGridBadSource from '../../components/blog/demos/dom-order-lecteur-ecran/ProductGridBad.astro?raw';
+import ProductGridFixed from '../../components/blog/demos/dom-order-lecteur-ecran/ProductGridFixed.astro';
+import productGridFixedSource from '../../components/blog/demos/dom-order-lecteur-ecran/ProductGridFixed.astro?raw';
+
+Dans [l'audit d'accessibilité de ce portfolio](/blog/portfolio-ia-accessible-ou-pas), j'avais listé rapidement un problème que je trouve particulièrement intéressant, parce qu'il est facile à rater visuellement et qu'on le retrouve un peu partout sur le web : l'ordre du DOM qui ne correspond pas à l'ordre attendu par un lecteur d'écran, alors que visuellement tout semble parfaitement logique.
+
+## Un exemple concret
+
+Prenons une grille de produits, comme on en trouve sur n'importe quel site e-commerce. Sur chaque carte, on affiche d'abord un badge de disponibilité ("En promo", "Bientôt disponible"), puis un bouton d'ajout au panier, puis le titre du produit, puis sa description.
+
+<CodeDemo title="Grille produit — ordre de lecture problématique" source={productGridBadSource}>
+  <ProductGridBad />
+</CodeDemo>
+
+Visuellement, rien à signaler : c'est un agencement de carte tout à fait courant. Le souci est invisible à l'œil, il est dans le code.
+
+Essayez de naviguer dans cette grille avec un lecteur d'écran en sautant de titre en titre (touche <kbd>H</kbd> sous NVDA ou VoiceOver, un réflexe très courant pour scanner rapidement une liste de résultats). Vous atterrissez bien sur « Casque audio sans fil ». Mais si vous continuez à lire séquentiellement à partir de ce titre, le badge et le bouton que vous entendez juste après appartiennent déjà au produit *suivant* : dans le DOM, le badge et le bouton de chaque carte sont placés *avant* son propre `<h2>`, donc ils restent inaudibles pour quelqu'un qui vient d'atterrir sur ce titre en navigant par en-têtes. La disponibilité et l'action associées au bon produit sont tout simplement passées sous silence.
+
+## La correction
+
+On peut corriger ça **sans rien changer visuellement**. Il suffit de changer l'ordre du HTML pour qu'il corresponde à l'ordre de lecture logique (le titre et la description arrivent en premier), puis d'utiliser la propriété CSS `order` en flexbox pour replacer visuellement le badge et le bouton en haut de la carte, exactement là où ils étaient avant.
+
+<CodeDemo title="Même rendu, ordre de lecture corrigé via `order`" source={productGridFixedSource}>
+  <ProductGridFixed />
+</CodeDemo>
+
+Le rendu est strictement identique aux yeux d'une personne voyante — même carte, même agencement, même style. Mais cette fois, le lecteur d'écran annonce d'abord le titre du produit, puis sa description, puis sa disponibilité et l'action associée, dans le bon ordre, qu'on navigue séquentiellement ou par en-têtes.
+
+## À retenir
+
+`order` (en flexbox ou en grid) est justement fait pour ça : découpler l'ordre *visuel* de l'ordre *du document*. Ordre du document = ordre de lecture pour un lecteur d'écran (et ordre de tabulation par défaut, ce qui compte aussi pour la navigation clavier). Dès qu'une maquette réordonne des éléments uniquement pour des raisons visuelles, `order` permet de satisfaire les deux exigences en même temps, sans dupliquer le HTML ni sacrifier l'un des deux usages.
