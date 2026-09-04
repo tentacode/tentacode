@@ -15,7 +15,7 @@
     accept_hostkey: yes
 
 - name: Installing www dependencies
-  shell: source ~/.nvm/nvm.sh && npm install
+  shell: source ~/.nvm/nvm.sh && npm install --no-audit --no-fund --maxsockets 3
   args:
     chdir: "{{ user.workspace_directory }}/tentacode/www"
     executable: /bin/bash
